@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node andrebot-api.js",
-    "test": "env $(cat .env) node andrebot-api.js"
+    "test": "env $(cat .env) node-dev andrebot-api.js"
   },
   "keywords": [],
   "author": "",
