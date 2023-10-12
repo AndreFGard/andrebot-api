@@ -4,6 +4,7 @@ var router = express.Router();
 /* legacy functions*/
 router.get('/', function(req, res, next) {
   res.send('Legacy route');
+  next();
 });
 
 router.post('/winner', (req, res, next) => {
@@ -11,7 +12,7 @@ router.post('/winner', (req, res, next) => {
       res.sendStatus(404)
       next();
   }
-  if (!isAuthorization(req, res, next)) {
+  if (!isAuthorization(req, res,)) {
       console.log("UNAUTHORIZED ATTEMPT: " + req.ip)
       res.status(404).send();
       next();
@@ -36,7 +37,7 @@ router.get('/winners', async (req, res, next) => {
       res.sendStatus(404)
       next();
   }
-  if (!isAuthorization(req, res, next)) {
+  if (!isAuthorization(req, res)) {
       console.log("UNAUTHORIZED ATTEMPT: " + req.ip)
       res.status(404).send();
       next();
