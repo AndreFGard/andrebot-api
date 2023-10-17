@@ -4,10 +4,14 @@ var router = express.Router();
 /* legacy functions*/
 router.get('/', function(req, res, next) {
   res.send('Legacy route');
-  next();
+  next()
 });
 
 router.post('/winner', (req, res, next) => {
+  if (typeof db === 'undefined') {
+    res.send(`Error.\nThis is legacy, potentially broken functionality.`);
+    return;
+  }
   if (!req.headers.authorization) {
       res.sendStatus(404)
       next();
@@ -23,12 +27,16 @@ router.post('/winner', (req, res, next) => {
   const winner = req.body;
   values = [winner.username, winner.word, winner.attempts, winner.timestamp];
 
-  db.run(addwinner_SQL, values, function(err) {
+  try {
+    db.run(addwinner_SQL, values, function(err) {
       if (err) {
           return res.send("error: " + err);
       }
       res.send(`success`);
       });
+  } catch (error) {
+    res.send(`Error.\nThis is legacy, potentially broken functionality.`);
+  }
 });
 
 
@@ -43,9 +51,12 @@ router.get('/winners', async (req, res, next) => {
       next();
   }
 
-  
   const winners = new Map();
-  await new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
+      if (typeof db === 'undefined') {
+        res.send(`Error.\nThis is legacy, potentially broken functionality.`);
+        return;
+      }
       db.each("SELECT username, COUNT(username) as c FROM wordlewinners GROUP BY username;", (err, row) => {
           if (err) {
               reject(err);
@@ -60,6 +71,7 @@ router.get('/winners', async (req, res, next) => {
           }
       });
   });
+
 
   function logMapElements(value, key, map) {
       console.log(`m[${key}] = ${value}`);
