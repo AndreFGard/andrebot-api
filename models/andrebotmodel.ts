@@ -54,4 +54,12 @@ export class AndrebotModel {
 
     }
 
+    async addWinner(username: string, loser_username: string, word: string, platform: string, attempts: number){
+        await this.check_connection();
+        const q = "insert into victories (user_id, loser_id, word, platform, attempts, event_date) " +
+                    "values ((SELECT id from users where username = %L), (SELECT id FROM users WHERE username = %L), %L, %L, %s, NOW())";
+        console.log(format(q, username, loser_username, word,platform, attempts ))
+        const res = await this.client.query(format(q, username, loser_username, word, attempts, platform));
+    }
+
 }

@@ -12,6 +12,13 @@ export interface rankEntry extends UserEntry {
     anon_username: string;
 };
 
+export interface Victory_event {
+    username: string,
+    loser_username: string,
+    word: string,
+    platform: string,
+    attempts: number,
+}
 
 export class andrebotServices {
 
@@ -42,5 +49,15 @@ export class andrebotServices {
 
     }
 
+    async addWinner(event: Victory_event){
+        if (!(['discord', 'telegram'].includes(event.platform))){
+            return;
+        }
+        await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts);
+    }
+
+    async addWinners(events: Array<Victory_event>){
+        await events.map(this.addWinner);
+    }
 }
 
