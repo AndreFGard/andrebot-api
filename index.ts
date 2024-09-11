@@ -12,7 +12,6 @@ app.use(express.json()); //middleware that partes the request's json
 
 
 app.get("/", (req: Request, res: Response) => {
-    console.log(req.body);
     res.send("eae");
 });
 
