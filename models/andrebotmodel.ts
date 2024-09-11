@@ -2,6 +2,7 @@ import { rankEntry, UserEntry } from './../services/andrebotServices';
 import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';
+import {uniqueNamesGenerator, adjectives, colors, animals} from 'unique-names-generator';
 
 dotenv.config();
 
@@ -54,12 +55,27 @@ export class AndrebotModel {
 
     }
 
-    async addWinner(username: string, loser_username: string, word: string, platform: string, attempts: number){
-        await this.check_connection();
-        const q = "insert into victories (user_id, loser_id, word, platform, attempts, event_date) " +
-                    "values ((SELECT id from users where username = %L), (SELECT id FROM users WHERE username = %L), %L, %L, %s, NOW())";
-        console.log(format(q, username, loser_username, word,platform, attempts ))
-        const res = await this.client.query(format(q, username, loser_username, word, attempts, platform));
+    //placeholder
+    createAnonUsername(username: string, platform: string) {
+        return uniqueNamesGenerator({
+            dictionaries: [adjectives, colors, animals],
+            length: 3}) + platform;
     }
 
+    async addUser(username: string, platform: string, wins?: number){
+        await this.check_connection();
+
+        let q =  format("INSERT INTO users (username, platform, anon_username, wins, registration) SELECT %L, %L, %L, %s, NOW() WHERE NOT EXISTS " +
+                "(SELECT 1 FROM users WHERE username = %L AND platform = %L);",
+                username, platform, this.createAnonUsername(username, platform), Number(wins), username, platform);
+        
+        this.client.query(q)
+            .catch((err: Error) => {
+                console.log(err);
+            })
+    }
+
+
+
+  
 }

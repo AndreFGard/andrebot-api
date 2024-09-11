@@ -22,9 +22,6 @@ export interface Victory_event {
 
 export class andrebotServices {
 
-    testauth(): boolean {
-        return true;
-    }
 
     async getHash(password: string){
         return await bcrypt.hash(password, 10);
@@ -49,15 +46,20 @@ export class andrebotServices {
 
     }
 
-    async addWinner(event: Victory_event){
-        if (!(['discord', 'telegram'].includes(event.platform))){
-            return;
+    async addWinner(event: Victory_event) {
+        if (!['discord', 'telegram'].includes(event.platform)) {
+            return 0;
         }
         await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts);
     }
 
     async addWinners(events: Array<Victory_event>){
         await events.map(this.addWinner);
+    }
+
+    async addUser({ username, platform, wins }: { username: string, platform: string, wins?: number }) {
+        model.addUser(username, platform, wins||0);
+        return;
     }
 }
 
