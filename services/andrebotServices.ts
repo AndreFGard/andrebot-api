@@ -18,6 +18,7 @@ export interface Victory_event {
     word: string,
     platform: string,
     attempts: number,
+    date?: string
 }
 
 export class andrebotServices {
@@ -47,15 +48,17 @@ export class andrebotServices {
     }
 
     async addWinner(event: Victory_event) {
-        //discord, telegram
+        //discord, telegram are the allowed platforms, for now
         if (!['dsc', 'tg'].includes(event.platform)) {
             return 0;
         }
-        await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts);
+        await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts,event.date);
     }
 
     async addWinners(events: Array<Victory_event>){
-        await events.map(this.addWinner);
+        for (const evt of events){
+            await this.addWinner(evt);
+        }
     }
 
     async addUser({ username, platform, wins }: { username: string, platform: string, wins?: number }) {

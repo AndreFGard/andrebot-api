@@ -1,4 +1,4 @@
-import { rankEntry, UserEntry } from './../services/andrebotServices';
+import { rankEntry, UserEntry, Victory_event } from './../services/andrebotServices';
 import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';
@@ -84,32 +84,46 @@ export class AndrebotModel {
         username, platform));
     }
 
-    async addWinner(username: string, loser_username: string, word: string, platform: string, attempts: number){
-        await this.check_connection();
+    private async __do_addWinner_query(username: string, loser_username: string, word: string, platform: string, attempts: number, date?:string){
         var q1 = "insert into victories (user_id, loser_id, word, platform, attempts, event_date) " +
-                    "values ((SELECT id from users where username = %L and platform = %L), " + 
-                    "(SELECT id FROM users WHERE username = %L and platform = %L), %L, %L, %s, NOW())";
-        q1 = format(q1, username, platform, loser_username, platform, word,platform, attempts );
+        "values ((SELECT id from users where username = %L and platform = %L), " + 
+        "(SELECT id FROM users WHERE username = %L and platform = %L), %L, %L, %s, %L)";
+        q1 = format(q1, username, platform, loser_username, platform, word,platform, attempts, date||'NOW()' );
+        return this.client.query(q1);
+    }
+    async addWinner(username: string, loser_username: string, word: string, platform: string, attempts: number, date?:string){
+        await this.check_connection();
+
 
         //TODO: deal with error
-        (this.client.query(q1)
+
+
+        (this.__do_addWinner_query(username,loser_username,word,platform,attempts,date)
             .catch(async (err:Error) => {
                 if (err.message.includes("null value in column")){
-                    console.log('non registered user, trying to add the loser and the winner');
+                    console.log('unregistered user, trying to add the loser and the winner');
                     await this.addUser(username, platform, 0);
                     await this.addUser(loser_username, platform, 0);
 
-                } else console.log('unknown error: '  + err.message);
-            }))
-            .then( () => {
-                this.increment_wins(username, platform, 1).catch(err => {
-                    console.log(err);
-                }); 
-            }).catch(_ => {
-                console.log('failed to register users');
-               console.log(_);
-            });
-        
+                } else {
+                    console.log('unknown error: '  + err.message);
+                     return;
+                };
+                }).then(() => {
+                    this.__do_addWinner_query(username,loser_username,word,platform,attempts,date).catch(() => {
+                        return;
+                    })
+                })
+        )
+        .then( () => {
+            this.increment_wins(username, platform, 1).catch(err => {
+                console.log(err);
+            }); 
+        }).catch(_ => {
+            console.log('failed to register users');
+            console.log(_);
+        });
+    
 
     }
 
