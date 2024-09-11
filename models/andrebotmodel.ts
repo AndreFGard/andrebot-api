@@ -21,12 +21,10 @@ export class AndrebotModel {
             ssl: {
                 rejectUnauthorized: true
             }
-            
         })
         this.is_connected = false;
-
-
     }
+
 
     async check_connection(){
         if (!this.is_connected) {
@@ -43,7 +41,7 @@ export class AndrebotModel {
 
     async getRank(){
         await this.check_connection();
-        const res = await this.client.query("select username,anon_username,wins from users limit 10");
+        const res = await this.client.query("select username,anon_username,wins,platform from users order by wins desc limit 10");
         
         return res.rows;
     }
@@ -55,12 +53,12 @@ export class AndrebotModel {
 
     }
 
-    //placeholder
     createAnonUsername(username: string, platform: string) {
         return uniqueNamesGenerator({
             dictionaries: [adjectives, colors, animals],
             length: 3}) + platform;
     }
+
 
     async addUser(username: string, platform: string, wins?: number){
         await this.check_connection();
@@ -77,6 +75,7 @@ export class AndrebotModel {
             })
     }
 
+
     async increment_wins(username: string, platform: string, amount: number){
         await this.check_connection();
         this.client.query(format(
@@ -91,11 +90,12 @@ export class AndrebotModel {
         q1 = format(q1, username, platform, loser_username, platform, word,platform, attempts, date||'NOW()' );
         return this.client.query(q1);
     }
+
+
     async addWinner(username: string, loser_username: string, word: string, platform: string, attempts: number, date?:string){
         await this.check_connection();
 
-
-        //TODO: deal with error
+        //TODO: propagate errors
         try {
             await this.__do_addWinner_query(username,loser_username,word,platform,attempts,date);
         } catch (err: any) {
@@ -119,11 +119,7 @@ export class AndrebotModel {
             console.log("failed to increment wins");
             return;
         }
-    
-
     }
 
 
-
-  
 }

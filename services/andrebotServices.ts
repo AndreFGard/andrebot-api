@@ -38,7 +38,7 @@ export class andrebotServices {
         const rows = await model.getRank();
 
         let filtered: Array<rankEntry> = rows.map((value: rankEntry) => {
-            const newname = value.platform in showPlatforms ? value.username: value.anon_username;
+            const newname = showPlatforms.includes(value.platform) ? value.username: value.anon_username;
             value.username = newname;
             return value;
         });
