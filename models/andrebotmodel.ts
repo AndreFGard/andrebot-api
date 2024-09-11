@@ -21,7 +21,9 @@ export class AndrebotModel {
             ssl: {
                 rejectUnauthorized: true
             }
-        })
+        }).on('error', (err) => {
+            console.log('something bad happened');
+        });
         this.is_connected = false;
     }
 
