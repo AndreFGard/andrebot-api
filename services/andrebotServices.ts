@@ -47,7 +47,8 @@ export class andrebotServices {
     }
 
     async addWinner(event: Victory_event) {
-        if (!['discord', 'telegram'].includes(event.platform)) {
+        //discord, telegram
+        if (!['dsc', 'tg'].includes(event.platform)) {
             return 0;
         }
         await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts);
