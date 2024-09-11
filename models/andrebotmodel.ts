@@ -96,33 +96,29 @@ export class AndrebotModel {
 
 
         //TODO: deal with error
-
-
-        (this.__do_addWinner_query(username,loser_username,word,platform,attempts,date)
-            .catch(async (err:Error) => {
-                if (err.message.includes("null value in column")){
-                    console.log('unregistered user, trying to add the loser and the winner');
+        try {
+            await this.__do_addWinner_query(username,loser_username,word,platform,attempts,date);
+        } catch (err: any) {
+            if (err.message.includes("null value in column")){
+                console.log('unregistered user, trying to add the loser and the winner');
+                try {
                     await this.addUser(username, platform, 0);
                     await this.addUser(loser_username, platform, 0);
+                    await this.__do_addWinner_query(username,loser_username,word,platform,attempts,date);
 
-                } else {
-                    console.log('unknown error: '  + err.message);
-                     return;
-                };
-                }).then(() => {
-                    this.__do_addWinner_query(username,loser_username,word,platform,attempts,date).catch(() => {
-                        return;
-                    })
-                })
-        )
-        .then( () => {
-            this.increment_wins(username, platform, 1).catch(err => {
-                console.log(err);
-            }); 
-        }).catch(_ => {
-            console.log('failed to register users');
-            console.log(_);
-        });
+                } catch (retryError: any) {
+                    console.log("failed to register users: " + retryError.message||"(unknown)");
+                    return;
+                }
+            }
+        }
+
+        try {
+            await this.increment_wins(username, platform, 1);
+        } catch (err: any){
+            console.log("failed to increment wins");
+            return;
+        }
     
 
     }
