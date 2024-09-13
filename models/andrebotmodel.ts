@@ -22,29 +22,28 @@ const makeClient = function(errorFunc: (a: any) => void ) {
 }
 
 
-
+let ___is_db_connected = false;
 export class AndrebotModel {
-    is_connected: boolean;
     client: Client;
 
     errorFunc(err: any){
         console.log("something bad happened");
-        this.is_connected = false;
+        ___is_db_connected = false;
     }
 
     constructor(){
 
         this.client = makeClient(this.errorFunc);
-        this.is_connected = false;
+        ___is_db_connected = false;
     }
 
 
     async check_connection(){
-        if (!this.is_connected) {
+        if (!___is_db_connected) {
             try {
                 this.client = makeClient(this.errorFunc);
                 await this.client.connect();
-                this.is_connected = true;
+                ___is_db_connected = true;
                 console.log("Connected to the database");
             } catch (error) {
                 console.error("Error connecting to the database:", error);
