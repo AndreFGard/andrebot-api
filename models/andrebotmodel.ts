@@ -3,28 +3,38 @@ import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';
 import {uniqueNamesGenerator, adjectives, colors, animals} from 'unique-names-generator';
+import { error } from 'console';
 
 dotenv.config();
+
+const makeClient = function(errorFunc: (a: any) => void ) {
+    const c = new Client({
+        user: process.env.PGUSER,
+        port: Number(process.env.PGPORT),
+        host: process.env.PGHOST,
+        password: process.env.PGPASSWORD,
+        database: process.env.PGDATABASE,
+        ssl: {
+            rejectUnauthorized: true
+        }
+    }).on('error', errorFunc);
+    return c;
+}
+
 
 
 export class AndrebotModel {
     is_connected: boolean;
     client: Client;
 
+    errorFunc(err: any){
+        console.log("something bad happened");
+        this.is_connected = false;
+    }
+
     constructor(){
-        this.client = new Client({
-            user: process.env.PGUSER,
-            port: Number(process.env.PGPORT),
-            host: process.env.PGHOST,
-            password: process.env.PGPASSWORD,
-            database: process.env.PGDATABASE,
-            ssl: {
-                rejectUnauthorized: true
-            }
-        }).on('error', (err) => {
-            console.log('something bad happened');
-            this.is_connected = false;
-        });
+
+        this.client = makeClient(this.errorFunc);
         this.is_connected = false;
     }
 
@@ -32,6 +42,7 @@ export class AndrebotModel {
     async check_connection(){
         if (!this.is_connected) {
             try {
+                this.client = makeClient(this.errorFunc);
                 await this.client.connect();
                 this.is_connected = true;
                 console.log("Connected to the database");
