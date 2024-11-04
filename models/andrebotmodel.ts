@@ -1,10 +1,10 @@
-import { rankEntry, UserEntry, Victory_Event } from './../services/andrebotServices';
+import { rankEntry, UserEntry, Victory_Event, ClassSchedule, ScheduleDay } from './../services/andrebotServices';
 import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';
 import {uniqueNamesGenerator, adjectives, colors, animals} from 'unique-names-generator';
 import { error } from 'console';
-
+import * as fs from 'fs';
 dotenv.config();
 
 const makeClient = function(errorFunc: (a: any) => void ) {
@@ -20,6 +20,9 @@ const makeClient = function(errorFunc: (a: any) => void ) {
     }).on('error', errorFunc);
     return c;
 }
+
+const coursesraw = fs.readFileSync('courses.json', 'utf-8');
+const courses = JSON.parse(coursesraw);
 
 
 let ___is_db_connected = false;
@@ -132,6 +135,10 @@ export class AndrebotModel {
             console.log("failed to increment wins");
             return;
         }
+    }
+
+    getCoursesbyBachelor(bachelor: string): Record<number, ClassSchedule[]>{
+        return courses[bachelor];
     }
 
 

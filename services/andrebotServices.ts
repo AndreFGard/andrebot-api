@@ -31,6 +31,25 @@ const Victory_Event_Schema = z.object({
     date: z.string().optional()
 });
 
+export interface ScheduleDay {
+    day: string;
+    start: string;
+    end: string;
+    classroom: string;
+}
+
+export interface ClassSchedule {
+    bachelor: string;
+    code: string;
+    name: string;
+    professor: string;
+    days: ScheduleDay[];
+    term: string;
+    optional: boolean;
+}
+
+export const daynames = ["seg", "ter", "qua", "qui", "sex"];
+
 
 export class andrebotServices {
 
@@ -77,6 +96,20 @@ export class andrebotServices {
         return;
     }
 
-    
+    async getCourses(bachelor: string){
+        const courses = model.getCoursesbyBachelor(bachelor);
+        //let filteredCourses: ClassSchedule[][] ;
+        //filteredCourses = Object.values(courses) as ClassSchedule[][];
+
+        let courselist: ClassSchedule[] =[];
+        Object.entries(courses).forEach((key,_) =>{
+            key[1].forEach((k) => {
+                courselist.push(k);
+            });
+        })
+        return courselist;
+    }
+
+
 }
 

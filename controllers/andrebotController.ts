@@ -51,3 +51,9 @@ export const getRank = async (req: Request, res: Response, next: NextFunction) =
     const rank = await andrebotService.getRank(req.body.platforms || []);
     res.send({"rank": rank});
 }
+
+
+export const getCoursesbyBachelor = async (req: Request, res: Response, next: NextFunction)=> {
+    const result = andrebotService.getCourses(req.body.bachelor || "CC");
+     res.send(await result);
+}
