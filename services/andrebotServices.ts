@@ -1,4 +1,5 @@
 import bcrypt from "bcryptjs";
+import z from 'zod';
 import {AndrebotModel} from "../models/andrebotmodel"
 
 const model = new AndrebotModel();
@@ -12,7 +13,7 @@ export interface rankEntry extends UserEntry {
     anon_username: string;
 };
 
-export interface Victory_event {
+export interface Victory_Event {
     username: string,
     loser_username: string,
     word: string,
@@ -20,6 +21,16 @@ export interface Victory_event {
     attempts: number,
     date?: string
 }
+
+const Victory_Event_Schema = z.object({
+    username: z.string(),
+    loser_username: z.string().optional(),
+    word: z.string(),
+    platform: z.string(),
+    attempts: z.number(),
+    date: z.string().optional()
+});
+
 
 export class andrebotServices {
 
@@ -47,7 +58,7 @@ export class andrebotServices {
 
     }
 
-    async addWinner(event: Victory_event) {
+    async addWinner(event: Victory_Event) {
         //discord, telegram are the allowed platforms, for now
         if (!['dsc', 'tg'].includes(event.platform)) {
             return 0;
@@ -55,7 +66,7 @@ export class andrebotServices {
         await model.addWinner(event.username,event.loser_username,event.word,event.platform,event.attempts,event.date);
     }
 
-    async addWinners(events: Array<Victory_event>){
+    async addWinners(events: Array<Victory_Event>){
         for (const evt of events){
             await this.addWinner(evt);
         }
@@ -65,5 +76,7 @@ export class andrebotServices {
         model.addUser(username, platform, wins||0);
         return;
     }
+
+    
 }
 
