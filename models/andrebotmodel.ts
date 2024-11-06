@@ -28,7 +28,7 @@ Object(Object(courses).values() as Record<number, ClassSchedule[]>[])
     .values().forEach((classes: ClassSchedule[]) => {
         classes.forEach((classs: ClassSchedule) => {
             classs.days.forEach((day: ScheduleDay) => {
-                day.classCode = classs.code;
+                day.id = Number(classs.id);
             })
         });
     });

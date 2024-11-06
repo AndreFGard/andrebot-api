@@ -36,7 +36,7 @@ export interface ScheduleDay {
     start: string;
     end: string;
     classroom: string;
-    classCode: string;
+    id: number;
 }
 
 export interface ClassSchedule {
@@ -104,6 +104,7 @@ export class CourseTable {
     checkConflict(classes: ClassSchedule[]){
         const days = classes.map((classs) => {
             return classs.days}).flat();
+
 
     }
 }
