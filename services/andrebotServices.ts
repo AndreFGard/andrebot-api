@@ -51,6 +51,7 @@ export interface ClassSchedule {
 }
 
 export const weekdays = ["seg", "ter", "qua", "qui", "sex"];
+const _weekdaysDict = Object.fromEntries(weekdays.map((day, index) => [day, Number(index)]));
 
 export type TermDict = Record<number, ClassSchedule[]>;
 export type BachelorDict = Record<string, TermDict>;
@@ -100,12 +101,41 @@ export class CourseTable {
         return this.classesByCode[id] || undefined;
     }
 
+    checkDayConflict(day1: ScheduleDay, day2: ScheduleDay){
+        if (day1.id == day2.id) return false; //they are the same
+        else if ((day1 == day2) && (
+                (day1.start <= day2.start && day1.end >= day2.start)
+            || 
+                (day2.start <= day1.start && day2.end >= day1.start))){
+                    return true;
+            }
+        return false;
+    }
 
     checkConflict(classes: ClassSchedule[]){
-        const days = classes.map((classs) => {
+        let days = classes.map((classs) => {
             return classs.days}).flat();
+        days.sort((a,b) => {
+            return (_weekdaysDict[a.day] < _weekdaysDict[b.day]) ? -1 : 1;
+        })
 
+        let sortedDays: Record<string, ScheduleDay[]> = {};
 
+        days.forEach(d => {
+            if (d.day in sortedDays) sortedDays[d.day].push(d);
+            else sortedDays[d.day] = [d];
+        })
+
+        let failed: [ScheduleDay,ScheduleDay][] = [];
+        Object.entries(sortedDays).forEach(([entr, dayList]) => {
+            dayList.forEach(d1 => {
+                dayList.forEach(d2 => {
+                    if (this.checkDayConflict(d1, d2)) failed.push([d1,d2]);
+                });
+            });
+        });
+
+        return failed;
     }
 }
 
