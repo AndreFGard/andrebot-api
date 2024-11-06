@@ -138,7 +138,7 @@ export class AndrebotModel {
     }
 
     getCoursesbyBachelor(bachelor: string): Record<number, ClassSchedule[]>{
-        return courses[bachelor];
+        return courses[bachelor] as Record<number, ClassSchedule[]>;
     }
 
 
