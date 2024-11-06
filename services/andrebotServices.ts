@@ -56,20 +56,32 @@ export type BachelorDict = Record<string, TermDict>;
 export class CourseTable {
     bachelorDict: BachelorDict;
     bachelors: string[];
-    courseListByBachelor: Record<string, ClassSchedule[]>;
+    classListByBachelor: Record<string, ClassSchedule[]>;
+    classesByCode: Record<string, Record<string, ClassSchedule>>;
     
+
+
     constructor(courses: BachelorDict){
         this.bachelorDict = courses;
         this.bachelors = Object(courses).keys();
-        this.courseListByBachelor = {};
+        this.classListByBachelor = {};
 
         this.bachelors.forEach((bachelor: string) => {
-            this.courseListByBachelor[bachelor] = Object(this.bachelorDict[bachelor]).values();
+            this.classListByBachelor[bachelor] = Object(this.bachelorDict[bachelor]).values();
         });
+        
+        this.classesByCode = {};
+        Object.entries(this.classListByBachelor).forEach(([bsc, classList]) => {
+            this.classesByCode[bsc] = {};
+            classList.forEach(classSched => {
+                this.classesByCode[bsc][classSched.code] = classSched;
+            })
+        })
+
     }
 
     getCourseList(bachelor: string){
-        return this.courseListByBachelor[bachelor];
+        return this.classListByBachelor[bachelor];
     }
 }
 
@@ -138,6 +150,10 @@ export class andrebotServices {
             });
         })
         return courselist;
+    }
+
+    async getClassesFromCodes(codes: string[]){
+
     }
 
 
