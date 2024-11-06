@@ -44,6 +44,7 @@ export interface ClassSchedule {
     name: string;
     professor: string;
     days: ScheduleDay[];
+    id: number;
     term: string;
     optional: boolean;
 }
