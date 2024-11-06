@@ -2,6 +2,7 @@
 import express, {Express, NextFunction, Request, Response} from "express";
 import {andrebotServices} from "../services/andrebotServices";
 import { GraduationServices } from "../services/andrebotServices";
+import { number } from "zod";
 const andrebotService = new andrebotServices();
 
 export const testauth = async (req: Request, res: Response, next: NextFunction) => {
@@ -67,4 +68,18 @@ export const getCoursesbyBachelor = async (req: Request, res: Response, next: Ne
   
       res.render('timetable', { classSchedules: filteredSchedules, classes, selectedClassCode });
     
+}
+
+export const RenderTimeTable = async (req: Request, res: Response, next: NextFunction) => {
+    if (!req.query.bsc){
+        next("missing bsc");
+    }
+    const IDsStrings = req.query.selectedClassIDs || "" as string;
+    const bsc = req.query.bsc as string;
+    const selectedClassIDs = String(IDsStrings).split(",");
+    const selectedClasses = selectedClassIDs.map(ID => {
+        return GraduationServices.getClassByID(Number(ID));
+    });
+
+
 }

@@ -36,6 +36,7 @@ export interface ScheduleDay {
     start: string;
     end: string;
     classroom: string;
+    classCode: string;
 }
 
 export interface ClassSchedule {
@@ -49,7 +50,7 @@ export interface ClassSchedule {
     optional: boolean;
 }
 
-export const daynames = ["seg", "ter", "qua", "qui", "sex"];
+export const weekdays = ["seg", "ter", "qua", "qui", "sex"];
 
 export type TermDict = Record<number, ClassSchedule[]>;
 export type BachelorDict = Record<string, TermDict>;
@@ -58,7 +59,8 @@ export class CourseTable {
     bachelorDict: BachelorDict;
     bachelors: string[];
     classListByBachelor: Record<string, ClassSchedule[]>;
-    classesByCode: Record<string, Record<string, ClassSchedule>>;
+    classesByCode: Record<string, Record<string, ClassSchedule[]>>;
+    classesByID: Record<number, ClassSchedule>
     
 
 
@@ -71,18 +73,38 @@ export class CourseTable {
             this.classListByBachelor[bachelor] = Object(this.bachelorDict[bachelor]).values();
         });
         
+        this.classesByID = {}
         this.classesByCode = {};
         Object.entries(this.classListByBachelor).forEach(([bsc, classList]) => {
             this.classesByCode[bsc] = {};
             classList.forEach(classSched => {
-                this.classesByCode[bsc][classSched.code] = classSched;
-            })
+                if (classSched.code in this.classesByCode[bsc]) this.classesByCode[bsc][classSched.code].push(classSched);
+                else this.classesByCode[bsc][classSched.code] = [classSched];
+
+                this.classesByID[classSched.id] = classSched;
+            });
+
         })
 
     }
 
     getCourseList(bachelor: string){
         return this.classListByBachelor[bachelor];
+    }
+
+    getClassesByCode(bsc: string, code  : string){
+        return this.classesByCode.bsc.code || [];
+    }
+
+    getClassByID(id: number){
+        return this.classesByCode[id] || undefined;
+    }
+
+
+    checkConflict(classes: ClassSchedule[]){
+        const days = classes.map((classs) => {
+            return classs.days}).flat();
+
     }
 }
 
