@@ -1,6 +1,7 @@
 
 import express, {Express, NextFunction, Request, Response} from "express";
 import {andrebotServices} from "../services/andrebotServices";
+import { GraduationServices } from "../services/andrebotServices";
 const andrebotService = new andrebotServices();
 
 export const testauth = async (req: Request, res: Response, next: NextFunction) => {

@@ -50,7 +50,37 @@ export interface ClassSchedule {
 
 export const daynames = ["seg", "ter", "qua", "qui", "sex"];
 
+export type TermDict = Record<number, ClassSchedule[]>;
+export type BachelorDict = Record<string, TermDict>;
 
+export class CourseTable {
+    bachelorDict: BachelorDict;
+    bachelors: string[];
+    courseListByBachelor: Record<string, ClassSchedule[]>;
+    
+    constructor(courses: BachelorDict){
+        this.bachelorDict = courses;
+        this.bachelors = Object(courses).keys();
+        this.courseListByBachelor = {};
+
+        this.bachelors.forEach((bachelor: string) => {
+            this.courseListByBachelor[bachelor] = Object(this.bachelorDict[bachelor]).values();
+        });
+    }
+
+    getCourseList(bachelor: string){
+        return this.courseListByBachelor[bachelor];
+    }
+}
+
+
+const bachelors = ["CC", "EC", "SI"];
+let courses: BachelorDict = {}
+Object(bachelors).forEach( (bachelor: string) => {
+    courses[bachelor] = model.getCoursesbyBachelor(bachelor);
+});
+
+export const GraduationServices = new CourseTable(courses);
 export class andrebotServices {
 
 
@@ -97,13 +127,13 @@ export class andrebotServices {
     }
 
     async getCourses(bachelor: string){
-        const courses = model.getCoursesbyBachelor(bachelor);
+
         //let filteredCourses: ClassSchedule[][] ;
         //filteredCourses = Object.values(courses) as ClassSchedule[][];
 
         let courselist: ClassSchedule[] =[];
-        Object.entries(courses).forEach((key,_) =>{
-            key[1].forEach((k) => {
+        Object.entries(courses).forEach((key: any[],_) =>{
+            key[1].forEach((k: any) => {
                 courselist.push(k);
             });
         })
