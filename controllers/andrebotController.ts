@@ -54,6 +54,16 @@ export const getRank = async (req: Request, res: Response, next: NextFunction) =
 
 
 export const getCoursesbyBachelor = async (req: Request, res: Response, next: NextFunction)=> {
-    const result = andrebotService.getCourses(req.body.bachelor || "CC");
-     res.send(await result);
+    const classSchedules = (await andrebotService.getCourses(req.body.bachelor || "CC")).slice(0,20);
+    //const search_options = result.map((classinfo) => {})
+    const classes =  classSchedules.map(i => {return {code: i.code, name: i.name, professor: i.professor}})
+  
+      const selectedClassCode = req.query.classCode as string; // Get selected class code from the query
+  
+      const filteredSchedules = selectedClassCode
+        ? classSchedules.filter(schedule => schedule.code === selectedClassCode)
+        : classSchedules;
+  
+      res.render('timetable', { classSchedules: filteredSchedules, classes, selectedClassCode });
+    
 }

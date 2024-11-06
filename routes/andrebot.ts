@@ -5,7 +5,7 @@ import { testauth, addWinners, addUser, getRank, auth , getCoursesbyBachelor} fr
 router.get('/testauth', testauth );
 router.get('/getrank', getRank);
 
-router.get('/getCourses', getCoursesbyBachelor)
+router.get('/timetable', getCoursesbyBachelor)
 
 router.use(auth);
 router.post('/addwinners', addWinners);
