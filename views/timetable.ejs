@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Timetable</title>
+  <script></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .slot {
+      height: 30px;
+    }
+    .filled {
+      background-color: #d1e7dd;
+      font-weight: bold;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Class Timetable</h1>
+  
+  <!-- Search Form -->
+  <div class="search-box">
+    <form action="/andrebot/timetable" method="GET">
+      <label for="classSelect">Select a class:</label>
+      <select id="classSelect" name="classCode">
+        <option value="">--Select a class--</option>
+        <% classes.forEach(classItem => { %>
+          <option value="<%= classItem.code %>" <%= classItem.code === selectedClassCode ? 'selected' : '' %>><%= classItem.name %> - <%= classItem.professor %></option>
+        <% }) %>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <!-- Timetable -->
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 
+        const startHour = 6;
+        const endHour = 22;
+        const daysOfWeek = ['seg', 'ter', 'qua', 'qui', 'sex'];
+        
+        for (let hour = startHour; hour < endHour; hour++) {
+          let startTime = hour.toString().padStart(2, '0') + ':00';
+          let endTime = (hour + 1).toString().padStart(2, '0') + ':00';
+      %>
+        <tr>
+          <td><%= startTime %> - <%= endTime %></td>
+          <% 
+            for (let day of daysOfWeek) { 
+              let scheduleForSlot = classSchedules.find(schedule => 
+                schedule.days.some(d => 
+                  d.day === day && d.start <= startTime && d.end > startTime
+                )
+              );
+          %>
+            <td class="slot <%= scheduleForSlot ? 'filled' : '' %>">
+              <% if (scheduleForSlot) { %>
+                <%= scheduleForSlot.code %>
+              <% } %>
+            </td>
+          <% } %>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
