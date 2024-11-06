@@ -65,11 +65,11 @@ export class CourseTable {
     
     constructor(courses: BachelorDict){
         this.bachelorDict = courses;
-        this.bachelors = Object(courses).keys();
+        this.bachelors = Object.keys(courses);
         this.classListByBachelor = {};
 
         this.bachelors.forEach((bachelor: string) => {
-            this.classListByBachelor[bachelor] = Object(this.bachelorDict[bachelor]).values();
+            this.classListByBachelor[bachelor] = Object.values(this.bachelorDict[bachelor]).flat();
         });
         
         this.classesByID = {}

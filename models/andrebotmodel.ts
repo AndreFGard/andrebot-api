@@ -23,16 +23,15 @@ const makeClient = function(errorFunc: (a: any) => void ) {
 
 const coursesraw = fs.readFileSync('courses.json', 'utf-8');
 const courses = JSON.parse(coursesraw) as Record<string, Record<number, ClassSchedule[]>>;
-
-Object(Object(courses).values() as Record<number, ClassSchedule[]>[])
-    .values().forEach((classes: ClassSchedule[]) => {
-        classes.forEach((classs: ClassSchedule) => {
-            classs.days.forEach((day: ScheduleDay) => {
-                day.id = Number(classs.id);
+Object.values(courses).forEach(bsc => {
+    Object.values(bsc).forEach(trm => {
+        Object.values(trm).forEach(clss => {
+            clss.days.forEach(d => {
+                d.id = clss.id;
             })
-        });
-    });
-    
+        })
+    })
+})
 
 
 let ___is_db_connected = false;
