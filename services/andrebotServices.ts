@@ -60,11 +60,9 @@ export class CourseTable {
     bachelorDict: BachelorDict;
     bachelors: string[];
     classListByBachelor: Record<string, ClassSchedule[]>;
-    classesByCode: Record<string, Record<string, ClassSchedule[]>>;
+    _classesByCode: Record<string, Record<string, ClassSchedule[]>>;
     classesByID: Record<number, ClassSchedule>
     
-
-
     constructor(courses: BachelorDict){
         this.bachelorDict = courses;
         this.bachelors = Object(courses).keys();
@@ -75,18 +73,17 @@ export class CourseTable {
         });
         
         this.classesByID = {}
-        this.classesByCode = {};
+        this._classesByCode = {};
         Object.entries(this.classListByBachelor).forEach(([bsc, classList]) => {
-            this.classesByCode[bsc] = {};
+            this._classesByCode[bsc] = {};
             classList.forEach(classSched => {
-                if (classSched.code in this.classesByCode[bsc]) this.classesByCode[bsc][classSched.code].push(classSched);
-                else this.classesByCode[bsc][classSched.code] = [classSched];
+                if (classSched.code in this._classesByCode[bsc]) this._classesByCode[bsc][classSched.code].push(classSched);
+                else this._classesByCode[bsc][classSched.code] = [classSched];
 
                 this.classesByID[classSched.id] = classSched;
             });
 
         })
-
     }
 
     getCourseList(bachelor: string){
@@ -94,11 +91,11 @@ export class CourseTable {
     }
 
     getClassesByCode(bsc: string, code  : string){
-        return this.classesByCode.bsc.code || [];
+        return this._classesByCode.bsc.code || [];
     }
 
     getClassByID(id: number){
-        return this.classesByCode[id] || undefined;
+        return this.classesByID[id] || undefined;
     }
 
     checkDayConflict(day1: ScheduleDay, day2: ScheduleDay){
@@ -134,8 +131,11 @@ export class CourseTable {
                 });
             });
         });
-
-        return failed;
+        
+        const failed_classes = failed.map(([d1, d2]) => {
+            return [this.getClassByID(d1.id), this.getClassByID(d1.id)];
+        });
+        return failed_classes ;
     }
 }
 
@@ -147,6 +147,7 @@ Object(bachelors).forEach( (bachelor: string) => {
 });
 
 export const GraduationServices = new CourseTable(courses);
+
 export class andrebotServices {
 
 
