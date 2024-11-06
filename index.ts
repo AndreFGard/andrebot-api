@@ -8,7 +8,7 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json()); //middleware that partes the request's json
-
+app.set('view engine', 'ejs');
 
 
 app.get("/", (req: Request, res: Response) => {
