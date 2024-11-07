@@ -10,19 +10,29 @@
         function addClass(clss){
             const storedclasses = localStorage.getItem("classes") || "";
             const old_classes = storedclasses ? storedclasses.split(",") : [];
-            const newClasses = old_classes.concat([String(clss)]);
+            const newClasses = [...new Set(
+                                        old_classes.concat([String(clss)]))];
             localStorage.setItem("classes", newClasses.toString());
             console.log("eae");
             return newClasses.map(Number);
         }
 
+        function getClasses(){
+            const storedclasses = localStorage.getItem('classes') || "";
+            if (storedclasses) {
+                return storedclasses.split(',').map(Number);
+            }
+            else return [];
+        }
+
 
         async function fetchTimetable() {
             const newSelectedClassID = document.getElementById('class-select').value;
-            const selectedClassIDs = addClass(newSelectedClassID);
+            const selectedClassIDs = getClasses();
+            addClass(newSelectedClassID);
             const bsc = getbsc();
             const program = document.querySelector('input[name="program"]:checked')?.value;
-            const response = await fetch(`../andrebot/timetable?NewSelectedClassIDs=${selectedClassIDs}&bsc=${bsc}&program=${program}`, {
+            const response = await fetch(`../andrebot/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[Number(newSelectedClassID)]}&bsc=${bsc}&program=${program}`, {
                 method: 'GET'
             });
             const tableHTML = await response.text();
