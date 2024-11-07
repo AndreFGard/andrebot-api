@@ -1,8 +1,7 @@
 
 import express, {Express, NextFunction, Request, Response} from "express";
 import {andrebotServices} from "../services/andrebotServices";
-import { GraduationServices } from "../services/andrebotServices";
-import { number } from "zod";
+import { GraduationServices, ClassSchedule } from "../services/andrebotServices";
 const andrebotService = new andrebotServices();
 
 export const testauth = async (req: Request, res: Response, next: NextFunction) => {
@@ -70,16 +69,43 @@ export const getCoursesbyBachelor = async (req: Request, res: Response, next: Ne
     
 }
 
+export const RenderMainPage = (req: Request, res: Response) => {
+    const bsc = req.query.bsc as string || "CC";
+    const allClasses = GraduationServices.classListByBachelor[bsc] || [];
+
+    const bachelors = {
+        CC: bsc === "CC",
+        EC: bsc === "EC",
+        SI: bsc === "SI"
+    };
+    res.render('timetableditor', { allClasses, bsc, bachelors });
+};
+
+export const renderClassList = (req: Request, res: Response) => {
+    const program = req.query.program as string;
+    const programClasses = GraduationServices.classListByBachelor[program] || [];
+    res.render('classes', { programClasses });
+};
+
 export const RenderTimeTable = async (req: Request, res: Response, next: NextFunction) => {
-    if (!req.query.bsc){
-        next("missing bsc");
+    try {
+        const bsc = req.query.bsc as string || "CC";
+        const IDsStrings = String(req.query.NewSelectedClassIDs || "");
+        const newselectedClasses: ClassSchedule[] = IDsStrings.split(",").filter(id => id).map(ID => {
+            return GraduationServices.getClassByID(Number(ID));
+        });
+
+        const conflicts = GraduationServices.checkConflict(newselectedClasses) as [ClassSchedule, ClassSchedule][];
+
+        let classestorender: ClassSchedule[] = [];
+        if (conflicts.length === 0) {
+            classestorender = newselectedClasses;
+        }
+
+        // Render the partial table and send as HTML
+        res.render('timetable', { classestorender });
+    } catch (error) {
+        next(error);
     }
-    const IDsStrings = req.query.selectedClassIDs || "" as string;
-    const bsc = req.query.bsc as string;
-    const selectedClassIDs = String(IDsStrings).split(",");
-    const selectedClasses = selectedClassIDs.map(ID => {
-        return GraduationServices.getClassByID(Number(ID));
-    });
+};
 
-
-}
