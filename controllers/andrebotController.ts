@@ -91,17 +91,17 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
     try {
         const bsc = req.query.bsc as string || "CC";
 
-        const IDsStrings = String(req.query.SelectedClassIDs || "");
-        const SelectedClassIDs: ClassSchedule[] = IDsStrings.split(",").filter(id => id).map(ID => {
+        const IDsStrings = [...new Set(String(req.query.SelectedClassIDs || "").split(","))];
+        const SelectedClassIDs: ClassSchedule[] = IDsStrings.filter(id => id).map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         });
 
-        const NewIDsStrings = String(req.query.NewSelectedClassIDs || "");
-        const NewSelectedClassIDs: ClassSchedule[] = NewIDsStrings.split(",").filter(id => id).map(ID => {
+        const NewIDsStrings = [...new Set(String(req.query.NewSelectedClassIDs || "").split(","))];
+        const NewSelectedClassIDs: ClassSchedule[] = NewIDsStrings.filter(id => id).map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         });
 
-        const currentlyChosenClasses = SelectedClassIDs.concat(NewSelectedClassIDs);
+        let currentlyChosenClasses = SelectedClassIDs.concat(NewSelectedClassIDs);
         const conflicts = GraduationServices.checkConflict(currentlyChosenClasses)       as [ClassSchedule, ClassSchedule][];
 
         let classestorender: ClassSchedule[] = [];
@@ -109,6 +109,7 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
         if (conflicts.length === 0) 
             classestorender = currentlyChosenClasses;
         else classestorender = SelectedClassIDs;
+        [classestorender, currentlyChosenClasses] = [[...new Set(classestorender)], [...new Set(currentlyChosenClasses)]];
 
         // Render the partial table and send as HTML
         res.render('timetable', { classestorender, conflicts, currentlyChosenClasses });
