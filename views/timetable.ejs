@@ -18,8 +18,8 @@
                         <td><%= classItem.name %></td>
                         <td><%= classItem.professor %></td>
                         <td>
-                            <button class="btn btn-secondary" id="classButton<%= idx %>" type="button" onclick="(() => {console.log('<%= classItem.id %>')})()">
-                                Action
+                            <button class="btn btn-secondary" id="classButton<%= idx %>" type="button" onclick="event.preventDefault(); deleteClass(<%= classItem.id %>);  fetchTimetable();">
+                                Delete
                             </button>
                         </td>
                     </tr>

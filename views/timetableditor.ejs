@@ -25,10 +25,20 @@
             else return [];
         }
 
+        function deleteClass(x){
+            let storedClasses = getClasses();
+            console.log(`deleting id ${x} from ${storedClasses}`);
+            const idx = storedClasses.indexOf(x);
+            if (idx > -1) storedClasses.splice(idx, 1);
+            localStorage.setItem('classes', storedClasses.toString());
+        }
+
 
         async function fetchTimetable() {
-            const newSelectedClassID = document.getElementById('class-select').value;
             const selectedClassIDs = getClasses();
+            //this prevents the adding of 0 as a class
+            const newSelectedClassID = document.getElementById('class-select').value || selectedClassIDs[0] || 1; 
+            
             addClass(newSelectedClassID);
             const bsc = getbsc();
             const program = document.querySelector('input[name="program"]:checked')?.value;
@@ -107,6 +117,8 @@
             </div>
             <input type="hidden" id="bsc-input" value="<%= bsc %>">
             <button type="submit" class="btn btn-primary">Generate Timetable</button>
+            <button type="button" class="btn btn-primary" onclick="fetchTimetable();">Refresh Timetable</button>
+
         </form>
 
         <!-- Container for the Table -->
