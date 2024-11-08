@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script>
         const getbsc = () => document.getElementById('bsc-input').value;
+
         function addClass(clss){
             const storedclasses = localStorage.getItem("classes") || "";
             const old_classes = storedclasses ? storedclasses.split(",") : [];
-            const newClasses = [...new Set(
-                                        old_classes.concat([String(clss)]))];
-            localStorage.setItem("classes", newClasses.toString());
-            console.log("eae");
-            return newClasses.map(Number);
+
+            if (clss){
+                const newClasses = [...new Set(
+                                            old_classes.concat([String(clss)]))];
+                localStorage.setItem("classes", newClasses.toString());
+                console.log("eae");
+                return newClasses.map(Number);
+            }
+            else return old_classes.map(Number);
+            
         }
 
         function getClasses(){
