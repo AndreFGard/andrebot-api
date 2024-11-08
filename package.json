@@ -4,7 +4,8 @@
   "description": "## Routes documentation ### Status codes: - **[200]** - OK - **[400]** - Bad request. Missing data - **[403 | 404]** - Auth Error",
   "main": "dist/index.js",
   "scripts": {
-    "test": "npx ts-node index.ts"  },
+    "test": "npx ts-node index.ts"
+  },
   "author": "andreFgard",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
+    "ejs-lint": "^2.0.1",
     "express": "^4.19.2",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",

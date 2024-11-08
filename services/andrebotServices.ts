@@ -54,7 +54,7 @@ export interface ClassSchedule {
     id: number;
     term: string;
     optional: boolean;
-    
+    colorCode?: string;
 }
 
 export class Timetable{

@@ -6,24 +6,27 @@
         width: 100%;
     }
 </style>
-<div class=".container">
+<div class="container">
     <div id="chosenclasstable">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col ">Professor</th>
+                    <th scope="col">Professor</th>
                     <th scope="col">Code</th>
-                    
                 </tr>
             </thead>
             <tbody>
                 <% for (const [idx, classItem] of currentlyChosenClasses.entries()) { %>
-                    <tr class="<%= (conflictsIDs.includes(classItem.id)) ? 'table-danger' : ''%>">
+                    <tr class="<%= (conflictsIDs.includes(classItem.id)) ? 'table-danger' : '' %>">
                         <th scope="row"><%= idx + 1 %></th>
                         <td><%= classItem.name %></td>
-                        <td><%= classItem.professor %></td>
+                        <td>
+                            <span class="text-truncate d-inline-block w-100" style="max-width: 150px;">
+                                <%= classItem.professor %>
+                            </span>
+                        </td>
                         <td>
                             <button class="btn btn-secondary" id="classButton<%= idx %>" type="button" onclick="deleteClass(<%= classItem.id %>); fetchTimetable();">
                                 Delete
@@ -74,7 +77,7 @@
                                 <% if (scheduleDay) { %>
                                     <!-- Truncate text inside the cell -->
                                     <div class="text-truncate" style="max-width: 100%;">
-                                        <%= scheduleDay.class.name %> - <%= scheduleDay.id %>
+                                        <%= scheduleDay.class.name %> - <%= scheduleDay.code %>
                                     </div>
                                 <% } %>
                             </td>
