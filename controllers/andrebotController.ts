@@ -107,8 +107,9 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
 
         [classestorender, currentlyChosenClasses] = [[...new Set(classestorender)], [...new Set(currentlyChosenClasses)]];
 
+        const timetable = GraduationServices.arrangeTimetable(classestorender);
         // Render the partial table and send as HTML
-        res.render('timetable', { classestorender, conflicts, currentlyChosenClasses });
+        res.render('timetable', { classestorender, conflicts, currentlyChosenClasses, timetable});
     } catch (error) {
         next(error);
     }
