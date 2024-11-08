@@ -103,12 +103,8 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
 
         let currentlyChosenClasses = SelectedClassIDs.concat(NewSelectedClassIDs);
         const conflicts = GraduationServices.checkConflict(currentlyChosenClasses)       as [ClassSchedule, ClassSchedule][];
+        let classestorender: ClassSchedule[] = GraduationServices.filterConflictless(currentlyChosenClasses);
 
-        let classestorender: ClassSchedule[] = [];
-
-        if (conflicts.length === 0) 
-            classestorender = currentlyChosenClasses;
-        else classestorender = SelectedClassIDs;
         [classestorender, currentlyChosenClasses] = [[...new Set(classestorender)], [...new Set(currentlyChosenClasses)]];
 
         // Render the partial table and send as HTML
