@@ -28,7 +28,7 @@ Object.values(courses).forEach(bsc => {
         Object.values(trm).forEach(clss => {
             clss.days.forEach(d => {
 
-                const range = (a: number,b: number) => Array.from(Array(b).keys()).splice(a);
+                const range = (a: number,b: number) => Array.from(Array(b+1).keys()).splice(a);
                 
                 //this is very ugly and even imprecise, but simplifies the timetable making a lot
                 const start = Number(d.start.split(":")[0]) + Math.round(Number(d.start.split(":")[1])/60);
