@@ -35,18 +35,19 @@
 
 
         async function fetchTimetable() {
-            const selectedClassIDs = getClasses();
+            const selectedClassIDs = getClasses() || "";
             //this prevents the adding of 0 as a class
-            const newSelectedClassID = document.getElementById('class-select').value || selectedClassIDs[0] || 1; 
+            const newSelectedClassID = Number(document.getElementById('class-select').value) || ""; 
             
             addClass(newSelectedClassID);
             const bsc = getbsc();
             const program = document.querySelector('input[name="program"]:checked')?.value;
-            const response = await fetch(`../andrebot/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[Number(newSelectedClassID)]}&bsc=${bsc}&program=${program}`, {
+            const response = await fetch(`../andrebot/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&bsc=${bsc}&program=${program}`, {
                 method: 'GET'
             });
             const tableHTML = await response.text();
             document.getElementById('timetable-container').innerHTML = tableHTML;
+            document.getElementById('class-select').value = 0; //reset it
         }
 
         // Fetch classes when a program is selected
