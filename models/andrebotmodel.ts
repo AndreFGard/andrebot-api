@@ -27,6 +27,14 @@ Object.values(courses).forEach(bsc => {
     Object.values(bsc).forEach(trm => {
         Object.values(trm).forEach(clss => {
             clss.days.forEach(d => {
+
+                const range = (a: number,b: number) => Array.from(Array(b).keys()).splice(a);
+                
+                //this is very ugly and even imprecise, but simplifies the timetable making a lot
+                const start = Number(d.start.split(":")[0]) + Math.round(Number(d.start.split(":")[1])/60);
+                const end = Number(d.end.split(":")[0]) + Math.round(Number(d.end.split(":")[1])/60);
+                let hours = range(start,end).map(n => (n.toString().padStart(2, '0') + ":00"));
+                d.aproxHourList = hours;
                 d.id = clss.id;
             })
         })
