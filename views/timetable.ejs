@@ -70,7 +70,7 @@
                             const scheduleDay = timetable.table[day]?.[hour];
                             %>
                             
-                            <td class="<%= scheduleDay ? 'bg-success text-white' : '' %>">
+                            <td class="<%= scheduleDay ? 'text-white' : '' %>" <%= (scheduleDay) ? `style=background-color:${scheduleDay.class.colorCode}` : ""%>>
                                 <% if (scheduleDay) { %>
                                     <!-- Truncate text inside the cell -->
                                     <div class="text-truncate" style="max-width: 100%;">

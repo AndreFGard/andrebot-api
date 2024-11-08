@@ -73,6 +73,7 @@
                 options[i].style.display = optionText.includes(filterValue) ? '' : 'none';
             }
         }
+        document.addEventListener('DOMContentLoaded', fetchTimetable, false);
 
 
     </script>
@@ -90,14 +91,14 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1>Class Timetable Selector</h1>
+        <h1 class="my-4">Class Timetable Selector</h1>
 
         <!-- Program Selection Radio Buttons -->
         <div class="mb-3">
             <label class="form-label">Select Program:</label>
             <div class="program-buttons">
                 <% Object.keys(bachelors).forEach(program => { %>
-                    <input class="btn-check" type="radio" name="program" id="<%= program %>btn" onclick="fetchClassesByProgram('<%= program %>')" value="<%= program %>"
+                    <input class="btn-check" type="radio" name="program" id="<%= program %>btn" onclick="document.getElementById('class-search').value ='';fetchClassesByProgram('<%= program %>')" value="<%= program %>"
                            <%= bachelors[program] ? 'checked' : '' %> >
                     <label class="btn btn-primary btn-lg btn-lg-custom" for="<%= program %>btn"><%= program %></label>
                 <% }) %>
