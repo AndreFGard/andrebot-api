@@ -1,66 +1,47 @@
 <!-- timetable region-->
  <!--classestorender, conflicts, currentlyChosenClasses-->
+ <style>
+    .fixed-table {
+        table-layout: fixed;
+        width: 100%;
+    }
+</style>
+
 <div>
     <div id="chosenclasstable">
-        <table class="table">
-            <thead>
+        <table class="table table-bordered table-hover fixed-table small">
+            <thead class="table-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Professor</th>
-                    <th scope="col">Code</th>
+                    <th style="width: 1%;">Time</th>
+                    <th style="width: 1%;">Seg</th>
+                    <th style="width: 1%;">Ter</th>
+                    <th style="width: 1%;">Qua</th>
+                    <th style="width: 1%;">Qui</th>
+                    <th style="width: 1%;">Sex</th>
                 </tr>
             </thead>
             <tbody>
-                <% for (const [idx, classItem] of currentlyChosenClasses.entries()) { %>
+                <% timetable.aproxHourList.forEach(hour => { %>
                     <tr>
-                        <th scope="row"><%= idx + 1 %></th>
-                        <td><%= classItem.name %></td>
-                        <td><%= classItem.professor %></td>
-                        <td>
-                            <button class="btn btn-secondary" id="classButton<%= idx %>" type="button" onclick="event.preventDefault(); deleteClass(<%= classItem.id %>);  fetchTimetable();">
-                                Delete
-                            </button>
-                        </td>
+                        <td><%= hour %></td> <!-- Display the hour slot -->
+                        
+                        <% ['seg', 'ter', 'qua', 'qui', 'sex'].forEach(day => { %>
+                            <% 
+                            const scheduleDay = timetable.table[day]?.[hour];
+                            %>
+                            
+                            <td class="<%= scheduleDay ? 'bg-success text-white' : '' %>">
+                                <% if (scheduleDay) { %>
+                                    <!-- Truncate text inside the cell -->
+                                    <div class="text-truncate" style="max-width: 100%;">
+                                        <%= scheduleDay.class.name %> - <%= scheduleDay.id %>
+                                    </div>
+                                <% } %>
+                            </td>
+                        <% }) %>
                     </tr>
-                <% } %>
+                <% }) %>
             </tbody>
         </table>
-    </div>
-
-    <table class="table table-bordered table-hover">
-    <thead class="table-dark">
-        <tr>
-            <th>Time</th>
-            <th>Seg</th>
-            <th>Ter</th>
-            <th>Qua</th>
-            <th>Qui</th>
-            <th>Sex</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for (let hour = 6; hour <= 22; hour++) { %>
-            <tr>
-                <td><%= hour %>:00</td>
-                <% ['seg', 'ter', 'qua', 'qui', 'sex'].forEach(day => { %>
-                    <td>
-                        <% 
-                        let scheduledClass = classestorender.find(cls =>
-                            cls.days.some(scheduleDay =>
-                                scheduleDay.day === day && 
-                                Number(scheduleDay.start.split(':')[0]) <= hour && 
-                                Number(scheduleDay.end.split(':')[0]) > hour
-                            )
-                        );
-                        %>
-                        <% if (scheduledClass) { %>
-                            <div class="bg-success text-white"><%= scheduledClass.name %> - <%= scheduledClass.classroom %></div>
-                        <% } %>
-                    </td>
-                <% }) %>
-            </tr>
-        <% } %>
-    </tbody>
-    </table>
+        
 </div>
