@@ -168,7 +168,7 @@ export class CourseTable {
 
     checkDayConflict(day1: ScheduleDay, day2: ScheduleDay){
         if (day1.id == day2.id) return false; //they are the same
-        else if ((day1 == day2) && (
+        else if ((day1.day == day2.day) && (
                 (day1.start <= day2.start && day1.end >= day2.start)
             || 
                 (day2.start <= day1.start && day2.end >= day1.start))){
