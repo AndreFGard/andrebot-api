@@ -177,7 +177,7 @@ export class CourseTable {
         return false;
     }
 
-    checkConflict(classes: ClassSchedule[]){
+    getConflictingDays(classes: ClassSchedule[]){
         let days = classes.map((classs) => {
             return classs.days}).flat();
         days.sort((a,b) => {
@@ -199,15 +199,26 @@ export class CourseTable {
                 });
             });
         });
-        
-        const failed_classes = failed.map(([d1, d2]) => {
-            return [this.getClassByID(d1.id), this.getClassByID(d1.id)];
+        return failed;
+    }
+
+    //TODO - make it possible  to reuse previously detected conflicts rather than recalculating htem always
+    getConflictingClasses(classes: ClassSchedule[]){
+        const failed_classes = this.getConflictingDays(classes).map(([d1, d2]) => {
+            return [this.getClassByID(d1.id), this.getClassByID(d2.id)];
         });
         return failed_classes ;
     }
 
+    blameConflictingClasses(classes: ClassSchedule[]){
+        const failed_blamed_truples = this.getConflictingDays(classes)
+                .map(([d1, d2]) =>  [this.getClassByID(d1.id), this.getClassByID(d2.id), d1]);
+        
+        return failed_blamed_truples;
+    }
+
     filterConflictless(classes: ClassSchedule[]){
-        const conflictsIds = GraduationServices.checkConflict(classes).flat().map(clss => clss.id);
+        const conflictsIds = GraduationServices.getConflictingClasses(classes).flat().map(clss => clss.id);
         return classes.filter( clss => {
             return (!conflictsIds.includes(clss.id));
         })

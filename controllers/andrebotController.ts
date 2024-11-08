@@ -101,15 +101,18 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
             return GraduationServices.getClassByID(Number(ID));
         });
 
-        let currentlyChosenClasses = SelectedClassIDs.concat(NewSelectedClassIDs);
-        const conflicts = GraduationServices.checkConflict(currentlyChosenClasses)       as [ClassSchedule, ClassSchedule][];
+        let currentlyChosenClasses = [...new Set(SelectedClassIDs.concat(NewSelectedClassIDs))];
+        const conflictDays = GraduationServices.getConflictingDays(currentlyChosenClasses).flat();
         let classestorender: ClassSchedule[] = GraduationServices.filterConflictless(currentlyChosenClasses);
 
         [classestorender, currentlyChosenClasses] = [[...new Set(classestorender)], [...new Set(currentlyChosenClasses)]];
 
         const timetable = GraduationServices.arrangeTimetable(classestorender);
         // Render the partial table and send as HTML
-        res.render('timetable', { classestorender, conflicts, currentlyChosenClasses, timetable});
+        const conflictsIDs = [...new Set(conflictDays.map(x => x.id))];
+
+        const blamedConflicts = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
+        res.render('timetable', { classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts});
     } catch (error) {
         next(error);
     }
