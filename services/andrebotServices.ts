@@ -1,9 +1,13 @@
+import { number } from 'zod';
 import bcrypt from "bcryptjs";
 import z from 'zod';
 import {AndrebotModel} from "../models/andrebotmodel"
 
 const model = new AndrebotModel();
-
+function min(a:string, b:string){
+    return (a < b) ? a : b;
+}
+const max = (a:string, b:string) => (a > b) ? a : b;
 export interface UserEntry {
     username: string, platform: string;
 };
@@ -35,6 +39,7 @@ export interface ScheduleDay {
     day: string;
     start: string;
     end: string;
+    aproxHourList: string[];
     classroom: string;
     id: number;
 }
@@ -48,6 +53,67 @@ export interface ClassSchedule {
     id: number;
     term: string;
     optional: boolean;
+    
+}
+
+export class Timetable{
+    table: Record<string, Record<string, ScheduleDay|undefined>>
+    //range of hours that must be included in the table eg. ['08:00','09:00', '10:00']
+    aproxHourList: string[];
+    //the earliest starting hour: 8
+    startHour: Number;
+    //the latest ending hour: 10
+    endHour: Number;
+
+    constructor(classes: ClassSchedule[], filterConflictless: (classes: ClassSchedule[]) => ClassSchedule[]){
+        let filteredDays = filterConflictless(classes)
+                                    .map(c => c.days)
+                                    .flat();
+        
+        //sort by hour and day
+        filteredDays.sort((a,b) => {
+            return (_weekdaysDict[a.start] < _weekdaysDict[b.start]) ? -1 : 1;
+        });
+
+        filteredDays.sort((a,b) => {
+            return (_weekdaysDict[a.day] < _weekdaysDict[b.day]) ? -1 : 1;
+        });
+
+        let table : Record<string, Record<string, ScheduleDay|undefined>> = {};
+        let globalstart = "25:00", globalmax = "00:00";
+        for (const day of weekdays) table[day] = {};
+
+        for (const day of filteredDays){
+            if (day.aproxHourList){
+                globalstart = min(day.aproxHourList[0], globalstart);
+                globalmax = max(day.aproxHourList.slice(-1)[0], globalmax);
+
+                for (const h of day.aproxHourList){
+                    table[day.day][h] = day;
+                }
+            }
+        }
+        const range = (a: string|number,b: string|number) => 
+            Array.from(Array(Number(b)+1).keys()).splice(Number(a));
+
+
+        const hourRange = range(globalstart.split(":")[0],globalmax.split(":")[0])
+                            .map(n => (n.toString().padStart(2, '0') + ":00"));
+        
+        for (let dayrecord of Object.values(table)){
+            for (const h of hourRange){
+                if (!(h in dayrecord)){
+                dayrecord[h] = undefined;
+                }
+            }
+        }
+
+        this.table = table;
+        this.aproxHourList = hourRange;
+        [this.startHour, this.endHour] = [globalstart,globalmax].map(x => Number(x.split(":")[0]));
+
+
+    }
 }
 
 export const weekdays = ["seg", "ter", "qua", "qui", "sex"];
@@ -139,10 +205,15 @@ export class CourseTable {
     }
 
     filterConflictless(classes: ClassSchedule[]){
-        const conflictsIds = this.checkConflict(classes).flat().map(clss => clss.id);
+        const conflictsIds = GraduationServices.checkConflict(classes).flat().map(clss => clss.id);
         return classes.filter( clss => {
             return (!conflictsIds.includes(clss.id));
         })
+    }
+
+    //arranges the timetable given that it's guaranteed that there are no conflicts
+    arrangeTimetable(classes: ClassSchedule[]){
+        return new Timetable(classes, GraduationServices.filterConflictless);
     }
 }
 
