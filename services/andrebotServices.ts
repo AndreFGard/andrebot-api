@@ -141,7 +141,7 @@ export class CourseTable {
     filterConflictless(classes: ClassSchedule[]){
         const conflictsIds = this.checkConflict(classes).flat().map(clss => clss.id);
         return classes.filter( clss => {
-            return conflictsIds.includes(clss.id);
+            return (!conflictsIds.includes(clss.id));
         })
     }
 }
