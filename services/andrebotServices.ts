@@ -40,6 +40,7 @@ export interface ScheduleDay {
     start: string;
     end: string;
     aproxHourList: string[];
+    class?: ClassSchedule;
     classroom: string;
     id: number;
 }
@@ -93,8 +94,9 @@ export class Timetable{
                 }
             }
         }
+        //+2 because it includes the last and adds another spare hour to prettify the table
         const range = (a: string|number,b: string|number) => 
-            Array.from(Array(Number(b)+1).keys()).splice(Number(a));
+            Array.from(Array(Number(b)+2).keys()).splice(Number(a)); 
 
 
         const hourRange = range(globalstart.split(":")[0],globalmax.split(":")[0])
