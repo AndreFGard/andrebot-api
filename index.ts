@@ -1,4 +1,4 @@
-//
+import path from "path";
 import express, {Express, NextFunction, Request, Response} from "express";
 import dotenv from "dotenv";
 import cors from "cors"
@@ -14,6 +14,10 @@ app.use(cors())
 app.get("/", (req: Request, res: Response) => {
     res.send("eae");
 });
+
+
+
+app.use('/.well-known', express.static(path.join(__dirname, '.well-known'), { dotfiles: 'allow' }));
 
 import andrebotRoutes from "./routes/andrebot";
 app.use("/andrebot", andrebotRoutes);
