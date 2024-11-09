@@ -41,7 +41,7 @@
     </table>
 </div>
 <hr>
-<div class="container">
+
     <% if (conflictsIDs.length > 0){
         %> <div class="alert alert-danger" role="alert">
             There were conflicts between your classes! : <%= blamedConflicts.map(([cls1, cls2, day]) => `${cls1.code}-${cls2.code}  (${day.day} ${day.start}-${day.end})`).toString().replaceAll(",", " || ") %>
@@ -57,7 +57,7 @@
         <table class="table table-bordered table-hover fixed-table small">
             <thead class="table-dark">
                 <tr>
-                    <th style="width: 1%;">Time</th>
+                    <th style="width: 1%;" >Time</th>
                     <th style="width: 1%;">Seg</th>
                     <th style="width: 1%;">Ter</th>
                     <th style="width: 1%;">Qua</th>
@@ -68,7 +68,7 @@
             <tbody>
                 <% timetable.aproxHourList.forEach(hour => { %>
                     <tr>
-                        <td><%= hour %></td> <!-- Display the hour slot -->
+                        <td class="small text-center"><%= hour %></td> <!-- Display the hour slot -->
                         
                         <% ['seg', 'ter', 'qua', 'qui', 'sex'].forEach(day => { %>
                             <% 
@@ -78,8 +78,9 @@
                             <td class="<%= scheduleDay ? 'text-white' : '' %>" <%= (scheduleDay) ? `style=background-color:${scheduleDay.class.colorCode}` : ""%>>
                                 <% if (scheduleDay) { %>
                                     <!-- Truncate text inside the cell -->
-                                    <div class="text-truncate" style="max-width: 100%;">
-                                        <%= scheduleDay.class.name %> - <%= scheduleDay.code %>
+                                    <div class="text-truncate" style="max-width: 100%; text-transform: capitalize; ">
+                                        <%= scheduleDay.class.shortName.toLowerCase()%>
+                                        
                                     </div>
                                 <% } %>
                             </td>
@@ -89,4 +90,3 @@
             </tbody>
         </table>
         
-</div>

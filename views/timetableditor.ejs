@@ -125,9 +125,9 @@
             </div>
             <div class="d-grid gap-2 d-md-inline-flex mt-2">
                 <input type="hidden" id="bsc-input" value="<%= bsc %>">
-                <button type="submit" class="btn btn-primary">Generate Timetable</button>
+                <button type="submit" class="btn btn-primary">Add class</button>
                 <button type="button" class="btn btn-primary" onclick="fetchTimetable();">Refresh Timetable</button>
-                <button type="button" class="btn btn-danger" onclick="localStorage.clear();">Wipe Timetable</button>
+                <button type="button" class="btn btn-danger" onclick="localStorage.clear();fetchTimetable()">Wipe Timetable</button>
             </div>
         </form>
 
