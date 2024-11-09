@@ -8,6 +8,7 @@ import cors from "cors"
 dotenv.config();
 
 const app: Express = express();
+const DOMAIN_NAME_S = process.env.DOMAIN_NAME_S as string;
 const port = process.env.PORT || 3000;
 app.use(cors())
 app.use(express.json()); //middleware that partes the request's json
@@ -33,9 +34,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 //if http is enabled
 
 if (Number(port) == 443){
-    const privateKey = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/privkey.pem', 'utf8');
-    const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/cert.pem', 'utf8');
-    const ca = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/chain.pem', 'utf8');
+    const privateKey = fs.readFileSync(`/etc/letsencrypt/live/${DOMAIN_NAME_S}/privkey.pem`, 'utf8');
+    const certificate = fs.readFileSync(`etc/letsencrypt/live/${DOMAIN_NAME_S}/cert.pem`, 'utf8');
+    const ca = fs.readFileSync(`/etc/letsencrypt/live/${DOMAIN_NAME_S}/chain.pem`, 'utf8');
     
     const credentials = {
         key: privateKey,
