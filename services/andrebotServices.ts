@@ -43,6 +43,7 @@ export interface ScheduleDay {
     class?: ClassSchedule;
     classroom: string;
     id: number;
+    timeString?: string;
 }
 
 export interface ClassSchedule {
@@ -55,6 +56,7 @@ export interface ClassSchedule {
     term: string;
     optional: boolean;
     colorCode?: string;
+    shortName?: string;
 }
 
 export class Timetable{

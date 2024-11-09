@@ -26,11 +26,13 @@ const courses = JSON.parse(coursesraw) as Record<string, Record<number, ClassSch
 Object.values(courses).forEach(bsc => {
     Object.values(bsc).forEach(trm => {
         let i =0;
-        Object.values(trm).forEach(clss => {
+        Object.values(trm).forEach(clss =>
+             {
+            clss.shortName = clss.name.replaceAll("DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
                 const hexcodes = ['#8cb369ff', '#f4e285ff', '#f4a259ff', '#5b8e7dff', '#bc4b51ff', '#8cb369ff', '#f4e285ff', '#f4a259ff', '#5b8e7dff', '#bc4b51ff', '#585123ff', '#eec170ff', '#f2a65aff', '#f58549ff', '#772f1aff', '#ee6055ff', '#60d394ff', '#aaf683ff', '#ffd97dff', '#ff9b85ff'];
-                const color = hexcodes[Math.floor(Math.random()*Math.random()*10000*i ) % hexcodes.length];
+                const color = hexcodes[i% hexcodes.length];
                 const range = (a: number,b: number) => Array.from(Array(b).keys()).splice(a);
                 
                 //this is very ugly and even imprecise, but simplifies the timetable making a lot
@@ -39,6 +41,7 @@ Object.values(courses).forEach(bsc => {
                 let hours = range(start,end).map(n => (n.toString().padStart(2, '0') + ":00"));
                 d.aproxHourList = hours;
                 d.id = clss.id;
+                d.timeString = `${d.day}: ${d.start}-${d.end} `;
                 d.class = clss;
                 clss.colorCode = clss.colorCode || color;
             })
