@@ -6,37 +6,39 @@
         width: 100%;
     }
 </style>
-<div class="container">
-    <div id="chosenclasstable">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Professor</th>
-                    <th scope="col">Code</th>
+<div id="chosenclasstable" class="table-responsive-md">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Professor</th>
+                <th scope="col">Action</th>
+                <th scope="col">Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const [idx, classItem] of currentlyChosenClasses.entries()) { %>
+                <tr class="<%= (conflictsIDs.includes(classItem.id)) ? 'table-danger' : '' %>">
+                    <th scope="row"><%= idx + 1 %></th>
+                    <td style="text-transform: capitalize;"><%= classItem.name.toLowerCase() %></td>
+                    <td>
+                        <span class="text-truncate d-inline-block w-100" style="max-width: 150px;">
+                            <%= classItem.professor %>
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger btn-sm" id="classButton<%= idx %>" type="button" onclick="deleteClass(<%= classItem.id %>); fetchTimetable();">
+                            Delete
+                        </button>
+                    </td>
+                    <td>
+                        <%= classItem.code %>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <% for (const [idx, classItem] of currentlyChosenClasses.entries()) { %>
-                    <tr class="<%= (conflictsIDs.includes(classItem.id)) ? 'table-danger' : '' %>">
-                        <th scope="row"><%= idx + 1 %></th>
-                        <td><%= classItem.name %></td>
-                        <td>
-                            <span class="text-truncate d-inline-block w-100" style="max-width: 150px;">
-                                <%= classItem.professor %>
-                            </span>
-                        </td>
-                        <td>
-                            <button class="btn btn-secondary" id="classButton<%= idx %>" type="button" onclick="deleteClass(<%= classItem.id %>); fetchTimetable();">
-                                Delete
-                            </button>
-                        </td>
-                    </tr>
-                <% } %>
-            </tbody>
-        </table>
-    </div>
+            <% } %>
+        </tbody>
+    </table>
 </div>
 <hr>
 <div class="container">
