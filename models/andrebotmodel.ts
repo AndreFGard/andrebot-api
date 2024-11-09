@@ -31,7 +31,8 @@ Object.values(courses).forEach(bsc => {
             clss.shortName = clss.name.replaceAll("DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
-                const hexcodes = ['#8cb369ff', '#f4e285ff', '#f4a259ff', '#5b8e7dff', '#bc4b51ff', '#8cb369ff', '#f4e285ff', '#f4a259ff', '#5b8e7dff', '#bc4b51ff', '#585123ff', '#eec170ff', '#f2a65aff', '#f58549ff', '#772f1aff', '#ee6055ff', '#60d394ff', '#aaf683ff', '#ffd97dff', '#ff9b85ff'];
+                const hexcodes = ['#60d394ff', '#f58549ff', '#ff9b85ff', '#bc4b51ff', '#8cb369ff', '#ffd97dff', '#f4e285ff', '#f2a65aff', '#8cb369ff', '#772f1aff', '#f4a259ff', '#eec170ff', '#5b8e7dff', '#f4a259ff', '#ee6055ff', '#5b8e7dff', '#585123ff', '#f4e285ff', '#aaf683ff', '#bc4b51ff'];
+
                 const color = hexcodes[i% hexcodes.length];
                 const range = (a: number,b: number) => Array.from(Array(b).keys()).splice(a);
                 
