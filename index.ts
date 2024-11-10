@@ -35,7 +35,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 if (Number(port) == 443){
     const privateKey = fs.readFileSync(`/etc/letsencrypt/live/${DOMAIN_NAME_S}/privkey.pem`, 'utf8');
-    const certificate = fs.readFileSync(`etc/letsencrypt/live/${DOMAIN_NAME_S}/cert.pem`, 'utf8');
+    const certificate = fs.readFileSync(`/etc/letsencrypt/live/${DOMAIN_NAME_S}/cert.pem`, 'utf8');
     const ca = fs.readFileSync(`/etc/letsencrypt/live/${DOMAIN_NAME_S}/chain.pem`, 'utf8');
     
     const credentials = {
