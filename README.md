@@ -1,12 +1,12 @@
 # andrebot-api
 
 ## Authentication
-For methods that require admin authentication, the headers should contain the fields:
+Methods that require admin authentication, the headers should contain the fields:
 - password: (your admin password)
 - platform: (your admin name)
 
 ## Platforms
-For now, the only platforms available are telegram and discord. a web platform will be created eventually. Use **dsc** to refer to discord and **tg** to refer to telegram
+Currently, the only platforms available are telegram (tg), discord (dsc) and web (web) 
 
 ## Routes documentation
 ### Status codes:
@@ -39,7 +39,6 @@ For now, the only platforms available are telegram and discord. a web platform w
   },
 ]}
 ```
-
 
 ### [GET] /andrebot/winners
 fetch all of the **victory events**, rather than the rank. If an user is from another platform, **and complete = True**, the anonymous version of their username will be used instead. If **complete = False**, only  requests from the chosen platforms will be shown
@@ -75,4 +74,5 @@ add one or more wordle **victory events**
 ```
 - response content: empty
 
-
+### [GET] /andrebot/timetableeditor
+Returns the html relative to the main timetable editor, as well as fetch (client side) the list of relevant classes for that bachelor and the timetable itself.
