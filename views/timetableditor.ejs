@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable Selector</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script>
+        const getbsc = () => document.getElementById('bsc-input').value;
+
+        function addClass(clss){
+            const storedclasses = localStorage.getItem("classes") || "";
+            const old_classes = storedclasses ? storedclasses.split(",") : [];
+
+            if (clss){
+                const newClasses = [...new Set(
+                                            old_classes.concat([String(clss)]))];
+                localStorage.setItem("classes", newClasses.toString());
+                console.log("eae");
+                return newClasses.map(Number);
+            }
+            else return old_classes.map(Number);
+            
+        }
+
+        function getClasses(){
+            const storedclasses = localStorage.getItem('classes') || "";
+            if (storedclasses) {
+                return storedclasses.split(',').map(Number);
+            }
+            else return [];
+        }
+
+        function deleteClass(x){
+            let storedClasses = getClasses();
+            console.log(`deleting id ${x} from ${storedClasses}`);
+            const idx = storedClasses.indexOf(x);
+            if (idx > -1) storedClasses.splice(idx, 1);
+            localStorage.setItem('classes', storedClasses.toString());
+        }
+
+
+        async function fetchTimetable() {
+            const selectedClassIDs = getClasses() || "";
+            //this prevents the adding of 0 as a class
+            const newSelectedClassID = Number(document.getElementById('class-select').value) || ""; 
+            
+            addClass(newSelectedClassID);
+            const bsc = getbsc();
+            const program = document.querySelector('input[name="program"]:checked')?.value;
+            const response = await fetch(`../andrebot/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&bsc=${bsc}&program=${program}`, {
+                method: 'GET'
+            });
+            const tableHTML = await response.text();
+            document.getElementById('timetable-container').innerHTML = tableHTML;
+            document.getElementById('class-select').value = 0; //reset it
+        }
+
+        // Fetch classes when a program is selected
+        async function fetchClassesByProgram(program) {
+            document.getElementById('bsc-input').value = program;
+            const response = await fetch(`../andrebot/classes?program=${program}`);
+            const classesHTML = await response.text();
+            document.getElementById('class-select-container').innerHTML = classesHTML;
+        }
+
+        // Filter classes based on search input
+        function filterClasses() {
+            const filterValue = document.getElementById('class-search').value.toLowerCase();
+            const options = document.getElementById('class-select').options;
+            for (let i = 0; i < options.length; i++) {
+                const optionText = options[i].text.toLowerCase();
+                options[i].style.display = optionText.includes(filterValue) ? '' : 'none';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', fetchTimetable, false);
+
+
+    </script>
+
+    <style>
+        .program-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .btn-lg-custom {
+            font-size: 1.25rem;
+            padding: 1rem 1.5rem;
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+    <div class="container mt-4"  style="max-width: 900px;">
+        <h1 class="my-4">Class Timetable Selector</h1>
+
+        <!-- Program Selection Radio Buttons -->
+        <div class="mb-3">
+            <label class="form-label">Select Program:</label>
+            <div class="program-buttons">
+                <% Object.keys(bachelors).forEach(program => { %>
+                    <input class="btn-check" type="radio" name="program" id="<%= program %>btn" onclick="document.getElementById('class-search').value ='';fetchClassesByProgram('<%= program %>')" value="<%= program %>"
+                           <%= bachelors[program] ? 'checked' : '' %> >
+                    <label class="btn btn-primary btn-lg btn-lg-custom" for="<%= program %>btn"><%= program %></label>
+                <% }) %>
+            </div>
+        </div>
+
+        <!-- Form for Class Selection -->
+        <form onsubmit="event.preventDefault(); fetchTimetable();">
+            <div class="mb-3">
+                <label for="class-select" class="form-label">Select Classes:</label>
+
+                <!-- Search input for filtering classes -->
+                <input type="text" id="class-search" class="form-control mb-2" placeholder="Search classes..." onkeyup="filterClasses()">
+
+                <!-- Dynamic Class Selection Container -->
+                <div id="class-select-container">
+                    <!-- `classes.ejs` will load here based on selected program -->
+                    <select id="class-select" class="form-select" multiple>
+                        <% allClasses.forEach(classItem => { %>
+                            <option value="<%= classItem.id %>"><%= classItem.name %> - <%= classItem.professor %></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-inline-flex mt-2">
+                <input type="hidden" id="bsc-input" value="<%= bsc %>">
+                <button type="submit" class="btn btn-primary">Add class</button>
+                <button type="button" class="btn btn-primary" onclick="fetchTimetable();">Refresh Timetable</button>
+                <button type="button" class="btn btn-danger" onclick="localStorage.clear();fetchTimetable()">Wipe Timetable</button>
+            </div>
+        </form>
+
+        <!-- Container for the Table -->
+        <div id="timetable-container" class="mt-4">
+            <!-- The timetable will be loaded here -->
+        </div>
+    </div>
+</body>
+</html>
