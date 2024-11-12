@@ -28,7 +28,7 @@ Object.values(courses).forEach(bsc => {
         let i =0;
         Object.values(trm).forEach(clss =>
              {
-            clss.shortName = clss.name.replaceAll("DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
+            clss.shortName = clss.name.replaceAll(" DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
                 const hexcodes = ['#60d394ff', '#f58549ff', '#ff9b85ff', '#bc4b51ff', '#8cb369ff', '#ffd97dff', '#f4e285ff', '#f2a65aff', '#8cb369ff', '#772f1aff', '#f4a259ff', '#eec170ff', '#5b8e7dff', '#f4a259ff', '#ee6055ff', '#5b8e7dff', '#585123ff', '#f4e285ff', '#aaf683ff', '#bc4b51ff'];
