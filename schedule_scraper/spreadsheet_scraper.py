@@ -1,5 +1,5 @@
 import os
-filepath = os.getenv("PUBLICACAO_OFERTA_PATH_HTML")
+filepath = os.getenv("PUBLICACAO_OFERTA_PATH_HTML") or '/guaxim/Downloads/Publicação Oferta Graduação 24.2 - Google Drive.html'
 PRINT_DEBUG = 1
 
 
@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import re
 from sys import stderr
 
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, ValidationError, ConfigDict
 import bs4
 
 
@@ -31,40 +31,10 @@ def get_schedule_matches(mainstr, regex=TIME_REGEX_PATTERN):
 
 
 from pydantic import constr
-class CourseInterface(BaseModel):
-    major: str
-    turma: str
-    code: str
-    course_name: str
-    professor: str
-    schedule_string: str
-    term: int = -1
-    optional: bool = False
-    schedule: None = None
-
-
-class Course:
-    def __init__(self, bachelor, bachelor_code_str, professor, schedule, id,term=0, optional=0):
-        self.bachelor = bachelor
-        self.code,self.name = decode_course_str(bachelor_code_str)
-
-        self.professor = professor.strip()
-        self.schedule_string = schedule
-        self.term = term
-        self.id = id
-        self.optional=0
-        
-        self.schedule = ClassSchedule(self, self.schedule_string)
-
-    def to_dict(self):
-        days = [{'day': d[1].day, 'start':d[1].start, 'end':d[1].end,'classroom': d[1].classroom} for d in self.schedule.days]
-        return {'bachelor': self.bachelor, 'code':self.code, 'id': self.id, 'name': self.name,
-                 'professor':self.professor, 'days': days, 'term' : self.term,
-                   'optional': self.optional}
 
 class DaySchedule:
-    def __init__(self, course: CourseInterface, day, start, end, classroom="    "):
-        self.course: CourseInterface = course
+    def __init__(self, day, start, end, classroom="    ", course_id=-1):
+        self.course_id:int = course_id
         self.day = day
         self.start, self.end = start, end
         self.classroom = classroom
@@ -74,12 +44,49 @@ class DaySchedule:
               or (day.start < self.start and day.end > self.start)
             ) and self.day == day.day
         return conflicts
+
+class ClassSchedule:
+    def __init__(self, course_id: int, schedule_string): #type: ignore
+        self.matches = (get_schedule_matches(schedule_string.strip()))
+        self.days = [(match[0], DaySchedule(*match, course_id=course_id)) for match in self.matches]
+
+class CourseInterface(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+    major: str
+    turma: str
+    code: str
+    name: str
+    professor: str
+    schedule_string: str
+    term: int = -1
+    optional: bool = False
+    id: int = -1
+    schedule: ClassSchedule | None = None
+
+
+class Course:
+    def __init__(self, major, major_code_str, professor, schedule, id,term=0, optional=0):
+        self.major = major
+        self.code,self.name = decode_course_str(major_code_str)
+
+        self.professor = professor.strip()
+        self.schedule_string = schedule
+        self.term = term
+        self.id = id
+        self.optional=0
+        
+        self.schedule = ClassSchedule(self, self.schedule_string) #type: ignore
+
+    def to_dict(self):
+        days = [{'day': d[1].day, 'start':d[1].start, 'end':d[1].end,'classroom': d[1].classroom} for d in self.schedule.days]
+        return {'major': self.major, 'code':self.code, 'id': self.id, 'name': self.name,
+                 'professor':self.professor, 'days': days, 'term' : self.term,
+                   'optional': self.optional}
+
+
         
     
-class ClassSchedule:
-    def __init__(self, course_info: CourseInterface, schedule_string):
-        self.matches = (get_schedule_matches(schedule_string.strip()))
-        self.days = [(match[0], DaySchedule(course_info, *match)) for match in self.matches]
+
         
 
 def decode_course_str(bscstring: str) -> tuple[str, str]:
@@ -87,7 +94,7 @@ def decode_course_str(bscstring: str) -> tuple[str, str]:
     return code.strip(),''.join(name).strip()
 
 
-with open(filepath, 'r', encoding='utf-8') as file:
+with open(filepath, 'r', encoding='utf-8') as file: #type: ignore
     content = file.read()
 
 soup = BeautifulSoup(content, 'html.parser')
@@ -134,26 +141,33 @@ def scrape_schedule(rows):
 
 
 class CourseInfo(CourseInterface):
-    def __init__(self, col_contents: list[str], term=-1, optional=False, first_value_disqualifier="Órgão"):
+    def __init__(self, col_contents: list[str], id=-1, term=-1, optional=False, first_value_disqualifier="Órgão"):
         try:
             major = col_contents[0]
             if first_value_disqualifier in major:
                 raise ValueError(f"Invalid major format: {major}")
+
             turma = col_contents[1]
-            code, course_name = decode_course_str(col_contents[2])
+            code, name = decode_course_str(col_contents[2])
             professor = col_contents[3]
             schedule_string = col_contents[4]
+
             if not code: raise ValueError("Course code is empty")
-            super().__init__(major=major, turma=turma, code=code, course_name=course_name,
+
+            super().__init__(major=major, turma=turma, code=code, name=name,
                              professor=professor, schedule_string=schedule_string,
-                              term=term, optional=optional)
+                              term=term, optional=optional, id=id)
+
+            self.schedule = ClassSchedule(self.id, schedule_string)
+
         except IndexError as e:
             raise ValidationError(f'Invalid course data format: {col_contents}') from e
+
     def __repr__(self):
-        return f"{self.major}-{self.code}-{self.course_name}: {self.professor}"
+        return f"{self.major}-{self.code}-{self.name}: {self.professor}"
 
 class OptionalCourseInfo(CourseInfo):
-    def __init__(self, col_contents: list[str]):
+    def __init__(self, col_contents: list[str], id=-1):
         try:
             term = int(col_contents[1])
         except:
@@ -229,10 +243,10 @@ def scrape_schedulenew(rows):
             if len(col_content) == 6:
                 #switch to the optional strategy
                 optional_term=col_content[1]
-                course = OptionalCourseInfo(col_content)
+                course = OptionalCourseInfo(col_content, id=i)
                 cmajor = course.major
             else:
-                course= CourseInfo(col_content, term=currentTerm, optional=False)
+                course= CourseInfo(col_content, term=currentTerm, optional=False,id=i)
 
             courses[usemajor].append(course)
             continue
@@ -256,3 +270,42 @@ print(f"\n\n\n#{'-'*100}#\n{coursesByMajor['CC'][:3]}", file=stderr)
 # Print the lengths of courses for each major
 for major, courses in coursesByMajor.items():
     print(f"Major {major}: {len(courses)} courses", file=stderr)
+
+def dumpSchedule(schedule: ClassSchedule):
+    days = []
+    for d in schedule.days:
+        days.append({
+            "day": d[1].day,
+            "start": d[1].start,
+            "end": d[1].end,
+            "classroom": d[1].classroom,
+            "course_id": d[1].course_id
+        })
+    return days
+        
+
+
+def dumpCourse(course: CourseInfo):
+    x = course.model_dump()
+    x.pop('schedule')
+    x['days'] = dumpSchedule(course.schedule) #type: ignore
+    return x
+
+def dumpCoursesByTerm(courses: list[CourseInfo]):
+    terms = {}
+    for c in courses:
+        dumped = dumpCourse(c)
+        if str(c.term) not in terms:
+            terms[str(c.term)] = [dumped]
+        else:
+            terms[str(c.term)].append(dumped)
+    return terms
+
+
+coursesByMajorAndTerm = {maj:dumpCoursesByTerm(coursesByMajor[maj]) for maj in coursesByMajor}
+#dump into json
+
+import json
+with open("courses2.json", "w", encoding="utf-8") as f:
+    json.dump(coursesByMajorAndTerm, f, ensure_ascii=False, indent=4)
+
