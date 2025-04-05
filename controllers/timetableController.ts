@@ -15,7 +15,7 @@ export const getCoursesbymajor = async (req: Request, res: Response, next: NextF
         ? classSchedules.filter(schedule => schedule.code === selectedClassCode)
         : classSchedules;
   
-      res.render('timetable', { classSchedules: filteredSchedules, classes, selectedClassCode });
+      res.render('timetable', { classSchedules: filteredSchedules, selectedClassCode });
     
 }
 

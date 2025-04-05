@@ -48,7 +48,7 @@
             addClass(newSelectedClassID);
             const bsc = getbsc();
             const program = document.querySelector('input[name="program"]:checked')?.value;
-            const response = await fetch(`../andrebot/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&bsc=${bsc}&program=${program}`, {
+            const response = await fetch(`../timetable/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&bsc=${bsc}&program=${program}`, {
                 method: 'GET'
             });
             const tableHTML = await response.text();
@@ -59,7 +59,7 @@
         // Fetch classes when a program is selected
         async function fetchClassesByProgram(program) {
             document.getElementById('bsc-input').value = program;
-            const response = await fetch(`../andrebot/classes?program=${program}`);
+            const response = await fetch(`../timetable/classes?program=${program}`);
             const classesHTML = await response.text();
             document.getElementById('class-select-container').innerHTML = classesHTML;
         }
