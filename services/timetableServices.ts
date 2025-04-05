@@ -1,36 +1,16 @@
-import {AndrebotModel} from "../models/andrebotmodel"
+import {timetableModel} from "../models/timetablemodel"
+import { CourseInfo, ScheduleDay } from '../models/schemas';
 
 
-const model = new AndrebotModel();
+
+const model = new timetableModel();
 function min(a:string, b:string){
     return (a < b) ? a : b;
 }
 const max = (a:string, b:string) => (a > b) ? a : b;
 
 
-export interface ScheduleDay {
-    day: string;
-    start: string;
-    end: string;
-    aproxHourList: string[];
-    classroom: string;
-    course_id: number;
-    timeString?: string;
-    class?: CourseInfo;
-}
 
-export interface CourseInfo {
-    major: string;
-    code: string;
-    name: string;
-    professor: string;
-    days: ScheduleDay[];
-    id: number;
-    term: string;
-    optional: boolean;
-    colorCode?: string;
-    shortName?: string;
-}
 
 export class Timetable{
     table: Record<string, Record<string, ScheduleDay|undefined>>
