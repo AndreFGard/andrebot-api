@@ -97,9 +97,9 @@
         <div class="mb-3">
             <label class="form-label">Select Program:</label>
             <div class="program-buttons">
-                <% Object.keys(bachelors).forEach(program => { %>
+                <% Object.keys(majors).forEach(program => { %>
                     <input class="btn-check" type="radio" name="program" id="<%= program %>btn" onclick="document.getElementById('class-search').value ='';fetchClassesByProgram('<%= program %>')" value="<%= program %>"
-                           <%= bachelors[program] ? 'checked' : '' %> >
+                           <%= majors[program] ? 'checked' : '' %> >
                     <label class="btn btn-primary btn-lg btn-lg-custom" for="<%= program %>btn"><%= program %></label>
                 <% }) %>
             </div>

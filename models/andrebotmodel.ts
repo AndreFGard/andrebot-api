@@ -163,8 +163,8 @@ export class AndrebotModel {
         }
     }
 
-    getCoursesbyBachelor(bachelor: string): Record<number, ClassSchedule[]>{
-        return courses[bachelor] as Record<number, ClassSchedule[]>;
+    getCoursesbymajor(major: string): Record<number, ClassSchedule[]>{
+        return courses[major] as Record<number, ClassSchedule[]>;
     }
 
 

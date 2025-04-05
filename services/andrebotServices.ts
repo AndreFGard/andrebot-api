@@ -47,7 +47,7 @@ export interface ScheduleDay {
 }
 
 export interface ClassSchedule {
-    bachelor: string;
+    major: string;
     code: string;
     name: string;
     professor: string;
@@ -124,27 +124,27 @@ export const weekdays = ["seg", "ter", "qua", "qui", "sex"];
 const _weekdaysDict = Object.fromEntries(weekdays.map((day, index) => [day, Number(index)]));
 
 export type TermDict = Record<number, ClassSchedule[]>;
-export type BachelorDict = Record<string, TermDict>;
+export type majorDict = Record<string, TermDict>;
 
 export class CourseTable {
-    bachelorDict: BachelorDict;
-    bachelors: string[];
-    classListByBachelor: Record<string, ClassSchedule[]>;
+    majorDict: majorDict;
+    majors: string[];
+    classListBymajor: Record<string, ClassSchedule[]>;
     _classesByCode: Record<string, Record<string, ClassSchedule[]>>;
     classesByID: Record<number, ClassSchedule>
     
-    constructor(courses: BachelorDict){
-        this.bachelorDict = courses;
-        this.bachelors = Object.keys(courses);
-        this.classListByBachelor = {};
+    constructor(courses: majorDict){
+        this.majorDict = courses;
+        this.majors = Object.keys(courses);
+        this.classListBymajor = {};
 
-        this.bachelors.forEach((bachelor: string) => {
-            this.classListByBachelor[bachelor] = Object.values(this.bachelorDict[bachelor]).flat();
+        this.majors.forEach((major: string) => {
+            this.classListBymajor[major] = Object.values(this.majorDict[major]).flat();
         });
         
         this.classesByID = {}
         this._classesByCode = {};
-        Object.entries(this.classListByBachelor).forEach(([bsc, classList]) => {
+        Object.entries(this.classListBymajor).forEach(([bsc, classList]) => {
             this._classesByCode[bsc] = {};
             classList.forEach(classSched => {
                 if (classSched.code in this._classesByCode[bsc]) this._classesByCode[bsc][classSched.code].push(classSched);
@@ -156,8 +156,8 @@ export class CourseTable {
         })
     }
 
-    getCourseList(bachelor: string){
-        return this.classListByBachelor[bachelor];
+    getCourseList(major: string){
+        return this.classListBymajor[major];
     }
 
     getClassesByCode(bsc: string, code  : string){
@@ -233,10 +233,10 @@ export class CourseTable {
 }
 
 
-const bachelors = ["CC", "EC", "SI"];
-let courses: BachelorDict = {}
-Object(bachelors).forEach( (bachelor: string) => {
-    courses[bachelor] = model.getCoursesbyBachelor(bachelor);
+const majors = ["CC", "EC", "SI"];
+let courses: majorDict = {}
+Object(majors).forEach( (major: string) => {
+    courses[major] = model.getCoursesbymajor(major);
 });
 
 export const GraduationServices = new CourseTable(courses);
@@ -286,7 +286,7 @@ export class andrebotServices {
         return;
     }
 
-    async getCourses(bachelor: string){
+    async getCourses(major: string){
 
         //let filteredCourses: ClassSchedule[][] ;
         //filteredCourses = Object.values(courses) as ClassSchedule[][];
