@@ -4,7 +4,7 @@
   "description": "## Routes documentation ### Status codes: - **[200]** - OK - **[400]** - Bad request. Missing data - **[403 | 404]** - Auth Error",
   "main": "dist/index.js",
   "scripts": {
-    "test": "npx ts-node index.ts"
+    "dev": "npx ts-node-dev --respawn --transpile-only index.ts"
   },
   "author": "andreFgard",
   "license": "ISC",
