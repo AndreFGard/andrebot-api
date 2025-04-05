@@ -64,30 +64,6 @@ class CourseInterface(BaseModel):
     schedule: ClassSchedule | None = None
 
 
-class Course:
-    def __init__(self, major, major_code_str, professor, schedule, id,term=0, optional=0):
-        self.major = major
-        self.code,self.name = decode_course_str(major_code_str)
-
-        self.professor = professor.strip()
-        self.schedule_string = schedule
-        self.term = term
-        self.id = id
-        self.optional=0
-        
-        self.schedule = ClassSchedule(self, self.schedule_string) #type: ignore
-
-    def to_dict(self):
-        days = [{'day': d[1].day, 'start':d[1].start, 'end':d[1].end,'classroom': d[1].classroom} for d in self.schedule.days]
-        return {'major': self.major, 'code':self.code, 'id': self.id, 'name': self.name,
-                 'professor':self.professor, 'days': days, 'term' : self.term,
-                   'optional': self.optional}
-
-
-        
-    
-
-        
 
 def decode_course_str(bscstring: str) -> tuple[str, str]:
     code, *name =  bscstring.split('-')
@@ -103,41 +79,6 @@ soup = BeautifulSoup(content, 'html.parser')
 rows : list[bs4.Tag] = list(soup.find_all('tr')[1:])
 #periodo = (rows[0].text.split(' ')[1])
 #rows = rows[2:]
-
-def scrape_schedule(rows):
-    headers_term_counter,weirdcounter, periodo = 0,0,0
-    weirds = []
-    terms = {}
-    courses=[]
-    currentTerm = 0
-    for i,r in enumerate(rows):
-
-        cols = r.find_all('td')
-
-        #each column is either a course info (len 6) or a header (len 4). only includes nonempty columns
-        col_content = [c.text for c in cols if c.text]
-
-        if len(col_content) == 4:
-            
-            isoptional = i > 101
-            courses.append(Course(*col_content,i, term=currentTerm, optional=float(isoptional)))
-        elif len(col_content) == 5:
-            #course headers here
-            headers_term_counter +=1
-            continue
-        elif len(col_content) == 1:
-            terms[int(col_content[0].split(' ')[1])] =  terms.get(int(col_content[0].split(' ')[1])) or []
-            courses = terms[int(col_content[0].split(' ')[1])]
-            headers_term_counter +=1
-            currentTerm = int(col_content[0].split(": ")[1])
-        else:
-            weirds.append(col_content)
-            weirdcounter+=1
-            print(f'weird row ctx {i}: {col_content}:\n', file=stderr)
-            continue
-
-    totalrows = i
-    return terms, totalrows, headers_term_counter, weirdcounter, weirds
 
 
 class CourseInfo(CourseInterface):
