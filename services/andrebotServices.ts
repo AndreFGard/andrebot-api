@@ -40,13 +40,13 @@ export interface ScheduleDay {
     start: string;
     end: string;
     aproxHourList: string[];
-    class?: ClassSchedule;
     classroom: string;
-    id: number;
+    course_id: number;
     timeString?: string;
+    class?: CourseInfo;
 }
 
-export interface ClassSchedule {
+export interface CourseInfo {
     major: string;
     code: string;
     name: string;
@@ -68,7 +68,7 @@ export class Timetable{
     //the latest ending hour: 10
     endHour: Number;
 
-    constructor(classes: ClassSchedule[], filterConflictless: (classes: ClassSchedule[]) => ClassSchedule[]){
+    constructor(classes: CourseInfo[], filterConflictless: (classes: CourseInfo[]) => CourseInfo[]){
         let filteredDays = filterConflictless(classes)
                                     .map(c => c.days)
                                     .flat();
@@ -123,15 +123,15 @@ export class Timetable{
 export const weekdays = ["seg", "ter", "qua", "qui", "sex"];
 const _weekdaysDict = Object.fromEntries(weekdays.map((day, index) => [day, Number(index)]));
 
-export type TermDict = Record<number, ClassSchedule[]>;
+export type TermDict = Record<number, CourseInfo[]>;
 export type majorDict = Record<string, TermDict>;
 
 export class CourseTable {
     majorDict: majorDict;
     majors: string[];
-    classListBymajor: Record<string, ClassSchedule[]>;
-    _classesByCode: Record<string, Record<string, ClassSchedule[]>>;
-    classesByID: Record<number, ClassSchedule>
+    classListBymajor: Record<string, CourseInfo[]>;
+    _classesByCode: Record<string, Record<string, CourseInfo[]>>;
+    classesByID: Record<number, CourseInfo>
     
     constructor(courses: majorDict){
         this.majorDict = courses;
@@ -169,7 +169,7 @@ export class CourseTable {
     }
 
     checkDayConflict(day1: ScheduleDay, day2: ScheduleDay){
-        if (day1.id == day2.id) return false; //they are the same
+        if (day1.course_id == day2.course_id) return false; //they are the same
         else if ((day1.day == day2.day) && (
                 (day1.start <= day2.start && day1.end >= day2.start)
             || 
@@ -179,7 +179,7 @@ export class CourseTable {
         return false;
     }
 
-    getConflictingDays(classes: ClassSchedule[]){
+    getConflictingDays(classes: CourseInfo[]){
         let days = classes.map((classs) => {
             return classs.days}).flat();
         days.sort((a,b) => {
@@ -205,21 +205,21 @@ export class CourseTable {
     }
 
     //TODO - make it possible  to reuse previously detected conflicts rather than recalculating htem always
-    getConflictingClasses(classes: ClassSchedule[]){
+    getConflictingClasses(classes: CourseInfo[]){
         const failed_classes = this.getConflictingDays(classes).map(([d1, d2]) => {
-            return [this.getClassByID(d1.id), this.getClassByID(d2.id)];
+            return [this.getClassByID(d1.course_id), this.getClassByID(d2.course_id)];
         });
         return failed_classes ;
     }
 
-    blameConflictingClasses(classes: ClassSchedule[]){
+    blameConflictingClasses(classes: CourseInfo[]){
         const failed_blamed_truples = this.getConflictingDays(classes)
-                .map(([d1, d2]) =>  [this.getClassByID(d1.id), this.getClassByID(d2.id), d1]);
+                .map(([d1, d2]) =>  [this.getClassByID(d1.course_id), this.getClassByID(d2.course_id), d1]);
         
         return failed_blamed_truples;
     }
 
-    filterConflictless(classes: ClassSchedule[]){
+    filterConflictless(classes: CourseInfo[]){
         const conflictsIds = GraduationServices.getConflictingClasses(classes).flat().map(clss => clss.id);
         return classes.filter( clss => {
             return (!conflictsIds.includes(clss.id));
@@ -227,7 +227,7 @@ export class CourseTable {
     }
 
     //arranges the timetable given that it's guaranteed that there are no conflicts
-    arrangeTimetable(classes: ClassSchedule[]){
+    arrangeTimetable(classes: CourseInfo[]){
         return new Timetable(classes, GraduationServices.filterConflictless);
     }
 }
@@ -288,10 +288,10 @@ export class andrebotServices {
 
     async getCourses(major: string){
 
-        //let filteredCourses: ClassSchedule[][] ;
-        //filteredCourses = Object.values(courses) as ClassSchedule[][];
+        //let filteredCourses: CourseInfo[][] ;
+        //filteredCourses = Object.values(courses) as CourseInfo[][];
 
-        let courselist: ClassSchedule[] =[];
+        let courselist: CourseInfo[] =[];
         Object.entries(courses).forEach((key: any[],_) =>{
             key[1].forEach((k: any) => {
                 courselist.push(k);

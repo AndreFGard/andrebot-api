@@ -1,4 +1,4 @@
-import { rankEntry, UserEntry, Victory_Event, ClassSchedule, ScheduleDay } from './../services/andrebotServices';
+import { rankEntry, UserEntry, Victory_Event, CourseInfo, ScheduleDay } from './../services/andrebotServices';
 import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';
@@ -22,7 +22,7 @@ const makeClient = function(errorFunc: (a: any) => void ) {
 }
 
 const coursesraw = fs.readFileSync('courses.json', 'utf-8');
-const courses = JSON.parse(coursesraw) as Record<string, Record<number, ClassSchedule[]>>;
+const courses = JSON.parse(coursesraw) as Record<string, Record<number, CourseInfo[]>>;
 Object.values(courses).forEach(bsc => {
     Object.values(bsc).forEach(trm => {
         let i =0;
@@ -41,7 +41,7 @@ Object.values(courses).forEach(bsc => {
                 const end = Number(d.end.split(":")[0]) + Math.round(Number(d.end.split(":")[1])/60);
                 let hours = range(start,end).map(n => (n.toString().padStart(2, '0') + ":00"));
                 d.aproxHourList = hours;
-                d.id = clss.id;
+                d.course_id = clss.id;
                 d.timeString = `${d.day}: ${d.start}-${d.end} `;
                 d.class = clss;
                 clss.colorCode = clss.colorCode || color;
@@ -163,8 +163,8 @@ export class AndrebotModel {
         }
     }
 
-    getCoursesbymajor(major: string): Record<number, ClassSchedule[]>{
-        return courses[major] as Record<number, ClassSchedule[]>;
+    getCoursesbymajor(major: string): Record<number, CourseInfo[]>{
+        return courses[major] as Record<number, CourseInfo[]>;
     }
 
 
