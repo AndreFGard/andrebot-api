@@ -1,4 +1,5 @@
-import { rankEntry, UserEntry, Victory_Event, CourseInfo, ScheduleDay } from './../services/andrebotServices';
+import { rankEntry, UserEntry, Victory_Event,} from './../services/andrebotServices';
+import { CourseInfo, ScheduleDay } from './../services/timetableServices';
 import {Client} from "pg";
 import dotenv from "dotenv";
 import format from 'pg-format';

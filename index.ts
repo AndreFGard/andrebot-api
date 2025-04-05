@@ -26,6 +26,9 @@ app.get("/", (req: Request, res: Response) => {
 import andrebotRoutes from "./routes/andrebot";
 app.use("/andrebot", andrebotRoutes);
 
+import timetableRoutes from "./routes/timetable";
+app.use("/timetable", timetableRoutes);
+
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).send("not found :)");
 });
