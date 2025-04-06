@@ -7,7 +7,9 @@ export interface ScheduleDay {
     classroom: string;
     course_id: number;
     timeString?: string;
-    class?: CourseInfo;
+    className: string;
+    colorCode: string;
+
 }
 
 export interface ITimetable {
@@ -28,4 +30,13 @@ export interface CourseInfo {
     optional: boolean;
     colorCode?: string;
     shortName?: string;
+}
+
+export interface TimetableResponse {
+    classestorender: CourseInfo[];
+    currentlyChosenClasses: CourseInfo[];
+    timetable: ITimetable;
+    conflictsIDs: number[];
+    conflictDays: [CourseInfo, CourseInfo, ScheduleDay][];
+    blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][];
 }

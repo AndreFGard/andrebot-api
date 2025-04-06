@@ -1,16 +1,21 @@
+import {CourseInfo, ITimetable, ScheduleDay, fetchTimetable} from './../../src/api';
 
-import {CourseInfo, ITimetable, ScheduleDay} from './../../../backend/models/schemas';
+interface TimetableProps {
+  currentlyChosenClasses: CourseInfo[];
+  conflictsIDs: number[];
+  timetable: ITimetable;
+  blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][];
+}
 
-function Timetable(currentlyChosenClasses: CourseInfo[], conflictsIDs: number[],timetable:ITimetable,blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][]) {
-  
+const Timetable: React.FC<TimetableProps> = ({
+  currentlyChosenClasses,
+  conflictsIDs,
+  timetable,
+  blamedConflicts
+}) => {
   const deleteClass = (id: number) => {
     // Implementation for deleteClass function
     console.log('Delete class with id:', id);
-  };
-
-  const fetchTimetable = () => {
-    // Implementation for fetchTimetable function
-    console.log('Fetching timetable');
   };
 
   return (
@@ -43,7 +48,7 @@ function Timetable(currentlyChosenClasses: CourseInfo[], conflictsIDs: number[],
                     type="button" 
                     onClick={() => {
                       deleteClass(classItem.id);
-                      fetchTimetable();
+                      fetchTimetable([2]);
                     }}
                   >
                     Delete
@@ -95,7 +100,7 @@ function Timetable(currentlyChosenClasses: CourseInfo[], conflictsIDs: number[],
                     <td 
                       key={dayIdx}
                       className={scheduleDay ? 'text-white' : ''} 
-                      style={scheduleDay ? { backgroundColor: scheduleDay.class.colorCode } : {}}
+                      style={scheduleDay ? { backgroundColor: scheduleDay.colorCode } : {}}
                     >
                       {scheduleDay && (
                         <div className="text-truncate" style={{ maxWidth: '100%', textTransform: 'capitalize' }}>
