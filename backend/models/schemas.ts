@@ -10,6 +10,13 @@ export interface ScheduleDay {
     class?: CourseInfo;
 }
 
+export interface ITimetable {
+    table: Record<string, Record<string, ScheduleDay|undefined>>;
+    aproxHourList: string[];
+    startHour: Number;
+    endHour: Number;
+}
+
 export interface CourseInfo {
     major: string;
     code: string;

@@ -1,5 +1,5 @@
 import {timetableModel} from "../models/timetablemodel"
-import { CourseInfo, ScheduleDay } from '../models/schemas';
+import { CourseInfo, ScheduleDay, ITimetable } from '../models/schemas';
 
 
 
@@ -11,8 +11,7 @@ const max = (a:string, b:string) => (a > b) ? a : b;
 
 
 
-
-export class Timetable{
+export class Timetable implements ITimetable {
     table: Record<string, Record<string, ScheduleDay|undefined>>
     //range of hours that must be included in the table eg. ['08:00','09:00', '10:00']
     aproxHourList: string[];
@@ -165,11 +164,11 @@ export class CourseTable {
         return failed_classes ;
     }
 
-    blameConflictingClasses(classes: CourseInfo[]){
+    blameConflictingClasses(classes: CourseInfo[]): [CourseInfo, CourseInfo, ScheduleDay][] {
         const failed_blamed_truples = this.getConflictingDays(classes)
                 .map(([d1, d2]) =>  [this.getClassByID(d1.course_id), this.getClassByID(d2.course_id), d1]);
         
-        return failed_blamed_truples;
+        return failed_blamed_truples as [CourseInfo, CourseInfo, ScheduleDay][];
     }
 
     filterConflictless(classes: CourseInfo[]){
