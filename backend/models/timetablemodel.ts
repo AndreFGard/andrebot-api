@@ -25,8 +25,11 @@ Object.values(courses).forEach(bsc => {
                 d.aproxHourList = hours;
                 d.course_id = clss.id;
                 d.timeString = `${d.day}: ${d.start}-${d.end} `;
-                d.class = clss;
+                d.className = clss.name;
+
                 clss.colorCode = clss.colorCode || color;
+                d.classColor = clss.colorCode;
+                
             })
         })
     })

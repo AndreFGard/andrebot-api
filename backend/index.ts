@@ -20,7 +20,10 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 
+var morgan = require('morgan')
 
+
+app.use(morgan('tiny'))
 
 
 import andrebotRoutes from "./routes/andrebot";

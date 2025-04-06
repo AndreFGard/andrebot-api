@@ -42,14 +42,17 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
         const bsc = req.query.bsc as string || "CC";
 
         const IDsStrings = [...new Set(String(req.query.SelectedClassIDs || "").split(","))];
+        console.log(IDsStrings);
         const SelectedClassIDs: CourseInfo[] = IDsStrings.filter(id => id).map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         });
+        console.log(SelectedClassIDs)
 
         const NewIDsStrings = [...new Set(String(req.query.NewSelectedClassIDs || "").split(","))];
         const NewSelectedClassIDs: CourseInfo[] = NewIDsStrings.filter(id => id).map(ID => {
             return GraduationServices.getClassByID(Number(ID));
-        });
+        }).filter((x) => x !== undefined);
+
 
         let currentlyChosenClasses = [...new Set(SelectedClassIDs.concat(NewSelectedClassIDs))];
         const conflictDays = GraduationServices.getConflictingDays(currentlyChosenClasses).flat();
@@ -62,7 +65,7 @@ export const RenderTimeTable = async (req: Request, res: Response, next: NextFun
         const conflictsIDs = [...new Set(conflictDays.map(x => x.course_id))];
 
         const blamedConflicts = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
-        res.render('timetable', { classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts});
+        res.send({ classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts})
     } catch (error) {
         next(error);
     }
