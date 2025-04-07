@@ -1,5 +1,5 @@
 import { GraduationServices, TimeTableService} from "../services/timetableServices";
-import {CourseInfo, TimetableRenderInfo, TimetableResponse} from "../models/schemas";
+import {CourseInfo, TimetableRenderInfo, } from "../models/schemas";
 import express, {Express, NextFunction, Request, Response} from "express";
 
 const timetableService = new TimeTableService();

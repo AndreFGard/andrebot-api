@@ -32,14 +32,7 @@ export interface CourseInfo {
     shortName?: string;
 }
 
-export interface TimetableResponse {
-    classestorender: CourseInfo[];
-    currentlyChosenClasses: CourseInfo[];
-    timetable: ITimetable;
-    conflictsIDs: number[];
-    conflictDays: [CourseInfo, CourseInfo, ScheduleDay][];
-    blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][];
-}
+
 
 interface TimetableRenderInfo {
     timetable: ITimetable;

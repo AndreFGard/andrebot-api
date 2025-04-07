@@ -244,13 +244,6 @@ export class TimeTableService{
         const timetable = GraduationServices.arrangeTimetable(conflictlessClasses);
         
 
-        // const renderInfo: TimetableRenderInfo = {
-        //     timetable: timetable,
-        //     conflictingClasses: conflictingClasses.map(([c1, c2]) => c1), // Extracting just the first class from each conflict pair
-        //     conflictingIds: conflictingIds,
-        //     conflictlessClasses: conflictlessClasses,
-        //     conflictlessIds: conflictlessClasses.map(c => c.id),
-        // };
         const renderInfo: TimetableRenderInfo = {
             timetable: timetable,
             conflictlessClasses: conflictlessClasses,

@@ -29,7 +29,7 @@ app.use(morgan('tiny'))
 import andrebotRoutes from "./routes/andrebot";
 app.use("/andrebot", andrebotRoutes);
 
-import timetableRoutes from "./routes/timetable";
+import timetableRoutes from "./routes/timetableRouter";
 app.use("/timetable", timetableRoutes);
 
 app.use((req: Request, res: Response, next: NextFunction) => {

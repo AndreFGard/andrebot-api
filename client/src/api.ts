@@ -1,6 +1,6 @@
-import {CourseInfo, ITimetable, ScheduleDay, TimetableResponse, TimetableRenderInfo} from './../../backend/models/schemas';
+import {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo} from './../../backend/models/schemas';
 
-export type {CourseInfo, ITimetable, ScheduleDay, TimetableResponse, TimetableRenderInfo} from './../../backend/models/schemas';
+export type {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo} from './../../backend/models/schemas';
 
 export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 
