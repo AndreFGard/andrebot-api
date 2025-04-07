@@ -26,8 +26,8 @@ var morgan = require('morgan')
 app.use(morgan('tiny'))
 
 
-import andrebotRoutes from "./routes/andrebot";
-app.use("/andrebot", andrebotRoutes);
+// import andrebotRoutes from "./routes/andrebot";
+// app.use("/andrebot", andrebotRoutes);
 
 import timetableRoutes from "./routes/timetableRouter";
 app.use("/timetable", timetableRoutes);
