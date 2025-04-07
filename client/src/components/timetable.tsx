@@ -1,4 +1,4 @@
-import {CourseInfo, ITimetable, ScheduleDay, fetchTimetable, TimetableRenderInfo} from './../../src/api';
+import {fetchTimetable, TimetableRenderInfo} from './../../src/api';
 
 
 

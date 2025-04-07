@@ -1,4 +1,4 @@
-import {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo} from './../../backend/models/schemas';
+import {TimetableRenderInfo} from './../../backend/models/schemas';
 
 export type {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo} from './../../backend/models/schemas';
 

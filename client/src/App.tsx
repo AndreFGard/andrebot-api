@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, fetchTimetable } from './api'
+import { TimetableRenderInfo, fetchTimetable } from './api'
 import Timetable from './components/timetable'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [timetableData, setTimetableData] = useState<TimetableRenderInfo | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -14,7 +13,6 @@ function App() {
     const loadTimetable = async () => {
       try {
         // You can change the IDs as needed
-        const selectedClassIDs = [2]
         const data = await fetchTimetable([3,4,5,6,7,])
         setTimetableData(data)
       } catch (error) {
