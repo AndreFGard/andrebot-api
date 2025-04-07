@@ -65,8 +65,8 @@ class CourseInterface(BaseModel):
 
 
 
-def decode_course_str(bscstring: str) -> tuple[str, str]:
-    code, *name =  bscstring.split('-')
+def decode_course_str(majorstring: str) -> tuple[str, str]:
+    code, *name =  majorstring.split('-')
     return code.strip(),''.join(name).strip()
 
 

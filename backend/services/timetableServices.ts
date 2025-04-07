@@ -96,11 +96,11 @@ export class CourseTable {
         
         this.classesByID = {}
         this._classesByCode = {};
-        Object.entries(this.classListBymajor).forEach(([bsc, classList]) => {
-            this._classesByCode[bsc] = {};
+        Object.entries(this.classListBymajor).forEach(([major, classList]) => {
+            this._classesByCode[major] = {};
             classList.forEach(classSched => {
-                if (classSched.code in this._classesByCode[bsc]) this._classesByCode[bsc][classSched.code].push(classSched);
-                else this._classesByCode[bsc][classSched.code] = [classSched];
+                if (classSched.code in this._classesByCode[major]) this._classesByCode[major][classSched.code].push(classSched);
+                else this._classesByCode[major][classSched.code] = [classSched];
 
                 this.classesByID[classSched.id] = classSched;
             });
@@ -112,8 +112,8 @@ export class CourseTable {
         return this.classListBymajor[major];
     }
 
-    getClassesByCode(bsc: string, code  : string){
-        return this._classesByCode.bsc.code || [];
+    getClassesByCode(major: string, code  : string){
+        return this._classesByCode.major.code || [];
     }
 
     getClassByID(id: number){
@@ -193,7 +193,13 @@ Object(majors).forEach( (major: string) => {
 
 export const GraduationServices = new CourseTable(courses);
 
-
+interface timetableRenderInfo {
+    timetable: Timetable;
+    conflictingClasses: CourseInfo[];
+    conflictingIds: number[]
+    conflictlessClasses: CourseInfo[];
+    conflictlessIds: number[];
+}
 
 export class TimeTableService{
     constructor() {
@@ -216,6 +222,43 @@ export class TimeTableService{
 
     async getClassesFromCodes(codes: string[]){
 
+    }
+
+    async renderTimetable(chosenids: string[], newchosenids: string[]){
+        const selectedClasses = chosenids.map(ID => {
+            return GraduationServices.getClassByID(Number(ID));
+        });
+        console.log(selectedClasses)
+
+        const newSelectedClasses: CourseInfo[] = newchosenids.filter(id => id).map(ID => {
+            return GraduationServices.getClassByID(Number(ID));
+        }).filter((x) => x !== undefined);
+
+        
+        //** all classes, including conflicting ones */
+        let currentlyChosenClasses = [...new Set(selectedClasses.concat(newSelectedClasses))];
+        const conflictDays = GraduationServices.getConflictingDays(currentlyChosenClasses).flat();
+
+        // these are only the classes that are not conflicting
+        let conflictlessClasses: CourseInfo[] = GraduationServices.filterConflictless(currentlyChosenClasses);
+        
+        const conflictingClasses = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
+        const conflictingIds = [...new Set(conflictDays.map(x => x.course_id))];
+
+        [conflictlessClasses, currentlyChosenClasses] = [[...new Set(conflictlessClasses)], [...new Set(currentlyChosenClasses)]];
+
+        const timetable = GraduationServices.arrangeTimetable(conflictlessClasses);
+        
+
+        const renderInfo: timetableRenderInfo = {
+            timetable: timetable,
+            conflictingClasses: conflictingClasses.map(([c1, c2]) => c1), // Extracting just the first class from each conflict pair
+            conflictingIds: conflictingIds,
+            conflictlessClasses: conflictlessClasses,
+            conflictlessIds: conflictlessClasses.map(c => c.id),
+        };
+
+        return renderInfo;      
     }
 
 
