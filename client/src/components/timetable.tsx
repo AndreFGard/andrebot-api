@@ -1,17 +1,12 @@
-import {CourseInfo, ITimetable, ScheduleDay, fetchTimetable} from './../../src/api';
+import {CourseInfo, ITimetable, ScheduleDay, fetchTimetable, TimetableRenderInfo} from './../../src/api';
 
-interface TimetableProps {
-  currentlyChosenClasses: CourseInfo[];
-  conflictsIDs: number[];
-  timetable: ITimetable;
-  blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][];
-}
 
-const Timetable: React.FC<TimetableProps> = ({
-  currentlyChosenClasses,
-  conflictsIDs,
+
+const Timetable: React.FC<TimetableRenderInfo> = ({
+  conflictlessClasses,
+  conflictIds,
   timetable,
-  blamedConflicts
+  conflicts
 }) => {
   const deleteClass = (id: number) => {
     // Implementation for deleteClass function
@@ -32,8 +27,8 @@ const Timetable: React.FC<TimetableProps> = ({
             </tr>
           </thead>
           <tbody>
-            {currentlyChosenClasses.map((classItem, idx) => (
-              <tr key={idx} className={conflictsIDs.includes(classItem.id) ? 'table-danger' : ''}>
+            {conflictlessClasses.map((classItem, idx) => (
+              <tr key={idx} className={conflictIds.includes(classItem.id) ? 'table-danger' : ''}>
                 <th scope="row">{idx + 1}</th>
                 <td style={{ textTransform: 'capitalize' }}>{classItem.name.toLowerCase()}</td>
                 <td>
@@ -64,9 +59,9 @@ const Timetable: React.FC<TimetableProps> = ({
       </div>
       <hr/>
 
-      {conflictsIDs.length > 0 && (
+      {conflictIds.length > 0 && (
         <div className="alert alert-danger" role="alert">
-          There were conflicts between your classes! : {blamedConflicts.map(([cls1, cls2, day]) => 
+          There were conflicts between your classes! : {conflicts.map(([cls1, cls2, day]) => 
             `${cls1.code}-${cls2.code} (${day.day} ${day.start}-${day.end})`).join(' || ')}
         </div>
       )}
@@ -104,7 +99,7 @@ const Timetable: React.FC<TimetableProps> = ({
                     >
                       {scheduleDay && (
                         <div className="text-truncate" style={{ maxWidth: '100%', textTransform: 'capitalize' }}>
-                          {scheduleDay.class.shortName.toLowerCase()}
+                          {scheduleDay.className.toLowerCase()}
                         </div>
                       )}
                     </td>

@@ -1,5 +1,5 @@
 import {timetableModel} from "../models/timetablemodel"
-import { CourseInfo, ScheduleDay, ITimetable } from '../models/schemas';
+import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo} from '../models/schemas';
 
 
 
@@ -193,13 +193,6 @@ Object(majors).forEach( (major: string) => {
 
 export const GraduationServices = new CourseTable(courses);
 
-interface timetableRenderInfo {
-    timetable: Timetable;
-    conflictingClasses: CourseInfo[];
-    conflictingIds: number[]
-    conflictlessClasses: CourseInfo[];
-    conflictlessIds: number[];
-}
 
 export class TimeTableService{
     constructor() {
@@ -224,13 +217,15 @@ export class TimeTableService{
 
     }
 
-    async renderTimetable(chosenids: string[], newchosenids: string[]){
-        const selectedClasses = chosenids.map(ID => {
+    async renderTimetable(chosenids: string[], addedClassIds: string[]){
+
+        //theoretically, these should be conflictless
+        const chosenClasses = chosenids.map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         });
-        console.log(selectedClasses)
-
-        const newSelectedClasses: CourseInfo[] = newchosenids.filter(id => id).map(ID => {
+        console.log(chosenClasses)
+        
+        const addedClasses: CourseInfo[] = addedClassIds.filter(id => id).map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         }).filter((x) => x !== undefined);
 
@@ -239,21 +234,30 @@ export class TimeTableService{
         let currentlyChosenClasses = [...new Set(chosenClasses.concat(addedClasses))].filter(i=>i!==undefined);
         let conflictlessClasses: CourseInfo[] = GraduationServices.filterConflictless(currentlyChosenClasses);
         
-        const conflictingClasses = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
-        const conflictingIds = [...new Set(conflictDays.map(x => x.course_id))];
+        //const conflictDays = GraduationServices.getConflictingDays(currentlyChosenClasses).flat();
+        const conflicts = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
+        const conflictIds = [...new Set(conflicts.map(x => (x[0].id, x[1].id)).flat())];
 
-        [conflictlessClasses, currentlyChosenClasses] = [[...new Set(conflictlessClasses)], [...new Set(currentlyChosenClasses)]];
+        [conflictlessClasses, currentlyChosenClasses] = [conflictlessClasses, currentlyChosenClasses]
+                    .map((x)=>[... new Set(x)]);
 
         const timetable = GraduationServices.arrangeTimetable(conflictlessClasses);
         
 
-        const renderInfo: timetableRenderInfo = {
+        // const renderInfo: TimetableRenderInfo = {
+        //     timetable: timetable,
+        //     conflictingClasses: conflictingClasses.map(([c1, c2]) => c1), // Extracting just the first class from each conflict pair
+        //     conflictingIds: conflictingIds,
+        //     conflictlessClasses: conflictlessClasses,
+        //     conflictlessIds: conflictlessClasses.map(c => c.id),
+        // };
+        const renderInfo: TimetableRenderInfo = {
             timetable: timetable,
-            conflictingClasses: conflictingClasses.map(([c1, c2]) => c1), // Extracting just the first class from each conflict pair
-            conflictingIds: conflictingIds,
             conflictlessClasses: conflictlessClasses,
+            conflicts: conflicts,
+            conflictIds: conflictIds,
             conflictlessIds: conflictlessClasses.map(c => c.id),
-        };
+        }
 
         return renderInfo;      
     }

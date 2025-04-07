@@ -1,5 +1,5 @@
 import { GraduationServices, TimeTableService} from "../services/timetableServices";
-import {CourseInfo} from "../models/schemas";
+import {CourseInfo, TimetableRenderInfo, TimetableResponse} from "../models/schemas";
 import express, {Express, NextFunction, Request, Response} from "express";
 
 const timetableService = new TimeTableService();
@@ -37,18 +37,22 @@ export const renderClassList = (req: Request, res: Response) => {
     res.render('classes', { programClasses });
 };
 
-export const RenderTimeTable = async (req: Request, res: Response, next: NextFunction) => {
+export async function RenderTimeTable(req: Request, res: Response, next: NextFunction){
     try {
         const major = req.query.major as string || "CC";
 
-        const IDsStrings = [...new Set(String(req.query.SelectedClassIDs || "").split(","))];
-        const NewIDsStrings = [...new Set(String(req.query.NewSelectedClassIDs || "").split(","))];
+        const classIds = [...new Set(String(req.query.SelectedClassIDs || "")
+                            .split(","))];
+        const newClassIds = [...new Set(String(req.query.NewSelectedClassIDs || "")
+                            .split(","))];
 
         
-
-        res.send({ classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts})
+        const renderInfo: TimetableRenderInfo = await timetableService.renderTimetable(classIds, newClassIds)
+        res.send(renderInfo);
+        //res.send({ classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts})
     } catch (error) {
         next(error);
     }
+
 };
 

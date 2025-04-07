@@ -40,3 +40,13 @@ export interface TimetableResponse {
     conflictDays: [CourseInfo, CourseInfo, ScheduleDay][];
     blamedConflicts: [CourseInfo, CourseInfo, ScheduleDay][];
 }
+
+interface TimetableRenderInfo {
+    timetable: ITimetable;
+    conflictlessClasses: CourseInfo[];
+    conflicts: [CourseInfo, CourseInfo, ScheduleDay][];
+    conflictIds: number[];
+    conflictlessIds: number[];
+}
+
+export type {TimetableRenderInfo};

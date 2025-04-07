@@ -28,7 +28,7 @@ Object.values(courses).forEach(major => {
                 d.className = clss.name;
 
                 clss.colorCode = clss.colorCode || color;
-                d.classColor = clss.colorCode;
+                d.colorCode = clss.colorCode;
                 
             })
         })

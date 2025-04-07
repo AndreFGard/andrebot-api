@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { CourseInfo, ITimetable, ScheduleDay, TimetableResponse, fetchTimetable } from './api'
+import { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, fetchTimetable } from './api'
 import Timetable from './components/timetable'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [timetableData, setTimetableData] = useState<TimetableResponse | null>(null)
+  const [timetableData, setTimetableData] = useState<TimetableRenderInfo | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -43,10 +43,11 @@ function App() {
           <p>Loading timetable...</p>
         ) : timetableData ? (
           <Timetable 
-            currentlyChosenClasses={timetableData.currentlyChosenClasses}
-            conflictsIDs={timetableData.conflictsIDs}
+            conflictlessClasses={timetableData.conflictlessClasses}
+            conflictIds={timetableData.conflictIds}
             timetable={timetableData.timetable}
-            blamedConflicts={timetableData.blamedConflicts}
+            conflicts={timetableData.conflicts}
+            conflictlessIds={timetableData.conflictlessIds}
           />
         ) : (
           <p>Failed to load timetable</p>
