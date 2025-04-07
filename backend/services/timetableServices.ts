@@ -236,10 +236,7 @@ export class TimeTableService{
 
         
         //** all classes, including conflicting ones */
-        let currentlyChosenClasses = [...new Set(selectedClasses.concat(newSelectedClasses))];
-        const conflictDays = GraduationServices.getConflictingDays(currentlyChosenClasses).flat();
-
-        // these are only the classes that are not conflicting
+        let currentlyChosenClasses = [...new Set(chosenClasses.concat(addedClasses))].filter(i=>i!==undefined);
         let conflictlessClasses: CourseInfo[] = GraduationServices.filterConflictless(currentlyChosenClasses);
         
         const conflictingClasses = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
