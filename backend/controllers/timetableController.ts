@@ -32,10 +32,10 @@ export const RenderMainPage = (req: Request, res: Response) => {
 };
 
 export const renderClassList = (req: Request, res: Response) => {
-    const program = req.query.program as string;
-    const programClasses = GraduationServices.classListBymajor[program] || [];
-    res.send({programClasses})
-    //res.render('classes', { programClasses });
+    const major = req.query.major as string;
+    const majorClasses = GraduationServices.classListBymajor[major] || [];
+    res.send({majorClasses})
+    //res.render('classes', { majorClasses });
 };
 
 export async function RenderTimeTable(req: Request, res: Response, next: NextFunction){

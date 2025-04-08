@@ -17,7 +17,7 @@ function App() {
     // Fetch initial classes for the default major (BCC)
     const fetchInitialClasses = async () => {
       try {
-        const response = await fetch("http://localhost:3000/timetable/classes?program=CC");
+        const response = await fetch("http://localhost:3000/timetable/classes?major=CC");
         const data = await response.json();
         setAllClasses(data);
       } catch (error) {

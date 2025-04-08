@@ -53,10 +53,10 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
     }
     
     const majorValue = getmajor();
-    const program = majorValue; // Using major as program since radio buttons select major
+    const major = majorValue; // Using major as major since radio buttons select major
     
     try {
-      const response = await fetch(`http://localhost:3000/timetable/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&major=${majorValue}&program=${program}`, {
+      const response = await fetch(`http://localhost:3000/timetable/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&major=${majorValue}&major=${major}`, {
         method: 'GET'
       });
       const tableHTML = await response.text();
@@ -67,10 +67,10 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
     }
   }
 
-  async function fetchClassesByProgram(program: string) {
-    setMajor(program);
+  async function fetchClassesByProgram(major: string) {
+    setMajor(major);
     try {
-      const response = await fetch(`http://localhost:3000/timetable/classes?program=${program}`);
+      const response = await fetch(`http://localhost:3000/timetable/classes?major=${major}`);
       const data = await response.json();
       setAvailableClasses(data);
     } catch (error) {
@@ -94,23 +94,23 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
       {/* Program Selection Radio Buttons */}
       <div className="mb-3">
         <label className="form-label">Select Program:</label>
-        <div className="program-buttons">
-          {Object.entries(majors).map(([program, isChecked]) => (
-            <React.Fragment key={program}>
+        <div className="major-buttons">
+          {Object.entries(majors).map(([major, isChecked]) => (
+            <React.Fragment key={major}>
               <input 
                 className="btn-check" 
                 type="radio" 
-                name="program" 
-                id={`${program}btn`} 
+                name="major" 
+                id={`${major}btn`} 
                 onClick={() => {
                   setSearchTerm('');
-                  fetchClassesByProgram(program);
+                  fetchClassesByProgram(major);
                 }}
-                value={program}
+                value={major}
                 defaultChecked={isChecked}
               />
-              <label className="btn btn-primary btn-lg btn-lg-custom" htmlFor={`${program}btn`}>
-                {program}
+              <label className="btn btn-primary btn-lg btn-lg-custom" htmlFor={`${major}btn`}>
+                {major}
               </label>
             </React.Fragment>
           ))}
