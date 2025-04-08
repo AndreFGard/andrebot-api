@@ -17,7 +17,7 @@ function App() {
     // Fetch initial classes for the default major (BCC)
     const fetchInitialClasses = async () => {
       try {
-        const response = await fetch("../timetable/classes?program=BCC");
+        const response = await fetch("http://localhost:3000/timetable/classes?program=CC");
         const data = await response.json();
         setAllClasses(data);
       } catch (error) {
@@ -45,7 +45,7 @@ function App() {
         <TimetableEditor 
           majors={majors} 
           allClasses={allClasses} 
-          initialMajor="BCC" 
+          initialMajor="CC" 
         />
       </main>
     </div>
