@@ -16,6 +16,7 @@ dont forget to create a ***courses.json*** file inside ``/backend``with the info
 under the following format:
 ```json
 {
+
 "MAJORNAME": {
     "TERMNUMBER": [
         {
