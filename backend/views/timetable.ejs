@@ -1,5 +1,5 @@
 <!-- timetable region-->
- <!--classestorender, currentlyChosenClasses, conflictsIDs, conflictDays, blamedConflicts-->
+ <!--coursestorender, currentlyChosenClasses, conflictsIDs, conflictDays, blamedConflicts-->
  <style>
     .fixed-table {
         table-layout: fixed;
@@ -44,7 +44,7 @@
 
     <% if (conflictsIDs.length > 0){
         %> <div class="alert alert-danger" role="alert">
-            There were conflicts between your classes! : <%= blamedConflicts.map(([cls1, cls2, day]) => `${cls1.code}-${cls2.code}  (${day.day} ${day.start}-${day.end})`).toString().replaceAll(",", " || ") %>
+            There were conflicts between your courses! : <%= blamedConflicts.map(([cls1, cls2, day]) => `${cls1.code}-${cls2.code}  (${day.day} ${day.start}-${day.end})`).toString().replaceAll(",", " || ") %>
           </div>
     <% } %>
     <% if (timetable.aproxHourList.length == 0){

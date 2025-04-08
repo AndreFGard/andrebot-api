@@ -1,6 +1,6 @@
 import { CourseInfo } from "../api";
 
-const classes = (majorClasses: CourseInfo[]) =>
+const courses = (majorClasses: CourseInfo[]) =>
 {
     //<option value="<%= classItem.id %>"><%= classItem.name %> - <%= classItem.professor %></option>
 
@@ -17,4 +17,4 @@ const classes = (majorClasses: CourseInfo[]) =>
     );
 }
 
-export default classes;
+export default courses;

@@ -20,8 +20,8 @@ export class Timetable implements ITimetable {
     //the latest ending hour: 10
     endHour: Number;
 
-    constructor(classes: CourseInfo[], filterConflictless: (classes: CourseInfo[]) => CourseInfo[]){
-        let filteredDays = filterConflictless(classes)
+    constructor(courses: CourseInfo[], filterConflictless: (courses: CourseInfo[]) => CourseInfo[]){
+        let filteredDays = filterConflictless(courses)
                                     .map(c => c.days)
                                     .flat();
         
@@ -82,8 +82,8 @@ export class CourseTable {
     majorDict: majorDict;
     majors: string[];
     classListBymajor: Record<string, CourseInfo[]>;
-    _classesByCode: Record<string, Record<string, CourseInfo[]>>;
-    classesByID: Record<number, CourseInfo>
+    _coursesByCode: Record<string, Record<string, CourseInfo[]>>;
+    coursesByID: Record<number, CourseInfo>
     
     constructor(courses: majorDict){
         this.majorDict = courses;
@@ -94,15 +94,15 @@ export class CourseTable {
             this.classListBymajor[major] = Object.values(this.majorDict[major]).flat();
         });
         
-        this.classesByID = {}
-        this._classesByCode = {};
+        this.coursesByID = {}
+        this._coursesByCode = {};
         Object.entries(this.classListBymajor).forEach(([major, classList]) => {
-            this._classesByCode[major] = {};
+            this._coursesByCode[major] = {};
             classList.forEach(classSched => {
-                if (classSched.code in this._classesByCode[major]) this._classesByCode[major][classSched.code].push(classSched);
-                else this._classesByCode[major][classSched.code] = [classSched];
+                if (classSched.code in this._coursesByCode[major]) this._coursesByCode[major][classSched.code].push(classSched);
+                else this._coursesByCode[major][classSched.code] = [classSched];
 
-                this.classesByID[classSched.id] = classSched;
+                this.coursesByID[classSched.id] = classSched;
             });
 
         })
@@ -113,11 +113,11 @@ export class CourseTable {
     }
 
     getClassesByCode(major: string, code  : string){
-        return this._classesByCode.major.code || [];
+        return this._coursesByCode.major.code || [];
     }
 
     getClassByID(id: number){
-        return this.classesByID[id] || undefined;
+        return this.coursesByID[id] || undefined;
     }
 
     checkDayConflict(day1: ScheduleDay, day2: ScheduleDay){
@@ -131,8 +131,8 @@ export class CourseTable {
         return false;
     }
 
-    getConflictingDays(classes: CourseInfo[]){
-        let days = classes.map((classs) => {
+    getConflictingDays(courses: CourseInfo[]){
+        let days = courses.map((classs) => {
             return classs.days}).flat();
         days.sort((a,b) => {
             return (_weekdaysDict[a.day] < _weekdaysDict[b.day]) ? -1 : 1;
@@ -157,30 +157,30 @@ export class CourseTable {
     }
 
     //TODO - make it possible  to reuse previously detected conflicts rather than recalculating htem always
-    getConflictingClasses(classes: CourseInfo[]){
-        const failed_classes = this.getConflictingDays(classes).map(([d1, d2]) => {
+    getConflictingClasses(courses: CourseInfo[]){
+        const failed_courses = this.getConflictingDays(courses).map(([d1, d2]) => {
             return [this.getClassByID(d1.course_id), this.getClassByID(d2.course_id)];
         });
-        return failed_classes ;
+        return failed_courses ;
     }
 
-    blameConflictingClasses(classes: CourseInfo[]): [CourseInfo, CourseInfo, ScheduleDay][] {
-        const failed_blamed_truples = this.getConflictingDays(classes)
+    blameConflictingClasses(courses: CourseInfo[]): [CourseInfo, CourseInfo, ScheduleDay][] {
+        const failed_blamed_truples = this.getConflictingDays(courses)
                 .map(([d1, d2]) =>  [this.getClassByID(d1.course_id), this.getClassByID(d2.course_id), d1]);
         
         return failed_blamed_truples as [CourseInfo, CourseInfo, ScheduleDay][];
     }
 
-    filterConflictless(classes: CourseInfo[]){
-        const conflictsIds = GraduationServices.getConflictingClasses(classes).flat().map(clss => clss.id);
-        return classes.filter( clss => {
+    filterConflictless(courses: CourseInfo[]){
+        const conflictsIds = GraduationServices.getConflictingClasses(courses).flat().map(clss => clss.id);
+        return courses.filter( clss => {
             return (!conflictsIds.includes(clss.id));
         })
     }
 
     //arranges the timetable given that it's guaranteed that there are no conflicts
-    arrangeTimetable(classes: CourseInfo[]){
-        return new Timetable(classes, GraduationServices.filterConflictless);
+    arrangeTimetable(courses: CourseInfo[]){
+        return new Timetable(courses, GraduationServices.filterConflictless);
     }
 }
 
@@ -229,7 +229,7 @@ export class TimeTableService{
         }).filter((x) => x !== undefined);
 
         
-        //** all classes, including conflicting ones */
+        //** all courses, including conflicting ones */
         let currentlyChosenClasses = [...new Set(chosenClasses.concat(addedClasses))].filter(i=>i!==undefined);
         let conflictlessClasses: CourseInfo[] = GraduationServices.filterConflictless(currentlyChosenClasses);
         

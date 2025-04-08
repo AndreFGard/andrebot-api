@@ -8,7 +8,7 @@ interface TimetableEditorProps {
 
 const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, initialMajor }) => {
   const [major, setMajor] = useState(initialMajor);
-  const [classes, setClasses] = useState<number[]>([]);
+  const [courses, setClasses] = useState<number[]>([]);
   const [timetableHtml, setTimetableHtml] = useState<string>('');
   const [availableClasses, setAvailableClasses] = useState(allClasses);
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,22 +16,22 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
   const getmajor = () => major;
 
   function addClass(clss: number) {
-    const storedclasses = localStorage.getItem("classes") || "";
-    const old_classes = storedclasses ? storedclasses.split(",") : [];
+    const storedcourses = localStorage.getItem("courses") || "";
+    const old_courses = storedcourses ? storedcourses.split(",") : [];
 
     if (clss) {
-      const newClasses = [...new Set(old_classes.concat([String(clss)]))];
-      localStorage.setItem("classes", newClasses.toString());
+      const newClasses = [...new Set(old_courses.concat([String(clss)]))];
+      localStorage.setItem("courses", newClasses.toString());
       console.log("Class added");
       return newClasses.map(Number);
     }
-    else return old_classes.map(Number);
+    else return old_courses.map(Number);
   }
 
   function getClasses() {
-    const storedclasses = localStorage.getItem('classes') || "";
-    if (storedclasses) {
-      return storedclasses.split(',').filter(Boolean).map(Number);
+    const storedcourses = localStorage.getItem('courses') || "";
+    if (storedcourses) {
+      return storedcourses.split(',').filter(Boolean).map(Number);
     }
     else return [];
   }
@@ -41,7 +41,7 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
     console.log(`deleting id ${x} from ${storedClasses}`);
     const idx = storedClasses.indexOf(x);
     if (idx > -1) storedClasses.splice(idx, 1);
-    localStorage.setItem('classes', storedClasses.toString());
+    localStorage.setItem('courses', storedClasses.toString());
   }
 
   async function fetchTimetable(newClassId?: number) {
@@ -70,11 +70,11 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
   async function fetchClassesByProgram(major: string) {
     setMajor(major);
     try {
-      const response = await fetch(`http://localhost:3000/timetable/classes?major=${major}`);
+      const response = await fetch(`http://localhost:3000/timetable/courses?major=${major}`);
       const data = await response.json();
       setAvailableClasses(data);
     } catch (error) {
-      console.error("Failed to fetch classes:", error);
+      console.error("Failed to fetch courses:", error);
     }
   }
 
@@ -127,12 +127,12 @@ const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, i
         <div className="mb-3">
           <label htmlFor="class-select" className="form-label">Select Classes:</label>
 
-          {/* Search input for filtering classes */}
+          {/* Search input for filtering courses */}
           <input 
             type="text" 
             id="class-search" 
             className="form-control mb-2" 
-            placeholder="Search classes..." 
+            placeholder="Search courses..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

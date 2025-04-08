@@ -61,7 +61,7 @@ const Timetable: React.FC<TimetableRenderInfo> = ({
 
       {conflictIds.length > 0 && (
         <div className="alert alert-danger" role="alert">
-          There were conflicts between your classes! : {conflicts.map(([cls1, cls2, day]) => 
+          There were conflicts between your courses! : {conflicts.map(([cls1, cls2, day]) => 
             `${cls1.code}-${cls2.code} (${day.day} ${day.start}-${day.end})`).join(' || ')}
         </div>
       )}

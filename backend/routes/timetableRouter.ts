@@ -5,6 +5,6 @@ import { RenderTimeTable, RenderMainPage, renderClassList} from "../controllers/
 
 router.get('/timetableeditor', RenderMainPage)
 router.get('/timetable', RenderTimeTable)
-router.get('/classes', renderClassList)
+router.get('/courses', renderClassList)
 
 export default router;

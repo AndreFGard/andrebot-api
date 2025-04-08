@@ -49,7 +49,7 @@ export async function RenderTimeTable(req: Request, res: Response, next: NextFun
         
         const renderInfo: TimetableRenderInfo = await timetableService.renderTimetable(classIds, newClassIds)
         res.send(renderInfo);
-        //res.send({ classestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts})
+        //res.send({ coursestorender, currentlyChosenClasses, timetable, conflictsIDs, conflictDays, blamedConflicts})
     } catch (error) {
         next(error);
     }

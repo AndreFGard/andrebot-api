@@ -14,14 +14,14 @@ function App() {
   const [allClasses, setAllClasses] = useState<any[]>([]);
 
   useEffect(() => {
-    // Fetch initial classes for the default major (BCC)
+    // Fetch initial courses for the default major (BCC)
     const fetchInitialClasses = async () => {
       try {
-        const response = await fetch("http://localhost:3000/timetable/classes?major=CC");
+        const response = await fetch("http://localhost:3000/timetable/courses?major=CC");
         const data = await response.json();
         setAllClasses(data);
       } catch (error) {
-        console.error("Failed to fetch initial classes:", error);
+        console.error("Failed to fetch initial courses:", error);
       }
     };
     

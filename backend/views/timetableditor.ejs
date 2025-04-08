@@ -9,24 +9,24 @@
         const getmajor = () => document.getElementById('major-input').value;
 
         function addClass(clss){
-            const storedclasses = localStorage.getItem("classes") || "";
-            const old_classes = storedclasses ? storedclasses.split(",") : [];
+            const storedcourses = localStorage.getItem("courses") || "";
+            const old_courses = storedcourses ? storedcourses.split(",") : [];
 
             if (clss){
                 const newClasses = [...new Set(
-                                            old_classes.concat([String(clss)]))];
-                localStorage.setItem("classes", newClasses.toString());
+                                            old_courses.concat([String(clss)]))];
+                localStorage.setItem("courses", newClasses.toString());
                 console.log("eae");
                 return newClasses.map(Number);
             }
-            else return old_classes.map(Number);
+            else return old_courses.map(Number);
             
         }
 
         function getClasses(){
-            const storedclasses = localStorage.getItem('classes') || "";
-            if (storedclasses) {
-                return storedclasses.split(',').map(Number);
+            const storedcourses = localStorage.getItem('courses') || "";
+            if (storedcourses) {
+                return storedcourses.split(',').map(Number);
             }
             else return [];
         }
@@ -36,7 +36,7 @@
             console.log(`deleting id ${x} from ${storedClasses}`);
             const idx = storedClasses.indexOf(x);
             if (idx > -1) storedClasses.splice(idx, 1);
-            localStorage.setItem('classes', storedClasses.toString());
+            localStorage.setItem('courses', storedClasses.toString());
         }
 
 
@@ -56,15 +56,15 @@
             document.getElementById('class-select').value = 0; //reset it
         }
 
-        // Fetch classes when a major is selected
+        // Fetch courses when a major is selected
         async function fetchClassesByProgram(major) {
             document.getElementById('major-input').value = major;
-            const response = await fetch(`../timetable/classes?major=${major}`);
-            const classesHTML = await response.text();
-            document.getElementById('class-select-container').innerHTML = classesHTML;
+            const response = await fetch(`../timetable/courses?major=${major}`);
+            const coursesHTML = await response.text();
+            document.getElementById('class-select-container').innerHTML = coursesHTML;
         }
 
-        // Filter classes based on search input
+        // Filter courses based on search input
         function filterClasses() {
             const filterValue = document.getElementById('class-search').value.toLowerCase();
             const options = document.getElementById('class-select').options;
@@ -110,12 +110,12 @@
             <div class="mb-3">
                 <label for="class-select" class="form-label">Select Classes:</label>
 
-                <!-- Search input for filtering classes -->
-                <input type="text" id="class-search" class="form-control mb-2" placeholder="Search classes..." onkeyup="filterClasses()">
+                <!-- Search input for filtering courses -->
+                <input type="text" id="class-search" class="form-control mb-2" placeholder="Search courses..." onkeyup="filterClasses()">
 
                 <!-- Dynamic Class Selection Container -->
                 <div id="class-select-container">
-                    <!-- `classes.ejs` will load here based on selected major -->
+                    <!-- `courses.ejs` will load here based on selected major -->
                     <select id="class-select" class="form-select" multiple>
                         <% allClasses.forEach(classItem => { %>
                             <option value="<%= classItem.id %>"><%= classItem.name %> - <%= classItem.professor %></option>
