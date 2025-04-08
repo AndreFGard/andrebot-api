@@ -3,27 +3,30 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TimetableRenderInfo, fetchTimetable } from './api'
-import Timetable from './components/timetable'
+import TimetableEditor from './components/tiimetableeditor'
 
 function App() {
-  const [timetableData, setTimetableData] = useState<TimetableRenderInfo | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [majors, setMajors] = useState<Record<string, boolean>>({
+    CC: true,
+    EC: false,
+    SI: false
+  });
+  const [allClasses, setAllClasses] = useState<any[]>([]);
 
   useEffect(() => {
-    const loadTimetable = async () => {
+    // Fetch initial classes for the default major (BCC)
+    const fetchInitialClasses = async () => {
       try {
-        // You can change the IDs as needed
-        const data = await fetchTimetable([3,4,5,6,7,])
-        setTimetableData(data)
+        const response = await fetch("../timetable/classes?program=BCC");
+        const data = await response.json();
+        setAllClasses(data);
       } catch (error) {
-        console.error('Error fetching timetable:', error)
-      } finally {
-        setLoading(false)
+        console.error("Failed to fetch initial classes:", error);
       }
-    }
-
-    loadTimetable()
-  }, [])
+    };
+    
+    fetchInitialClasses();
+  }, []);
 
   return (
     <div className="App">
@@ -36,21 +39,15 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
         </div>
-        
-        {loading ? (
-          <p>Loading timetable...</p>
-        ) : timetableData ? (
-          <Timetable 
-            conflictlessClasses={timetableData.conflictlessClasses}
-            conflictIds={timetableData.conflictIds}
-            timetable={timetableData.timetable}
-            conflicts={timetableData.conflicts}
-            conflictlessIds={timetableData.conflictlessIds}
-          />
-        ) : (
-          <p>Failed to load timetable</p>
-        )}
       </header>
+      
+      <main>
+        <TimetableEditor 
+          majors={majors} 
+          allClasses={allClasses} 
+          initialMajor="BCC" 
+        />
+      </main>
     </div>
   )
 }

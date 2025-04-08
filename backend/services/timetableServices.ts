@@ -217,9 +217,8 @@ export class TimeTableService{
 
     }
 
-    async renderTimetable(chosenids: string[], addedClassIds: string[]){
-
-        //theoretically, these should be conflictless
+    //provides all the information necessary to render the timetable
+    async renderTimetable(chosenids: string[], addedClassIds: string[]): Promise<TimetableRenderInfo> {
         const chosenClasses = chosenids.map(ID => {
             return GraduationServices.getClassByID(Number(ID));
         });

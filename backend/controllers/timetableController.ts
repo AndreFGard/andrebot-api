@@ -28,13 +28,14 @@ export const RenderMainPage = (req: Request, res: Response) => {
         EC: major === "EC",
         SI: major === "SI"
     };
-    res.render('timetableditor', { allClasses, major, majors });
+    res.send({ allClasses, major, majors });
 };
 
 export const renderClassList = (req: Request, res: Response) => {
     const program = req.query.program as string;
     const programClasses = GraduationServices.classListBymajor[program] || [];
-    res.render('classes', { programClasses });
+    res.send({programClasses})
+    //res.render('classes', { programClasses });
 };
 
 export async function RenderTimeTable(req: Request, res: Response, next: NextFunction){
@@ -44,8 +45,7 @@ export async function RenderTimeTable(req: Request, res: Response, next: NextFun
         const classIds = [...new Set(String(req.query.SelectedClassIDs || "")
                             .split(","))];
         const newClassIds = [...new Set(String(req.query.NewSelectedClassIDs || "")
-                            .split(","))];
-
+                            .split(","))]
         
         const renderInfo: TimetableRenderInfo = await timetableService.renderTimetable(classIds, newClassIds)
         res.send(renderInfo);
