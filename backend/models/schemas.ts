@@ -43,3 +43,10 @@ interface TimetableRenderInfo {
 }
 
 export type {TimetableRenderInfo};
+
+export interface courseDisplayInfo{
+    name: string;
+    id: number;
+    professor: string;
+}
+export const majorList = ["CC", "EC", "SI", "outros"];

@@ -1,6 +1,6 @@
-import {TimetableRenderInfo} from './../../backend/models/schemas';
+import {TimetableRenderInfo, courseDisplayInfo, majorList} from './../../backend/models/schemas';
 
-export type {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo} from './../../backend/models/schemas';
+export type {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, courseDisplayInfo} from './../../backend/models/schemas';
 
 export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 
@@ -11,12 +11,8 @@ export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 
 };
 
-export interface courseDisplayInfo{
-    name: string;
-    id: number;
-    professor: string;
-}
-export const majorList = ['CC', 'EC', 'SI', "todos"];
+
+
 export const coursesplaceholder : Record<string, courseDisplayInfo[]> = {
     CC: [
         {
@@ -39,3 +35,5 @@ export const coursesplaceholder : Record<string, courseDisplayInfo[]> = {
     ],
     SI: [],
 };
+
+export {majorList};
