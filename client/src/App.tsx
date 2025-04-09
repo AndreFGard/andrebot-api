@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      <main className='max-w-full m-auto'>
+      <main className=''>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <TimetableEditor></TimetableEditor>
       </ThemeProvider>
