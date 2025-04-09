@@ -1,4 +1,3 @@
-import './App.css'
 import TimetableEditor from './components/tiimetableeditor'
 import { ThemeProvider } from "@/components/theme-provider"
 function App() {
