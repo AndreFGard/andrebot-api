@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/backend/index.ts",
+            "preLaunchTask": "npm: build - backend",
+            "outFiles": [
+                "${workspaceFolder}/backend/dist/**/*.js"
+            ],
+            "sourceMaps": true,
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/backend/dist/**/*.js",
+                "${workspaceFolder}/backend/**/*.ts"
+            ],
+            "cwd": "${workspaceFolder}/backend",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
