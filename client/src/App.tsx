@@ -9,22 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          <a href="https://vitejs.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-      </header>
-      
-      <main>
+      <main className='max-w-full m-auto'>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <TimetableEditor ></TimetableEditor>
+        <TimetableEditor></TimetableEditor>
       </ThemeProvider>
-        
+        \
       </main>
     </div>
   )

@@ -14,5 +14,28 @@ export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 export interface courseDisplayInfo{
     name: string;
     id: number;
-    professor?: string;
+    professor: string;
 }
+export const majorList = ['CC', 'EC', 'SI', "todos"];
+export const coursesplaceholder : Record<string, courseDisplayInfo[]> = {
+    CC: [
+        {
+            name: 'Algebra Linear',
+            id: 1,
+            professor: "Silvio"
+        },
+        {
+            name: 'Algoritmos',
+            id: 2,
+            professor: 'Gustavo',
+        },
+    ],
+    EC: [
+        {
+            name: 'Arquietura de Sistemas Operacionas e Computadores',
+            id: 2,
+            professor: 'Andson',
+        },
+    ],
+    SI: [],
+};
