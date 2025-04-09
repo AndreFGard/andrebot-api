@@ -1,179 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-interface TimetableEditorProps {
-  majors: Record<string, boolean>;
-  allClasses: any[];
-  initialMajor: string;
-}
+import ClassChooser from './classChooser';
+const TimetableEditor = () => {
+  
+  const [major,setmajor ] = React.useState("CC");
 
-const TimetableEditor: React.FC<TimetableEditorProps> = ({ majors, allClasses, initialMajor }) => {
-  const [major, setMajor] = useState(initialMajor);
-  const [courses, setClasses] = useState<number[]>([]);
-  const [timetableHtml, setTimetableHtml] = useState<string>('');
-  const [availableClasses, setAvailableClasses] = useState(allClasses);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [courses, setCourses] = React.useState([
+    {id: 0, name: "Alice Johnson"},
+    {id: 1, name: "Bob Williams"},
+    {id: 2, name: "Charlie Brown"},
+    {id: 3, name: "Diana Miller"},
+    {id: 4, name: "Ethan Davis"},
+    {id: 5, name: "Fiona Wilson"},
+    {id: 6, name: "George Garcia"},
+    {id: 7, name: "Hannah Rodriguez"},
+    {id: 8, name: "Isaac Martinez"},
+    {id: 9, name: "Jack Anderson"},
+    {id: 10, name: "Kelly Thomas"},
+    {id: 11, name: "Liam Jackson"},
+    {id: 12, name: "Mia White"},
+    {id: 13, name: "Noah Harris"},
+    {id: 14, name: "Olivia Martin"},
+    {id: 15, name: "Peter Thompson"},
+    {id: 16, name: "Quinn Lewis"},
+    {id: 17, name: "Ryan Clark"},
+    {id: 18, name: "Sophia Hall"},
+    {id: 19, name: "Tyler Young"}
+  ]);
 
-  const getmajor = () => major;
 
-  function addClass(clss: number) {
-    const storedcourses = localStorage.getItem("courses") || "";
-    const old_courses = storedcourses ? storedcourses.split(",") : [];
-
-    if (clss) {
-      const newClasses = [...new Set(old_courses.concat([String(clss)]))];
-      localStorage.setItem("courses", newClasses.toString());
-      console.log("Class added");
-      return newClasses.map(Number);
-    }
-    else return old_courses.map(Number);
+  const [newCourseId, setNewCourseId] = React.useState(-1);
+  function handleCourseAddition(value: number){
+    setNewCourseId(value);
+    console.log(value);
   }
-
-  function getClasses() {
-    const storedcourses = localStorage.getItem('courses') || "";
-    if (storedcourses) {
-      return storedcourses.split(',').filter(Boolean).map(Number);
-    }
-    else return [];
-  }
-
-  function deleteClass(x: number) {
-    let storedClasses = getClasses();
-    console.log(`deleting id ${x} from ${storedClasses}`);
-    const idx = storedClasses.indexOf(x);
-    if (idx > -1) storedClasses.splice(idx, 1);
-    localStorage.setItem('courses', storedClasses.toString());
-  }
-
-  async function fetchTimetable(newClassId?: number) {
-    const selectedClassIDs = getClasses() || [];
-    const newSelectedClassID = newClassId || 0;
-    
-    if (newSelectedClassID) {
-      addClass(newSelectedClassID);
-    }
-    
-    const majorValue = getmajor();
-    const major = majorValue; // Using major as major since radio buttons select major
-    
-    try {
-      const response = await fetch(`http://localhost:3000/timetable/timetable?SelectedClassIDs=${selectedClassIDs}&NewSelectedClassIDs=${[newSelectedClassID]}&major=${majorValue}&major=${major}`, {
-        method: 'GET'
-      });
-      const tableHTML = await response.text();
-      setTimetableHtml(tableHTML);
-      setClasses(getClasses());
-    } catch (error) {
-      console.error("Failed to fetch timetable:", error);
-    }
-  }
-
-  async function fetchClassesByProgram(major: string) {
-    setMajor(major);
-    try {
-      const response = await fetch(`http://localhost:3000/timetable/courses?major=${major}`);
-      const data = await response.json();
-      setAvailableClasses(data);
-    } catch (error) {
-      console.error("Failed to fetch courses:", error);
-    }
-  }
-
-  const filteredClasses = availableClasses.filter(classItem => 
-    classItem.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    classItem.professor.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  useEffect(() => {
-    fetchTimetable();
-  }, []);
-
   return (
-    <div className="container mt-4" style={{ maxWidth: "900px" }}>
-      <h1 className="my-4">Class Timetable Selector</h1>
-
-      {/* Program Selection Radio Buttons */}
-      <div className="mb-3">
-        <label className="form-label">Select Program:</label>
-        <div className="major-buttons">
-          {Object.entries(majors).map(([major, isChecked]) => (
-            <React.Fragment key={major}>
-              <input 
-                className="btn-check" 
-                type="radio" 
-                name="major" 
-                id={`${major}btn`} 
-                onClick={() => {
-                  setSearchTerm('');
-                  fetchClassesByProgram(major);
-                }}
-                value={major}
-                defaultChecked={isChecked}
-              />
-              <label className="btn btn-primary btn-lg btn-lg-custom" htmlFor={`${major}btn`}>
-                {major}
-              </label>
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-
-      {/* Form for Class Selection */}
-      <form onSubmit={(event) => {
-        event.preventDefault();
-        const selectElement = document.getElementById('class-select') as HTMLSelectElement;
-        fetchTimetable(Number(selectElement.value));
-        selectElement.value = ''; // Reset selection
-      }}>
-        <div className="mb-3">
-          <label htmlFor="class-select" className="form-label">Select Classes:</label>
-
-          {/* Search input for filtering courses */}
-          <input 
-            type="text" 
-            id="class-search" 
-            className="form-control mb-2" 
-            placeholder="Search courses..." 
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-
-          {/* Dynamic Class Selection Container */}
-          <div id="class-select-container">
-            <select id="class-select" className="form-select">
-              <option value="">Select a class</option>
-              {filteredClasses.map(classItem => (
-                <option key={classItem.id} value={classItem.id}>
-                  {classItem.name} - {classItem.professor}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="d-grid gap-2 d-md-inline-flex mt-2">
-          <button type="submit" className="btn btn-primary">Add class</button>
-          <button type="button" className="btn btn-primary" onClick={() => fetchTimetable()}>
-            Refresh Timetable
-          </button>
-          <button 
-            type="button" 
-            className="btn btn-danger" 
-            onClick={() => {
-              localStorage.clear();
-              fetchTimetable();
-            }}
-          >
-            Wipe Timetable
-          </button>
-        </div>
-      </form>
-
-      {/* Container for the Table */}
-      <div 
-        id="timetable-container" 
-        className="mt-4" 
-        dangerouslySetInnerHTML={{ __html: timetableHtml }}
-      />
-    </div>
+    <ClassChooser major={major} onMajorChange={setmajor} courses={courses} onNewCourseChange={handleCourseAddition} />
   );
 };
 

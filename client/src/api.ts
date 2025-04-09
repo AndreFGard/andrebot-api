@@ -10,3 +10,9 @@ export const fetchTimetable = async (SelectedClassIDs: number[]) => {
     return data;
 
 };
+
+export interface courseDisplayInfo{
+    name: string;
+    id: number;
+    professor?: string;
+}
