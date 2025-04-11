@@ -1,17 +1,14 @@
-import {fetchTimetable, TimetableRenderInfo} from './../../src/api';
+import {TimetableRenderInfo} from './../../src/api';
 
+interface TimetableProps{
+  renderinfo: TimetableRenderInfo;
+  onCourseToggle: (value: number) => void;
+  selectedCourseIds: Set<number>;
+}
 
-
-const Timetable: React.FC<TimetableRenderInfo> = ({
-  conflictlessClasses,
-  conflictIds,
-  timetable,
-  conflicts
-}) => {
-  const deleteClass = (id: number) => {
-    // Implementation for deleteClass function
-    console.log('Delete class with id:', id);
-  };
+const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selectedCourseIds}) => {
+  selectedCourseIds;
+  const { timetable, conflictlessClasses, conflicts, conflictIds } = renderinfo;
 
   return (
     <>
@@ -42,8 +39,7 @@ const Timetable: React.FC<TimetableRenderInfo> = ({
                     id={`classButton${idx}`} 
                     type="button" 
                     onClick={() => {
-                      deleteClass(classItem.id);
-                      fetchTimetable([2]);
+                      onCourseToggle(Number(classItem.id));
                     }}
                   >
                     Delete
@@ -87,8 +83,7 @@ const Timetable: React.FC<TimetableRenderInfo> = ({
           <tbody>
             {timetable.aproxHourList.map((hour, hourIdx) => (
               <tr key={hourIdx}>
-                <td className="small text-center">{hour}</td> {/* Display the hour slot */}
-                
+                <td className="small text-center">{hour}</td>
                 {['seg', 'ter', 'qua', 'qui', 'sex'].map((day, dayIdx) => {
                   const scheduleDay = timetable.table[day]?.[hour];
                   return (
