@@ -31,7 +31,7 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
       Object.entries(courses).map(([major, terms]) => [
         major,
         Object.fromEntries(
-          Object.entries(terms).filter(([term]) => selectedTerms.has(Number(term)))
+          Object.entries(terms).filter(([term]) =>(selectedTerms.has(Number(term)) || term == '-1'))
         ),
       ])
     );

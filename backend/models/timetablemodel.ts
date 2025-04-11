@@ -1,4 +1,4 @@
-import { CourseInfo, ScheduleDay, CourseDisplayInfo } from './schemas';
+import { CourseInfo, ScheduleDay, CourseDisplayInfo, majorList } from './schemas';
 import * as fs from 'fs';
 
 
@@ -34,6 +34,17 @@ Object.values(courses).forEach(major => {
         })
     })
 })
+
+const data = courses;
+
+Object.keys(data).filter(k => {return(!majorList.includes(k))})
+    .forEach(k=> {
+        if (!data["outros"]) data["outros"] = {'-1': []};
+        const subdata = Object.values(data[k]).flat();
+        data["outros"][-1] = data["outros"][-1].concat(subdata)
+        delete data[k];
+    }
+);
 
 export class timetableModel{
     readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
