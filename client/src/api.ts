@@ -50,9 +50,10 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
     SI: [],
 };
 
+
 export const getCourseDisplayInfoList = async () => {
     const response = await fetch(`${apiUrl}/getCourseDisplayInfoList`);
-    const data = await response.json() as Record<string, Record<number, CourseDisplayInfo[]>>;
+    const data = await response.json() as Record<string, Record<string, CourseDisplayInfo[]>>;
     return data;
 }
 

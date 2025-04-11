@@ -51,7 +51,8 @@ export class timetableModel{
 
                 return {[Number(term)]: convertedCourses};
             })
-            return {[major]: mjrCourses}
+            const assigned = Object.assign({}, ...mjrCourses);
+            return {[major]: assigned}
         });
 
         this.#courseDisplayInfoList = Object.assign({}, ...y);
