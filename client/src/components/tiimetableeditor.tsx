@@ -28,7 +28,6 @@ const TimetableEditor = () => {
       onNewCourseChange={handleCourseAddition}
       selectedCourseIds={selectedCourseIds}
      />
-    <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
 
   </>
   );
