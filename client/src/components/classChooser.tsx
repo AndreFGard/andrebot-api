@@ -125,9 +125,15 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNew
                           onSelect={() => onNewCourseChange(Number(course.id))}
                           className={(selectedCourseIds.has(course.id)) ? 'bg-muted' : ''}
                           >
-                        <span className="truncate">
-                          {course.name} - {course.professor}
-                        </span>
+                        <div className="flex justify-between items-center w-full">
+                          <div className="flex flex-col">
+                            <span className="font-semibold text-sm">{course.name}</span>
+                            <span className="text-xs text-muted-foreground">Prof: {course.professor}</span>
+                          </div>
+                          {selectedCourseIds.has(course.id) && 
+                            <Check className="h-4 w-4 text-primary ml-2 flex-shrink-0" />
+                          }
+                        </div>
                       </CommandItem>
                     ))}
                   </CommandGroup>
