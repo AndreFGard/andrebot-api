@@ -36,35 +36,34 @@ Object.values(courses).forEach(major => {
 })
 
 export class timetableModel{
-    readonly #courseDisplayInfoList: Record<string, CourseDisplayInfo[]> = {};
+    readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
 
     constructor(){
-        const x =
+
+        const y =
             Object.keys(courses).map((major) => {
-            const mjrCourses = Object.values(courses[major]).flat().map((course) => {
-                const x: CourseDisplayInfo ={
-                    name: course.name,
-                    id: course.id,
-                    professor: course.professor
-                }
-                if (x.id == -1){
-                    console.log(`MISSING ID in: ${x.name}`);
-                }
-                return x;
+            const mjrCourses = Object.entries(courses[major]).map(([term, courses]) => {
+                const convertedCourses = courses.map((crs) => ({
+                    name: crs.name,
+                    id: crs.id,
+                    professor: crs.professor
+                }));
+
+                return {[Number(term)]: convertedCourses};
             })
             return {[major]: mjrCourses}
         });
-        this.#courseDisplayInfoList = Object.assign({}, ...x);
-        
-        
 
+        this.#courseDisplayInfoList = Object.assign({}, ...y);
     }
+
+
     getCoursesbymajor(major: string): Record<number, CourseInfo[]>{
         return courses[major] as Record<number, CourseInfo[]>;
         
     }
 
-    getCourseDisplayInfoList():  Record<string, CourseDisplayInfo[]>{
+    getCourseDisplayInfoList(): Record<string, Record<number, CourseDisplayInfo[]>>{
         return this.#courseDisplayInfoList;
     }
 }

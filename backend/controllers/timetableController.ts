@@ -57,7 +57,7 @@ export async function RenderTimeTable(req: Request, res: Response, next: NextFun
 };
 
 
-export async function getCourseDisplayInfoList(req: Request, res: Response<Record<string, CourseDisplayInfo[]>>) {
-        const courseDisplayInfoList: Record<string, CourseDisplayInfo[]> = timetableService.getCourseDisplayInfoList();
+export async function getCourseDisplayInfoList(req: Request, res: Response< Record<string, Record<number, CourseDisplayInfo[]>>>) {
+        const courseDisplayInfoList = timetableService.getCourseDisplayInfoList();
         res.send(courseDisplayInfoList);
 }

@@ -1,7 +1,7 @@
-import {TimetableRenderInfo, CourseDisplayInfo, majorList} from './../../backend/models/schemas';
+import { TimetableRenderInfo, CourseDisplayInfo, majorList } from './../../backend/models/schemas';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/timetable';
-export type {CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, CourseDisplayInfo} from './../../backend/models/schemas';
+export type { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, CourseDisplayInfo } from './../../backend/models/schemas';
 
 export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 
@@ -14,34 +14,47 @@ export const fetchTimetable = async (SelectedClassIDs: number[]) => {
 
 
 
-export const coursesplaceholder : Record<string, CourseDisplayInfo[]> = {
-    CC: [
-        {
-            name: 'Algebra Linear',
-            id: 1,
-            professor: "Silvio"
-        },
-        {
-            name: 'Algoritmos',
-            id: 2,
+export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo[]>> = {
+    CC: {
+        1: [
+            {
+                name: 'Algebra Linear',
+                id: 1,
+                professor: "Silvio"
+            },
+            {
+                name: 'Algoritmos',
+                id: 2,
+                professor: 'Gustavo',
+            },
+        ],
+        2: [{
+            name: 'Desenvolvimento Paia',
+            id: 3,
             professor: 'Gustavo',
         },
-    ],
-    EC: [
-        {
-            name: 'Arquietura de Sistemas Operacionas e Computadores',
-            id: 2,
-            professor: 'Andson',
-        },
-    ],
+        ]
+    },
+    EC: {        
+        1: [{
+            name: 'Calculo 1',
+            id: 3,
+            professor: 'Andre',
+        }],
+        2: [{
+            name: 'Desenvolvimento Paia',
+            id: 3,
+            professor: 'Gustavo',
+        }]
+    },
     SI: [],
 };
 
 export const getCourseDisplayInfoList = async () => {
     const response = await fetch(`${apiUrl}/getCourseDisplayInfoList`);
-    const data = await response.json() as Record<string, CourseDisplayInfo[]>;
+    const data = await response.json() as Record<string, Record<number, CourseDisplayInfo[]>>;
     return data;
 }
 
 
-export {majorList};
+export { majorList };
