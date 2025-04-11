@@ -44,7 +44,7 @@ interface TimetableRenderInfo {
 
 export type {TimetableRenderInfo};
 
-export interface courseDisplayInfo{
+export interface CourseDisplayInfo{
     name: string;
     id: number;
     professor: string;

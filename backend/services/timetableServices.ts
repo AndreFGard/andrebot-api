@@ -254,5 +254,9 @@ export class TimeTableService{
         return renderInfo;      
     }
 
+    getCourseDisplayInfoList(){
+        return model.getCourseDisplayInfoList();
+    }
+
 
 }
