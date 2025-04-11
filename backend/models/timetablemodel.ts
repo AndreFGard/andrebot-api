@@ -1,4 +1,4 @@
-import { CourseInfo, ScheduleDay } from './schemas';
+import { CourseInfo, ScheduleDay, CourseDisplayInfo } from './schemas';
 import * as fs from 'fs';
 
 
@@ -36,8 +36,32 @@ Object.values(courses).forEach(major => {
 })
 
 export class timetableModel{
-    constructor(){}
+    readonly #courseDisplayInfoList: Record<string, CourseDisplayInfo[]> = {};
+
+    constructor(){
+        const x =
+            Object.keys(courses).map((major) => {
+            const mjrCourses = Object.values(courses[major]).flat().map((course) => {
+                const x: CourseDisplayInfo ={
+                    name: course.name,
+                    id: course.id,
+                    professor: course.professor
+                }
+                return x;
+            })
+            return {[major]: mjrCourses}
+        });
+        this.#courseDisplayInfoList = Object.assign({}, ...x);
+        
+        
+
+    }
     getCoursesbymajor(major: string): Record<number, CourseInfo[]>{
         return courses[major] as Record<number, CourseInfo[]>;
+        
+    }
+
+    getCourseDisplayInfoList():  Record<string, CourseDisplayInfo[]>{
+        return this.#courseDisplayInfoList;
     }
 }

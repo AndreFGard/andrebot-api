@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import ClassChooser from './classChooser';
-import {coursesplaceholder} from '../api';
 const TimetableEditor = () => {
   
   const [major,setmajor ] = React.useState("CC");
-
-  const [courses, setCourses] = React.useState(coursesplaceholder);
-
-
   const [newCourseId, setNewCourseId] = React.useState(-1);
+  const [selectedCourseIds, setSelectedCourseIds] = React.useState<number[]>([]);
+
   function handleCourseAddition(value: number){
     setNewCourseId(value);
     console.log(value);
   }
   return (
-    <ClassChooser major={major} onMajorChange={setmajor} courses={courses} onNewCourseChange={handleCourseAddition} />
+    <ClassChooser major={major} onMajorChange={setmajor}
+      onNewCourseChange={handleCourseAddition}
+      selectedCourseIds={selectedCourseIds}
+     />
   );
 };
 
