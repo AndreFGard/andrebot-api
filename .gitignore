@@ -132,3 +132,4 @@ dist
 .spacenode_module*
 node_modules
 node_modules.old
+backend/courses.json
