@@ -64,7 +64,6 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNew
                     {courses[mjr].map((course) => (
                       <CommandItem key={course.id} onSelect={() => onNewCourseChange(Number(course.id))}>
                         <span className="truncate">
-                          
                           {course.name} - {course.professor}
                         </span>
                       </CommandItem>

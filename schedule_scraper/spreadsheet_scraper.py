@@ -82,7 +82,7 @@ rows : list[bs4.Tag] = list(soup.find_all('tr')[1:])
 
 
 class CourseInfo(CourseInterface):
-    def __init__(self, col_contents: list[str], id=-1, term=-1, optional=False, first_value_disqualifier="Órgão"):
+    def __init__(self, col_contents: list[str], id:int, term=-1, optional=False, first_value_disqualifier="Órgão"):
         try:
             major = col_contents[0]
             if first_value_disqualifier in major:
@@ -108,7 +108,7 @@ class CourseInfo(CourseInterface):
         return f"{self.major}-{self.code}-{self.name}: {self.professor}"
 
 class OptionalCourseInfo(CourseInfo):
-    def __init__(self, col_contents: list[str], id=-1):
+    def __init__(self, col_contents: list[str], id:int):
         try:
             term = int(col_contents[1])
         except:
@@ -247,6 +247,6 @@ coursesByMajorAndTerm = {maj:dumpCoursesByTerm(coursesByMajor[maj]) for maj in c
 #dump into json
 
 import json
-with open("courses2.json", "w", encoding="utf-8") as f:
+with open("../backend/courses.json", "w", encoding="utf-8") as f:
     json.dump(coursesByMajorAndTerm, f, ensure_ascii=False, indent=4)
 

@@ -47,6 +47,9 @@ export class timetableModel{
                     id: course.id,
                     professor: course.professor
                 }
+                if (x.id == -1){
+                    console.log(`MISSING ID in: ${x.name}`);
+                }
                 return x;
             })
             return {[major]: mjrCourses}
