@@ -14,12 +14,11 @@ interface ClassChooserProps {
   major: string;
   onMajorChange: (value: string) => void;
   onNewCourseChange: (value: number) => void;
-  selectedCourseIds: number[];
+  selectedCourseIds: Set<number>;
 }
 
 import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
-import { stringify } from 'querystring';
 
 
 const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNewCourseChange, selectedCourseIds }: ClassChooserProps) => {
@@ -81,7 +80,11 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNew
                   <CommandEmpty>No results found.</CommandEmpty>
                   <CommandGroup>
                     {Object.values(filteredCourses[mjr]).flat().map((course) => (
-                      <CommandItem key={course.id} onSelect={() => onNewCourseChange(Number(course.id))}>
+                      <CommandItem 
+                          key={course.id} 
+                          onSelect={() => onNewCourseChange(Number(course.id))}
+                          className={(selectedCourseIds.has(course.id)) ? 'bg-muted' : ''}
+                          >
                         <span className="truncate">
                           {course.name} - {course.professor}
                         </span>

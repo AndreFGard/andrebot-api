@@ -57,4 +57,37 @@ export const getCourseDisplayInfoList = async () => {
 }
 
 
-export { majorList };
+export {majorList};
+
+//*Manages the list of selected course ids */
+export class CourseSelectionManager{
+    selectedCourseIds: Set<number> = new Set();
+    queue = new Set<number>();
+    constructor(selectIds?: number[] | Set<number>) {
+        if (selectIds) {
+            this.selectedCourseIds = new Set(selectIds);
+        }
+
+    }
+
+    toggle(courseId:number, ): boolean {
+        const which: Set<number> = this.selectedCourseIds;
+        if (which.has(courseId)) {
+            which.delete(courseId);
+            return false;
+        } else {
+            which.add(courseId);
+            return true;
+        }
+    }
+    isin(courseId:number): boolean {
+        return this.selectedCourseIds.has(courseId);
+    }
+    getSelectedCourseIds(): Set<number> {
+        return (this.selectedCourseIds);
+    }
+    setSelectedCourseIds(courseIds: number[]) {
+        this.selectedCourseIds = new Set(courseIds);
+    }
+
+}
