@@ -1,4 +1,4 @@
-import { TimetableRenderInfo, CourseDisplayInfo, majorList } from './../../backend/models/schemas';
+import { TimetableRenderInfo, CourseDisplayInfo, majorList, ITimetable } from './../../backend/models/schemas';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/timetable';
 export type { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, CourseDisplayInfo } from './../../backend/models/schemas';
@@ -84,11 +84,27 @@ export class CourseSelectionManager{
     isin(courseId:number): boolean {
         return this.selectedCourseIds.has(courseId);
     }
+
+    //* VERY IMPORTANT TO RETURN A NEW SET
     getSelectedCourseIds(): Set<number> {
-        return (this.selectedCourseIds);
+        return new Set(this.selectedCourseIds);
     }
     setSelectedCourseIds(courseIds: number[]) {
         this.selectedCourseIds = new Set(courseIds);
     }
 
 }
+
+
+export const initialTimetable: TimetableRenderInfo = ({
+    timetable: {
+        table: {},
+        aproxHourList: [],
+        startHour: 7,
+        endHour: 17
+    } as ITimetable,
+    conflictlessClasses: [],
+    conflicts: [],
+    conflictIds: [],
+    conflictlessIds: []
+});
