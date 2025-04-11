@@ -1,14 +1,17 @@
 import React, { useEffect} from 'react';
 
 import ClassChooser from './classChooser';
-import { CourseSelectionManager } from '@/api';
+import { CourseSelectionManager, fetchTimetable, TimetableRenderInfo, initialTimetable} from '@/api';
+import Timetable from './timetable';
 const TimetableEditor = () => {
   
   const [major,setmajor ] = React.useState("CC");
-  const [newCourseId, setNewCourseId] = React.useState(-1);
+ // const [newCourseId, setNewCourseId] = React.useState(-1);
   const [selectedCourseIds, setSelectedCourseIds] = React.useState<Set<number>>(new Set());
 
   const [courseManager, setCourseManager] = React.useState<CourseSelectionManager>(new CourseSelectionManager) ;
+  const [timetableRenderInfo, setTimetableRenderInfo] = React.useState<TimetableRenderInfo>(initialTimetable);
+
 
   useEffect(() => {
       const manager = new CourseSelectionManager();
@@ -16,19 +19,31 @@ const TimetableEditor = () => {
   }, []);
 
   function handleCourseAddition(value: number){
-    setNewCourseId(value);
-    console.log(value);
+    //setNewCourseId(value);
+    
     courseManager.toggle(value);
+    console.log(`toggling ${value}: ${Array.from(courseManager.getSelectedCourseIds())}`);
     setSelectedCourseIds(courseManager.getSelectedCourseIds())
   }
+
+  useEffect(() => { 
+    fetchTimetable(Array.from(selectedCourseIds.values())).then((data: TimetableRenderInfo) => {
+      setTimetableRenderInfo(data);
+    }).
+    catch((e: Error) => {
+        console.log("error fetching timetable data", e)
+    });
+  }, [selectedCourseIds])
+
 
   return (
     <>
     <ClassChooser major={major} onMajorChange={setmajor}
-      onNewCourseChange={handleCourseAddition}
+      onCourseToggle={handleCourseAddition}
       selectedCourseIds={selectedCourseIds}
      />
     <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
+    <Timetable renderinfo={timetableRenderInfo} onCourseToggle={handleCourseAddition} selectedCourseIds={selectedCourseIds}/>
 
   </>
   );

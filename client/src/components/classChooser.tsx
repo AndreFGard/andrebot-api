@@ -9,11 +9,10 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import {Check} from "lucide-react";
 interface ClassChooserProps {
   major: string;
   onMajorChange: (value: string) => void;
-  onNewCourseChange: (value: number) => void;
+  onCourseToggle: (value: number) => void;
   selectedCourseIds: Set<number>;
 }
 
@@ -21,7 +20,7 @@ import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
 
 
-const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNewCourseChange, selectedCourseIds }: ClassChooserProps) => {
+const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, selectedCourseIds }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
 
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
@@ -82,7 +81,7 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onNew
                     {Object.values(filteredCourses[mjr]).flat().map((course) => (
                       <CommandItem 
                           key={course.id} 
-                          onSelect={() => onNewCourseChange(Number(course.id))}
+                          onSelect={() => onCourseToggle(Number(course.id))}
                           className={(selectedCourseIds.has(course.id)) ? 'bg-muted' : ''}
                           >
                         <span className="truncate">
