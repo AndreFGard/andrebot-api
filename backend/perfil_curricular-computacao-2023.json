@@ -1,0 +1,14 @@
+{
+  "prerequisites": {
+    "Math 101": [],
+    "Math 102": ["Math 101"],
+    "CS 101": ["Math 101"],
+    "CS 102": ["CS 101"],
+    "CS 201": ["CS 102", "Math 102"],
+    "CS 202": ["CS 201"],
+    "CS 301": ["CS 202"]
+  },
+  "completed_courses": ["CS 201", "Math 102"],
+  "major": "Computer Science",
+  "curriculumVersion": "2023"
+}
