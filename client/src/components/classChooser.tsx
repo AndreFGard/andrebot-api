@@ -80,7 +80,6 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
   return (
     <>
       <div className='w-full max-w-full truncate overflow-x-hidden'>
-        <h2 className='text-2xl font-bold mb-4 text-left'>Choose your major</h2>
         <Tabs
           defaultValue={major}
           className="flex w-full"
@@ -96,7 +95,6 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
           
           {/* Term selection dropdown */}
           <div className="my-4">
-            <h3 className='text-xl font-bold mb-2 text-left'>Select Term</h3>
             <Select onValueChange={handleTermChange} defaultValue="1">
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select a term" />
