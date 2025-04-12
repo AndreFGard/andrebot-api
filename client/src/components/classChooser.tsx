@@ -9,13 +9,6 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import {Check} from "lucide-react";
 interface ClassChooserProps {
@@ -27,28 +20,13 @@ interface ClassChooserProps {
 
 import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
+import TermChooser from './majorChooser';
 
 
 const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, selectedCourseIds }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
-
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
-  
-  // Derive available terms dynamically from course data
-  const availableTerms = React.useMemo(() => {
-    const terms = new Set<number>();
-    Object.values(courses).forEach((majorTerms) => {
-      Object.keys(majorTerms).forEach((term) => {
-        terms.add(Number(term));
-      });
-    });
-    return Array.from(terms).sort((a, b) => a - b);  // Sort terms in ascending order
-  }, [courses]);
-  
-  const handleTermChange = (term: string) => {
-    setSelectedTerms(new Set([Number(term)]));
-  };
-  
+
   //filtered by term
   const filteredCourses:  Record<string, Record<number, CourseDisplayInfo[]>> =
     Object.fromEntries(
@@ -93,21 +71,7 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
             ))}
           </TabsList>
           
-          {/* Term selection dropdown */}
-          <div className="my-4">
-            <Select onValueChange={handleTermChange} defaultValue="1">
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a term" />
-              </SelectTrigger>
-              <SelectContent>
-                {availableTerms.map((term) => (
-                  <SelectItem key={term} value={term.toString()}>
-                    Term {term}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+          <TermChooser terms={new Set([1,2,3,4,5,6,7,8,9])} selectedTerms={selectedTerms} setSelectedTerms={setSelectedTerms}></TermChooser>
           
           {Object.keys(filteredCourses).map((mjr) => (
 
