@@ -1,29 +1,5 @@
 import {TimetableRenderInfo} from './../../src/api';
 
-// Function to convert any color to a pastel version
-function getPastelColor(hexColor: string): string {
-  // Pastel color palette
-  const pastelColors = [
-    '#FFD6D6', // pastel red
-    '#D6FFDD', // pastel green
-    '#D6EEFF', // pastel blue
-    '#FFE9D6', // pastel orange
-    '#E8D6FF', // pastel purple
-    '#FFFBD6', // pastel yellow
-    '#FFD6F1', // pastel pink
-    '#D6FFEC', // pastel teal
-    '#D6D6FF', // pastel indigo
-    '#F2FFD6'  // pastel lime
-  ];
-  
-  // Hash the input color to get a consistent pastel color
-  const hash = hexColor.split('').reduce((acc, char) => {
-    return acc + char.charCodeAt(0);
-  }, 0);
-  
-  return pastelColors[hash % pastelColors.length];
-}
-
 interface TimetableProps{
   renderinfo: TimetableRenderInfo;
   onCourseToggle: (value: number) => void;
@@ -117,17 +93,17 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
                     >
                       {scheduleDay && (
                         <div
-                          className="absolute inset-1.5 rounded-md overflow-hidden shadow-sm transition-all duration-150 hover:shadow-md" /* Changed inset-0.5 to inset-1 */
+                          className="absolute inset-1.5 rounded-md overflow-hidden shadow-sm transition-all duration-150 hover:shadow-md"
                           style={{
-                            backgroundColor: getPastelColor(scheduleDay.colorCode || '#e8f0fe'),
+                            backgroundColor: scheduleDay.colorCode,
                             opacity: 0.7
                           }}
                         >
                           <div className="p-1.5 h-full flex flex-col justify-center">
-                            <div className="text-[10px] font-semibold text-gray-800 mb-0.5 truncate"> {/* Changed text color to gray-800 */}
+                            <div className="text-[10px] font-semibold text-gray-800 mb-0.5 truncate"> {}
                               {scheduleDay.start}-{scheduleDay.end}
                             </div>
-                            <div className="text-xs font-semibold text-gray-900 capitalize leading-tight truncate"> {/* Changed text color to gray-900 */}
+                            <div className="text-xs font-semibold text-gray-900 capitalize leading-tight truncate"> {}
                               {scheduleDay.className.toLowerCase()}
                             </div>
                           </div>
