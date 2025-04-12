@@ -71,7 +71,6 @@ class ToposortModel {
             const completedCoursesDegree = {} as Record<string, number>;
             const validCompletedCourses = new Set();
 
-            // Inicializando os cursos completados com o grau de pré-requisitos
             for (const course of completed) {
                 completedCoursesDegree[course] = this.curriculumDAG.coursesAndDegree[course] || 0;
                 if (completedCoursesDegree[course] === 0) {
@@ -79,7 +78,6 @@ class ToposortModel {
                 }
             }
 
-            // Processando cursos com pré-requisitos resolvidos
             while (validCompletedCourses.size > 0) {
                 const course = validCompletedCourses.values().next().value;
                 validCompletedCourses.delete(course);
@@ -135,6 +133,7 @@ class ToposortModel {
                     ([course, prereqs]) => `${course}: ${prereqs.join(', ')}`
                 );
                 console.log("Missing courses:", missingCoursesList);
+                throw new Error(`Missing prerequisites: ${missingCoursesList.join(', ')}`);
             }
 
             for (const [course, prereqs] of this.curriculumDAG.prerequisites.entries()) {
