@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-//import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Command,
@@ -29,15 +28,18 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
 
   //filtered by term
+
+  console.log(`filtering by terms ${Array.from(selectedTerms)} and major ${major} with major == majorList.at(-1) = ${major == majorList.at(-1)}`);
   const filteredCourses:  Record<string, Record<number, CourseDisplayInfo[]>> =
     Object.fromEntries(
-      Object.entries(courses).map(([major, terms]) => [
-        major,
+      Object.entries(courses).map(([coursemajor, terms]) => [
+        coursemajor,
         Object.fromEntries(
-          Object.entries(terms).filter(([term]) =>(selectedTerms.has(Number(term)) || term == '-1'))
+          Object.entries(terms).filter(([term]) =>(selectedTerms.has(Number(term)) || selectedTerms.has(-1)))
         ),
       ])
     );
+    console.log(`filtering term {Array.from(selectedTerms)}`);
 
 
   //const filteredCourses = Object.entries(courses).filter(([majcourse]) => { return selectedTerms.includes(course.term); }
