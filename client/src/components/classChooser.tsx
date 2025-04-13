@@ -13,6 +13,7 @@ import {
 import {Check} from "lucide-react";
 interface ClassChooserProps {
   major: string;
+  useMajorChooser?: boolean;
   onMajorChange: (value: string) => void;
   onCourseToggle: (value: number) => void;
   selectedCourseIds: Set<number>;
@@ -23,7 +24,7 @@ import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
 import TermChooser from './termChooser';
 
 
-const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, selectedCourseIds }: ClassChooserProps) => {
+const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, useMajorChooser, selectedCourseIds }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
 
@@ -58,19 +59,18 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
   return (
     <>
       <div className='w-full max-w-full truncate overflow-x-hidden'>
-        <Tabs
-          defaultValue={major}
-          className="flex w-full"
-          onValueChange={(value) => {
-            onMajorChange(value);
-          }}
-        >
-          <TabsList className='w-full h-12'>
-            {majorList.map((major) => (
-              <TabsTrigger key={major} value={major} className="flex-grow text-xl font-bold">{major}</TabsTrigger>
-            ))}
-          </TabsList>
-          
+          {/* Wrapping Tabs component */}
+          <Tabs defaultValue={major} className="w-full">
+            {/* Add MajorChooser if useMajorChooser is true */}
+            {useMajorChooser && (
+              <TabsList className='w-full h-12'>
+                {majorList.map((mjr) => (
+                  <TabsTrigger key={mjr} value={mjr} className="flex-grow text-xl font-bold" onClick={() => onMajorChange(mjr)}>
+                    {mjr}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            )}
           <TermChooser terms={new Set([1,2,3,4,5,6,7,8,9])} selectedTerms={selectedTerms} setSelectedTerms={setSelectedTerms}></TermChooser>
           
           {Object.keys(filteredCourses).map((mjr) => (
