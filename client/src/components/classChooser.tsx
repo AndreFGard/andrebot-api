@@ -20,7 +20,7 @@ interface ClassChooserProps {
 
 import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
-import TermChooser from './majorChooser';
+import TermChooser from './termChooser';
 
 
 const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, selectedCourseIds }: ClassChooserProps) => {
