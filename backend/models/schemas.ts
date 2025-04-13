@@ -49,4 +49,5 @@ export interface CourseDisplayInfo{
     id: number;
     professor: string;
 }
+//MUST be kept stable because they are matched against the database names
 export const majorList = ["CC", "EC", "SI", "outros"];
