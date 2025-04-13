@@ -49,5 +49,15 @@ export interface CourseDisplayInfo{
     id: number;
     professor: string;
 }
+
+
+export interface CurriculumDAG {
+    prerequisites: Map<string, string[]>;
+    coursesAndDegree: Record<string, number>;
+    courseList: string[]; 
+    completed_courses: string[];
+    major: string;
+    curriculumVersion: string;
+}
 //MUST be kept stable because they are matched against the database names
 export const majorList = ["CC", "EC", "SI", "outros"];

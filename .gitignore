@@ -133,3 +133,5 @@ dist
 node_modules
 node_modules.old
 backend/courses.json
+package-lock.json
+.vscode/tsconfig.json
