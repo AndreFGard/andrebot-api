@@ -19,6 +19,7 @@ function App() {
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
         <div >
+          <CourseHistory></CourseHistory>
         </div>
   
         <hr style={{marginTop: 200}}></hr>
