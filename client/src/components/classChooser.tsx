@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-//import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Command,
@@ -9,17 +8,11 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import {Check} from "lucide-react";
 interface ClassChooserProps {
   major: string;
+  useMajorChooser?: boolean;
   onMajorChange: (value: string) => void;
   onCourseToggle: (value: number) => void;
   selectedCourseIds: Set<number>;
@@ -27,38 +20,25 @@ interface ClassChooserProps {
 
 import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
+import TermChooser from './termChooser';
 
 
-const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, selectedCourseIds }: ClassChooserProps) => {
+const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, useMajorChooser, selectedCourseIds }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
-
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
-  
-  // Derive available terms dynamically from course data
-  const availableTerms = React.useMemo(() => {
-    const terms = new Set<number>();
-    Object.values(courses).forEach((majorTerms) => {
-      Object.keys(majorTerms).forEach((term) => {
-        terms.add(Number(term));
-      });
-    });
-    return Array.from(terms).sort((a, b) => a - b);  // Sort terms in ascending order
-  }, [courses]);
-  
-  const handleTermChange = (term: string) => {
-    setSelectedTerms(new Set([Number(term)]));
-  };
-  
+
   //filtered by term
+
   const filteredCourses:  Record<string, Record<number, CourseDisplayInfo[]>> =
     Object.fromEntries(
-      Object.entries(courses).map(([major, terms]) => [
-        major,
+      Object.entries(courses).map(([coursemajor, terms]) => [
+        coursemajor,
         Object.fromEntries(
-          Object.entries(terms).filter(([term]) =>(selectedTerms.has(Number(term)) || term == '-1'))
+          Object.entries(terms).filter(([term]) =>(selectedTerms.has(Number(term)) || selectedTerms.has(-1)))
         ),
       ])
     );
+    console.log(`filtering term {Array.from(selectedTerms)}`);
 
 
   //const filteredCourses = Object.entries(courses).filter(([majcourse]) => { return selectedTerms.includes(course.term); }
@@ -80,36 +60,19 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
   return (
     <>
       <div className='w-full max-w-full truncate overflow-x-hidden'>
-        <h2 className='text-2xl font-bold mb-4 text-left'>Choose your major</h2>
-        <Tabs
-          defaultValue={major}
-          className="flex w-full"
-          onValueChange={(value) => {
-            onMajorChange(value);
-          }}
-        >
-          <TabsList className='w-full h-12'>
-            {majorList.map((major) => (
-              <TabsTrigger key={major} value={major} className="flex-grow text-xl font-bold">{major}</TabsTrigger>
-            ))}
-          </TabsList>
-          
-          {/* Term selection dropdown */}
-          <div className="my-4">
-            <h3 className='text-xl font-bold mb-2 text-left'>Select Term</h3>
-            <Select onValueChange={handleTermChange} defaultValue="1">
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a term" />
-              </SelectTrigger>
-              <SelectContent>
-                {availableTerms.map((term) => (
-                  <SelectItem key={term} value={term.toString()}>
-                    Term {term}
-                  </SelectItem>
+          {/* Wrapping Tabs component */}
+          <Tabs defaultValue={major} className="w-full">
+            {/* Add MajorChooser if useMajorChooser is true */}
+            {useMajorChooser && (
+              <TabsList className='w-full h-12'>
+                {majorList.map((mjr) => (
+                  <TabsTrigger key={mjr} value={mjr} className="flex-grow text-xl font-bold" onClick={() => onMajorChange(mjr)}>
+                    {mjr}
+                  </TabsTrigger>
                 ))}
-              </SelectContent>
-            </Select>
-          </div>
+              </TabsList>
+            )}
+          <TermChooser terms={new Set([1,2,3,4,5,6,7,8,9])} selectedTerms={selectedTerms} setSelectedTerms={setSelectedTerms}></TermChooser>
           
           {Object.keys(filteredCourses).map((mjr) => (
 
