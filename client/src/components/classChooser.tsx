@@ -29,7 +29,6 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
 
   //filtered by term
 
-  console.log(`filtering by terms ${Array.from(selectedTerms)} and major ${major} with major == majorList.at(-1) = ${major == majorList.at(-1)}`);
   const filteredCourses:  Record<string, Record<number, CourseDisplayInfo[]>> =
     Object.fromEntries(
       Object.entries(courses).map(([coursemajor, terms]) => [
