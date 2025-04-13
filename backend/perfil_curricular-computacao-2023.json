@@ -8,7 +8,7 @@
     "CS 202": ["CS 201"],
     "CS 301": ["CS 202"]
   },
-  "completed_courses": ["CS 201", "Math 102"],
+  "completed_courses": ["CS 301", "CS 201"],
   "major": "Computer Science",
   "curriculumVersion": "2023"
 }
