@@ -1,79 +1,141 @@
-import React, { useEffect} from 'react';
-
-import ClassChooser from './classChooser';
-import { CourseSelectionManager, fetchTimetable, TimetableRenderInfo, initialTimetable} from '@/api';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import MajorChooser from './majorChooser';
-import TermChooser from './termChooser';
-
+import React, { useEffect, useState } from 'react';
+import { CourseDisplayInfo } from '@/api';
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { coursesplaceholder } from '@/api';
+import MajorChooser from './majorChooser';
+import { useCourseSelection } from '@/hooks/useCourseSelection';
+
+import PeriodCard from './PeriodCard';
+import VisualizationTab from './VisualizationTab';
 
 const CourseHistory = () => {
-  const terms = new Set([1,2,3,4,5,6,7,8]);
-  const [major,setmajor ] = React.useState("CC");
- // const [newCourseId, setNewCourseId] = React.useState(-1);
-  const [selectedCourseIds, setSelectedCourseIds] = React.useState<Set<number>>(new Set());
+  const [major, setMajor] = React.useState("CC");
+  const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
+  
+  const { 
+    selectedCourseIds, 
+    toggleCourse, 
+    addCoursesByTerm, 
+    getCoursesForPeriod 
+  } = useCourseSelection();
 
-  const [courseManager, setCourseManager] = React.useState<CourseSelectionManager>(new CourseSelectionManager) ;
-
+  // Prevent automatic scroll on page load
   useEffect(() => {
-      const manager = new CourseSelectionManager();
-      setCourseManager(manager);
+    window.scrollTo(0, 0);
   }, []);
 
-  function handleCourseAddition(value: number){
-    //setNewCourseId(value);
-    
-    courseManager.toggle(value);
-    console.log(`toggling ${value}: ${Array.from(courseManager.getSelectedCourseIds())}`);
-    setSelectedCourseIds(courseManager.getSelectedCourseIds())
-  }
+  // Get all periods for the selected major
+  const allPeriods = React.useMemo(() => {
+    if (coursesplaceholder[major]) {
+      return Array.from(new Set(Object.keys(coursesplaceholder[major]).map(Number))).sort((a, b) => a - b);
+    }
+    return [];
+  }, [major]);
+  
+  // Track expanded/collapsed state of each period
+  const [expandedPeriods, setExpandedPeriods] = useState<Record<number, boolean>>(() => {
+    const initialState: Record<number, boolean> = {};
+    if (allPeriods.length > 0) {
+      initialState[allPeriods[0]] = true; // Expand the first period by default
+    }
+    return initialState;
+  });
 
-  //todo substitute by actual courses, using createContext
-  function batchAddCoursesByTerm(term: number){
-    coursesplaceholder[major][term].forEach((course) => {
-      //make sure it's only enabling
-      if (!courseManager.isin(course.id)) courseManager.toggle(course.id);
+  // Update expanded state when major changes
+  useEffect(() => {
+    setExpandedPeriods(prev => {
+      const newState: Record<number, boolean> = {};
+      if (allPeriods.length > 0) {
+        newState[allPeriods[0]] = prev[allPeriods[0]] ?? true;
+        allPeriods.slice(1).forEach(p => {
+          newState[p] = prev[p] ?? false;
+        });
+      }
+      return newState;
     });
-    setSelectedCourseIds(courseManager.getSelectedCourseIds()); 
-  }
+  }, [allPeriods]);
+  
+  // Toggle period expansion
+  const togglePeriod = (period: number) => {
+    setExpandedPeriods(prev => ({
+      ...prev,
+      [period]: !prev[period]
+    }));
+  };
 
-  //term chooser
-  const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
+  // Wrapper functions that include major
+  const handleCourseToggle = (courseId: number) => toggleCourse(courseId);
+  const handleAddAllFromTerm = (term: number) => addCoursesByTerm(major, term);
+  const getCoursesForPeriodWithMajor = (period: number) => getCoursesForPeriod(major, period);
+
   return (
     <>
-    <h3>What major are you studying?</h3>
-    <MajorChooser major={major} onMajorChange={setmajor} />
-    <Card className='w-full '>
-      <CardContent className='py-3 grid grid-cols-1 md:grid-cols-2 gap-2'>
-        <div className='outline rounded-md px-1.5'>
-          <ClassChooser major={major} onMajorChange={setmajor}
-          onCourseToggle={handleCourseAddition}
-          selectedCourseIds={selectedCourseIds}
-          />
-        </div>
-        <div className='outline rounded-md px-1.5'>
-        <TermChooser terms={terms}
-                  selectedTerms={selectedTerms}
-                  setSelectedTerms={setSelectedTerms}
-                  multipleChoice={false} >
-        </TermChooser>
-            <ul className="space-y-2 my-4">
-            {Array.from(selectedTerms).map((term: number) => 
-            coursesplaceholder[major][term].map((course: { id: number; name: string }) => (
-              <li key={course.id} className="flex flex-row justify-between py-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
-              <span className="text-gray-700 px-2">{course.name}</span>
-              </li>
-            ))
-            )}
-            </ul>
-          <Button onClick={() => batchAddCoursesByTerm(Array.from(selectedTerms)[0])}>Add all</Button>
-        </div>
-        <p>Selected courses: {Array.from(selectedCourseIds).join(", ")}</p>
-      </CardContent>
-    </Card>
-  </>
+      {/* Major Selection */}
+      <Card className="mb-4">
+        <CardContent className="pt-6">
+          <h2 className="text-2xl font-bold mb-4">Selecione seu Curso</h2>
+          <MajorChooser major={major} onMajorChange={setMajor} />
+        </CardContent>
+      </Card>
+
+      {/* Course History */}
+      <Card>
+        <CardContent>
+          <h2 className="text-2xl font-bold my-4">Disciplinas Cursadas</h2>
+          
+          <Tabs defaultValue="periodo" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 mb-4 bg-muted p-1 rounded-lg h-auto"> 
+              <TabsTrigger 
+                value="periodo" 
+                className="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm px-3 py-1.5 text-sm font-medium text-muted-foreground data-[state=inactive]:bg-transparent"
+              >
+                Por Periodo
+              </TabsTrigger>
+              <TabsTrigger 
+                value="visualizacao" 
+                className="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm px-3 py-1.5 text-sm font-medium text-muted-foreground data-[state=inactive]:bg-transparent"
+              >
+                Visualização
+              </TabsTrigger>
+            </TabsList>
+            
+            {/* Period-based view */}
+            <TabsContent value="periodo" className="w-full">
+              <div className="space-y-3">
+                {allPeriods.map((period) => (
+                  <PeriodCard
+                    key={period}
+                    period={period}
+                    courses={getCoursesForPeriodWithMajor(period)}
+                    selectedCourseIds={selectedCourseIds}
+                    isExpanded={expandedPeriods[period] || false}
+                    onToggleExpand={togglePeriod}
+                    onToggleCourse={handleCourseToggle}
+                    onAddAllFromPeriod={handleAddAllFromTerm}
+                  />
+                ))}
+              </div>
+            </TabsContent>
+            
+            {/* Visualization tab */}
+            <TabsContent value="visualizacao">
+              <VisualizationTab
+                major={major}
+                selectedCourseIds={selectedCourseIds}
+                selectedTerms={selectedTerms}
+                allPeriods={allPeriods}
+                coursesData={coursesplaceholder}
+                onMajorChange={setMajor}
+                onCourseToggle={handleCourseToggle}
+                onUpdateSelectedTerms={setSelectedTerms}
+                onAddAllFromTerm={handleAddAllFromTerm}
+              />
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 
