@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { CurriculumDAG } from './schemas';
+import e from 'express';
 
 function loadCurriculumData(filePath: string): CurriculumDAG {
     try {
@@ -11,6 +12,7 @@ function loadCurriculumData(filePath: string): CurriculumDAG {
             { key: 'completed_courses', check: Array.isArray, message: "'completed_courses' must be an array." },
             { key: 'major', check: (v: any) => typeof v === 'string', message: "'major' must be a string." },
             { key: 'curriculumVersion', check: (v: any) => typeof v === 'string', message: "'curriculumVersion' must be a string." },
+            { key: 'equivalences', check: (v: any) => v && typeof v === 'object', message: "Invalid 'equivalences' field in JSON." },
         ];
 
         for (const field of requiredFields) {
@@ -26,6 +28,7 @@ function loadCurriculumData(filePath: string): CurriculumDAG {
             completed_courses: parsedData.completed_courses,
             major: parsedData.major,
             curriculumVersion: parsedData.curriculumVersion,
+            equivalences: new Map<string, string[]>(Object.entries(parsedData.equivalences || {})),
         };
     } catch (error) {
         console.error(`Error loading curriculum data from ${filePath}:`, error);
@@ -42,12 +45,47 @@ class ToposortModel {
         this._curriculumDAG = loadCurriculumData(filePath);
         this.setCourseList();
         this.setCoursesAndDegree();
+        console.log(this._curriculumDAG.completed_courses);
     }
 
     get curriculumDAG(): CurriculumDAG {
         return this._curriculumDAG;
     }
 
+    private _addEquivalences(): string[] {
+        const completed_temp = new Set(this.curriculumDAG.completed_courses);    
+        const equivalences_to_add = new Set<string>();
+        const equivalences = this.curriculumDAG.equivalences;
+    
+        for (const course of completed_temp) {
+            for (const [equivalentTo, equivalents] of equivalences.entries()) {
+                if(equivalents.length > 1) {
+                    let completedCount = 0;
+                    for (const equiv of equivalents) {
+                        if (completed_temp.has(equiv)) {completedCount++;}
+                    }
+                    console.log("More than one equivalent:",equivalents);
+                    if (completedCount === equivalents.length) {
+                        equivalences_to_add.add(equivalentTo);
+                    }
+                }
+                else{if (equivalents.includes(course)) {
+                    equivalences_to_add.add(equivalentTo); 
+                    }
+                }
+            }
+        }
+    
+    
+        console.log("Equivalences to add:", equivalences_to_add);
+        equivalences_to_add.forEach(course => completed_temp.add(course));
+    
+        return Array.from(completed_temp);
+    }
+    
+    
+    
+    
     private setCourseList(): void {
         this.curriculumDAG.courseList = Array.from(this.curriculumDAG.prerequisites.keys());
     }
@@ -126,6 +164,7 @@ class ToposortModel {
     
     public atualizarPrerequisitos(): string[] {
         try {
+            this.curriculumDAG.completed_courses = this._addEquivalences();
             const completed = new Set(this.curriculumDAG.completed_courses);
             if (completed.size === 0) {
                 throw new Error("No completed courses provided.");
