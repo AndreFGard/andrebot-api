@@ -12,6 +12,12 @@ export interface ScheduleDay {
 
 }
 
+interface PendingCourse extends CourseInfo {
+    blockedCourseIds: number[];
+    blockedCourseCodes: string[];
+}
+export type {PendingCourse};
+
 export interface ITimetable {
     table: Record<string, Record<string, ScheduleDay|undefined>>;
     aproxHourList: string[];
