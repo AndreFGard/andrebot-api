@@ -59,4 +59,5 @@ export interface CurriculumDAG {
     completed_courses: string[];
     major: string;
     curriculumVersion: string;
+    equivalences: Map<string, string[]>;
 }
