@@ -50,7 +50,6 @@ export interface CourseDisplayInfo{
     professor: string;
 }
 
-export const majorList = ["CC", "EC", "SI", "outros"];
 
 export interface CurriculumDAG {
     prerequisites: Map<string, string[]>;
@@ -61,3 +60,5 @@ export interface CurriculumDAG {
     curriculumVersion: string;
     equivalences: Map<string, string[]>;
 }
+//MUST be kept stable because they are matched against the database names
+export const majorList = ["CC", "EC", "SI", "outros"];

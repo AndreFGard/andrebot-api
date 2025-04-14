@@ -38,9 +38,11 @@ const TimetableEditor = () => {
 
   return (
     <>
+    <h2 className='text-xl font-bold mb-2 text-left'>Select Major</h2>
     <ClassChooser major={major} onMajorChange={setmajor}
       onCourseToggle={handleCourseAddition}
       selectedCourseIds={selectedCourseIds}
+      useMajorChooser={true}
      />
     <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
     <Timetable renderinfo={timetableRenderInfo} onCourseToggle={handleCourseAddition} selectedCourseIds={selectedCourseIds}/>

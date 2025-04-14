@@ -13,7 +13,7 @@ Object.values(courses).forEach(major => {
             clss.shortName = clss.name.replaceAll(" DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
-                const hexcodes = ['#60d394ff', '#f58549ff', '#ff9b85ff', '#bc4b51ff', '#8cb369ff', '#ffd97dff', '#f4e285ff', '#f2a65aff', '#8cb369ff', '#772f1aff', '#f4a259ff', '#eec170ff', '#5b8e7dff', '#f4a259ff', '#ee6055ff', '#5b8e7dff', '#585123ff', '#f4e285ff', '#aaf683ff', '#bc4b51ff'];
+                const hexcodes = ['#fee2e2', '#ffedd5', '#fef3c7', '#fef9c3', '#ecfccb', '#d1fae5', '#a7f3d0', '#99f6e4', '#a5f3fc', '#bae6fd', '#c7d2fe', '#e0e7ff', '#ddd6fe', '#f5d0fe', '#fae8ff', '#fde7f3', '#e5e7eb', '#d1d5db', '#f3f4f6', '#e5e7eb']; // Updated Tailwind bg-200 shades
 
                 const color = hexcodes[i% hexcodes.length];
                 const range = (a: number,b: number) => Array.from(Array(b).keys()).splice(a);
