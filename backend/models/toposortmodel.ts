@@ -217,7 +217,7 @@ class ToposortModel {
                     ([course, prereqs]) => `${course}: ${prereqs.join(', ')}`
                 );
                 console.log("Missing courses:", missingCoursesList);
-                throw new Error(`Missing prerequisites: ${missingCoursesList.join(', ')}`);
+                // throw new Error(`Missing prerequisites: ${missingCoursesList.join(', ')}`);
             }
 
             for (const [course, prereqs] of this.curriculumDAG.prerequisites.entries()) {
