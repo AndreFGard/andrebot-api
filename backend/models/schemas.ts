@@ -49,6 +49,8 @@ export interface CourseDisplayInfo{
     name: string;
     id: number;
     professor: string;
+    code: string;
+    term: string | number;
 }
 
 
@@ -72,8 +74,6 @@ export const majorList = ["CC", "EC", "SI", "outros"];
 
 
 interface PendingCourse extends CourseDisplayInfo{
-    code: string;
-    term: number;
     blockedCourseIds: number[];
     blockedCourseCodes: string[];
 }
