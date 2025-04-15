@@ -70,7 +70,7 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
       {/* Statistics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-          <CardContent className="pt-3">
+          <CardContent className="pt-2">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-lg font-medium text-muted-foreground">Disciplinas Cursadas</p>
@@ -87,7 +87,7 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
         </Card>
 
         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
-          <CardContent className="pt-3">
+          <CardContent className="pt-2">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-lg font-medium text-muted-foreground">Créditos Completados</p>
@@ -104,7 +104,7 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
         </Card>
         
         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200"> 
-          <CardContent className="pt-3"> 
+          <CardContent className="pt-2"> 
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-lg font-medium text-muted-foreground">Progresso do Curso</p> 
