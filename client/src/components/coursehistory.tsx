@@ -79,7 +79,7 @@ const CourseHistory = () => {
         <CardContent className="pt-6">
           <h2 className="text-2xl font-bold mb-4">Selecione seu Curso</h2>
           <MajorChooser major={major} onMajorChange={setMajor} />
-          <h2 className="text-2xl font-bold my-4">Você mudou de grade?</h2>
+          <h2 className="text-2xl font-bold my-4">Grade nova?</h2>
           <MajorChooser major={newCurriculum} onMajorChange={setNewCurriculum} majors={newCurriculumStrings} />
         </CardContent>
       </Card>
