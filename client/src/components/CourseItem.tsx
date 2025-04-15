@@ -9,12 +9,15 @@ interface CourseItemProps {
   course: CourseDisplayInfo;
   isSelected: boolean;
   onToggleCourse: (id: number) => void;
+  isGreyedOut?: boolean; // Optional prop to indicate if the course should be greyed out
 }
 
-const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse }) => {
+const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut }) => {
   const courseCode = getCourseCode(course);
   const courseCredits = getCourseCredits(course);
   const typeStyle = getCourseTypeStyle(courseCode);
+
+  const isStyleSelected = isGreyedOut || isSelected;
 
   return (
     <div 
@@ -23,7 +26,8 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
         typeStyle.borderL,
         isSelected 
           ? `${typeStyle.bg}` 
-          : "bg-transparent hover:bg-muted/50"
+          : "bg-transparent hover:bg-muted/50",
+            isStyleSelected ? 'bg-othercurriculum' : '' 
       )}
     >
       {/* Main Content Area */}
@@ -33,7 +37,7 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
           {/* Code Callout */}
           <span className={cn(
             "text-xs font-mono px-1.5 py-1 rounded",
-            isSelected ? `${typeStyle.bg} border ${typeStyle.border}` : "bg-muted" 
+            isSelected ? `${typeStyle.bg} border ${typeStyle.border}` : "bg-muted"
           )}>
             {courseCode}
           </span>

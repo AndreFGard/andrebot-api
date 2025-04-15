@@ -14,6 +14,7 @@ interface PeriodCardProps {
   onToggleExpand: (period: number) => void;
   onToggleCourse: (id: number) => void;
   onAddAllFromPeriod: (period: number) => void;
+  isNewCurriculum?: boolean;
 }
 
 const PeriodCard: React.FC<PeriodCardProps> = ({ 
@@ -23,7 +24,8 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
   isExpanded, 
   onToggleExpand, 
   onToggleCourse, 
-  onAddAllFromPeriod 
+  onAddAllFromPeriod,
+  isNewCurriculum
 }) => {
   const progress = calculatePeriodProgress(courses, selectedCourseIds);
 
@@ -73,6 +75,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
                 course={course}
                 isSelected={selectedCourseIds.has(course.id)}
                 onToggleCourse={onToggleCourse}
+                isGreyedOut={(course.isNewCurriculum != isNewCurriculum)}
               />
             ))}
           </div>

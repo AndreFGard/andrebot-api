@@ -30,7 +30,8 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
         name: course.name,
         professor: course.professor,
         code: course.code,
-        term: course.term
+        term: course.term,
+        isNewCurriculum: course.isNewCurriculum,
     });
 
     // Get all periods that have recommendations

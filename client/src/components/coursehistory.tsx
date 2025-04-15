@@ -70,6 +70,8 @@ const CourseHistory = () => {
   const handleAddAllFromTerm = (term: number) => addCoursesByTerm(major, term);
   const getCoursesForPeriodWithMajor = (period: number) => getCoursesForPeriod(major, period);
 
+  const newCurriculumStrings = ["Não", "Sim"];
+  const [newCurriculum, setNewCurriculum] = useState<string>("Não");
   return (
     <>
       {/* Major Selection */}
@@ -77,6 +79,8 @@ const CourseHistory = () => {
         <CardContent className="pt-6">
           <h2 className="text-2xl font-bold mb-4">Selecione seu Curso</h2>
           <MajorChooser major={major} onMajorChange={setMajor} />
+          <h2 className="text-2xl font-bold my-4">Você mudou de grade?</h2>
+          <MajorChooser major={newCurriculum} onMajorChange={setNewCurriculum} majors={newCurriculumStrings} />
         </CardContent>
       </Card>
 
@@ -114,6 +118,7 @@ const CourseHistory = () => {
                     onToggleExpand={togglePeriod}
                     onToggleCourse={handleCourseToggle}
                     onAddAllFromPeriod={handleAddAllFromTerm}
+                    isNewCurriculum={newCurriculumStrings.indexOf(newCurriculum) === 1}
                   />
                 ))}
               </div>
