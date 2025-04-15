@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { CourseSelectionManager, CourseDisplayInfo } from '@/api';
-import { coursesplaceholder } from '@/api';
+import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
 
 export function useCourseSelection(initialSelection: number[] = []) {
+  const courses = useContext(CourseDisplayInfoCtx);
+
   const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set(initialSelection));
   const [courseManager] = useState<CourseSelectionManager>(new CourseSelectionManager(initialSelection));
   
@@ -14,7 +16,7 @@ export function useCourseSelection(initialSelection: number[] = []) {
   
   // Add all courses from a term
   const addCoursesByTerm = (major: string, term: number) => {
-    const coursesInTerm = coursesplaceholder[major]?.[term] ?? [];
+    const coursesInTerm = courses[major]?.[term] ?? [];
     coursesInTerm.forEach((course) => {
       if (!courseManager.isin(course.id)) {
         courseManager.toggle(course.id);
@@ -25,7 +27,7 @@ export function useCourseSelection(initialSelection: number[] = []) {
   
   // Get courses for a specific period
   const getCoursesForPeriod = (major: string, period: number): CourseDisplayInfo[] => {
-    return coursesplaceholder[major]?.[period] ?? [];
+    return courses[major]?.[period] ?? [];
   };
   
   return {

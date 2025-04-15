@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { CourseDisplayInfo } from '@/api';
+import React, { useContext, useEffect, useState } from 'react';
+import { CourseDisplayInfo, getCourseDisplayInfoList } from '@/api';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { coursesplaceholder } from '@/api';
@@ -8,11 +8,13 @@ import { useCourseSelection } from '@/hooks/useCourseSelection';
 
 import PeriodCard from './PeriodCard';
 import VisualizationTab from './VisualizationTab';
+import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
 
 const CourseHistory = () => {
   const [major, setMajor] = React.useState("CC");
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
-  
+  const courses = useContext(CourseDisplayInfoCtx)
+
   const { 
     selectedCourseIds, 
     toggleCourse, 
@@ -25,10 +27,11 @@ const CourseHistory = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
   // Get all periods for the selected major
   const allPeriods = React.useMemo(() => {
-    if (coursesplaceholder[major]) {
-      return Array.from(new Set(Object.keys(coursesplaceholder[major]).map(Number))).sort((a, b) => a - b);
+    if (courses[major]) {
+      return Array.from(new Set(Object.keys(courses[major]).map(Number))).sort((a, b) => a - b);
     }
     return [];
   }, [major]);
@@ -125,7 +128,7 @@ const CourseHistory = () => {
                 selectedCourseIds={selectedCourseIds}
                 selectedTerms={selectedTerms}
                 allPeriods={allPeriods}
-                coursesData={coursesplaceholder}
+                coursesData={courses}
                 onMajorChange={setMajor}
                 onCourseToggle={handleCourseToggle}
                 onUpdateSelectedTerms={setSelectedTerms}
