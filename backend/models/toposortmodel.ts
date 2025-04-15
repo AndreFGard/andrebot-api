@@ -35,6 +35,10 @@ function loadCurriculumData(filePath: string): CurriculumDAG {
   }
 }
 
+class RecommendationModel{
+    
+}
+
 class ToposortModel {
     private readonly _curriculumDAG: CurriculumDAG;
 

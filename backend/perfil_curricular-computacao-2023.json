@@ -102,9 +102,6 @@
     "CIN0179": ["CIN0144"],
     "CIN0181": ["CIN0144"]  
   },
-  "completed_courses": ["CIN0133"],
-  "major": "Computer Science",
-  "curriculumVersion": "2023",
   "equivalences": [
     {"new_codes": ["CIN0130"], "old_codes": ["IF675"]},
     {"new_codes": ["CIN0133"], "old_codes": ["IF669"]},
