@@ -54,6 +54,7 @@ export interface CourseDisplayInfo{
     name: string;
     id: number;
     professor: string;
+    prerequisites?: number[];
 }
 
 
