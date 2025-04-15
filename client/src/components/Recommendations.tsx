@@ -34,7 +34,9 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
     });
 
     // Get all periods that have recommendations
-    const periods = Object.keys(recommendations).map(Number).sort((a, b) => a - b);
+    const periods = Object.keys(recommendations).map(Number);
+    periods.sort((a, b) => a - b);
+    console.log(`periods are ${recommendations[0]}`);
 
     return (
         <div className="space-y-3">

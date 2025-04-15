@@ -62,9 +62,9 @@ export async function getCourseDisplayInfoList(req: Request, res: Response< Reco
         res.send(courseDisplayInfoList);
 }
 
-export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>[]>) {
+export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>>) {
     const major = req.query.major as string || "CC";
     const courseids = (req.query.completedCourseIds as string || "").split(",").map(Number);
-    const recommendations=[timetableService.getRecommendations(major, courseids)]
+    const recommendations=timetableService.getRecommendations(major, courseids);
     res.send(recommendations);
 }

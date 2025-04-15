@@ -1,4 +1,4 @@
-import { TimetableRenderInfo, CourseDisplayInfo, majorList, ITimetable } from './../../backend/models/schemas';
+import { TimetableRenderInfo, CourseDisplayInfo, majorList, ITimetable, PendingCourse } from './../../backend/models/schemas';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/timetable';
 export type { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, CourseDisplayInfo } from './../../backend/models/schemas';
@@ -123,5 +123,5 @@ export const initialTimetable: TimetableRenderInfo = ({
 export const getRecommendations = async (major: string, completedCourseIds: number[]) => {
     const response = await fetch(`${apiUrl}/getRecommendations?major=${major}&completedCourseIds=${completedCourseIds.join(',')}`);
     const data = await response.json();
-    return data;
+    return data as Record<number, PendingCourse[]>;
 }
