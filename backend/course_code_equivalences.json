@@ -1,0 +1,4160 @@
+{
+    "IF669": {
+     "old_codes": [
+      "IF669"
+     ],
+     "old_course_name": [
+      "INTRODUCAO A PROGRAMACAO"
+     ],
+     "old_status": [
+      "120h Aula"
+     ],
+     "new_codes": [
+      "CIN0133"
+     ],
+     "new_course_name": [
+      "INTRODUCAO A PROGRAMACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF670": {
+     "old_codes": [
+      "IF670"
+     ],
+     "old_course_name": [
+      "MATEMAT DISCRETA P/COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0132"
+     ],
+     "new_course_name": [
+      "MATEMATICA DISCRETA PARA COMPUTACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "MA026": {
+     "old_codes": [
+      "MA026"
+     ],
+     "old_course_name": [
+      "CALCULO DIFERENCIAL E INTEGRAL 1"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "MA026"
+     ],
+     "new_course_name": [
+      "CALCULO DIFERENCIAL E INTEGRAL 1"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "MA531": {
+     "old_codes": [
+      "MA531"
+     ],
+     "old_course_name": [
+      "ALGEBRA VET LINEAR P/COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0138"
+     ],
+     "new_course_name": [
+      "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "ET586": {
+     "old_codes": [
+      "ET586"
+     ],
+     "old_course_name": [
+      "ESTATIST PROBABILIDADE COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0142"
+     ],
+     "new_course_name": [
+      "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF672": {
+     "old_codes": [
+      "IF672"
+     ],
+     "old_course_name": [
+      "ALGORITMOS E ESTRUTURAS DE DADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0140"
+     ],
+     "new_course_name": [
+      "ALGORITMOS"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF673": {
+     "old_codes": [
+      "IF673"
+     ],
+     "old_course_name": [
+      "LOGICA PARA COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0141"
+     ],
+     "new_course_name": [
+      "LOGICA PARA COMPUTACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF675": {
+     "old_codes": [
+      "IF675"
+     ],
+     "old_course_name": [
+      "SISTEMAS DIGITAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0130"
+     ],
+     "new_course_name": [
+      "SISTEMAS DIGITAIS"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF677": {
+     "old_codes": [
+      "IF677"
+     ],
+     "old_course_name": [
+      "INFRA-ESTRUTURA DE SOFTWARE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0134"
+     ],
+     "new_course_name": [
+      "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF678": {
+     "old_codes": [
+      "IF678"
+     ],
+     "old_course_name": [
+      "INFRA-ESTRUTURA DE COMUNICACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0154"
+     ],
+     "new_course_name": [
+      "REDES DE COMPUTADORES"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF679": {
+     "old_codes": [
+      "IF679"
+     ],
+     "old_course_name": [
+      "INFORMATICA E SOCIEDADE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0149"
+     ],
+     "new_course_name": [
+      "INFORMATICA E SOCIEDADE"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "LE530": {
+     "old_codes": [
+      "LE530"
+     ],
+     "old_course_name": [
+      "INGLES PARA COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "LE037"
+     ],
+     "new_course_name": [
+      "LINGUA INGLESA INSTRUMENTAL 1"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF680": {
+     "old_codes": [
+      "IF680"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO GRAFICO"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [
+      "CIN0053"
+     ],
+     "new_course_name": [
+      "PROCESSAMENTO GRAFICO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF681": {
+     "old_codes": [
+      "IF681"
+     ],
+     "old_course_name": [
+      "INTERFACES USUARIO-MAQUINA"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [
+      "CIN0131"
+     ],
+     "new_course_name": [
+      "CONCEPCAO DE ARTEFATOS DIGITAIS"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF685": {
+     "old_codes": [
+      "IF685"
+     ],
+     "old_course_name": [
+      "GERENCIAMENTO DADOS E INFORMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0137"
+     ],
+     "new_course_name": [
+      "BANCO DE DADOS"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF689": {
+     "old_codes": [
+      "IF689"
+     ],
+     "old_course_name": [
+      "INFORMATICA TEORICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0148"
+     ],
+     "new_course_name": [
+      "TEORIA DA COMPUTACAO"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF676": {
+     "old_codes": [
+      "IF676"
+     ],
+     "old_course_name": [
+      "METODOL EXPRESSAO TEC-CIENTIFICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0147"
+     ],
+     "new_course_name": [
+      "METODOLOGIA CIENTIFICA"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF683": {
+     "old_codes": [
+      "IF683"
+     ],
+     "old_course_name": [
+      "PROJETO DE DESENVOLVIMENTO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0176"
+     ],
+     "new_course_name": [
+      "PROJETO DE DESENVOLVIMENTO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF686": {
+     "old_codes": [
+      "IF686"
+     ],
+     "old_course_name": [
+      "PARADIGMAS LING.COMPUTACIONAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0145 CIN0146"
+     ],
+     "new_course_name": [
+      "PROGRAMACAO CONCORRENTE"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO OBRIGATÓRIO"
+     ]
+    },
+    "IF687": {
+     "old_codes": [
+      "IF687"
+     ],
+     "old_course_name": [
+      "INTRODUCAO A MULTIMIDIA"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [
+      "CIN0055"
+     ],
+     "new_course_name": [
+      "TENDENCIAS EM MIDIA E INTERACAO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF688": {
+     "old_codes": [
+      "IF688"
+     ],
+     "old_course_name": [
+      "TEO.IMPLEMEN.LING. COMPUTACIONAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0150"
+     ],
+     "new_course_name": [
+      "COMPILADORES"
+     ],
+     "new_status": [
+      "OBRIGATÓRIO"
+     ]
+    },
+    "IF818": {
+     "old_codes": [
+      "IF818"
+     ],
+     "old_course_name": [
+      "ANALISE E MINERACAO DE REDES COMPLEXAS"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "CIN0153"
+     ],
+     "new_course_name": [
+      "ANALISE E MINERACAO DE REDES COMPLEXAS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF866": {
+     "old_codes": [
+      "IF866"
+     ],
+     "old_course_name": [
+      "CRIATIVIDADE COMPUTACIONAL"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "CIN0129"
+     ],
+     "new_course_name": [
+      "CRIATIVIDADE COMPUTACIONAL"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF867": {
+     "old_codes": [
+      "IF867"
+     ],
+     "old_course_name": [
+      "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "CIN0040"
+     ],
+     "new_course_name": [
+      "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF868": {
+     "old_codes": [
+      "IF868"
+     ],
+     "old_course_name": [
+      "ALGORITMOS PARA STREAMS DE DADOS"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "CIN0120"
+     ],
+     "new_course_name": [
+      "ALGORITMOS PARA STREAMS DE DADOS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF869": {
+     "old_codes": [
+      "IF869"
+     ],
+     "old_course_name": [
+      "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [
+      "CIN0119"
+     ],
+     "new_course_name": [
+      "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF702": {
+     "old_codes": [
+      "IF702"
+     ],
+     "old_course_name": [
+      "REDES NEURAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0037"
+     ],
+     "new_course_name": [
+      "REDES NEURAIS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF703": {
+     "old_codes": [
+      "IF703"
+     ],
+     "old_course_name": [
+      "AGENTES AUTONOMOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0038"
+     ],
+     "new_course_name": [
+      "AGENTES AUTONOMOS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF704": {
+     "old_codes": [
+      "IF704"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO LINGUAGEM NATURAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0179"
+     ],
+     "new_course_name": [
+      "PROCESSAMENTO DE LINGUAGEM NATURAL"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF711": {
+     "old_codes": [
+      "IF711"
+     ],
+     "old_course_name": [
+      "PROGRAM. CONCORRENTE DISTRIBUIDA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0169"
+     ],
+     "new_course_name": [
+      "PROGRAMACAO CONCORRENTE E DISTRIBUIDA"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF716": {
+     "old_codes": [
+      "IF716"
+     ],
+     "old_course_name": [
+      "ESPECIF.REQUIS.VALIDACAO SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "IF1008"
+     ],
+     "new_course_name": [
+      "ENGENHARIA DE REQUISITOS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF717": {
+     "old_codes": [
+      "IF717"
+     ],
+     "old_course_name": [
+      "PLANEJ. GERENCIAMENTO DE PROJETOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0165"
+     ],
+     "new_course_name": [
+      "METODOLOGIAS DE GERENCIAMENTO DE PROJETO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF720": {
+     "old_codes": [
+      "IF720"
+     ],
+     "old_course_name": [
+      "QUALIDADE DE SOFTWARE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0166"
+     ],
+     "new_course_name": [
+      "PLANEJAMENTO E GESTAO DA QUALIDADE DE SOFTWARE"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF721": {
+     "old_codes": [
+      "IF721"
+     ],
+     "old_course_name": [
+      "SISTEMAS CRITICOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0170"
+     ],
+     "new_course_name": [
+      "METODOS FORMAIS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF738": {
+     "old_codes": [
+      "IF738"
+     ],
+     "old_course_name": [
+      "REDES DE COMPUTADORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0157"
+     ],
+     "new_course_name": [
+      "REDES DE COMPUTADORES 2"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF741": {
+     "old_codes": [
+      "IF741"
+     ],
+     "old_course_name": [
+      "GERENCIAMENTO DE REDES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0071"
+     ],
+     "new_course_name": [
+      "GERENCIAMENTO E MONITORAMENTO DE REDES"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF748": {
+     "old_codes": [
+      "IF748"
+     ],
+     "old_course_name": [
+      "SEMINARIO REDES SIST.DISTRIBUIDOS"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [
+      "CIN0081"
+     ],
+     "new_course_name": [
+      "SEMINARIOS EM REDES DE COMPUTADORES"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF750": {
+     "old_codes": [
+      "IF750"
+     ],
+     "old_course_name": [
+      "COMPUTACAO GRAFICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0050"
+     ],
+     "new_course_name": [
+      "COMPUTACAO GRAFICA"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF751": {
+     "old_codes": [
+      "IF751"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO LINEAR DE IMAGENS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0056"
+     ],
+     "new_course_name": [
+      "PROCESSAMENTO DE IMAGEM"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF752": {
+     "old_codes": [
+      "IF752"
+     ],
+     "old_course_name": [
+      "ANALISE IMAG. VISAO COMPUTACIONAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0060"
+     ],
+     "new_course_name": [
+      "VISAO COMPUTACIONAL"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF754": {
+     "old_codes": [
+      "IF754"
+     ],
+     "old_course_name": [
+      "COMPUTACAO MUSICAL PROCESSAM.SOM"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0052"
+     ],
+     "new_course_name": [
+      "COMPUTACAO MUSICAL E PROCESSAMENTO DE SOM"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF759": {
+     "old_codes": [
+      "IF759"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO DE VOZ"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0059"
+     ],
+     "new_course_name": [
+      "PROCESSAMENTO DE VOZ"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF763": {
+     "old_codes": [
+      "IF763"
+     ],
+     "old_course_name": [
+      "ALGEBRA LINEAR AVANC. COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0174"
+     ],
+     "new_course_name": [
+      "ALGEBRA AVANCADA PARA COMPUTACAO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF764": {
+     "old_codes": [
+      "IF764"
+     ],
+     "old_course_name": [
+      "CALCULO AVANCADO PARA COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "MA027"
+     ],
+     "new_course_name": [
+      "CALCULO DIFERENCIAL E INTEGRAL 2"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF767": {
+     "old_codes": [
+      "IF767"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO CADEIA CARACTERES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0160"
+     ],
+     "new_course_name": [
+      "PROCESSAMENTO DE CADEIA DE CARACTERES"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF783": {
+     "old_codes": [
+      "IF783"
+     ],
+     "old_course_name": [
+      "GESTAO DE NEGOCIOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0125"
+     ],
+     "new_course_name": [
+      "GESTAO DE NEGOCIOS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF793": {
+     "old_codes": [
+      "IF793"
+     ],
+     "old_course_name": [
+      "PROJETO IMPLEMENTACAO DE JOGOS 2D"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0054"
+     ],
+     "new_course_name": [
+      "JOGOS DIGITAIS"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF797": {
+     "old_codes": [
+      "IF797"
+     ],
+     "old_course_name": [
+      "OTIMIZACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0103"
+     ],
+     "new_course_name": [
+      "OTIMIZACAO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF798": {
+     "old_codes": [
+      "IF798"
+     ],
+     "old_course_name": [
+      "ROBOTICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0100"
+     ],
+     "new_course_name": [
+      "INTRODUCAO A ROBOTICA"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF962": {
+     "old_codes": [
+      "IF962"
+     ],
+     "old_course_name": [
+      "RECUPERACAO DE INFORMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [
+      "CIN0178"
+     ],
+     "new_course_name": [
+      "RECUPERACAO DA INFORMACAO"
+     ],
+     "new_status": [
+      "ELETIVO"
+     ]
+    },
+    "IF668": {
+     "old_codes": [
+      "IF668"
+     ],
+     "old_course_name": [
+      "INTRODUCAO A COMPUTACAO"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "FI582": {
+     "old_codes": [
+      "FI582"
+     ],
+     "old_course_name": [
+      "FISICA PARA COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF674": {
+     "old_codes": [
+      "IF674"
+     ],
+     "old_course_name": [
+      "INFRA-ESTRUTURA DE HARDWARE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF682": {
+     "old_codes": [
+      "IF682"
+     ],
+     "old_course_name": [
+      "ENGENHARIA SOFTWARE E SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF690": {
+     "old_codes": [
+      "IF690"
+     ],
+     "old_course_name": [
+      "HISTORIA E FUTURO DA COMPUTACAO"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "FI006": {
+     "old_codes": [
+      "FI006"
+     ],
+     "old_course_name": [
+      "FISICA GERAL 1"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "FI007": {
+     "old_codes": [
+      "FI007"
+     ],
+     "old_course_name": [
+      "FISICA GERAL 2"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF109": {
+     "old_codes": [
+      "IF109"
+     ],
+     "old_course_name": [
+      "METODOS NUMERICOS"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF692": {
+     "old_codes": [
+      "IF692"
+     ],
+     "old_course_name": [
+      "PROJETO DE BANCO DE DADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF693": {
+     "old_codes": [
+      "IF693"
+     ],
+     "old_course_name": [
+      "SIST.GERENC. DE BANCO DE DADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF694": {
+     "old_codes": [
+      "IF694"
+     ],
+     "old_course_name": [
+      "BANCO DE DADOS DISTRIB. E MOVEIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF695": {
+     "old_codes": [
+      "IF695"
+     ],
+     "old_course_name": [
+      "BANCO DE DADOS AVANCADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF696": {
+     "old_codes": [
+      "IF696"
+     ],
+     "old_course_name": [
+      "INTEG. DADOS WEB E WAREHOUSE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF697": {
+     "old_codes": [
+      "IF697"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.GERENC.DADOS INFORMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF698": {
+     "old_codes": [
+      "IF698"
+     ],
+     "old_course_name": [
+      "SEMIN. GERENC. DADOS E INFORMACAO"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF699": {
+     "old_codes": [
+      "IF699"
+     ],
+     "old_course_name": [
+      "APRENDIZAGEM DE MAQUINA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF700": {
+     "old_codes": [
+      "IF700"
+     ],
+     "old_course_name": [
+      "PERCEP. COMPUTAC.E RECONH. PADRAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF701": {
+     "old_codes": [
+      "IF701"
+     ],
+     "old_course_name": [
+      "ENG.CONHEC.SISTEMAS ESPECIALISTAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF705": {
+     "old_codes": [
+      "IF705"
+     ],
+     "old_course_name": [
+      "AUTOMACAO INTELIGENTE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF706": {
+     "old_codes": [
+      "IF706"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANC.INTELEG.ARTIFICIAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF707": {
+     "old_codes": [
+      "IF707"
+     ],
+     "old_course_name": [
+      "SEMIN. EM INTELIGENCIA ARTIFICIAL"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF708": {
+     "old_codes": [
+      "IF708"
+     ],
+     "old_course_name": [
+      "PROGRAMACAO FUNCIONAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF709": {
+     "old_codes": [
+      "IF709"
+     ],
+     "old_course_name": [
+      "IMPLEMENTACAO SIST. OPERACIONAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF710": {
+     "old_codes": [
+      "IF710"
+     ],
+     "old_course_name": [
+      "PROGRAMACAO COM COMPONENTES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF712": {
+     "old_codes": [
+      "IF712"
+     ],
+     "old_course_name": [
+      "PROGRAMACAO PARA INTERNET"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF713": {
+     "old_codes": [
+      "IF713"
+     ],
+     "old_course_name": [
+      "SEMANTICA LINGUAGENS PROGRAMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF714": {
+     "old_codes": [
+      "IF714"
+     ],
+     "old_course_name": [
+      "SISTEMAS DE INFORMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF715": {
+     "old_codes": [
+      "IF715"
+     ],
+     "old_course_name": [
+      "CALCULO DE PROGRAMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF718": {
+     "old_codes": [
+      "IF718"
+     ],
+     "old_course_name": [
+      "ANALISE E PROJETOS DE SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF719": {
+     "old_codes": [
+      "IF719"
+     ],
+     "old_course_name": [
+      "DESENVOLVIMENTO DE SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF722": {
+     "old_codes": [
+      "IF722"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANCADOS ENG. SOFTWARE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF723": {
+     "old_codes": [
+      "IF723"
+     ],
+     "old_course_name": [
+      "SEM.ENG. SOFT LING. COMPUTACIONAL"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF724": {
+     "old_codes": [
+      "IF724"
+     ],
+     "old_course_name": [
+      "TOPICOS AVAN1⁄2.LING.COMPUTACIONAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF725": {
+     "old_codes": [
+      "IF725"
+     ],
+     "old_course_name": [
+      "PROJETO DE CPU"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF726": {
+     "old_codes": [
+      "IF726"
+     ],
+     "old_course_name": [
+      "ORGANIZ. TECNOLOGIA COMPUTADORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF727": {
+     "old_codes": [
+      "IF727"
+     ],
+     "old_course_name": [
+      "PROCESSADORES APLICAC. ESPECIFICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF728": {
+     "old_codes": [
+      "IF728"
+     ],
+     "old_course_name": [
+      "ENGENHARIA DE SISTEMAS EMBUTIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF729": {
+     "old_codes": [
+      "IF729"
+     ],
+     "old_course_name": [
+      "PROTOTIP. DE CIRCUITOS INTEGRADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF730": {
+     "old_codes": [
+      "IF730"
+     ],
+     "old_course_name": [
+      "SISTEMA DE TEMPO REAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF731": {
+     "old_codes": [
+      "IF731"
+     ],
+     "old_course_name": [
+      "AMBIENTES PROJETOS SIST.EMBUTIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF732": {
+     "old_codes": [
+      "IF732"
+     ],
+     "old_course_name": [
+      "PROJETOS DE SISTEMAS EMBUTIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF733": {
+     "old_codes": [
+      "IF733"
+     ],
+     "old_course_name": [
+      "TRANSDUTORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF734": {
+     "old_codes": [
+      "IF734"
+     ],
+     "old_course_name": [
+      "PROJETO DE COMPILADORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF735": {
+     "old_codes": [
+      "IF735"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.ARQUIT.DE COMPUTADORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF736": {
+     "old_codes": [
+      "IF736"
+     ],
+     "old_course_name": [
+      "SEMIN.ARQUIT. SISTEMAS EMBUTIDOS"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF737": {
+     "old_codes": [
+      "IF737"
+     ],
+     "old_course_name": [
+      "TOP.AVANC. EM SISTEMAS EMBUTIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF739": {
+     "old_codes": [
+      "IF739"
+     ],
+     "old_course_name": [
+      "COMUNICACAO SEM FIO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF740": {
+     "old_codes": [
+      "IF740"
+     ],
+     "old_course_name": [
+      "SISTEMAS DE COMUNICACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF742": {
+     "old_codes": [
+      "IF742"
+     ],
+     "old_course_name": [
+      "AVALIACAO DESEMPENHO DE SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF743": {
+     "old_codes": [
+      "IF743"
+     ],
+     "old_course_name": [
+      "SEGURANCA DE SISTEMAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF744": {
+     "old_codes": [
+      "IF744"
+     ],
+     "old_course_name": [
+      "ADM. DE SISTEMAS HETEROGENEOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF745": {
+     "old_codes": [
+      "IF745"
+     ],
+     "old_course_name": [
+      "SISTEMAS MULTIMIDIA DISTRIBUIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF746": {
+     "old_codes": [
+      "IF746"
+     ],
+     "old_course_name": [
+      "PROC.SIMUL.ESTOCAST.COMPUTACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF747": {
+     "old_codes": [
+      "IF747"
+     ],
+     "old_course_name": [
+      "TOP. AVANC. REDES DE COMPUTADORES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF749": {
+     "old_codes": [
+      "IF749"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANC.SIST.DISTRIBUIDOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF753": {
+     "old_codes": [
+      "IF753"
+     ],
+     "old_course_name": [
+      "PROCESSAMENTO DE SINAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF755": {
+     "old_codes": [
+      "IF755"
+     ],
+     "old_course_name": [
+      "REALIDADE VIRTUAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF756": {
+     "old_codes": [
+      "IF756"
+     ],
+     "old_course_name": [
+      "AUTORIA MULTIMIDIA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF758": {
+     "old_codes": [
+      "IF758"
+     ],
+     "old_course_name": [
+      "INTERFACES ADAPT. SISTEMAS MOVEIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF760": {
+     "old_codes": [
+      "IF760"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANCADOS EM MIDIAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF761": {
+     "old_codes": [
+      "IF761"
+     ],
+     "old_course_name": [
+      "SEMINARIO EM MIDIAS E INTERFACES"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF762": {
+     "old_codes": [
+      "IF762"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANCADOS EM INTERFACE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF765": {
+     "old_codes": [
+      "IF765"
+     ],
+     "old_course_name": [
+      "ANALISE NUMERICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF766": {
+     "old_codes": [
+      "IF766"
+     ],
+     "old_course_name": [
+      "ALGORITMOS DE APROXIMACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF768": {
+     "old_codes": [
+      "IF768"
+     ],
+     "old_course_name": [
+      "TEORIA DE GRAFOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF769": {
+     "old_codes": [
+      "IF769"
+     ],
+     "old_course_name": [
+      "TEORIA DA RECURSAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF770": {
+     "old_codes": [
+      "IF770"
+     ],
+     "old_course_name": [
+      "TEORIA DOS MODELOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF771": {
+     "old_codes": [
+      "IF771"
+     ],
+     "old_course_name": [
+      "TEORIA DA PROVA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF772": {
+     "old_codes": [
+      "IF772"
+     ],
+     "old_course_name": [
+      "LAMBDA CALCULO TEORIA TIPOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF773": {
+     "old_codes": [
+      "IF773"
+     ],
+     "old_course_name": [
+      "LOGICAS NAO CLASSICAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF774": {
+     "old_codes": [
+      "IF774"
+     ],
+     "old_course_name": [
+      "COMPLEXIDADE DESCRITIVA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF775": {
+     "old_codes": [
+      "IF775"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANCADOS EM ALGORITMOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF776": {
+     "old_codes": [
+      "IF776"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANCADOS INF. TEORICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF777": {
+     "old_codes": [
+      "IF777"
+     ],
+     "old_course_name": [
+      "TOP.AVANC. MATEMAT. COMPUTACIONAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF778": {
+     "old_codes": [
+      "IF778"
+     ],
+     "old_course_name": [
+      "SEMINARIO EM INFORMATICA TEORICA"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF779": {
+     "old_codes": [
+      "IF779"
+     ],
+     "old_course_name": [
+      "NOVA ECONOMIA E NOVA SOCIEDADE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF780": {
+     "old_codes": [
+      "IF780"
+     ],
+     "old_course_name": [
+      "ECONOMIA PARA EMPREENDEDOR"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF781": {
+     "old_codes": [
+      "IF781"
+     ],
+     "old_course_name": [
+      "EMPREENDIMENTOS EM INFORMATICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF782": {
+     "old_codes": [
+      "IF782"
+     ],
+     "old_course_name": [
+      "NEGOCIOS ON LINE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF784": {
+     "old_codes": [
+      "IF784"
+     ],
+     "old_course_name": [
+      "CONTABILIDADE FINANC. E GERENCIAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF785": {
+     "old_codes": [
+      "IF785"
+     ],
+     "old_course_name": [
+      "PROFICIENCIA EM INGLES 1"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF786": {
+     "old_codes": [
+      "IF786"
+     ],
+     "old_course_name": [
+      "PROFICIENCIA EM INGLES 2"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF787": {
+     "old_codes": [
+      "IF787"
+     ],
+     "old_course_name": [
+      "PROFICIENCIA EM INGLES 3"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF788": {
+     "old_codes": [
+      "IF788"
+     ],
+     "old_course_name": [
+      "INICIACAO CIENTIFICA 1"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF789": {
+     "old_codes": [
+      "IF789"
+     ],
+     "old_course_name": [
+      "INICIACAO CIENTIFICA 2"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF790": {
+     "old_codes": [
+      "IF790"
+     ],
+     "old_course_name": [
+      "PROJETO DE MONITORIA 1"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF791": {
+     "old_codes": [
+      "IF791"
+     ],
+     "old_course_name": [
+      "PROJETO DE MONITORIA 2"
+     ],
+     "old_status": [
+      "45h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF792": {
+     "old_codes": [
+      "IF792"
+     ],
+     "old_course_name": [
+      "COMERCIO ELETRONICO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF794": {
+     "old_codes": [
+      "IF794"
+     ],
+     "old_course_name": [
+      "JOGOS AVANCADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF795": {
+     "old_codes": [
+      "IF795"
+     ],
+     "old_course_name": [
+      "SISTEMAS SUPORTE DECIS.MIN.DADOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF796": {
+     "old_codes": [
+      "IF796"
+     ],
+     "old_course_name": [
+      "MINERACAO DA WEB"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF799": {
+     "old_codes": [
+      "IF799"
+     ],
+     "old_course_name": [
+      "PROG.DECLARATIVA B.D.INTELIGENTES"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF800": {
+     "old_codes": [
+      "IF800"
+     ],
+     "old_course_name": [
+      "ENGENHARIA SOFTWARE EDUCATIVOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF801": {
+     "old_codes": [
+      "IF801"
+     ],
+     "old_course_name": [
+      "TECNOLOGIAS EDUCACIONAIS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF802": {
+     "old_codes": [
+      "IF802"
+     ],
+     "old_course_name": [
+      "CONVERGENCIA DIGITAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF803": {
+     "old_codes": [
+      "IF803"
+     ],
+     "old_course_name": [
+      "INTRODUCAO A BIOLOGIA MOLECULAR"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF804": {
+     "old_codes": [
+      "IF804"
+     ],
+     "old_course_name": [
+      "COMPARACAO ANALISE SEQUENCIAS DNA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF805": {
+     "old_codes": [
+      "IF805"
+     ],
+     "old_course_name": [
+      "PROJETO EM BIO INFORMATICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF806": {
+     "old_codes": [
+      "IF806"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANC.EM BIO INFORMATICA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF807": {
+     "old_codes": [
+      "IF807"
+     ],
+     "old_course_name": [
+      "TOP. AVANC.SIST.SUP.DECIS.MIN.WEB"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF808": {
+     "old_codes": [
+      "IF808"
+     ],
+     "old_course_name": [
+      "TOPICOS AVANC.TECNOLOGIA ENSINO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF809": {
+     "old_codes": [
+      "IF809"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.ROBOT.AUTOM.INTELIGENTE"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF810": {
+     "old_codes": [
+      "IF810"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.EM NEGOCIOS ONLINE E EMPREENDIMENTOS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF811": {
+     "old_codes": [
+      "IF811"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.ADMINIST.SIST.SEGURANCA"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF812": {
+     "old_codes": [
+      "IF812"
+     ],
+     "old_course_name": [
+      "TOP.AVANC.ENTRETENIMENTO DIGITAL"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF835": {
+     "old_codes": [
+      "IF835"
+     ],
+     "old_course_name": [
+      "CONTROLE E MANIPULACAO"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "IF865": {
+     "old_codes": [
+      "IF865"
+     ],
+     "old_course_name": [
+      "INTERFACES GRAFICAS"
+     ],
+     "old_status": [
+      "75h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+    "MA036": {
+     "old_codes": [
+      "MA036"
+     ],
+     "old_course_name": [
+      "GEOMETRIA ANALITICA 1"
+     ],
+     "old_status": [
+      "60h Aula"
+     ],
+     "new_codes": [],
+     "new_course_name": [],
+     "new_status": []
+    },
+        "CIN0130": {
+         "new_codes": [
+          "CIN0130"
+         ],
+         "new_course_name": [
+          "SISTEMAS DIGITAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF675"
+         ],
+         "old_course_name": [
+          "SISTEMAS DIGITAIS"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0133": {
+         "new_codes": [
+          "CIN0133"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A PROGRAMACAO"
+         ],
+         "new_status": [
+          "120h Aula"
+         ],
+         "old_codes": [
+          "IF669"
+         ],
+         "old_course_name": [
+          "INTRODUCAO A PROGRAMACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0132": {
+         "new_codes": [
+          "CIN0132"
+         ],
+         "new_course_name": [
+          "MATEMATICA DISCRETA PARA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF670"
+         ],
+         "old_course_name": [
+          "MATEMAT DISCRETA P/COMPUTACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0131": {
+         "new_codes": [
+          "CIN0131"
+         ],
+         "new_course_name": [
+          "CONCEPCAO DE ARTEFATOS DIGITAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF681"
+         ],
+         "old_course_name": [
+          "INTERFACES USUARIO-MAQUINA"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0134": {
+         "new_codes": [
+          "CIN0134"
+         ],
+         "new_course_name": [
+          "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF677"
+         ],
+         "old_course_name": [
+          "INFRA-ESTRUTURA DE SOFTWARE"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0138": {
+         "new_codes": [
+          "CIN0138"
+         ],
+         "new_course_name": [
+          "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "MA531"
+         ],
+         "old_course_name": [
+          "ALGEBRA VET LINEAR P/COMPUTACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0140": {
+         "new_codes": [
+          "CIN0140"
+         ],
+         "new_course_name": [
+          "ALGORITMOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF672"
+         ],
+         "old_course_name": [
+          "ALGORITMOS E ESTRUTURAS DE DADOS"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0137": {
+         "new_codes": [
+          "CIN0137"
+         ],
+         "new_course_name": [
+          "BANCO DE DADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF685"
+         ],
+         "old_course_name": [
+          "GERENCIAMENTO DADOS E INFORMACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0141": {
+         "new_codes": [
+          "CIN0141"
+         ],
+         "new_course_name": [
+          "LOGICA PARA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF673"
+         ],
+         "old_course_name": [
+          "LOGICA PARA COMPUTACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0142": {
+         "new_codes": [
+          "CIN0142"
+         ],
+         "new_course_name": [
+          "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "ET586"
+         ],
+         "old_course_name": [
+          "ESTATIST PROBABILIDADE COMPUTACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0144": {
+         "new_codes": [
+          "CIN0144"
+         ],
+         "new_course_name": [
+          "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS"
+         ],
+         "new_status": [
+          "120h Aula"
+         ],
+         "old_codes": [
+          "IF684 IF699"
+         ],
+         "old_course_name": [
+          "SISTEMAS INTELIGENTES"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO ELETIVO"
+         ]
+        },
+        "CIN0147": {
+         "new_codes": [
+          "CIN0147"
+         ],
+         "new_course_name": [
+          "METODOLOGIA CIENTIFICA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF676"
+         ],
+         "old_course_name": [
+          "METODOL EXPRESSAO TEC-CIENTIFICA"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0148": {
+         "new_codes": [
+          "CIN0148"
+         ],
+         "new_course_name": [
+          "TEORIA DA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF689"
+         ],
+         "old_course_name": [
+          "INFORMATICA TEORICA"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0150": {
+         "new_codes": [
+          "CIN0150"
+         ],
+         "new_course_name": [
+          "COMPILADORES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF688"
+         ],
+         "old_course_name": [
+          "TEO.IMPLEMEN.LING. COMPUTACIONAIS"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0153": {
+         "new_codes": [
+          "CIN0153"
+         ],
+         "new_course_name": [
+          "ANALISE E MINERACAO DE REDES COMPLEXAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF818"
+         ],
+         "old_course_name": [
+          "ANALISE E MINERACAO DE REDES COMPLEXAS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0129": {
+         "new_codes": [
+          "CIN0129"
+         ],
+         "new_course_name": [
+          "CRIATIVIDADE COMPUTACIONAL"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF866"
+         ],
+         "old_course_name": [
+          "CRIATIVIDADE COMPUTACIONAL"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0040": {
+         "new_codes": [
+          "CIN0040"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF867"
+         ],
+         "old_course_name": [
+          "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0120": {
+         "new_codes": [
+          "CIN0120"
+         ],
+         "new_course_name": [
+          "ALGORITMOS PARA STREAMS DE DADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF868"
+         ],
+         "old_course_name": [
+          "ALGORITMOS PARA STREAMS DE DADOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0119": {
+         "new_codes": [
+          "CIN0119"
+         ],
+         "new_course_name": [
+          "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF869"
+         ],
+         "old_course_name": [
+          "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0037": {
+         "new_codes": [
+          "CIN0037"
+         ],
+         "new_course_name": [
+          "REDES NEURAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF702"
+         ],
+         "old_course_name": [
+          "REDES NEURAIS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0038": {
+         "new_codes": [
+          "CIN0038"
+         ],
+         "new_course_name": [
+          "AGENTES AUTONOMOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF703"
+         ],
+         "old_course_name": [
+          "AGENTES AUTONOMOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0053": {
+         "new_codes": [
+          "CIN0053"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO GRAFICO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF680"
+         ],
+         "old_course_name": [
+          "PROCESSAMENTO GRAFICO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0179": {
+         "new_codes": [
+          "CIN0179"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO DE LINGUAGEM NATURAL"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF704"
+         ],
+         "old_course_name": [
+          "PROCESSAMENTO LINGUAGEM NATURAL"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0169": {
+         "new_codes": [
+          "CIN0169"
+         ],
+         "new_course_name": [
+          "PROGRAMACAO CONCORRENTE E DISTRIBUIDA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF711"
+         ],
+         "old_course_name": [
+          "PROGRAM. CONCORRENTE DISTRIBUIDA"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0176": {
+         "new_codes": [
+          "CIN0176"
+         ],
+         "new_course_name": [
+          "PROJETO DE DESENVOLVIMENTO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF683"
+         ],
+         "old_course_name": [
+          "PROJETO DE DESENVOLVIMENTO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0055": {
+         "new_codes": [
+          "CIN0055"
+         ],
+         "new_course_name": [
+          "TENDENCIAS EM MIDIA E INTERACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF687"
+         ],
+         "old_course_name": [
+          "INTRODUCAO A MULTIMIDIA"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "IF1008": {
+         "new_codes": [
+          "IF1008"
+         ],
+         "new_course_name": [
+          "ENGENHARIA DE REQUISITOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF716"
+         ],
+         "old_course_name": [
+          "ESPECIF.REQUIS.VALIDACAO SISTEMAS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0165": {
+         "new_codes": [
+          "CIN0165"
+         ],
+         "new_course_name": [
+          "METODOLOGIAS DE GERENCIAMENTO DE PROJETO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF717"
+         ],
+         "old_course_name": [
+          "PLANEJ. GERENCIAMENTO DE PROJETOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0166": {
+         "new_codes": [
+          "CIN0166"
+         ],
+         "new_course_name": [
+          "PLANEJAMENTO E GESTAO DA QUALIDADE DE SOFTWARE"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF720"
+         ],
+         "old_course_name": [
+          "QUALIDADE DE SOFTWARE"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0154": {
+         "new_codes": [
+          "CIN0154"
+         ],
+         "new_course_name": [
+          "REDES DE COMPUTADORES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF678"
+         ],
+         "old_course_name": [
+          "INFRA-ESTRUTURA DE COMUNICACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0157": {
+         "new_codes": [
+          "CIN0157"
+         ],
+         "new_course_name": [
+          "REDES DE COMPUTADORES 2"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF738"
+         ],
+         "old_course_name": [
+          "REDES DE COMPUTADORES"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0071": {
+         "new_codes": [
+          "CIN0071"
+         ],
+         "new_course_name": [
+          "GERENCIAMENTO E MONITORAMENTO DE REDES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF741"
+         ],
+         "old_course_name": [
+          "GERENCIAMENTO DE REDES"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0081": {
+         "new_codes": [
+          "CIN0081"
+         ],
+         "new_course_name": [
+          "SEMINARIOS EM REDES DE COMPUTADORES"
+         ],
+         "new_status": [
+          "30h Aula"
+         ],
+         "old_codes": [
+          "IF748"
+         ],
+         "old_course_name": [
+          "SEMINARIO REDES SIST.DISTRIBUIDOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0050": {
+         "new_codes": [
+          "CIN0050"
+         ],
+         "new_course_name": [
+          "COMPUTACAO GRAFICA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF750"
+         ],
+         "old_course_name": [
+          "COMPUTACAO GRAFICA"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0056": {
+         "new_codes": [
+          "CIN0056"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO DE IMAGEM"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF751"
+         ],
+         "old_course_name": [
+          "PROCESSAMENTO LINEAR DE IMAGENS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0060": {
+         "new_codes": [
+          "CIN0060"
+         ],
+         "new_course_name": [
+          "VISAO COMPUTACIONAL"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF752"
+         ],
+         "old_course_name": [
+          "ANALISE IMAG. VISAO COMPUTACIONAL"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0052": {
+         "new_codes": [
+          "CIN0052"
+         ],
+         "new_course_name": [
+          "COMPUTACAO MUSICAL E PROCESSAMENTO DE SOM"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF754"
+         ],
+         "old_course_name": [
+          "COMPUTACAO MUSICAL PROCESSAM.SOM"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0059": {
+         "new_codes": [
+          "CIN0059"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO DE VOZ"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF759"
+         ],
+         "old_course_name": [
+          "PROCESSAMENTO DE VOZ"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0174": {
+         "new_codes": [
+          "CIN0174"
+         ],
+         "new_course_name": [
+          "ALGEBRA AVANCADA PARA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF763"
+         ],
+         "old_course_name": [
+          "ALGEBRA LINEAR AVANC. COMPUTACAO"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "MA027": {
+         "new_codes": [
+          "MA027"
+         ],
+         "new_course_name": [
+          "CALCULO DIFERENCIAL E INTEGRAL 2"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF764"
+         ],
+         "old_course_name": [
+          "CALCULO AVANCADO PARA COMPUTACAO"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0160": {
+         "new_codes": [
+          "CIN0160"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO DE CADEIA DE CARACTERES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF767"
+         ],
+         "old_course_name": [
+          "PROCESSAMENTO CADEIA CARACTERES"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0125": {
+         "new_codes": [
+          "CIN0125"
+         ],
+         "new_course_name": [
+          "GESTAO DE NEGOCIOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF783"
+         ],
+         "old_course_name": [
+          "GESTAO DE NEGOCIOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0054": {
+         "new_codes": [
+          "CIN0054"
+         ],
+         "new_course_name": [
+          "JOGOS DIGITAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF793"
+         ],
+         "old_course_name": [
+          "PROJETO IMPLEMENTACAO DE JOGOS 2D"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0103": {
+         "new_codes": [
+          "CIN0103"
+         ],
+         "new_course_name": [
+          "OTIMIZACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF797"
+         ],
+         "old_course_name": [
+          "OTIMIZACAO"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0100": {
+         "new_codes": [
+          "CIN0100"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A ROBOTICA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF798"
+         ],
+         "old_course_name": [
+          "ROBOTICA"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0178": {
+         "new_codes": [
+          "CIN0178"
+         ],
+         "new_course_name": [
+          "RECUPERACAO DA INFORMACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF962"
+         ],
+         "old_course_name": [
+          "RECUPERACAO DE INFORMACAO"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "CIN0170": {
+         "new_codes": [
+          "CIN0170"
+         ],
+         "new_course_name": [
+          "METODOS FORMAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "IF721"
+         ],
+         "old_course_name": [
+          "SISTEMAS CRITICOS"
+         ],
+         "old_status": [
+          "ELETIVO"
+         ]
+        },
+        "LE037": {
+         "new_codes": [
+          "LE037"
+         ],
+         "new_course_name": [
+          "LINGUA INGLESA INSTRUMENTAL 1"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [
+          "LE530"
+         ],
+         "old_course_name": [
+          "INGLES PARA COMPUTACAO"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "CIN0136": {
+         "new_codes": [
+          "CIN0136"
+         ],
+         "new_course_name": [
+          "DESENVOLVIMENTO DE SOFTWARE"
+         ],
+         "new_status": [
+          "120h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0135": {
+         "new_codes": [
+          "CIN0135"
+         ],
+         "new_course_name": [
+          "ESTRUTURAS DE DADOS ORIENTADAS A OBJETOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0139": {
+         "new_codes": [
+          "CIN0139"
+         ],
+         "new_course_name": [
+          "INTEGRACAO E EVOLUCAO DE SISTEMAS DE INFORMACAO"
+         ],
+         "new_status": [
+          "120h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0143": {
+         "new_codes": [
+          "CIN0143"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A SISTEMAS DISTRIBUIDOS E REDES DE COMPUTADORES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0149": {
+         "new_codes": [
+          "CIN0149"
+         ],
+         "new_course_name": [
+          "INFORMATICA E SOCIEDADE"
+         ],
+         "new_status": [
+          "30h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0039": {
+         "new_codes": [
+          "CIN0039"
+         ],
+         "new_course_name": [
+          "COMPUTACAO QUANTICA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0041": {
+         "new_codes": [
+          "CIN0041"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A APRENDIZAGEM POR REFORCO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0043": {
+         "new_codes": [
+          "CIN0043"
+         ],
+         "new_course_name": [
+          "APLICACOES DE APRENDIZAGEM DE MAQUINA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0044": {
+         "new_codes": [
+          "CIN0044"
+         ],
+         "new_course_name": [
+          "COMPUTACAO EVOLUCIONARIA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0045": {
+         "new_codes": [
+          "CIN0045"
+         ],
+         "new_course_name": [
+          "INTELIGENCIA ARTIFICIAL COLETIVA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0051": {
+         "new_codes": [
+          "CIN0051"
+         ],
+         "new_course_name": [
+          "FUNDAMENTOS GEOMETRICOS PARA VISAO COMPUTACIONAL"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0067": {
+         "new_codes": [
+          "CIN0067"
+         ],
+         "new_course_name": [
+          "REDES DEFINIDAS POR SOFTWARE"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0068": {
+         "new_codes": [
+          "CIN0068"
+         ],
+         "new_course_name": [
+          "REDES VEICULARES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0070": {
+         "new_codes": [
+          "CIN0070"
+         ],
+         "new_course_name": [
+          "REDES AUTOMOTIVAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0072": {
+         "new_codes": [
+          "CIN0072"
+         ],
+         "new_course_name": [
+          "AVALIACAO DE DESEMPENHO DE REDES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0073": {
+         "new_codes": [
+          "CIN0073"
+         ],
+         "new_course_name": [
+          "COMPUTACAO ORIENTADA A SERVICOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0075": {
+         "new_codes": [
+          "CIN0075"
+         ],
+         "new_course_name": [
+          "SISTEMAS DISTRIBUIDOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0076": {
+         "new_codes": [
+          "CIN0076"
+         ],
+         "new_course_name": [
+          "SEGURANCA DE REDES E SISTEMAS DISTRIBUIDOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0077": {
+         "new_codes": [
+          "CIN0077"
+         ],
+         "new_course_name": [
+          "PLATAFORMAS DE DISTRIBUICAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0079": {
+         "new_codes": [
+          "CIN0079"
+         ],
+         "new_course_name": [
+          "COMPUTACAO UBIQUA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0080": {
+         "new_codes": [
+          "CIN0080"
+         ],
+         "new_course_name": [
+          "INTERNET DAS COISAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0083": {
+         "new_codes": [
+          "CIN0083"
+         ],
+         "new_course_name": [
+          "TENDENCIAS EM REDES DE COMPUTADORES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0112": {
+         "new_codes": [
+          "CIN0112"
+         ],
+         "new_course_name": [
+          "SEGURANCA DE COMPUTADORES"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0113": {
+         "new_codes": [
+          "CIN0113"
+         ],
+         "new_course_name": [
+          "ASSINATURA DIGITAL E CERTIFICACAO DIGITAL"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0114": {
+         "new_codes": [
+          "CIN0114"
+         ],
+         "new_course_name": [
+          "TECNICAS DE ATAQUE E DETECCAO DE INTRUSAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0115": {
+         "new_codes": [
+          "CIN0115"
+         ],
+         "new_course_name": [
+          "SEGURANCA EM COMPUTACAO EM NUVEM"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0116": {
+         "new_codes": [
+          "CIN0116"
+         ],
+         "new_course_name": [
+          "TENDENCIAS EM SEGURANCA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0117": {
+         "new_codes": [
+          "CIN0117"
+         ],
+         "new_course_name": [
+          "SEMINARIOS EM SEGURANCA"
+         ],
+         "new_status": [
+          "30h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0121": {
+         "new_codes": [
+          "CIN0121"
+         ],
+         "new_course_name": [
+          "ETICA E ASPECTOS JURIDICOS DA COMPUTACAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0123": {
+         "new_codes": [
+          "CIN0123"
+         ],
+         "new_course_name": [
+          "DATA WAREHOUSING"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0152": {
+         "new_codes": [
+          "CIN0152"
+         ],
+         "new_course_name": [
+          "VISUALIZACAO DE DADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0155": {
+         "new_codes": [
+          "CIN0155"
+         ],
+         "new_course_name": [
+          "BANCOS DE DADOS NAO-CONVENCIONAIS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0156": {
+         "new_codes": [
+          "CIN0156"
+         ],
+         "new_course_name": [
+          "COMPUTACAO BIOINSPIRADA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0158": {
+         "new_codes": [
+          "CIN0158"
+         ],
+         "new_course_name": [
+          "SEGURANCA DE INFORMACAO E SISTEMAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0159": {
+         "new_codes": [
+          "CIN0159"
+         ],
+         "new_course_name": [
+          "SISTEMAS EMBARCADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0161": {
+         "new_codes": [
+          "CIN0161"
+         ],
+         "new_course_name": [
+          "TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSAO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0162": {
+         "new_codes": [
+          "CIN0162"
+         ],
+         "new_course_name": [
+          "ANALISE E ESPECIFICACAO AVANCADA DE REQUISITOS DE SISTEMAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0163": {
+         "new_codes": [
+          "CIN0163"
+         ],
+         "new_course_name": [
+          "ARQUITETURA DE SISTEMAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0167": {
+         "new_codes": [
+          "CIN0167"
+         ],
+         "new_course_name": [
+          "PROGRAMACAO COM NOVAS TECNOLOGIAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0168": {
+         "new_codes": [
+          "CIN0168"
+         ],
+         "new_course_name": [
+          "FUNDAMENTOS DE TESTE DE SOFTWARE"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0171": {
+         "new_codes": [
+          "CIN0171"
+         ],
+         "new_course_name": [
+          "TESTE DE SOFTWARE AVANCADO"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0172": {
+         "new_codes": [
+          "CIN0172"
+         ],
+         "new_course_name": [
+          "TRANSFORMACAO DE CODIGO E MODELOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0173": {
+         "new_codes": [
+          "CIN0173"
+         ],
+         "new_course_name": [
+          "SEMINARIOS EM ENGENHARIA DE SOFTWARE"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0175": {
+         "new_codes": [
+          "CIN0175"
+         ],
+         "new_course_name": [
+          "DISPOSITIVOS MULTIMIDIA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0177": {
+         "new_codes": [
+          "CIN0177"
+         ],
+         "new_course_name": [
+          "COMPUTACAO EM NUVEM"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0180": {
+         "new_codes": [
+          "CIN0180"
+         ],
+         "new_course_name": [
+          "PROCESSAMENTO DE DADOS EM LARGA ESCALA"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0181": {
+         "new_codes": [
+          "CIN0181"
+         ],
+         "new_course_name": [
+          "GOVERNANCA DE DADOS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "CIN0182": {
+         "new_codes": [
+          "CIN0182"
+         ],
+         "new_course_name": [
+          "GERENCIA DE CONFIGURACAO DE SOFTWARE, SERVICOS E SISTEMAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        },
+        "LE716": {
+         "new_codes": [
+          "LE716"
+         ],
+         "new_course_name": [
+          "INTRODUCAO A LIBRAS"
+         ],
+         "new_status": [
+          "60h Aula"
+         ],
+         "old_codes": [],
+         "old_course_name": [],
+         "old_status": []
+        }
+       }

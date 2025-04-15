@@ -1,0 +1,147 @@
+{"SI":{
+    "1": [
+      "Matemática Discreta",
+      "Introdução à Programação",
+      "Sistemas Digitais",
+      "Concepção de Artefatos Digitais"
+    ],
+    "2": [
+      "Cálculo 1",
+      "Estrutura de Dados",
+      "Arquitetura de Computadores + Sistemas Operacionais",
+      "Desenvolvimento de Software"
+    ],
+    "3": [
+      "Álgebra Linear para Computação",
+      "Algoritmos",
+      "Banco de Dados",
+      "Integração e Evolução de Sistemas de Informação"
+    ],
+    "4": [
+      "Estatística e Probabilidade",
+      "Lógica",
+      "Introdução a Sistemas Distribuídos e Redes de Computadores",
+      "Aprendizado de Máquina e Ciência de Dados"
+    ],
+    "5": [
+      "Empreendimentos em Informática",
+      "Aspectos Sócio-Econômicos de Sistemas de Informação",
+      "Administração Contemporânea"
+    ],
+    "6": [
+      "Arquitetura Empresarial",
+      "Gestão de Processos de Negócios"
+    ],
+    "7": [
+      "Comunicação Técnica e Científica",
+      "Análise e Projeto de Sistemas de Informação"
+    ],
+    "8": [
+      "Trabalho de Conclusão de Curso"
+    ]
+  },
+"EC":{
+    "1": [
+      "Cálculo Diferencial e Integral 1",
+      "Geometria Analítica",
+      "Introdução à Computação",
+      "Introdução à Programação",
+      "Laboratório de Programação"
+    ],
+    "2": [
+      "Cálculo Diferencial e Integral 2",
+      "Fundamentos de Álgebra Linear",
+      "Laboratório de Computação",
+      "Fundamentos de Programação",
+      "Laboratório de Programação"
+    ],
+    "3": [
+      "Cálculo Diferencial e Integral 3",
+      "Física Geral 1",
+      "Matemática Discreta para Computação",
+      "Algoritmos e Estruturas de Dados",
+      "Sistemas Digitais"
+    ],
+    "4": [
+      "Cálculo Diferencial e Integral 4",
+      "Física Geral 2",
+      "Probabilidade e Estatística para Computação",
+      "Informática e Sociedade",
+      "Organização e Arquitetura de Computadores"
+    ],
+    "5": [
+      "Complementos de Matemática para Computação",
+      "Circuitos Lógicos",
+      "Laboratório de Circuitos Lógicos",
+      "Banco de Dados",
+      "Sistemas Operacionais"
+    ],
+    "6": [
+      "Sinais e Sistemas Lineares para Computação",
+      "Eletrônica",
+      "Eletrônica para Computação",
+      "Laboratório de Eletrônica",
+      "Fundamentos de Redes de Computadores"
+    ],
+    "7": [
+      "Princípios de Comunicações",
+      "Processamento de Sinais",
+      "Fundamentos de Sistemas de Controle",
+      "Introdução ao Aprendizado de Máquina",
+      "Laboratório de Redes de Computadores"
+    ],
+    "8": [
+      "Projeto de Sistemas de Telecomunicações",
+      "Sistemas Embarcados",
+      "Engenharia de Software e Sistemas",
+      "Laboratório de Sistemas Embarcados"
+    ],
+    "9": [
+      "TCC 1",
+      "Lógica para Computação",
+      "Teoria da Computação",
+      "Linguagens Formais e Autômatos"
+    ],
+    "10": [
+      "TCC 2",
+      "Compiladores",
+      "Laboratório de Linguagens de Programação"
+    ]
+  },
+  "CC": {
+    "1": [
+      "Matemática Discreta para Computação",
+      "Introdução à Programação",
+      "Sistemas Digitais",
+      "Concepção de Artefatos Digitais"
+    ],
+    "2": [
+      "Cálculo 1",
+      "Estrutura de Dados Orientada a Objetos",
+      "Arquitetura de Computadores e Sistemas Operacionais",
+      "Desenvolvimento de Software"
+    ],
+    "3": [
+      "Álgebra Vetorial e Linear para Computação",
+      "Algoritmos",
+      "Banco de Dados",
+      "Integração e Evolução de Sistemas de Informação"
+    ],
+    "4": [
+      "Probabilidade e Estatística",
+      "Lógica para Computação",
+      "Introdução a Sistemas Distribuídos e Redes de Computadores",
+      "Aprendizado de Máquina e Ciência de Dados"
+    ],
+    "5": [
+      "Teoria da Computação",
+      "Programação Funcional",
+      "Programação Concorrente",
+      "Metodologia Científica",
+      "Informática e Sociedade"
+    ],
+    "6": [
+      "Compiladores"
+    ]
+  }
+}
