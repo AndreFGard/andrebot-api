@@ -1,0 +1,1782 @@
+{
+ "IF669": {
+  "old_code": [
+   "IF669"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A PROGRAMACAO"
+  ],
+  "new_code": [
+   "CIN0133"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A PROGRAMACAO"
+  ]
+ },
+ "IF670": {
+  "old_code": [
+   "IF670"
+  ],
+  "old_course_name": [
+   "MATEMAT DISCRETA P/COMPUTACAO"
+  ],
+  "new_code": [
+   "CIN0132"
+  ],
+  "new_course_name": [
+   "MATEMATICA DISCRETA PARA COMPUTACAO"
+  ]
+ },
+ "MA026": {
+  "old_code": [
+   "MA026"
+  ],
+  "old_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 1"
+  ],
+  "new_code": [
+   "MA026"
+  ],
+  "new_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 1"
+  ]
+ },
+ "MA531": {
+  "old_code": [
+   "MA531"
+  ],
+  "old_course_name": [
+   "ALGEBRA VET LINEAR P/COMPUTACAO"
+  ],
+  "new_code": [
+   "CIN0138"
+  ],
+  "new_course_name": [
+   "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO"
+  ]
+ },
+ "ET586": {
+  "old_code": [
+   "ET586"
+  ],
+  "old_course_name": [
+   "ESTATIST PROBABILIDADE COMPUTACAO"
+  ],
+  "new_code": [
+   "CIN0142"
+  ],
+  "new_course_name": [
+   "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO"
+  ]
+ },
+ "IF672": {
+  "old_code": [
+   "IF672"
+  ],
+  "old_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS"
+  ],
+  "new_code": [
+   "CIN0140"
+  ],
+  "new_course_name": [
+   "ALGORITMOS"
+  ]
+ },
+ "IF673": {
+  "old_code": [
+   "IF673"
+  ],
+  "old_course_name": [
+   "LOGICA PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "CIN0141"
+  ],
+  "new_course_name": [
+   "LOGICA PARA COMPUTACAO"
+  ]
+ },
+ "IF675": {
+  "old_code": [
+   "IF675"
+  ],
+  "old_course_name": [
+   "SISTEMAS DIGITAIS"
+  ],
+  "new_code": [
+   "CIN0130"
+  ],
+  "new_course_name": [
+   "SISTEMAS DIGITAIS"
+  ]
+ },
+ "IF677": {
+  "old_code": [
+   "IF677"
+  ],
+  "old_course_name": [
+   "INFRA-ESTRUTURA DE SOFTWARE"
+  ],
+  "new_code": [
+   "CIN0134"
+  ],
+  "new_course_name": [
+   "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS"
+  ]
+ },
+ "IF678": {
+  "old_code": [
+   "IF678"
+  ],
+  "old_course_name": [
+   "INFRA-ESTRUTURA DE COMUNICACAO"
+  ],
+  "new_code": [
+   "CIN0154"
+  ],
+  "new_course_name": [
+   "REDES DE COMPUTADORES"
+  ]
+ },
+ "IF679": {
+  "old_code": [
+   "IF679"
+  ],
+  "old_course_name": [
+   "INFORMATICA E SOCIEDADE"
+  ],
+  "new_code": [
+   "CIN0149"
+  ],
+  "new_course_name": [
+   "INFORMATICA E SOCIEDADE"
+  ]
+ },
+ "LE530": {
+  "old_code": [
+   "LE530"
+  ],
+  "old_course_name": [
+   "INGLES PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "LE037"
+  ],
+  "new_course_name": [
+   "LINGUA INGLESA INSTRUMENTAL 1"
+  ]
+ },
+ "IF680": {
+  "old_code": [
+   "IF680"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO GRAFICO"
+  ],
+  "new_code": [
+   "CIN0053"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO GRAFICO"
+  ]
+ },
+ "IF681": {
+  "old_code": [
+   "IF681"
+  ],
+  "old_course_name": [
+   "INTERFACES USUARIO-MAQUINA"
+  ],
+  "new_code": [
+   "CIN0131"
+  ],
+  "new_course_name": [
+   "CONCEPCAO DE ARTEFATOS DIGITAIS"
+  ]
+ },
+ "IF685": {
+  "old_code": [
+   "IF685"
+  ],
+  "old_course_name": [
+   "GERENCIAMENTO DADOS E INFORMACAO"
+  ],
+  "new_code": [
+   "CIN0137"
+  ],
+  "new_course_name": [
+   "BANCO DE DADOS"
+  ]
+ },
+ "IF689": {
+  "old_code": [
+   "IF689"
+  ],
+  "old_course_name": [
+   "INFORMATICA TEORICA"
+  ],
+  "new_code": [
+   "CIN0148"
+  ],
+  "new_course_name": [
+   "TEORIA DA COMPUTACAO"
+  ]
+ },
+ "IF676": {
+  "old_code": [
+   "IF676"
+  ],
+  "old_course_name": [
+   "METODOL EXPRESSAO TEC-CIENTIFICA"
+  ],
+  "new_code": [
+   "CIN0147"
+  ],
+  "new_course_name": [
+   "METODOLOGIA CIENTIFICA"
+  ]
+ },
+ "IF683": {
+  "old_code": [
+   "IF683"
+  ],
+  "old_course_name": [
+   "PROJETO DE DESENVOLVIMENTO"
+  ],
+  "new_code": [
+   "CIN0176"
+  ],
+  "new_course_name": [
+   "PROJETO DE DESENVOLVIMENTO"
+  ]
+ },
+ "IF686": {
+  "old_code": [
+   "IF686"
+  ],
+  "old_course_name": [
+   "PARADIGMAS LING.COMPUTACIONAIS"
+  ],
+  "new_code": [
+   "CIN0145 CIN0146"
+  ],
+  "new_course_name": [
+   "PROGRAMACAO CONCORRENTE"
+  ]
+ },
+ "IF687": {
+  "old_code": [
+   "IF687"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A MULTIMIDIA"
+  ],
+  "new_code": [
+   "CIN0055"
+  ],
+  "new_course_name": [
+   "TENDENCIAS EM MIDIA E INTERACAO"
+  ]
+ },
+ "IF688": {
+  "old_code": [
+   "IF688"
+  ],
+  "old_course_name": [
+   "TEO.IMPLEMEN.LING. COMPUTACIONAIS"
+  ],
+  "new_code": [
+   "CIN0150"
+  ],
+  "new_course_name": [
+   "COMPILADORES"
+  ]
+ },
+ "IF818": {
+  "old_code": [
+   "IF818"
+  ],
+  "old_course_name": [
+   "ANALISE E MINERACAO DE REDES COMPLEXAS"
+  ],
+  "new_code": [
+   "CIN0153"
+  ],
+  "new_course_name": [
+   "ANALISE E MINERACAO DE REDES COMPLEXAS"
+  ]
+ },
+ "IF866": {
+  "old_code": [
+   "IF866"
+  ],
+  "old_course_name": [
+   "CRIATIVIDADE COMPUTACIONAL"
+  ],
+  "new_code": [
+   "CIN0129"
+  ],
+  "new_course_name": [
+   "CRIATIVIDADE COMPUTACIONAL"
+  ]
+ },
+ "IF867": {
+  "old_code": [
+   "IF867"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+  ],
+  "new_code": [
+   "CIN0040"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+  ]
+ },
+ "IF868": {
+  "old_code": [
+   "IF868"
+  ],
+  "old_course_name": [
+   "ALGORITMOS PARA STREAMS DE DADOS"
+  ],
+  "new_code": [
+   "CIN0120"
+  ],
+  "new_course_name": [
+   "ALGORITMOS PARA STREAMS DE DADOS"
+  ]
+ },
+ "IF869": {
+  "old_code": [
+   "IF869"
+  ],
+  "old_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+  ],
+  "new_code": [
+   "CIN0119"
+  ],
+  "new_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+  ]
+ },
+ "IF702": {
+  "old_code": [
+   "IF702"
+  ],
+  "old_course_name": [
+   "REDES NEURAIS"
+  ],
+  "new_code": [
+   "CIN0037"
+  ],
+  "new_course_name": [
+   "REDES NEURAIS"
+  ]
+ },
+ "IF703": {
+  "old_code": [
+   "IF703"
+  ],
+  "old_course_name": [
+   "AGENTES AUTONOMOS"
+  ],
+  "new_code": [
+   "CIN0038"
+  ],
+  "new_course_name": [
+   "AGENTES AUTONOMOS"
+  ]
+ },
+ "IF704": {
+  "old_code": [
+   "IF704"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO LINGUAGEM NATURAL"
+  ],
+  "new_code": [
+   "CIN0179"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO DE LINGUAGEM NATURAL"
+  ]
+ },
+ "IF711": {
+  "old_code": [
+   "IF711"
+  ],
+  "old_course_name": [
+   "PROGRAM. CONCORRENTE DISTRIBUIDA"
+  ],
+  "new_code": [
+   "CIN0169"
+  ],
+  "new_course_name": [
+   "PROGRAMACAO CONCORRENTE E DISTRIBUIDA"
+  ]
+ },
+ "IF716": {
+  "old_code": [
+   "IF716"
+  ],
+  "old_course_name": [
+   "ESPECIF.REQUIS.VALIDACAO SISTEMAS"
+  ],
+  "new_code": [
+   "IF1008"
+  ],
+  "new_course_name": [
+   "ENGENHARIA DE REQUISITOS"
+  ]
+ },
+ "IF717": {
+  "old_code": [
+   "IF717"
+  ],
+  "old_course_name": [
+   "PLANEJ. GERENCIAMENTO DE PROJETOS"
+  ],
+  "new_code": [
+   "CIN0165"
+  ],
+  "new_course_name": [
+   "METODOLOGIAS DE GERENCIAMENTO DE PROJETO"
+  ]
+ },
+ "IF720": {
+  "old_code": [
+   "IF720"
+  ],
+  "old_course_name": [
+   "QUALIDADE DE SOFTWARE"
+  ],
+  "new_code": [
+   "CIN0166"
+  ],
+  "new_course_name": [
+   "PLANEJAMENTO E GESTAO DA QUALIDADE DE SOFTWARE"
+  ]
+ },
+ "IF721": {
+  "old_code": [
+   "IF721"
+  ],
+  "old_course_name": [
+   "SISTEMAS CRITICOS"
+  ],
+  "new_code": [
+   "CIN0170"
+  ],
+  "new_course_name": [
+   "METODOS FORMAIS"
+  ]
+ },
+ "IF738": {
+  "old_code": [
+   "IF738"
+  ],
+  "old_course_name": [
+   "REDES DE COMPUTADORES"
+  ],
+  "new_code": [
+   "CIN0157"
+  ],
+  "new_course_name": [
+   "REDES DE COMPUTADORES 2"
+  ]
+ },
+ "IF741": {
+  "old_code": [
+   "IF741"
+  ],
+  "old_course_name": [
+   "GERENCIAMENTO DE REDES"
+  ],
+  "new_code": [
+   "CIN0071"
+  ],
+  "new_course_name": [
+   "GERENCIAMENTO E MONITORAMENTO DE REDES"
+  ]
+ },
+ "IF748": {
+  "old_code": [
+   "IF748"
+  ],
+  "old_course_name": [
+   "SEMINARIO REDES SIST.DISTRIBUIDOS"
+  ],
+  "new_code": [
+   "CIN0081"
+  ],
+  "new_course_name": [
+   "SEMINARIOS EM REDES DE COMPUTADORES"
+  ]
+ },
+ "IF750": {
+  "old_code": [
+   "IF750"
+  ],
+  "old_course_name": [
+   "COMPUTACAO GRAFICA"
+  ],
+  "new_code": [
+   "CIN0050"
+  ],
+  "new_course_name": [
+   "COMPUTACAO GRAFICA"
+  ]
+ },
+ "IF751": {
+  "old_code": [
+   "IF751"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO LINEAR DE IMAGENS"
+  ],
+  "new_code": [
+   "CIN0056"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO DE IMAGEM"
+  ]
+ },
+ "IF752": {
+  "old_code": [
+   "IF752"
+  ],
+  "old_course_name": [
+   "ANALISE IMAG. VISAO COMPUTACIONAL"
+  ],
+  "new_code": [
+   "CIN0060"
+  ],
+  "new_course_name": [
+   "VISAO COMPUTACIONAL"
+  ]
+ },
+ "IF754": {
+  "old_code": [
+   "IF754"
+  ],
+  "old_course_name": [
+   "COMPUTACAO MUSICAL PROCESSAM.SOM"
+  ],
+  "new_code": [
+   "CIN0052"
+  ],
+  "new_course_name": [
+   "COMPUTACAO MUSICAL E PROCESSAMENTO DE SOM"
+  ]
+ },
+ "IF759": {
+  "old_code": [
+   "IF759"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE VOZ"
+  ],
+  "new_code": [
+   "CIN0059"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO DE VOZ"
+  ]
+ },
+ "IF763": {
+  "old_code": [
+   "IF763"
+  ],
+  "old_course_name": [
+   "ALGEBRA LINEAR AVANC. COMPUTACAO"
+  ],
+  "new_code": [
+   "CIN0174"
+  ],
+  "new_course_name": [
+   "ALGEBRA AVANCADA PARA COMPUTACAO"
+  ]
+ },
+ "IF764": {
+  "old_code": [
+   "IF764"
+  ],
+  "old_course_name": [
+   "CALCULO AVANCADO PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "MA027"
+  ],
+  "new_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 2"
+  ]
+ },
+ "IF767": {
+  "old_code": [
+   "IF767"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO CADEIA CARACTERES"
+  ],
+  "new_code": [
+   "CIN0160"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO DE CADEIA DE CARACTERES"
+  ]
+ },
+ "IF783": {
+  "old_code": [
+   "IF783"
+  ],
+  "old_course_name": [
+   "GESTAO DE NEGOCIOS"
+  ],
+  "new_code": [
+   "CIN0125"
+  ],
+  "new_course_name": [
+   "GESTAO DE NEGOCIOS"
+  ]
+ },
+ "IF793": {
+  "old_code": [
+   "IF793"
+  ],
+  "old_course_name": [
+   "PROJETO IMPLEMENTACAO DE JOGOS 2D"
+  ],
+  "new_code": [
+   "CIN0054"
+  ],
+  "new_course_name": [
+   "JOGOS DIGITAIS"
+  ]
+ },
+ "IF797": {
+  "old_code": [
+   "IF797"
+  ],
+  "old_course_name": [
+   "OTIMIZACAO"
+  ],
+  "new_code": [
+   "CIN0103"
+  ],
+  "new_course_name": [
+   "OTIMIZACAO"
+  ]
+ },
+ "IF798": {
+  "old_code": [
+   "IF798"
+  ],
+  "old_course_name": [
+   "ROBOTICA"
+  ],
+  "new_code": [
+   "CIN0100"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A ROBOTICA"
+  ]
+ },
+ "IF962": {
+  "old_code": [
+   "IF962"
+  ],
+  "old_course_name": [
+   "RECUPERACAO DE INFORMACAO"
+  ],
+  "new_code": [
+   "CIN0178"
+  ],
+  "new_course_name": [
+   "RECUPERACAO DA INFORMACAO"
+  ]
+ },
+ "IF668": {
+  "old_code": [
+   "IF668"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A COMPUTACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "FI582": {
+  "old_code": [
+   "FI582"
+  ],
+  "old_course_name": [
+   "FISICA PARA COMPUTACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF674": {
+  "old_code": [
+   "IF674"
+  ],
+  "old_course_name": [
+   "INFRA-ESTRUTURA DE HARDWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF682": {
+  "old_code": [
+   "IF682"
+  ],
+  "old_course_name": [
+   "ENGENHARIA SOFTWARE E SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF690": {
+  "old_code": [
+   "IF690"
+  ],
+  "old_course_name": [
+   "HISTORIA E FUTURO DA COMPUTACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "FI006": {
+  "old_code": [
+   "FI006"
+  ],
+  "old_course_name": [
+   "FISICA GERAL 1"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "FI007": {
+  "old_code": [
+   "FI007"
+  ],
+  "old_course_name": [
+   "FISICA GERAL 2"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF109": {
+  "old_code": [
+   "IF109"
+  ],
+  "old_course_name": [
+   "METODOS NUMERICOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF692": {
+  "old_code": [
+   "IF692"
+  ],
+  "old_course_name": [
+   "PROJETO DE BANCO DE DADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF693": {
+  "old_code": [
+   "IF693"
+  ],
+  "old_course_name": [
+   "SIST.GERENC. DE BANCO DE DADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF694": {
+  "old_code": [
+   "IF694"
+  ],
+  "old_course_name": [
+   "BANCO DE DADOS DISTRIB. E MOVEIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF695": {
+  "old_code": [
+   "IF695"
+  ],
+  "old_course_name": [
+   "BANCO DE DADOS AVANCADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF696": {
+  "old_code": [
+   "IF696"
+  ],
+  "old_course_name": [
+   "INTEG. DADOS WEB E WAREHOUSE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF697": {
+  "old_code": [
+   "IF697"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.GERENC.DADOS INFORMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF698": {
+  "old_code": [
+   "IF698"
+  ],
+  "old_course_name": [
+   "SEMIN. GERENC. DADOS E INFORMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF699": {
+  "old_code": [
+   "IF699"
+  ],
+  "old_course_name": [
+   "APRENDIZAGEM DE MAQUINA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF700": {
+  "old_code": [
+   "IF700"
+  ],
+  "old_course_name": [
+   "PERCEP. COMPUTAC.E RECONH. PADRAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF701": {
+  "old_code": [
+   "IF701"
+  ],
+  "old_course_name": [
+   "ENG.CONHEC.SISTEMAS ESPECIALISTAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF705": {
+  "old_code": [
+   "IF705"
+  ],
+  "old_course_name": [
+   "AUTOMACAO INTELIGENTE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF706": {
+  "old_code": [
+   "IF706"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANC.INTELEG.ARTIFICIAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF707": {
+  "old_code": [
+   "IF707"
+  ],
+  "old_course_name": [
+   "SEMIN. EM INTELIGENCIA ARTIFICIAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF708": {
+  "old_code": [
+   "IF708"
+  ],
+  "old_course_name": [
+   "PROGRAMACAO FUNCIONAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF709": {
+  "old_code": [
+   "IF709"
+  ],
+  "old_course_name": [
+   "IMPLEMENTACAO SIST. OPERACIONAIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF710": {
+  "old_code": [
+   "IF710"
+  ],
+  "old_course_name": [
+   "PROGRAMACAO COM COMPONENTES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF712": {
+  "old_code": [
+   "IF712"
+  ],
+  "old_course_name": [
+   "PROGRAMACAO PARA INTERNET"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF713": {
+  "old_code": [
+   "IF713"
+  ],
+  "old_course_name": [
+   "SEMANTICA LINGUAGENS PROGRAMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF714": {
+  "old_code": [
+   "IF714"
+  ],
+  "old_course_name": [
+   "SISTEMAS DE INFORMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF715": {
+  "old_code": [
+   "IF715"
+  ],
+  "old_course_name": [
+   "CALCULO DE PROGRAMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF718": {
+  "old_code": [
+   "IF718"
+  ],
+  "old_course_name": [
+   "ANALISE E PROJETOS DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF719": {
+  "old_code": [
+   "IF719"
+  ],
+  "old_course_name": [
+   "DESENVOLVIMENTO DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF722": {
+  "old_code": [
+   "IF722"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANCADOS ENG. SOFTWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF723": {
+  "old_code": [
+   "IF723"
+  ],
+  "old_course_name": [
+   "SEM.ENG. SOFT LING. COMPUTACIONAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF724": {
+  "old_code": [
+   "IF724"
+  ],
+  "old_course_name": [
+   "TOPICOS AVAN1⁄2.LING.COMPUTACIONAIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF725": {
+  "old_code": [
+   "IF725"
+  ],
+  "old_course_name": [
+   "PROJETO DE CPU"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF726": {
+  "old_code": [
+   "IF726"
+  ],
+  "old_course_name": [
+   "ORGANIZ. TECNOLOGIA COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF727": {
+  "old_code": [
+   "IF727"
+  ],
+  "old_course_name": [
+   "PROCESSADORES APLICAC. ESPECIFICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF728": {
+  "old_code": [
+   "IF728"
+  ],
+  "old_course_name": [
+   "ENGENHARIA DE SISTEMAS EMBUTIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF729": {
+  "old_code": [
+   "IF729"
+  ],
+  "old_course_name": [
+   "PROTOTIP. DE CIRCUITOS INTEGRADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF730": {
+  "old_code": [
+   "IF730"
+  ],
+  "old_course_name": [
+   "SISTEMA DE TEMPO REAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF731": {
+  "old_code": [
+   "IF731"
+  ],
+  "old_course_name": [
+   "AMBIENTES PROJETOS SIST.EMBUTIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF732": {
+  "old_code": [
+   "IF732"
+  ],
+  "old_course_name": [
+   "PROJETOS DE SISTEMAS EMBUTIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF733": {
+  "old_code": [
+   "IF733"
+  ],
+  "old_course_name": [
+   "TRANSDUTORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF734": {
+  "old_code": [
+   "IF734"
+  ],
+  "old_course_name": [
+   "PROJETO DE COMPILADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF735": {
+  "old_code": [
+   "IF735"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.ARQUIT.DE COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF736": {
+  "old_code": [
+   "IF736"
+  ],
+  "old_course_name": [
+   "SEMIN.ARQUIT. SISTEMAS EMBUTIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF737": {
+  "old_code": [
+   "IF737"
+  ],
+  "old_course_name": [
+   "TOP.AVANC. EM SISTEMAS EMBUTIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF739": {
+  "old_code": [
+   "IF739"
+  ],
+  "old_course_name": [
+   "COMUNICACAO SEM FIO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF740": {
+  "old_code": [
+   "IF740"
+  ],
+  "old_course_name": [
+   "SISTEMAS DE COMUNICACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF742": {
+  "old_code": [
+   "IF742"
+  ],
+  "old_course_name": [
+   "AVALIACAO DESEMPENHO DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF743": {
+  "old_code": [
+   "IF743"
+  ],
+  "old_course_name": [
+   "SEGURANCA DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF744": {
+  "old_code": [
+   "IF744"
+  ],
+  "old_course_name": [
+   "ADM. DE SISTEMAS HETEROGENEOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF745": {
+  "old_code": [
+   "IF745"
+  ],
+  "old_course_name": [
+   "SISTEMAS MULTIMIDIA DISTRIBUIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF746": {
+  "old_code": [
+   "IF746"
+  ],
+  "old_course_name": [
+   "PROC.SIMUL.ESTOCAST.COMPUTACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF747": {
+  "old_code": [
+   "IF747"
+  ],
+  "old_course_name": [
+   "TOP. AVANC. REDES DE COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF749": {
+  "old_code": [
+   "IF749"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANC.SIST.DISTRIBUIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF753": {
+  "old_code": [
+   "IF753"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE SINAIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF755": {
+  "old_code": [
+   "IF755"
+  ],
+  "old_course_name": [
+   "REALIDADE VIRTUAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF756": {
+  "old_code": [
+   "IF756"
+  ],
+  "old_course_name": [
+   "AUTORIA MULTIMIDIA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF758": {
+  "old_code": [
+   "IF758"
+  ],
+  "old_course_name": [
+   "INTERFACES ADAPT. SISTEMAS MOVEIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF760": {
+  "old_code": [
+   "IF760"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANCADOS EM MIDIAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF761": {
+  "old_code": [
+   "IF761"
+  ],
+  "old_course_name": [
+   "SEMINARIO EM MIDIAS E INTERFACES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF762": {
+  "old_code": [
+   "IF762"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANCADOS EM INTERFACE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF765": {
+  "old_code": [
+   "IF765"
+  ],
+  "old_course_name": [
+   "ANALISE NUMERICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF766": {
+  "old_code": [
+   "IF766"
+  ],
+  "old_course_name": [
+   "ALGORITMOS DE APROXIMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF768": {
+  "old_code": [
+   "IF768"
+  ],
+  "old_course_name": [
+   "TEORIA DE GRAFOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF769": {
+  "old_code": [
+   "IF769"
+  ],
+  "old_course_name": [
+   "TEORIA DA RECURSAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF770": {
+  "old_code": [
+   "IF770"
+  ],
+  "old_course_name": [
+   "TEORIA DOS MODELOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF771": {
+  "old_code": [
+   "IF771"
+  ],
+  "old_course_name": [
+   "TEORIA DA PROVA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF772": {
+  "old_code": [
+   "IF772"
+  ],
+  "old_course_name": [
+   "LAMBDA CALCULO TEORIA TIPOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF773": {
+  "old_code": [
+   "IF773"
+  ],
+  "old_course_name": [
+   "LOGICAS NAO CLASSICAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF774": {
+  "old_code": [
+   "IF774"
+  ],
+  "old_course_name": [
+   "COMPLEXIDADE DESCRITIVA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF775": {
+  "old_code": [
+   "IF775"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANCADOS EM ALGORITMOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF776": {
+  "old_code": [
+   "IF776"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANCADOS INF. TEORICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF777": {
+  "old_code": [
+   "IF777"
+  ],
+  "old_course_name": [
+   "TOP.AVANC. MATEMAT. COMPUTACIONAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF778": {
+  "old_code": [
+   "IF778"
+  ],
+  "old_course_name": [
+   "SEMINARIO EM INFORMATICA TEORICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF779": {
+  "old_code": [
+   "IF779"
+  ],
+  "old_course_name": [
+   "NOVA ECONOMIA E NOVA SOCIEDADE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF780": {
+  "old_code": [
+   "IF780"
+  ],
+  "old_course_name": [
+   "ECONOMIA PARA EMPREENDEDOR"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF781": {
+  "old_code": [
+   "IF781"
+  ],
+  "old_course_name": [
+   "EMPREENDIMENTOS EM INFORMATICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF782": {
+  "old_code": [
+   "IF782"
+  ],
+  "old_course_name": [
+   "NEGOCIOS ON LINE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF784": {
+  "old_code": [
+   "IF784"
+  ],
+  "old_course_name": [
+   "CONTABILIDADE FINANC. E GERENCIAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF785": {
+  "old_code": [
+   "IF785"
+  ],
+  "old_course_name": [
+   "PROFICIENCIA EM INGLES 1"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF786": {
+  "old_code": [
+   "IF786"
+  ],
+  "old_course_name": [
+   "PROFICIENCIA EM INGLES 2"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF787": {
+  "old_code": [
+   "IF787"
+  ],
+  "old_course_name": [
+   "PROFICIENCIA EM INGLES 3"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF788": {
+  "old_code": [
+   "IF788"
+  ],
+  "old_course_name": [
+   "INICIACAO CIENTIFICA 1"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF789": {
+  "old_code": [
+   "IF789"
+  ],
+  "old_course_name": [
+   "INICIACAO CIENTIFICA 2"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF790": {
+  "old_code": [
+   "IF790"
+  ],
+  "old_course_name": [
+   "PROJETO DE MONITORIA 1"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF791": {
+  "old_code": [
+   "IF791"
+  ],
+  "old_course_name": [
+   "PROJETO DE MONITORIA 2"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF792": {
+  "old_code": [
+   "IF792"
+  ],
+  "old_course_name": [
+   "COMERCIO ELETRONICO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF794": {
+  "old_code": [
+   "IF794"
+  ],
+  "old_course_name": [
+   "JOGOS AVANCADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF795": {
+  "old_code": [
+   "IF795"
+  ],
+  "old_course_name": [
+   "SISTEMAS SUPORTE DECIS.MIN.DADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF796": {
+  "old_code": [
+   "IF796"
+  ],
+  "old_course_name": [
+   "MINERACAO DA WEB"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF799": {
+  "old_code": [
+   "IF799"
+  ],
+  "old_course_name": [
+   "PROG.DECLARATIVA B.D.INTELIGENTES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF800": {
+  "old_code": [
+   "IF800"
+  ],
+  "old_course_name": [
+   "ENGENHARIA SOFTWARE EDUCATIVOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF801": {
+  "old_code": [
+   "IF801"
+  ],
+  "old_course_name": [
+   "TECNOLOGIAS EDUCACIONAIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF802": {
+  "old_code": [
+   "IF802"
+  ],
+  "old_course_name": [
+   "CONVERGENCIA DIGITAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF803": {
+  "old_code": [
+   "IF803"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A BIOLOGIA MOLECULAR"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF804": {
+  "old_code": [
+   "IF804"
+  ],
+  "old_course_name": [
+   "COMPARACAO ANALISE SEQUENCIAS DNA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF805": {
+  "old_code": [
+   "IF805"
+  ],
+  "old_course_name": [
+   "PROJETO EM BIO INFORMATICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF806": {
+  "old_code": [
+   "IF806"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANC.EM BIO INFORMATICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF807": {
+  "old_code": [
+   "IF807"
+  ],
+  "old_course_name": [
+   "TOP. AVANC.SIST.SUP.DECIS.MIN.WEB"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF808": {
+  "old_code": [
+   "IF808"
+  ],
+  "old_course_name": [
+   "TOPICOS AVANC.TECNOLOGIA ENSINO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF809": {
+  "old_code": [
+   "IF809"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.ROBOT.AUTOM.INTELIGENTE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF810": {
+  "old_code": [
+   "IF810"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.EM NEGOCIOS ONLINE E EMPREENDIMENTOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF811": {
+  "old_code": [
+   "IF811"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.ADMINIST.SIST.SEGURANCA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF812": {
+  "old_code": [
+   "IF812"
+  ],
+  "old_course_name": [
+   "TOP.AVANC.ENTRETENIMENTO DIGITAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF835": {
+  "old_code": [
+   "IF835"
+  ],
+  "old_course_name": [
+   "CONTROLE E MANIPULACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "IF865": {
+  "old_code": [
+   "IF865"
+  ],
+  "old_course_name": [
+   "INTERFACES GRAFICAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "MA036": {
+  "old_code": [
+   "MA036"
+  ],
+  "old_course_name": [
+   "GEOMETRIA ANALITICA 1"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ }
+}

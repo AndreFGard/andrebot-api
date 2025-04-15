@@ -1,0 +1,1178 @@
+{
+ "CIN0130": {
+  "old_code": [
+   "CIN0130"
+  ],
+  "old_course_name": [
+   "SISTEMAS DIGITAIS"
+  ],
+  "new_code": [
+   "IF675"
+  ],
+  "new_course_name": [
+   "SISTEMAS DIGITAIS"
+  ]
+ },
+ "CIN0133": {
+  "old_code": [
+   "CIN0133"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A PROGRAMACAO"
+  ],
+  "new_code": [
+   "IF669"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A PROGRAMACAO"
+  ]
+ },
+ "CIN0132": {
+  "old_code": [
+   "CIN0132"
+  ],
+  "old_course_name": [
+   "MATEMATICA DISCRETA PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "IF670"
+  ],
+  "new_course_name": [
+   "MATEMAT DISCRETA P/COMPUTACAO"
+  ]
+ },
+ "CIN0131": {
+  "old_code": [
+   "CIN0131"
+  ],
+  "old_course_name": [
+   "CONCEPCAO DE ARTEFATOS DIGITAIS"
+  ],
+  "new_code": [
+   "IF681"
+  ],
+  "new_course_name": [
+   "INTERFACES USUARIO-MAQUINA"
+  ]
+ },
+ "MA026": {
+  "old_code": [
+   "MA026"
+  ],
+  "old_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 1"
+  ],
+  "new_code": [
+   "MA026"
+  ],
+  "new_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 1"
+  ]
+ },
+ "CIN0134": {
+  "old_code": [
+   "CIN0134"
+  ],
+  "old_course_name": [
+   "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS"
+  ],
+  "new_code": [
+   "IF677"
+  ],
+  "new_course_name": [
+   "INFRA-ESTRUTURA DE SOFTWARE"
+  ]
+ },
+ "CIN0138": {
+  "old_code": [
+   "CIN0138"
+  ],
+  "old_course_name": [
+   "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "MA531"
+  ],
+  "new_course_name": [
+   "ALGEBRA VET LINEAR P/COMPUTACAO"
+  ]
+ },
+ "CIN0140": {
+  "old_code": [
+   "CIN0140"
+  ],
+  "old_course_name": [
+   "ALGORITMOS"
+  ],
+  "new_code": [
+   "IF672"
+  ],
+  "new_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS"
+  ]
+ },
+ "CIN0137": {
+  "old_code": [
+   "CIN0137"
+  ],
+  "old_course_name": [
+   "BANCO DE DADOS"
+  ],
+  "new_code": [
+   "IF685"
+  ],
+  "new_course_name": [
+   "GERENCIAMENTO DADOS E INFORMACAO"
+  ]
+ },
+ "CIN0141": {
+  "old_code": [
+   "CIN0141"
+  ],
+  "old_course_name": [
+   "LOGICA PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "IF673"
+  ],
+  "new_course_name": [
+   "LOGICA PARA COMPUTACAO"
+  ]
+ },
+ "CIN0142": {
+  "old_code": [
+   "CIN0142"
+  ],
+  "old_course_name": [
+   "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "ET586"
+  ],
+  "new_course_name": [
+   "ESTATIST PROBABILIDADE COMPUTACAO"
+  ]
+ },
+ "CIN0144": {
+  "old_code": [
+   "CIN0144"
+  ],
+  "old_course_name": [
+   "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS"
+  ],
+  "new_code": [
+   "IF684 IF699"
+  ],
+  "new_course_name": [
+   "SISTEMAS INTELIGENTES"
+  ]
+ },
+ "CIN0147": {
+  "old_code": [
+   "CIN0147"
+  ],
+  "old_course_name": [
+   "METODOLOGIA CIENTIFICA"
+  ],
+  "new_code": [
+   "IF676"
+  ],
+  "new_course_name": [
+   "METODOL EXPRESSAO TEC-CIENTIFICA"
+  ]
+ },
+ "CIN0148": {
+  "old_code": [
+   "CIN0148"
+  ],
+  "old_course_name": [
+   "TEORIA DA COMPUTACAO"
+  ],
+  "new_code": [
+   "IF689"
+  ],
+  "new_course_name": [
+   "INFORMATICA TEORICA"
+  ]
+ },
+ "CIN0150": {
+  "old_code": [
+   "CIN0150"
+  ],
+  "old_course_name": [
+   "COMPILADORES"
+  ],
+  "new_code": [
+   "IF688"
+  ],
+  "new_course_name": [
+   "TEO.IMPLEMEN.LING. COMPUTACIONAIS"
+  ]
+ },
+ "CIN0153": {
+  "old_code": [
+   "CIN0153"
+  ],
+  "old_course_name": [
+   "ANALISE E MINERACAO DE REDES COMPLEXAS"
+  ],
+  "new_code": [
+   "IF818"
+  ],
+  "new_course_name": [
+   "ANALISE E MINERACAO DE REDES COMPLEXAS"
+  ]
+ },
+ "CIN0129": {
+  "old_code": [
+   "CIN0129"
+  ],
+  "old_course_name": [
+   "CRIATIVIDADE COMPUTACIONAL"
+  ],
+  "new_code": [
+   "IF866"
+  ],
+  "new_course_name": [
+   "CRIATIVIDADE COMPUTACIONAL"
+  ]
+ },
+ "CIN0040": {
+  "old_code": [
+   "CIN0040"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+  ],
+  "new_code": [
+   "IF867"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A APRENDIZAGEM PROFUNDA"
+  ]
+ },
+ "CIN0120": {
+  "old_code": [
+   "CIN0120"
+  ],
+  "old_course_name": [
+   "ALGORITMOS PARA STREAMS DE DADOS"
+  ],
+  "new_code": [
+   "IF868"
+  ],
+  "new_course_name": [
+   "ALGORITMOS PARA STREAMS DE DADOS"
+  ]
+ },
+ "CIN0119": {
+  "old_code": [
+   "CIN0119"
+  ],
+  "old_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+  ],
+  "new_code": [
+   "IF869"
+  ],
+  "new_course_name": [
+   "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
+  ]
+ },
+ "CIN0037": {
+  "old_code": [
+   "CIN0037"
+  ],
+  "old_course_name": [
+   "REDES NEURAIS"
+  ],
+  "new_code": [
+   "IF702"
+  ],
+  "new_course_name": [
+   "REDES NEURAIS"
+  ]
+ },
+ "CIN0038": {
+  "old_code": [
+   "CIN0038"
+  ],
+  "old_course_name": [
+   "AGENTES AUTONOMOS"
+  ],
+  "new_code": [
+   "IF703"
+  ],
+  "new_course_name": [
+   "AGENTES AUTONOMOS"
+  ]
+ },
+ "CIN0053": {
+  "old_code": [
+   "CIN0053"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO GRAFICO"
+  ],
+  "new_code": [
+   "IF680"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO GRAFICO"
+  ]
+ },
+ "CIN0179": {
+  "old_code": [
+   "CIN0179"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE LINGUAGEM NATURAL"
+  ],
+  "new_code": [
+   "IF704"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO LINGUAGEM NATURAL"
+  ]
+ },
+ "CIN0169": {
+  "old_code": [
+   "CIN0169"
+  ],
+  "old_course_name": [
+   "PROGRAMACAO CONCORRENTE E DISTRIBUIDA"
+  ],
+  "new_code": [
+   "IF711"
+  ],
+  "new_course_name": [
+   "PROGRAM. CONCORRENTE DISTRIBUIDA"
+  ]
+ },
+ "CIN0176": {
+  "old_code": [
+   "CIN0176"
+  ],
+  "old_course_name": [
+   "PROJETO DE DESENVOLVIMENTO"
+  ],
+  "new_code": [
+   "IF683"
+  ],
+  "new_course_name": [
+   "PROJETO DE DESENVOLVIMENTO"
+  ]
+ },
+ "CIN0055": {
+  "old_code": [
+   "CIN0055"
+  ],
+  "old_course_name": [
+   "TENDENCIAS EM MIDIA E INTERACAO"
+  ],
+  "new_code": [
+   "IF687"
+  ],
+  "new_course_name": [
+   "INTRODUCAO A MULTIMIDIA"
+  ]
+ },
+ "IF1008": {
+  "old_code": [
+   "IF1008"
+  ],
+  "old_course_name": [
+   "ENGENHARIA DE REQUISITOS"
+  ],
+  "new_code": [
+   "IF716"
+  ],
+  "new_course_name": [
+   "ESPECIF.REQUIS.VALIDACAO SISTEMAS"
+  ]
+ },
+ "CIN0165": {
+  "old_code": [
+   "CIN0165"
+  ],
+  "old_course_name": [
+   "METODOLOGIAS DE GERENCIAMENTO DE PROJETO"
+  ],
+  "new_code": [
+   "IF717"
+  ],
+  "new_course_name": [
+   "PLANEJ. GERENCIAMENTO DE PROJETOS"
+  ]
+ },
+ "CIN0166": {
+  "old_code": [
+   "CIN0166"
+  ],
+  "old_course_name": [
+   "PLANEJAMENTO E GESTAO DA QUALIDADE DE SOFTWARE"
+  ],
+  "new_code": [
+   "IF720"
+  ],
+  "new_course_name": [
+   "QUALIDADE DE SOFTWARE"
+  ]
+ },
+ "CIN0154": {
+  "old_code": [
+   "CIN0154"
+  ],
+  "old_course_name": [
+   "REDES DE COMPUTADORES"
+  ],
+  "new_code": [
+   "IF678"
+  ],
+  "new_course_name": [
+   "INFRA-ESTRUTURA DE COMUNICACAO"
+  ]
+ },
+ "CIN0157": {
+  "old_code": [
+   "CIN0157"
+  ],
+  "old_course_name": [
+   "REDES DE COMPUTADORES 2"
+  ],
+  "new_code": [
+   "IF738"
+  ],
+  "new_course_name": [
+   "REDES DE COMPUTADORES"
+  ]
+ },
+ "CIN0071": {
+  "old_code": [
+   "CIN0071"
+  ],
+  "old_course_name": [
+   "GERENCIAMENTO E MONITORAMENTO DE REDES"
+  ],
+  "new_code": [
+   "IF741"
+  ],
+  "new_course_name": [
+   "GERENCIAMENTO DE REDES"
+  ]
+ },
+ "CIN0081": {
+  "old_code": [
+   "CIN0081"
+  ],
+  "old_course_name": [
+   "SEMINARIOS EM REDES DE COMPUTADORES"
+  ],
+  "new_code": [
+   "IF748"
+  ],
+  "new_course_name": [
+   "SEMINARIO REDES SIST.DISTRIBUIDOS"
+  ]
+ },
+ "CIN0050": {
+  "old_code": [
+   "CIN0050"
+  ],
+  "old_course_name": [
+   "COMPUTACAO GRAFICA"
+  ],
+  "new_code": [
+   "IF750"
+  ],
+  "new_course_name": [
+   "COMPUTACAO GRAFICA"
+  ]
+ },
+ "CIN0056": {
+  "old_code": [
+   "CIN0056"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE IMAGEM"
+  ],
+  "new_code": [
+   "IF751"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO LINEAR DE IMAGENS"
+  ]
+ },
+ "CIN0060": {
+  "old_code": [
+   "CIN0060"
+  ],
+  "old_course_name": [
+   "VISAO COMPUTACIONAL"
+  ],
+  "new_code": [
+   "IF752"
+  ],
+  "new_course_name": [
+   "ANALISE IMAG. VISAO COMPUTACIONAL"
+  ]
+ },
+ "CIN0052": {
+  "old_code": [
+   "CIN0052"
+  ],
+  "old_course_name": [
+   "COMPUTACAO MUSICAL E PROCESSAMENTO DE SOM"
+  ],
+  "new_code": [
+   "IF754"
+  ],
+  "new_course_name": [
+   "COMPUTACAO MUSICAL PROCESSAM.SOM"
+  ]
+ },
+ "CIN0059": {
+  "old_code": [
+   "CIN0059"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE VOZ"
+  ],
+  "new_code": [
+   "IF759"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO DE VOZ"
+  ]
+ },
+ "CIN0174": {
+  "old_code": [
+   "CIN0174"
+  ],
+  "old_course_name": [
+   "ALGEBRA AVANCADA PARA COMPUTACAO"
+  ],
+  "new_code": [
+   "IF763"
+  ],
+  "new_course_name": [
+   "ALGEBRA LINEAR AVANC. COMPUTACAO"
+  ]
+ },
+ "MA027": {
+  "old_code": [
+   "MA027"
+  ],
+  "old_course_name": [
+   "CALCULO DIFERENCIAL E INTEGRAL 2"
+  ],
+  "new_code": [
+   "IF764"
+  ],
+  "new_course_name": [
+   "CALCULO AVANCADO PARA COMPUTACAO"
+  ]
+ },
+ "CIN0160": {
+  "old_code": [
+   "CIN0160"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE CADEIA DE CARACTERES"
+  ],
+  "new_code": [
+   "IF767"
+  ],
+  "new_course_name": [
+   "PROCESSAMENTO CADEIA CARACTERES"
+  ]
+ },
+ "CIN0125": {
+  "old_code": [
+   "CIN0125"
+  ],
+  "old_course_name": [
+   "GESTAO DE NEGOCIOS"
+  ],
+  "new_code": [
+   "IF783"
+  ],
+  "new_course_name": [
+   "GESTAO DE NEGOCIOS"
+  ]
+ },
+ "CIN0054": {
+  "old_code": [
+   "CIN0054"
+  ],
+  "old_course_name": [
+   "JOGOS DIGITAIS"
+  ],
+  "new_code": [
+   "IF793"
+  ],
+  "new_course_name": [
+   "PROJETO IMPLEMENTACAO DE JOGOS 2D"
+  ]
+ },
+ "CIN0103": {
+  "old_code": [
+   "CIN0103"
+  ],
+  "old_course_name": [
+   "OTIMIZACAO"
+  ],
+  "new_code": [
+   "IF797"
+  ],
+  "new_course_name": [
+   "OTIMIZACAO"
+  ]
+ },
+ "CIN0100": {
+  "old_code": [
+   "CIN0100"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A ROBOTICA"
+  ],
+  "new_code": [
+   "IF798"
+  ],
+  "new_course_name": [
+   "ROBOTICA"
+  ]
+ },
+ "CIN0178": {
+  "old_code": [
+   "CIN0178"
+  ],
+  "old_course_name": [
+   "RECUPERACAO DA INFORMACAO"
+  ],
+  "new_code": [
+   "IF962"
+  ],
+  "new_course_name": [
+   "RECUPERACAO DE INFORMACAO"
+  ]
+ },
+ "CIN0170": {
+  "old_code": [
+   "CIN0170"
+  ],
+  "old_course_name": [
+   "METODOS FORMAIS"
+  ],
+  "new_code": [
+   "IF721"
+  ],
+  "new_course_name": [
+   "SISTEMAS CRITICOS"
+  ]
+ },
+ "LE037": {
+  "old_code": [
+   "LE037"
+  ],
+  "old_course_name": [
+   "LINGUA INGLESA INSTRUMENTAL 1"
+  ],
+  "new_code": [
+   "LE530"
+  ],
+  "new_course_name": [
+   "INGLES PARA COMPUTACAO"
+  ]
+ },
+ "CIN0136": {
+  "old_code": [
+   "CIN0136"
+  ],
+  "old_course_name": [
+   "DESENVOLVIMENTO DE SOFTWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0135": {
+  "old_code": [
+   "CIN0135"
+  ],
+  "old_course_name": [
+   "ESTRUTURAS DE DADOS ORIENTADAS A OBJETOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0139": {
+  "old_code": [
+   "CIN0139"
+  ],
+  "old_course_name": [
+   "INTEGRACAO E EVOLUCAO DE SISTEMAS DE INFORMACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0143": {
+  "old_code": [
+   "CIN0143"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A SISTEMAS DISTRIBUIDOS E REDES DE COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0149": {
+  "old_code": [
+   "CIN0149"
+  ],
+  "old_course_name": [
+   "INFORMATICA E SOCIEDADE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0039": {
+  "old_code": [
+   "CIN0039"
+  ],
+  "old_course_name": [
+   "COMPUTACAO QUANTICA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0041": {
+  "old_code": [
+   "CIN0041"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A APRENDIZAGEM POR REFORCO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0043": {
+  "old_code": [
+   "CIN0043"
+  ],
+  "old_course_name": [
+   "APLICACOES DE APRENDIZAGEM DE MAQUINA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0044": {
+  "old_code": [
+   "CIN0044"
+  ],
+  "old_course_name": [
+   "COMPUTACAO EVOLUCIONARIA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0045": {
+  "old_code": [
+   "CIN0045"
+  ],
+  "old_course_name": [
+   "INTELIGENCIA ARTIFICIAL COLETIVA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0051": {
+  "old_code": [
+   "CIN0051"
+  ],
+  "old_course_name": [
+   "FUNDAMENTOS GEOMETRICOS PARA VISAO COMPUTACIONAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0067": {
+  "old_code": [
+   "CIN0067"
+  ],
+  "old_course_name": [
+   "REDES DEFINIDAS POR SOFTWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0068": {
+  "old_code": [
+   "CIN0068"
+  ],
+  "old_course_name": [
+   "REDES VEICULARES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0070": {
+  "old_code": [
+   "CIN0070"
+  ],
+  "old_course_name": [
+   "REDES AUTOMOTIVAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0072": {
+  "old_code": [
+   "CIN0072"
+  ],
+  "old_course_name": [
+   "AVALIACAO DE DESEMPENHO DE REDES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0073": {
+  "old_code": [
+   "CIN0073"
+  ],
+  "old_course_name": [
+   "COMPUTACAO ORIENTADA A SERVICOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0075": {
+  "old_code": [
+   "CIN0075"
+  ],
+  "old_course_name": [
+   "SISTEMAS DISTRIBUIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0076": {
+  "old_code": [
+   "CIN0076"
+  ],
+  "old_course_name": [
+   "SEGURANCA DE REDES E SISTEMAS DISTRIBUIDOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0077": {
+  "old_code": [
+   "CIN0077"
+  ],
+  "old_course_name": [
+   "PLATAFORMAS DE DISTRIBUICAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0079": {
+  "old_code": [
+   "CIN0079"
+  ],
+  "old_course_name": [
+   "COMPUTACAO UBIQUA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0080": {
+  "old_code": [
+   "CIN0080"
+  ],
+  "old_course_name": [
+   "INTERNET DAS COISAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0083": {
+  "old_code": [
+   "CIN0083"
+  ],
+  "old_course_name": [
+   "TENDENCIAS EM REDES DE COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0112": {
+  "old_code": [
+   "CIN0112"
+  ],
+  "old_course_name": [
+   "SEGURANCA DE COMPUTADORES"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0113": {
+  "old_code": [
+   "CIN0113"
+  ],
+  "old_course_name": [
+   "ASSINATURA DIGITAL E CERTIFICACAO DIGITAL"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0114": {
+  "old_code": [
+   "CIN0114"
+  ],
+  "old_course_name": [
+   "TECNICAS DE ATAQUE E DETECCAO DE INTRUSAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0115": {
+  "old_code": [
+   "CIN0115"
+  ],
+  "old_course_name": [
+   "SEGURANCA EM COMPUTACAO EM NUVEM"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0116": {
+  "old_code": [
+   "CIN0116"
+  ],
+  "old_course_name": [
+   "TENDENCIAS EM SEGURANCA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0117": {
+  "old_code": [
+   "CIN0117"
+  ],
+  "old_course_name": [
+   "SEMINARIOS EM SEGURANCA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0121": {
+  "old_code": [
+   "CIN0121"
+  ],
+  "old_course_name": [
+   "ETICA E ASPECTOS JURIDICOS DA COMPUTACAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0123": {
+  "old_code": [
+   "CIN0123"
+  ],
+  "old_course_name": [
+   "DATA WAREHOUSING"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0152": {
+  "old_code": [
+   "CIN0152"
+  ],
+  "old_course_name": [
+   "VISUALIZACAO DE DADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0155": {
+  "old_code": [
+   "CIN0155"
+  ],
+  "old_course_name": [
+   "BANCOS DE DADOS NAO-CONVENCIONAIS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0156": {
+  "old_code": [
+   "CIN0156"
+  ],
+  "old_course_name": [
+   "COMPUTACAO BIOINSPIRADA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0158": {
+  "old_code": [
+   "CIN0158"
+  ],
+  "old_course_name": [
+   "SEGURANCA DE INFORMACAO E SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0159": {
+  "old_code": [
+   "CIN0159"
+  ],
+  "old_course_name": [
+   "SISTEMAS EMBARCADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0161": {
+  "old_code": [
+   "CIN0161"
+  ],
+  "old_course_name": [
+   "TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSAO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0162": {
+  "old_code": [
+   "CIN0162"
+  ],
+  "old_course_name": [
+   "ANALISE E ESPECIFICACAO AVANCADA DE REQUISITOS DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0163": {
+  "old_code": [
+   "CIN0163"
+  ],
+  "old_course_name": [
+   "ARQUITETURA DE SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0167": {
+  "old_code": [
+   "CIN0167"
+  ],
+  "old_course_name": [
+   "PROGRAMACAO COM NOVAS TECNOLOGIAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0168": {
+  "old_code": [
+   "CIN0168"
+  ],
+  "old_course_name": [
+   "FUNDAMENTOS DE TESTE DE SOFTWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0171": {
+  "old_code": [
+   "CIN0171"
+  ],
+  "old_course_name": [
+   "TESTE DE SOFTWARE AVANCADO"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0172": {
+  "old_code": [
+   "CIN0172"
+  ],
+  "old_course_name": [
+   "TRANSFORMACAO DE CODIGO E MODELOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0173": {
+  "old_code": [
+   "CIN0173"
+  ],
+  "old_course_name": [
+   "SEMINARIOS EM ENGENHARIA DE SOFTWARE"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0175": {
+  "old_code": [
+   "CIN0175"
+  ],
+  "old_course_name": [
+   "DISPOSITIVOS MULTIMIDIA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0177": {
+  "old_code": [
+   "CIN0177"
+  ],
+  "old_course_name": [
+   "COMPUTACAO EM NUVEM"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0180": {
+  "old_code": [
+   "CIN0180"
+  ],
+  "old_course_name": [
+   "PROCESSAMENTO DE DADOS EM LARGA ESCALA"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0181": {
+  "old_code": [
+   "CIN0181"
+  ],
+  "old_course_name": [
+   "GOVERNANCA DE DADOS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "CIN0182": {
+  "old_code": [
+   "CIN0182"
+  ],
+  "old_course_name": [
+   "GERENCIA DE CONFIGURACAO DE SOFTWARE, SERVICOS E SISTEMAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ },
+ "LE716": {
+  "old_code": [
+   "LE716"
+  ],
+  "old_course_name": [
+   "INTRODUCAO A LIBRAS"
+  ],
+  "new_code": [],
+  "new_course_name": []
+ }
+}
