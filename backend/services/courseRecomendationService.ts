@@ -2,10 +2,10 @@
 import { CourseInfo, majorList, PendingCourse} from "../models/schemas";
 
 
-
+export type {PendingCourse};
 
 //interface that must be implemented
-class CurriculumManager {
+export class CurriculumManager {
     // Abstract methods that must be implemented by child classes
     constructor(major:string){
         //load the file relevant to the major

@@ -72,3 +72,5 @@ export type EquivalenceMapping = {
     equivalences: EquivalenceMapping[];
   };
   
+
+export const majorList = ["CC", "EC", "SI", "outros"];
