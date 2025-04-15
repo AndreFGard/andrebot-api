@@ -1,7 +1,6 @@
 import TimetableEditor from './components/tiimetableeditor'
 import { ThemeProvider } from "@/components/theme-provider"
 import CourseHistory from './components/coursehistory'
-import { getCourseDisplayInfoList } from './api'
 import { CourseDisplayInfoProvider } from './CourseDisplayInfoCtx'
 function App() {
 

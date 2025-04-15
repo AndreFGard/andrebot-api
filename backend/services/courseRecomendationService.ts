@@ -2,7 +2,7 @@
 import { CourseInfo, majorList, PendingCourse} from "../models/schemas";
 
 
-export type {PendingCourse};
+
 
 //interface that must be implemented
 export class CurriculumManager {

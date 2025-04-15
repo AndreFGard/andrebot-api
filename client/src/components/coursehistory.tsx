@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { CourseDisplayInfo, getCourseDisplayInfoList } from '@/api';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { coursesplaceholder } from '@/api';
 import MajorChooser from './majorChooser';
 import { useCourseSelection } from '@/hooks/useCourseSelection';
 
