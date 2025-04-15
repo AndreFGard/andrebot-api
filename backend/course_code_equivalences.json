@@ -6,8 +6,8 @@
      "old_course_name": [
       "INTRODUCAO A PROGRAMACAO"
      ],
-     "old_status": [
-      "120h Aula"
+     "_class_hours": [
+      "120"
      ],
      "new_codes": [
       "CIN0133"
@@ -26,34 +26,14 @@
      "old_course_name": [
       "MATEMAT DISCRETA P/COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0132"
      ],
      "new_course_name": [
       "MATEMATICA DISCRETA PARA COMPUTACAO"
-     ],
-     "new_status": [
-      "OBRIGATÓRIO"
-     ]
-    },
-    "MA026": {
-     "old_codes": [
-      "MA026"
-     ],
-     "old_course_name": [
-      "CALCULO DIFERENCIAL E INTEGRAL 1"
-     ],
-     "old_status": [
-      "60h Aula"
-     ],
-     "new_codes": [
-      "MA026"
-     ],
-     "new_course_name": [
-      "CALCULO DIFERENCIAL E INTEGRAL 1"
      ],
      "new_status": [
       "OBRIGATÓRIO"
@@ -66,8 +46,8 @@
      "old_course_name": [
       "ALGEBRA VET LINEAR P/COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0138"
@@ -86,8 +66,8 @@
      "old_course_name": [
       "ESTATIST PROBABILIDADE COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0142"
@@ -106,8 +86,8 @@
      "old_course_name": [
       "ALGORITMOS E ESTRUTURAS DE DADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0140"
@@ -126,8 +106,8 @@
      "old_course_name": [
       "LOGICA PARA COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0141"
@@ -146,8 +126,8 @@
      "old_course_name": [
       "SISTEMAS DIGITAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0130"
@@ -166,8 +146,8 @@
      "old_course_name": [
       "INFRA-ESTRUTURA DE SOFTWARE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0134"
@@ -186,8 +166,8 @@
      "old_course_name": [
       "INFRA-ESTRUTURA DE COMUNICACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0154"
@@ -206,8 +186,8 @@
      "old_course_name": [
       "INFORMATICA E SOCIEDADE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0149"
@@ -226,8 +206,8 @@
      "old_course_name": [
       "INGLES PARA COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "LE037"
@@ -246,8 +226,8 @@
      "old_course_name": [
       "PROCESSAMENTO GRAFICO"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [
       "CIN0053"
@@ -266,8 +246,8 @@
      "old_course_name": [
       "INTERFACES USUARIO-MAQUINA"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [
       "CIN0131"
@@ -286,8 +266,8 @@
      "old_course_name": [
       "GERENCIAMENTO DADOS E INFORMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0137"
@@ -306,8 +286,8 @@
      "old_course_name": [
       "INFORMATICA TEORICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0148"
@@ -326,8 +306,8 @@
      "old_course_name": [
       "METODOL EXPRESSAO TEC-CIENTIFICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0147"
@@ -346,8 +326,8 @@
      "old_course_name": [
       "PROJETO DE DESENVOLVIMENTO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0176"
@@ -366,8 +346,8 @@
      "old_course_name": [
       "PARADIGMAS LING.COMPUTACIONAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0145 CIN0146"
@@ -386,8 +366,8 @@
      "old_course_name": [
       "INTRODUCAO A MULTIMIDIA"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [
       "CIN0055"
@@ -406,8 +386,8 @@
      "old_course_name": [
       "TEO.IMPLEMEN.LING. COMPUTACIONAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0150"
@@ -426,8 +406,8 @@
      "old_course_name": [
       "ANALISE E MINERACAO DE REDES COMPLEXAS"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [
       "CIN0153"
@@ -446,8 +426,8 @@
      "old_course_name": [
       "CRIATIVIDADE COMPUTACIONAL"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [
       "CIN0129"
@@ -466,8 +446,8 @@
      "old_course_name": [
       "INTRODUCAO A APRENDIZAGEM PROFUNDA"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [
       "CIN0040"
@@ -486,8 +466,8 @@
      "old_course_name": [
       "ALGORITMOS PARA STREAMS DE DADOS"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [
       "CIN0120"
@@ -506,8 +486,8 @@
      "old_course_name": [
       "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [
       "CIN0119"
@@ -526,8 +506,8 @@
      "old_course_name": [
       "REDES NEURAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0037"
@@ -546,8 +526,8 @@
      "old_course_name": [
       "AGENTES AUTONOMOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0038"
@@ -566,8 +546,8 @@
      "old_course_name": [
       "PROCESSAMENTO LINGUAGEM NATURAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0179"
@@ -586,8 +566,8 @@
      "old_course_name": [
       "PROGRAM. CONCORRENTE DISTRIBUIDA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0169"
@@ -606,8 +586,8 @@
      "old_course_name": [
       "ESPECIF.REQUIS.VALIDACAO SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "IF1008"
@@ -626,8 +606,8 @@
      "old_course_name": [
       "PLANEJ. GERENCIAMENTO DE PROJETOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0165"
@@ -646,8 +626,8 @@
      "old_course_name": [
       "QUALIDADE DE SOFTWARE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0166"
@@ -666,8 +646,8 @@
      "old_course_name": [
       "SISTEMAS CRITICOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0170"
@@ -686,8 +666,8 @@
      "old_course_name": [
       "REDES DE COMPUTADORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0157"
@@ -706,8 +686,8 @@
      "old_course_name": [
       "GERENCIAMENTO DE REDES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0071"
@@ -726,8 +706,8 @@
      "old_course_name": [
       "SEMINARIO REDES SIST.DISTRIBUIDOS"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [
       "CIN0081"
@@ -746,8 +726,8 @@
      "old_course_name": [
       "COMPUTACAO GRAFICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0050"
@@ -766,8 +746,8 @@
      "old_course_name": [
       "PROCESSAMENTO LINEAR DE IMAGENS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0056"
@@ -786,8 +766,8 @@
      "old_course_name": [
       "ANALISE IMAG. VISAO COMPUTACIONAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0060"
@@ -806,8 +786,8 @@
      "old_course_name": [
       "COMPUTACAO MUSICAL PROCESSAM.SOM"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0052"
@@ -826,8 +806,8 @@
      "old_course_name": [
       "PROCESSAMENTO DE VOZ"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0059"
@@ -846,8 +826,8 @@
      "old_course_name": [
       "ALGEBRA LINEAR AVANC. COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0174"
@@ -866,8 +846,8 @@
      "old_course_name": [
       "CALCULO AVANCADO PARA COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "MA027"
@@ -886,8 +866,8 @@
      "old_course_name": [
       "PROCESSAMENTO CADEIA CARACTERES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0160"
@@ -906,8 +886,8 @@
      "old_course_name": [
       "GESTAO DE NEGOCIOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0125"
@@ -926,8 +906,8 @@
      "old_course_name": [
       "PROJETO IMPLEMENTACAO DE JOGOS 2D"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0054"
@@ -946,8 +926,8 @@
      "old_course_name": [
       "OTIMIZACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0103"
@@ -966,8 +946,8 @@
      "old_course_name": [
       "ROBOTICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0100"
@@ -986,8 +966,8 @@
      "old_course_name": [
       "RECUPERACAO DE INFORMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [
       "CIN0178"
@@ -1006,8 +986,8 @@
      "old_course_name": [
       "INTRODUCAO A COMPUTACAO"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1020,8 +1000,8 @@
      "old_course_name": [
       "FISICA PARA COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1034,8 +1014,8 @@
      "old_course_name": [
       "INFRA-ESTRUTURA DE HARDWARE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1048,8 +1028,8 @@
      "old_course_name": [
       "ENGENHARIA SOFTWARE E SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1062,8 +1042,8 @@
      "old_course_name": [
       "HISTORIA E FUTURO DA COMPUTACAO"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1076,8 +1056,8 @@
      "old_course_name": [
       "FISICA GERAL 1"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1090,8 +1070,8 @@
      "old_course_name": [
       "FISICA GERAL 2"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1104,8 +1084,8 @@
      "old_course_name": [
       "METODOS NUMERICOS"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1118,8 +1098,8 @@
      "old_course_name": [
       "PROJETO DE BANCO DE DADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1132,8 +1112,8 @@
      "old_course_name": [
       "SIST.GERENC. DE BANCO DE DADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1146,8 +1126,8 @@
      "old_course_name": [
       "BANCO DE DADOS DISTRIB. E MOVEIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1160,8 +1140,8 @@
      "old_course_name": [
       "BANCO DE DADOS AVANCADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1174,8 +1154,8 @@
      "old_course_name": [
       "INTEG. DADOS WEB E WAREHOUSE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1188,8 +1168,8 @@
      "old_course_name": [
       "TOP.AVANC.GERENC.DADOS INFORMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1202,8 +1182,8 @@
      "old_course_name": [
       "SEMIN. GERENC. DADOS E INFORMACAO"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1216,8 +1196,8 @@
      "old_course_name": [
       "APRENDIZAGEM DE MAQUINA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1230,8 +1210,8 @@
      "old_course_name": [
       "PERCEP. COMPUTAC.E RECONH. PADRAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1244,8 +1224,8 @@
      "old_course_name": [
       "ENG.CONHEC.SISTEMAS ESPECIALISTAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1258,8 +1238,8 @@
      "old_course_name": [
       "AUTOMACAO INTELIGENTE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1272,8 +1252,8 @@
      "old_course_name": [
       "TOPICOS AVANC.INTELEG.ARTIFICIAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1286,8 +1266,8 @@
      "old_course_name": [
       "SEMIN. EM INTELIGENCIA ARTIFICIAL"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1300,8 +1280,8 @@
      "old_course_name": [
       "PROGRAMACAO FUNCIONAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1314,8 +1294,8 @@
      "old_course_name": [
       "IMPLEMENTACAO SIST. OPERACIONAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1328,8 +1308,8 @@
      "old_course_name": [
       "PROGRAMACAO COM COMPONENTES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1342,8 +1322,8 @@
      "old_course_name": [
       "PROGRAMACAO PARA INTERNET"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1356,8 +1336,8 @@
      "old_course_name": [
       "SEMANTICA LINGUAGENS PROGRAMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1370,8 +1350,8 @@
      "old_course_name": [
       "SISTEMAS DE INFORMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1384,8 +1364,8 @@
      "old_course_name": [
       "CALCULO DE PROGRAMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1398,8 +1378,8 @@
      "old_course_name": [
       "ANALISE E PROJETOS DE SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1412,8 +1392,8 @@
      "old_course_name": [
       "DESENVOLVIMENTO DE SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1426,8 +1406,8 @@
      "old_course_name": [
       "TOPICOS AVANCADOS ENG. SOFTWARE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1440,8 +1420,8 @@
      "old_course_name": [
       "SEM.ENG. SOFT LING. COMPUTACIONAL"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1454,8 +1434,8 @@
      "old_course_name": [
       "TOPICOS AVAN1⁄2.LING.COMPUTACIONAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1468,8 +1448,8 @@
      "old_course_name": [
       "PROJETO DE CPU"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1482,8 +1462,8 @@
      "old_course_name": [
       "ORGANIZ. TECNOLOGIA COMPUTADORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1496,8 +1476,8 @@
      "old_course_name": [
       "PROCESSADORES APLICAC. ESPECIFICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1510,8 +1490,8 @@
      "old_course_name": [
       "ENGENHARIA DE SISTEMAS EMBUTIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1524,8 +1504,8 @@
      "old_course_name": [
       "PROTOTIP. DE CIRCUITOS INTEGRADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1538,8 +1518,8 @@
      "old_course_name": [
       "SISTEMA DE TEMPO REAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1552,8 +1532,8 @@
      "old_course_name": [
       "AMBIENTES PROJETOS SIST.EMBUTIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1566,8 +1546,8 @@
      "old_course_name": [
       "PROJETOS DE SISTEMAS EMBUTIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1580,8 +1560,8 @@
      "old_course_name": [
       "TRANSDUTORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1594,8 +1574,8 @@
      "old_course_name": [
       "PROJETO DE COMPILADORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1608,8 +1588,8 @@
      "old_course_name": [
       "TOP.AVANC.ARQUIT.DE COMPUTADORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1622,8 +1602,8 @@
      "old_course_name": [
       "SEMIN.ARQUIT. SISTEMAS EMBUTIDOS"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1636,8 +1616,8 @@
      "old_course_name": [
       "TOP.AVANC. EM SISTEMAS EMBUTIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1650,8 +1630,8 @@
      "old_course_name": [
       "COMUNICACAO SEM FIO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1664,8 +1644,8 @@
      "old_course_name": [
       "SISTEMAS DE COMUNICACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1678,8 +1658,8 @@
      "old_course_name": [
       "AVALIACAO DESEMPENHO DE SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1692,8 +1672,8 @@
      "old_course_name": [
       "SEGURANCA DE SISTEMAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1706,8 +1686,8 @@
      "old_course_name": [
       "ADM. DE SISTEMAS HETEROGENEOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1720,8 +1700,8 @@
      "old_course_name": [
       "SISTEMAS MULTIMIDIA DISTRIBUIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1734,8 +1714,8 @@
      "old_course_name": [
       "PROC.SIMUL.ESTOCAST.COMPUTACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1748,8 +1728,8 @@
      "old_course_name": [
       "TOP. AVANC. REDES DE COMPUTADORES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1762,8 +1742,8 @@
      "old_course_name": [
       "TOPICOS AVANC.SIST.DISTRIBUIDOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1776,8 +1756,8 @@
      "old_course_name": [
       "PROCESSAMENTO DE SINAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1790,8 +1770,8 @@
      "old_course_name": [
       "REALIDADE VIRTUAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1804,8 +1784,8 @@
      "old_course_name": [
       "AUTORIA MULTIMIDIA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1818,8 +1798,8 @@
      "old_course_name": [
       "INTERFACES ADAPT. SISTEMAS MOVEIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1832,8 +1812,8 @@
      "old_course_name": [
       "TOPICOS AVANCADOS EM MIDIAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1846,8 +1826,8 @@
      "old_course_name": [
       "SEMINARIO EM MIDIAS E INTERFACES"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1860,8 +1840,8 @@
      "old_course_name": [
       "TOPICOS AVANCADOS EM INTERFACE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1874,8 +1854,8 @@
      "old_course_name": [
       "ANALISE NUMERICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1888,8 +1868,8 @@
      "old_course_name": [
       "ALGORITMOS DE APROXIMACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1902,8 +1882,8 @@
      "old_course_name": [
       "TEORIA DE GRAFOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1916,8 +1896,8 @@
      "old_course_name": [
       "TEORIA DA RECURSAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1930,8 +1910,8 @@
      "old_course_name": [
       "TEORIA DOS MODELOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1944,8 +1924,8 @@
      "old_course_name": [
       "TEORIA DA PROVA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1958,8 +1938,8 @@
      "old_course_name": [
       "LAMBDA CALCULO TEORIA TIPOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1972,8 +1952,8 @@
      "old_course_name": [
       "LOGICAS NAO CLASSICAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -1986,8 +1966,8 @@
      "old_course_name": [
       "COMPLEXIDADE DESCRITIVA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2000,8 +1980,8 @@
      "old_course_name": [
       "TOPICOS AVANCADOS EM ALGORITMOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2014,8 +1994,8 @@
      "old_course_name": [
       "TOPICOS AVANCADOS INF. TEORICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2028,8 +2008,8 @@
      "old_course_name": [
       "TOP.AVANC. MATEMAT. COMPUTACIONAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2042,8 +2022,8 @@
      "old_course_name": [
       "SEMINARIO EM INFORMATICA TEORICA"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2056,8 +2036,8 @@
      "old_course_name": [
       "NOVA ECONOMIA E NOVA SOCIEDADE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2070,8 +2050,8 @@
      "old_course_name": [
       "ECONOMIA PARA EMPREENDEDOR"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2084,8 +2064,8 @@
      "old_course_name": [
       "EMPREENDIMENTOS EM INFORMATICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2098,8 +2078,8 @@
      "old_course_name": [
       "NEGOCIOS ON LINE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2112,8 +2092,8 @@
      "old_course_name": [
       "CONTABILIDADE FINANC. E GERENCIAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2126,8 +2106,8 @@
      "old_course_name": [
       "PROFICIENCIA EM INGLES 1"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2140,8 +2120,8 @@
      "old_course_name": [
       "PROFICIENCIA EM INGLES 2"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2154,8 +2134,8 @@
      "old_course_name": [
       "PROFICIENCIA EM INGLES 3"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2168,8 +2148,8 @@
      "old_course_name": [
       "INICIACAO CIENTIFICA 1"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2182,8 +2162,8 @@
      "old_course_name": [
       "INICIACAO CIENTIFICA 2"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2196,8 +2176,8 @@
      "old_course_name": [
       "PROJETO DE MONITORIA 1"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2210,8 +2190,8 @@
      "old_course_name": [
       "PROJETO DE MONITORIA 2"
      ],
-     "old_status": [
-      "45h Aula"
+     "_class_hours": [
+      "45"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2224,8 +2204,8 @@
      "old_course_name": [
       "COMERCIO ELETRONICO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2238,8 +2218,8 @@
      "old_course_name": [
       "JOGOS AVANCADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2252,8 +2232,8 @@
      "old_course_name": [
       "SISTEMAS SUPORTE DECIS.MIN.DADOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2266,8 +2246,8 @@
      "old_course_name": [
       "MINERACAO DA WEB"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2280,8 +2260,8 @@
      "old_course_name": [
       "PROG.DECLARATIVA B.D.INTELIGENTES"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2294,8 +2274,8 @@
      "old_course_name": [
       "ENGENHARIA SOFTWARE EDUCATIVOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2308,8 +2288,8 @@
      "old_course_name": [
       "TECNOLOGIAS EDUCACIONAIS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2322,8 +2302,8 @@
      "old_course_name": [
       "CONVERGENCIA DIGITAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2336,8 +2316,8 @@
      "old_course_name": [
       "INTRODUCAO A BIOLOGIA MOLECULAR"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2350,8 +2330,8 @@
      "old_course_name": [
       "COMPARACAO ANALISE SEQUENCIAS DNA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2364,8 +2344,8 @@
      "old_course_name": [
       "PROJETO EM BIO INFORMATICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2378,8 +2358,8 @@
      "old_course_name": [
       "TOPICOS AVANC.EM BIO INFORMATICA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2392,8 +2372,8 @@
      "old_course_name": [
       "TOP. AVANC.SIST.SUP.DECIS.MIN.WEB"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2406,8 +2386,8 @@
      "old_course_name": [
       "TOPICOS AVANC.TECNOLOGIA ENSINO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2420,8 +2400,8 @@
      "old_course_name": [
       "TOP.AVANC.ROBOT.AUTOM.INTELIGENTE"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2434,8 +2414,8 @@
      "old_course_name": [
       "TOP.AVANC.EM NEGOCIOS ONLINE E EMPREENDIMENTOS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2448,8 +2428,8 @@
      "old_course_name": [
       "TOP.AVANC.ADMINIST.SIST.SEGURANCA"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2462,8 +2442,8 @@
      "old_course_name": [
       "TOP.AVANC.ENTRETENIMENTO DIGITAL"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2476,8 +2456,8 @@
      "old_course_name": [
       "CONTROLE E MANIPULACAO"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2490,8 +2470,8 @@
      "old_course_name": [
       "INTERFACES GRAFICAS"
      ],
-     "old_status": [
-      "75h Aula"
+     "_class_hours": [
+      "75"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2504,8 +2484,8 @@
      "old_course_name": [
       "GEOMETRIA ANALITICA 1"
      ],
-     "old_status": [
-      "60h Aula"
+     "_class_hours": [
+      "60"
      ],
      "new_codes": [],
      "new_course_name": [],
@@ -2518,8 +2498,8 @@
          "new_course_name": [
           "SISTEMAS DIGITAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF675"
@@ -2538,8 +2518,8 @@
          "new_course_name": [
           "INTRODUCAO A PROGRAMACAO"
          ],
-         "new_status": [
-          "120h Aula"
+         "_class_hours": [
+          "120"
          ],
          "old_codes": [
           "IF669"
@@ -2558,8 +2538,8 @@
          "new_course_name": [
           "MATEMATICA DISCRETA PARA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF670"
@@ -2578,14 +2558,34 @@
          "new_course_name": [
           "CONCEPCAO DE ARTEFATOS DIGITAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF681"
          ],
          "old_course_name": [
           "INTERFACES USUARIO-MAQUINA"
+         ],
+         "old_status": [
+          "OBRIGATÓRIO"
+         ]
+        },
+        "MA026": {
+         "new_codes": [
+          "MA026"
+         ],
+         "new_course_name": [
+          "CALCULO DIFERENCIAL E INTEGRAL 1"
+         ],
+         "_class_hours": [
+          "60"
+         ],
+         "old_codes": [
+          "MA026"
+         ],
+         "old_course_name": [
+          "CALCULO DIFERENCIAL E INTEGRAL 1"
          ],
          "old_status": [
           "OBRIGATÓRIO"
@@ -2598,8 +2598,8 @@
          "new_course_name": [
           "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF677"
@@ -2618,8 +2618,8 @@
          "new_course_name": [
           "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "MA531"
@@ -2638,8 +2638,8 @@
          "new_course_name": [
           "ALGORITMOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF672"
@@ -2658,8 +2658,8 @@
          "new_course_name": [
           "BANCO DE DADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF685"
@@ -2678,8 +2678,8 @@
          "new_course_name": [
           "LOGICA PARA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF673"
@@ -2698,8 +2698,8 @@
          "new_course_name": [
           "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "ET586"
@@ -2718,8 +2718,8 @@
          "new_course_name": [
           "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS"
          ],
-         "new_status": [
-          "120h Aula"
+         "_class_hours": [
+          "120"
          ],
          "old_codes": [
           "IF684 IF699"
@@ -2738,8 +2738,8 @@
          "new_course_name": [
           "METODOLOGIA CIENTIFICA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF676"
@@ -2758,8 +2758,8 @@
          "new_course_name": [
           "TEORIA DA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF689"
@@ -2778,8 +2778,8 @@
          "new_course_name": [
           "COMPILADORES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF688"
@@ -2798,8 +2798,8 @@
          "new_course_name": [
           "ANALISE E MINERACAO DE REDES COMPLEXAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF818"
@@ -2818,8 +2818,8 @@
          "new_course_name": [
           "CRIATIVIDADE COMPUTACIONAL"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF866"
@@ -2838,8 +2838,8 @@
          "new_course_name": [
           "INTRODUCAO A APRENDIZAGEM PROFUNDA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF867"
@@ -2858,8 +2858,8 @@
          "new_course_name": [
           "ALGORITMOS PARA STREAMS DE DADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF868"
@@ -2878,8 +2878,8 @@
          "new_course_name": [
           "ALGORITMOS E ESTRUTURAS DE DADOS AVANCADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF869"
@@ -2898,8 +2898,8 @@
          "new_course_name": [
           "REDES NEURAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF702"
@@ -2918,8 +2918,8 @@
          "new_course_name": [
           "AGENTES AUTONOMOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF703"
@@ -2938,8 +2938,8 @@
          "new_course_name": [
           "PROCESSAMENTO GRAFICO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF680"
@@ -2958,8 +2958,8 @@
          "new_course_name": [
           "PROCESSAMENTO DE LINGUAGEM NATURAL"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF704"
@@ -2978,8 +2978,8 @@
          "new_course_name": [
           "PROGRAMACAO CONCORRENTE E DISTRIBUIDA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF711"
@@ -2998,8 +2998,8 @@
          "new_course_name": [
           "PROJETO DE DESENVOLVIMENTO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF683"
@@ -3018,8 +3018,8 @@
          "new_course_name": [
           "TENDENCIAS EM MIDIA E INTERACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF687"
@@ -3038,8 +3038,8 @@
          "new_course_name": [
           "ENGENHARIA DE REQUISITOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF716"
@@ -3058,8 +3058,8 @@
          "new_course_name": [
           "METODOLOGIAS DE GERENCIAMENTO DE PROJETO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF717"
@@ -3078,8 +3078,8 @@
          "new_course_name": [
           "PLANEJAMENTO E GESTAO DA QUALIDADE DE SOFTWARE"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF720"
@@ -3098,8 +3098,8 @@
          "new_course_name": [
           "REDES DE COMPUTADORES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF678"
@@ -3118,8 +3118,8 @@
          "new_course_name": [
           "REDES DE COMPUTADORES 2"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF738"
@@ -3138,8 +3138,8 @@
          "new_course_name": [
           "GERENCIAMENTO E MONITORAMENTO DE REDES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF741"
@@ -3158,8 +3158,8 @@
          "new_course_name": [
           "SEMINARIOS EM REDES DE COMPUTADORES"
          ],
-         "new_status": [
-          "30h Aula"
+         "_class_hours": [
+          "30"
          ],
          "old_codes": [
           "IF748"
@@ -3178,8 +3178,8 @@
          "new_course_name": [
           "COMPUTACAO GRAFICA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF750"
@@ -3198,8 +3198,8 @@
          "new_course_name": [
           "PROCESSAMENTO DE IMAGEM"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF751"
@@ -3218,8 +3218,8 @@
          "new_course_name": [
           "VISAO COMPUTACIONAL"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF752"
@@ -3238,8 +3238,8 @@
          "new_course_name": [
           "COMPUTACAO MUSICAL E PROCESSAMENTO DE SOM"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF754"
@@ -3258,8 +3258,8 @@
          "new_course_name": [
           "PROCESSAMENTO DE VOZ"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF759"
@@ -3278,8 +3278,8 @@
          "new_course_name": [
           "ALGEBRA AVANCADA PARA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF763"
@@ -3298,8 +3298,8 @@
          "new_course_name": [
           "CALCULO DIFERENCIAL E INTEGRAL 2"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF764"
@@ -3318,8 +3318,8 @@
          "new_course_name": [
           "PROCESSAMENTO DE CADEIA DE CARACTERES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF767"
@@ -3338,8 +3338,8 @@
          "new_course_name": [
           "GESTAO DE NEGOCIOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF783"
@@ -3358,8 +3358,8 @@
          "new_course_name": [
           "JOGOS DIGITAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF793"
@@ -3378,8 +3378,8 @@
          "new_course_name": [
           "OTIMIZACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF797"
@@ -3398,8 +3398,8 @@
          "new_course_name": [
           "INTRODUCAO A ROBOTICA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF798"
@@ -3418,8 +3418,8 @@
          "new_course_name": [
           "RECUPERACAO DA INFORMACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF962"
@@ -3438,8 +3438,8 @@
          "new_course_name": [
           "METODOS FORMAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "IF721"
@@ -3458,8 +3458,8 @@
          "new_course_name": [
           "LINGUA INGLESA INSTRUMENTAL 1"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [
           "LE530"
@@ -3478,8 +3478,8 @@
          "new_course_name": [
           "DESENVOLVIMENTO DE SOFTWARE"
          ],
-         "new_status": [
-          "120h Aula"
+         "_class_hours": [
+          "120"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3492,8 +3492,8 @@
          "new_course_name": [
           "ESTRUTURAS DE DADOS ORIENTADAS A OBJETOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3506,8 +3506,8 @@
          "new_course_name": [
           "INTEGRACAO E EVOLUCAO DE SISTEMAS DE INFORMACAO"
          ],
-         "new_status": [
-          "120h Aula"
+         "_class_hours": [
+          "120"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3520,8 +3520,8 @@
          "new_course_name": [
           "INTRODUCAO A SISTEMAS DISTRIBUIDOS E REDES DE COMPUTADORES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3534,8 +3534,8 @@
          "new_course_name": [
           "INFORMATICA E SOCIEDADE"
          ],
-         "new_status": [
-          "30h Aula"
+         "_class_hours": [
+          "30"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3548,8 +3548,8 @@
          "new_course_name": [
           "COMPUTACAO QUANTICA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3562,8 +3562,8 @@
          "new_course_name": [
           "INTRODUCAO A APRENDIZAGEM POR REFORCO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3576,8 +3576,8 @@
          "new_course_name": [
           "APLICACOES DE APRENDIZAGEM DE MAQUINA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3590,8 +3590,8 @@
          "new_course_name": [
           "COMPUTACAO EVOLUCIONARIA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3604,8 +3604,8 @@
          "new_course_name": [
           "INTELIGENCIA ARTIFICIAL COLETIVA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3618,8 +3618,8 @@
          "new_course_name": [
           "FUNDAMENTOS GEOMETRICOS PARA VISAO COMPUTACIONAL"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3632,8 +3632,8 @@
          "new_course_name": [
           "REDES DEFINIDAS POR SOFTWARE"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3646,8 +3646,8 @@
          "new_course_name": [
           "REDES VEICULARES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3660,8 +3660,8 @@
          "new_course_name": [
           "REDES AUTOMOTIVAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3674,8 +3674,8 @@
          "new_course_name": [
           "AVALIACAO DE DESEMPENHO DE REDES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3688,8 +3688,8 @@
          "new_course_name": [
           "COMPUTACAO ORIENTADA A SERVICOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3702,8 +3702,8 @@
          "new_course_name": [
           "SISTEMAS DISTRIBUIDOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3716,8 +3716,8 @@
          "new_course_name": [
           "SEGURANCA DE REDES E SISTEMAS DISTRIBUIDOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3730,8 +3730,8 @@
          "new_course_name": [
           "PLATAFORMAS DE DISTRIBUICAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3744,8 +3744,8 @@
          "new_course_name": [
           "COMPUTACAO UBIQUA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3758,8 +3758,8 @@
          "new_course_name": [
           "INTERNET DAS COISAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3772,8 +3772,8 @@
          "new_course_name": [
           "TENDENCIAS EM REDES DE COMPUTADORES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3786,8 +3786,8 @@
          "new_course_name": [
           "SEGURANCA DE COMPUTADORES"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3800,8 +3800,8 @@
          "new_course_name": [
           "ASSINATURA DIGITAL E CERTIFICACAO DIGITAL"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3814,8 +3814,8 @@
          "new_course_name": [
           "TECNICAS DE ATAQUE E DETECCAO DE INTRUSAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3828,8 +3828,8 @@
          "new_course_name": [
           "SEGURANCA EM COMPUTACAO EM NUVEM"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3842,8 +3842,8 @@
          "new_course_name": [
           "TENDENCIAS EM SEGURANCA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3856,8 +3856,8 @@
          "new_course_name": [
           "SEMINARIOS EM SEGURANCA"
          ],
-         "new_status": [
-          "30h Aula"
+         "_class_hours": [
+          "30"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3870,8 +3870,8 @@
          "new_course_name": [
           "ETICA E ASPECTOS JURIDICOS DA COMPUTACAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3884,8 +3884,8 @@
          "new_course_name": [
           "DATA WAREHOUSING"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3898,8 +3898,8 @@
          "new_course_name": [
           "VISUALIZACAO DE DADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3912,8 +3912,8 @@
          "new_course_name": [
           "BANCOS DE DADOS NAO-CONVENCIONAIS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3926,8 +3926,8 @@
          "new_course_name": [
           "COMPUTACAO BIOINSPIRADA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3940,8 +3940,8 @@
          "new_course_name": [
           "SEGURANCA DE INFORMACAO E SISTEMAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3954,8 +3954,8 @@
          "new_course_name": [
           "SISTEMAS EMBARCADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3968,8 +3968,8 @@
          "new_course_name": [
           "TECNOLOGIA, DIVERSIDADE, EQUIDADE E INCLUSAO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3982,8 +3982,8 @@
          "new_course_name": [
           "ANALISE E ESPECIFICACAO AVANCADA DE REQUISITOS DE SISTEMAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -3996,8 +3996,8 @@
          "new_course_name": [
           "ARQUITETURA DE SISTEMAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4010,8 +4010,8 @@
          "new_course_name": [
           "PROGRAMACAO COM NOVAS TECNOLOGIAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4024,8 +4024,8 @@
          "new_course_name": [
           "FUNDAMENTOS DE TESTE DE SOFTWARE"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4038,8 +4038,8 @@
          "new_course_name": [
           "TESTE DE SOFTWARE AVANCADO"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4052,8 +4052,8 @@
          "new_course_name": [
           "TRANSFORMACAO DE CODIGO E MODELOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4066,8 +4066,8 @@
          "new_course_name": [
           "SEMINARIOS EM ENGENHARIA DE SOFTWARE"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4080,8 +4080,8 @@
          "new_course_name": [
           "DISPOSITIVOS MULTIMIDIA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4094,8 +4094,8 @@
          "new_course_name": [
           "COMPUTACAO EM NUVEM"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4108,8 +4108,8 @@
          "new_course_name": [
           "PROCESSAMENTO DE DADOS EM LARGA ESCALA"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4122,8 +4122,8 @@
          "new_course_name": [
           "GOVERNANCA DE DADOS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4136,8 +4136,8 @@
          "new_course_name": [
           "GERENCIA DE CONFIGURACAO DE SOFTWARE, SERVICOS E SISTEMAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
@@ -4150,8 +4150,8 @@
          "new_course_name": [
           "INTRODUCAO A LIBRAS"
          ],
-         "new_status": [
-          "60h Aula"
+         "_class_hours": [
+          "60"
          ],
          "old_codes": [],
          "old_course_name": [],
