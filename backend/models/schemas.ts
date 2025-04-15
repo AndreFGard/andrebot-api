@@ -31,6 +31,7 @@ export interface CourseInfo {
     optional: boolean;
     colorCode?: string;
     shortName?: string;
+    isNewCurriculum?: boolean;
 }
 
 
@@ -52,6 +53,7 @@ export interface CourseDisplayInfo{
     prerequisites?: number[];
     code: string;
     term: string | number;
+    isNewCurriculum?: boolean;
 }
 
 

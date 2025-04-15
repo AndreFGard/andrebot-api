@@ -8,8 +8,8 @@ const courses = JSON.parse(coursesraw) as Record<string, Record<number, CourseIn
 Object.values(courses).forEach(major => {
     Object.values(major).forEach(trm => {
         let i =0;
-        Object.values(trm).forEach(clss =>
-             {
+        Object.values(trm).forEach(clss => {
+            clss.isNewCurriculum = clss.code.toLowerCase().includes("cin");
             clss.shortName = clss.name.replaceAll(" DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
@@ -62,6 +62,7 @@ export class timetableModel{
                     professor: crs.professor,
                     term: crs.term,
                     code: crs.code,
+                    isNewCurriculum: crs.isNewCurriculum,
                 } as CourseDisplayInfo))
 
                 return {[Number(term)]: convertedCourses};

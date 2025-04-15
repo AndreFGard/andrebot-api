@@ -18,7 +18,8 @@ export class CurriculumManager {
             id: 5,
             term: 1,
             blockedCourseIds: [],
-            blockedCourseCodes: []
+            blockedCourseCodes: [],
+            isNewCurriculum: false,
         }
         return [placeholder] as PendingCourse[];
     }
