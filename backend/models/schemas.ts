@@ -12,11 +12,6 @@ export interface ScheduleDay {
 
 }
 
-interface PendingCourse extends CourseInfo {
-    blockedCourseIds: number[];
-    blockedCourseCodes: string[];
-}
-export type {PendingCourse};
 
 export interface ITimetable {
     table: Record<string, Record<string, ScheduleDay|undefined>>;
@@ -55,6 +50,8 @@ export interface CourseDisplayInfo{
     id: number;
     professor: string;
     prerequisites?: number[];
+    code: string;
+    term: string | number;
 }
 
 
@@ -75,3 +72,10 @@ export type EquivalenceMapping = {
   
 
 export const majorList = ["CC", "EC", "SI", "outros"];
+
+
+interface PendingCourse extends CourseDisplayInfo{
+    blockedCourseIds: number[];
+    blockedCourseCodes: string[];
+}
+export type {PendingCourse};
