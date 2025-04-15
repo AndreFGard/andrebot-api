@@ -1,5 +1,5 @@
 import {timetableModel} from "../models/timetablemodel"
-import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo} from '../models/schemas';
+import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo, PendingCourse} from '../models/schemas';
 
 
 
@@ -193,10 +193,12 @@ Object(majors).forEach( (major: string) => {
 
 export const GraduationServices = new CourseTable(courses);
 
+import { RecommendationSystem} from "./courseRecomendationService";
 
 export class TimeTableService{
+    recommender: RecommendationSystem = new RecommendationSystem();
     constructor() {
-        // Empty constructor
+
     }
 
     async getCourses(major: string){
@@ -213,8 +215,10 @@ export class TimeTableService{
         return courselist;
     }
 
-    async getClassesFromCodes(codes: string[]){
-
+    getCoursesFromCodes(codes: string[]){
+        return codes.
+                map(code => model.getCourseBycode(code)).
+                filter((x) => x !== undefined);
     }
 
     //provides all the information necessary to render the timetable
@@ -256,6 +260,15 @@ export class TimeTableService{
 
     getCourseDisplayInfoList(){
         return model.getCourseDisplayInfoList();
+    }
+
+    getRecommendations(major: string, completedCourseIds: number[]): Record<number, PendingCourse[]> {
+        const codes = completedCourseIds.map(
+                id => GraduationServices.getClassByID(id))
+                .filter(x=>x)
+                .map(x=>x.code);
+
+        return this.recommender.getRecommendations(major, codes);
     }
 
 

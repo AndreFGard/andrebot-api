@@ -12,6 +12,7 @@ export interface ScheduleDay {
 
 }
 
+
 export interface ITimetable {
     table: Record<string, Record<string, ScheduleDay|undefined>>;
     aproxHourList: string[];
@@ -30,6 +31,7 @@ export interface CourseInfo {
     optional: boolean;
     colorCode?: string;
     shortName?: string;
+    isNewCurriculum?: boolean;
 }
 
 
@@ -48,6 +50,10 @@ export interface CourseDisplayInfo{
     name: string;
     id: number;
     professor: string;
+    prerequisites?: number[];
+    code: string;
+    term: string | number;
+    isNewCurriculum?: boolean;
 }
 
 
@@ -66,3 +72,12 @@ export type EquivalenceMapping = {
     equivalences: EquivalenceMapping[];
   };
   
+
+export const majorList = ["CC", "EC", "SI", "outros"];
+
+
+interface PendingCourse extends CourseDisplayInfo{
+    blockedCourseIds: number[];
+    blockedCourseCodes: string[];
+}
+export type {PendingCourse};

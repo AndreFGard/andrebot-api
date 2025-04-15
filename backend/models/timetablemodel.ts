@@ -8,8 +8,8 @@ const courses = JSON.parse(coursesraw) as Record<string, Record<number, CourseIn
 Object.values(courses).forEach(major => {
     Object.values(major).forEach(trm => {
         let i =0;
-        Object.values(trm).forEach(clss =>
-             {
+        Object.values(trm).forEach(clss => {
+            clss.isNewCurriculum = clss.code.toLowerCase().includes("cin");
             clss.shortName = clss.name.replaceAll(" DE", "").replaceAll(" E ", " ").split(" ").slice(0,3).join(" ");
             clss.days.forEach(d => {
                 i+=1;
@@ -49,6 +49,8 @@ Object.keys(data).filter(k => {return(!majorList.includes(k))})
 export class timetableModel{
     readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
 
+    readonly #coursesByCode: Record<string, CourseInfo> = {};
+
     constructor(){
 
         const y =
@@ -57,8 +59,11 @@ export class timetableModel{
                 const convertedCourses = courses.map((crs) => ({
                     name: crs.name,
                     id: crs.id,
-                    professor: crs.professor
-                }));
+                    professor: crs.professor,
+                    term: crs.term,
+                    code: crs.code,
+                    isNewCurriculum: crs.isNewCurriculum,
+                } as CourseDisplayInfo))
 
                 return {[Number(term)]: convertedCourses};
             })
@@ -67,6 +72,17 @@ export class timetableModel{
         });
 
         this.#courseDisplayInfoList = Object.assign({}, ...y);
+
+        this.#coursesByCode = {};
+        Object.entries(courses).forEach(([major, termCourses]) => {
+            Object.entries(termCourses).forEach(([term, courseList]) => {
+                courseList.forEach(course => {
+                    this.#coursesByCode[course.code] = course;
+                });
+            });
+        });
+
+            
     }
 
 
@@ -77,5 +93,9 @@ export class timetableModel{
 
     getCourseDisplayInfoList(): Record<string, Record<number, CourseDisplayInfo[]>>{
         return this.#courseDisplayInfoList;
+    }
+
+    getCourseBycode(code: string): CourseInfo|undefined{   
+        return this.#coursesByCode[code] || undefined ;
     }
 }

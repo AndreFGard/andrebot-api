@@ -1,5 +1,5 @@
 import { GraduationServices, TimeTableService} from "../services/timetableServices";
-import {CourseDisplayInfo, CourseInfo, TimetableRenderInfo, } from "../models/schemas";
+import {CourseDisplayInfo, CourseInfo, TimetableRenderInfo, PendingCourse} from "../models/schemas";
 import express, {Express, NextFunction, Request, Response} from "express";
 
 const timetableService = new TimeTableService();
@@ -60,4 +60,11 @@ export async function RenderTimeTable(req: Request, res: Response, next: NextFun
 export async function getCourseDisplayInfoList(req: Request, res: Response< Record<string, Record<number, CourseDisplayInfo[]>>>) {
         const courseDisplayInfoList = timetableService.getCourseDisplayInfoList();
         res.send(courseDisplayInfoList);
+}
+
+export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>>) {
+    const major = req.query.major as string || "CC";
+    const courseids = (req.query.completedCourseIds as string || "").split(",").map(Number);
+    const recommendations=timetableService.getRecommendations(major, courseids);
+    res.send(recommendations);
 }
