@@ -33,7 +33,7 @@ export const getCourseTypeStyle = (code: string) => {
 // Function to generate a fictitious code
 export const getCourseCode = (course: CourseDisplayInfo): string => {
   // Use existing code if available, otherwise generate one based on ID/name
-  return `${course.name.substring(0,3).toUpperCase()}${String(course.id).padStart(3, '0')}`;
+  return course.code;
 };
 
 // Function to get fictitious credits if needed

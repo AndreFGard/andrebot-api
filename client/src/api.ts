@@ -20,18 +20,24 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
             {
                 name: 'Algebra Linear',
                 id: 1,
-                professor: "Silvio"
+                professor: "Silvio",
+                code: "MAT140",
+                term: "1"
             },
             {
                 name: 'Algoritmos',
                 id: 2,
                 professor: 'Gustavo',
+                code: "CC101",
+                term: "1"
             },
         ],
         2: [{
             name: 'Desenvolvimento Paia',
             id: 3,
             professor: 'Gustavo',
+            code: "CC102",
+            term: "2"
         },
         ]
     },
@@ -40,11 +46,15 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
             name: 'Calculo 1',
             id: 3,
             professor: 'Andre',
+            code: "MAT141",
+            term: "1"
         }],
         2: [{
             name: 'Desenvolvimento Paia',
             id: 3,
             professor: 'Gustavo',
+            code: "EC102",
+            term: "2"
         }]
     },
     SI: [],
