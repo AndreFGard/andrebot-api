@@ -6,8 +6,9 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 interface majorChooserProps {
     major: string;
     onMajorChange: (value: string) => void;
+    majors?: string[];
 }
-const majorChooser: React.FC<majorChooserProps> = ({ major, onMajorChange }: majorChooserProps) => {
+const majorChooser: React.FC<majorChooserProps> = ({ major, onMajorChange, majors=majorList }: majorChooserProps) => {
     return(
         <Tabs
             defaultValue={major}
@@ -17,7 +18,7 @@ const majorChooser: React.FC<majorChooserProps> = ({ major, onMajorChange }: maj
         }}
         >
         <TabsList className='w-full h-12'>
-        {majorList.map((major) => (
+        {majors.map((major) => (
             <TabsTrigger key={major} value={major} className="flex-grow text-xl font-bold">{major}</TabsTrigger>
         ))}
         </TabsList>
