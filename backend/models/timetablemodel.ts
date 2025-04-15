@@ -59,8 +59,10 @@ export class timetableModel{
                 const convertedCourses = courses.map((crs) => ({
                     name: crs.name,
                     id: crs.id,
-                    professor: crs.professor
-                }));
+                    professor: crs.professor,
+                    term: crs.term,
+                    code: crs.code,
+                } as CourseDisplayInfo))
 
                 return {[Number(term)]: convertedCourses};
             })

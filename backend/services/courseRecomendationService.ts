@@ -12,14 +12,11 @@ export class CurriculumManager {
     }
     getPendingCourses(completedCourseCodes: string[]): PendingCourse[] {
         const placeholder:PendingCourse = {
-            major: "CC",
             code: "CIN0133",
             name: "INTRODUÇÃO À PROGRAMAÇÃO",
             professor: "Ricardo Massa Ferreira Lima / Sérgio Soares / Fernanda Madeiral Delfim",
-            days: [], // Added missing required field
             id: 5,
-            term: "1", // Fixed term field
-            optional: false,
+            term: 1,
             blockedCourseIds: [],
             blockedCourseCodes: []
         }
