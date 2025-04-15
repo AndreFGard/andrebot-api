@@ -1,5 +1,5 @@
 import {timetableModel} from "../models/timetablemodel"
-import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo} from '../models/schemas';
+import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo, PendingCourse} from '../models/schemas';
 
 
 
@@ -193,7 +193,7 @@ Object(majors).forEach( (major: string) => {
 
 export const GraduationServices = new CourseTable(courses);
 
-import { RecommendationSystem, PendingCourse} from "./courseRecomendationService";
+import { RecommendationSystem} from "./courseRecomendationService";
 
 export class TimeTableService{
     recommender: RecommendationSystem = new RecommendationSystem();
