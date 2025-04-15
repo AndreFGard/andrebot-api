@@ -3,6 +3,10 @@ import React, { useEffect} from 'react';
 import ClassChooser from './classChooser';
 import { CourseSelectionManager, fetchTimetable, TimetableRenderInfo, initialTimetable} from '@/api';
 import Timetable from './timetable';
+import { Recommendations } from './Recommendations';
+import { getRecommendations } from '@/api';
+import { PendingCourse } from '../../../backend/models/schemas';
+
 const TimetableEditor = () => {
   
   const [major,setmajor ] = React.useState("CC");
@@ -35,6 +39,17 @@ const TimetableEditor = () => {
     });
   }, [selectedCourseIds])
 
+  //recommendations
+  const [recommendations, setRecommendations] = React.useState<Record<number, PendingCourse[]>>({});
+
+  useEffect(() => {
+    getRecommendations(major, Array.from(selectedCourseIds.values())).then((data: Record<number, PendingCourse[]>) => {
+      setRecommendations(data);
+    }).catch((e: Error) => {
+        console.log("error fetching recommendations data", e)
+    });
+  }
+  , [major, selectedCourseIds]);
 
   return (
     <>
@@ -46,7 +61,9 @@ const TimetableEditor = () => {
      />
     <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
     <Timetable renderinfo={timetableRenderInfo} onCourseToggle={handleCourseAddition} selectedCourseIds={selectedCourseIds}/>
-
+    
+    
+    <Recommendations currentTerm={1} recommendations={recommendations}/>
   </>
   );
 };
