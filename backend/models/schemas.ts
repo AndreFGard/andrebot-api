@@ -12,6 +12,12 @@ export interface ScheduleDay {
 
 }
 
+interface PendingCourse extends CourseInfo {
+    blockedCourseIds: number[];
+    blockedCourseCodes: string[];
+}
+export type {PendingCourse};
+
 export interface ITimetable {
     table: Record<string, Record<string, ScheduleDay|undefined>>;
     aproxHourList: string[];
@@ -51,13 +57,20 @@ export interface CourseDisplayInfo{
 }
 
 
-export interface CurriculumDAG {
+export type EquivalenceMapping = {
+    old_codes: string[];
+    new_codes: string[];
+  };
+  
+  export type CurriculumDAG = {
     prerequisites: Map<string, string[]>;
-    coursesAndDegree: Record<string, number>;
-    courseList: string[]; 
     completed_courses: string[];
     major: string;
     curriculumVersion: string;
-}
-//MUST be kept stable because they are matched against the database names
+    coursesAndDegree: Record<string, number>;
+    courseList: string[];
+    equivalences: EquivalenceMapping[];
+  };
+  
+
 export const majorList = ["CC", "EC", "SI", "outros"];

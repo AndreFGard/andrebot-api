@@ -49,6 +49,8 @@ Object.keys(data).filter(k => {return(!majorList.includes(k))})
 export class timetableModel{
     readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
 
+    readonly #coursesByCode: Record<string, CourseInfo> = {};
+
     constructor(){
 
         const y =
@@ -67,6 +69,17 @@ export class timetableModel{
         });
 
         this.#courseDisplayInfoList = Object.assign({}, ...y);
+
+        this.#coursesByCode = {};
+        Object.entries(courses).forEach(([major, termCourses]) => {
+            Object.entries(termCourses).forEach(([term, courseList]) => {
+                courseList.forEach(course => {
+                    this.#coursesByCode[course.code] = course;
+                });
+            });
+        });
+
+            
     }
 
 
@@ -77,5 +90,9 @@ export class timetableModel{
 
     getCourseDisplayInfoList(): Record<string, Record<number, CourseDisplayInfo[]>>{
         return this.#courseDisplayInfoList;
+    }
+
+    getCourseBycode(code: string): CourseInfo|undefined{   
+        return this.#coursesByCode[code] || undefined ;
     }
 }
