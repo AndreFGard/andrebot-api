@@ -32,7 +32,7 @@ const CourseHistory = () => {
       return Array.from(new Set(Object.keys(courses[major]).map(Number))).sort((a, b) => a - b);
     }
     return [];
-  }, [major]);
+  }, [major, courses]);S
   
   // Track expanded/collapsed state of each period
   const [expandedPeriods, setExpandedPeriods] = useState<Record<number, boolean>>(() => {
