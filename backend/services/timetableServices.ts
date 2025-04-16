@@ -2,7 +2,6 @@ import {timetableModel} from "../models/timetablemodel"
 import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo, PendingCourse} from '../models/schemas';
 
 
-
 const model = new timetableModel();
 function min(a:string, b:string){
     return (a < b) ? a : b;
@@ -270,6 +269,4 @@ export class TimeTableService{
 
         return this.recommender.getRecommendations(major, codes);
     }
-
-
 }

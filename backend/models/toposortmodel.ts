@@ -35,10 +35,180 @@ function loadCurriculumData(filePath: string): CurriculumDAG {
   }
 }
 
-class RecommendationModel{
+export interface CourseEquivalence {
+    name?: string;
+    // Old course information
+    old_codes: string[];
+    old_course_name: string[];
+    old_status: string[];
+    _class_hours: string[];
+    class_hours: number;
+
     
+    // New course information
+    new_codes: string[];
+    new_course_name: string[];
+    new_status: string[];
+  }
+  
+interface MandatoryCourse{
+    code:string;
+    name:string;
 }
 
+interface MandatoryGraph{
+    g: Record<string, string[]>
+    degrees: Record<string, number>;
+    uncaughtCourses: string[];
+}
+export class RecommendationModel{
+    prerequisites: Record<string, string[]> = {}
+    equivalences: Record<string, string[]> = {}
+    mandatory_courses_by_major: Record<string, Record<string, Record<number, MandatoryCourse[]>>> = {}
+    code_equivalences: Record<string, CourseEquivalence> = {};
+    mandatoryGraphs: Record<string, MandatoryGraph> = {};
+    uncaughtCourses: string[] = [];
+
+    constructor(){
+        const data = fs.readFileSync("general_course_info.json", 'utf-8');
+        const parsedData = JSON.parse(data);
+        //const prerequList = new Map<string, string[]>(Object.entries(parsedData.prerequisites));
+        this.prerequisites = parsedData.prerequisites;
+
+        this.mandatory_courses_by_major = JSON.parse(
+                    fs.readFileSync("mandatory_courses.json", 'utf-8')
+                )
+
+        const course_code_equivalences_f = fs.readFileSync("course_code_equivalences.json", 'utf-8');
+        const course_code_equivalences = JSON.parse(course_code_equivalences_f);
+        this.code_equivalences = course_code_equivalences;
+        
+        for (const [key, value] of Object.entries(this.code_equivalences)) {
+            value.name = key;
+            value.class_hours = parseInt(value._class_hours[0]);
+            
+        }
+
+        const x=  Object.assign({}, ...["CC","EC","SI"].map(major => {return {[major]:this.buildMandatoryGraph(major)}}));
+        this.mandatoryGraphs = x;
+        
+        // for (const [k,v] of Object.entries(this.code_equivalences)) {
+        //     //if one course = 2 courses, well record only
+        //     // the one course as having an equivalence to the other 2
+        // }
+    }
+
+    private getPrereqsOfMissingCourses(
+        completed: Set<string>,
+        missing: Set<string>
+    ): Record<string, string[]> {
+        const missingCourses: Map<string, string[]> = new Map();
+        const dealt = new Set();
+        const deepmmissing = Array.from(missing);
+        const miss = {} as Record<string, string[]>;
+
+        while(deepmmissing.length){
+            const curm = deepmmissing.pop()!;
+            if (dealt.has(curm)) continue;
+
+            dealt.add(curm);
+
+            for (const son of this.prerequisites[curm]) {
+                if (!miss[son]) {
+                    miss[son] = [];
+                }
+                miss[son].push(curm);
+                if (!completed.has(son) && !dealt.has(son)) deepmmissing.push(son);
+            }
+        }
+
+        return miss;
+    }
+
+    private addEquivalencesToCompleted(completedCourses: string[]|Set<string>): string[] {
+        const equivalences = this.code_equivalences;
+        let completed = new Set(completedCourses);
+        for (let x=0; x<2; x++){
+            for (const [k,v] of Object.entries(equivalences)) {
+                const oldCompleted = v.old_codes.every(code => completed.has(code));
+                const newCompleted = v.new_codes.every(code => completed.has(code));
+
+                if (oldCompleted || newCompleted) {
+                    for (const code of v.new_codes.concat(v.old_codes)) {
+                        completed.add(code);
+                    }
+                }
+            }
+        }
+
+        return Array.from(completed);
+    }
+
+    private getMandatoryByMajorCurriculum(major:string, isNewCurriculum:boolean){
+        return Object.values(
+            this.mandatory_courses_by_major[(isNewCurriculum)? 'NEW': 'OLD'][major]
+            )!.flat();
+    }
+
+    private buildMandatoryGraph(major:string){
+        const mandatoryCodes =  [true,false].map(
+            curr =>this.getMandatoryByMajorCurriculum(major, curr)
+        ).flat()
+
+        const g: MandatoryGraph = {g: {}, degrees: {}, uncaughtCourses: []};
+        const uncaughtCourses = [];
+        for (const course of mandatoryCodes){
+            if (!this.prerequisites[course.code]){
+                uncaughtCourses.push(course.code);
+                continue;
+            }
+
+            for (const p of this.prerequisites[course.code]){
+                if (!g.g[p]){
+                    g.g[p] = [];
+                    g.degrees[p] = 0;
+                }
+                g.g[p].push(course.code);
+                g.degrees[course.code] = (g.degrees[course.code] || 0) + 1;
+            }
+        }
+        g.uncaughtCourses = uncaughtCourses;
+        return g;
+    }
+
+
+    private getMandatoryCourses(major:string, oldCurriculum:boolean){
+        const curriculum =  (oldCurriculum) ? "OLD":"NEW";
+        return this.mandatory_courses_by_major[curriculum][major];
+    }
+
+
+    private getPendingCodes(major:string, oldCurriculum:boolean, maxTermToConsider:number, completedCodes: string[]){
+        const completedfull = this.addEquivalencesToCompleted(completedCodes);
+        const g = this.mandatoryGraphs[major];
+        //all the requisites of mandatory courses are mandatory themselves
+        const mark = {...g.degrees};
+        const orphans = [...completedfull];
+
+        while(orphans.length){
+            const dad = orphans.pop()!;
+            if (!g.g[dad]) continue;
+            for (const son of g.g[dad]){
+                mark[son]--;
+                if (mark[son] === 0){
+                    orphans.push(son);
+                    delete mark[son];
+                }
+            }
+        }
+
+        const pending = Object.entries(mark).filter(([_,v]) => v > 0).map(([k,_]) => k);
+        return pending;
+    }
+
+}
+
+const x = new RecommendationModel();
 class ToposortModel {
     private readonly _curriculumDAG: CurriculumDAG;
 
