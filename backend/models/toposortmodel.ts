@@ -133,16 +133,20 @@ export class RecommendationModel{
     private addEquivalencesToCompleted(completedCourses: string[]|Set<string>): string[] {
         const equivalences = this.code_equivalences;
         let completed = new Set(completedCourses);
+        let oldval = completed.size;
         for (let x=0; x<2; x++){
-            for (const [k,v] of Object.entries(equivalences)) {
-                const oldCompleted = v.old_codes.every(code => completed.has(code));
-                const newCompleted = v.new_codes.every(code => completed.has(code));
 
-                if (oldCompleted || newCompleted) {
+            for (const [k,v] of Object.entries(equivalences)) {
+                const oldCompletedEquivalencies = v.old_codes.every(code => completed.has(code)) && v.old_codes.length;
+                const newCompletedEquivalencies = v.new_codes.every(code => completed.has(code)) && v.new_codes.length;
+
+                if (oldCompletedEquivalencies || newCompletedEquivalencies) {
                     for (const code of v.new_codes.concat(v.old_codes)) {
                         completed.add(code);
                     }
                 }
+                if (completed.size != oldval)
+                    oldval = completed.size
             }
         }
 
@@ -332,10 +336,10 @@ class ToposortModel {
         while (changed) {
             changed = false;
             for (const { old_codes, new_codes } of equivalences) {
-                const oldCompleted = old_codes.every(code => completed_temp.has(code));
-                const newCompleted = new_codes.every(code => completed_temp.has(code));
+                const oldCompletedEquivalencies = old_codes.every(code => completed_temp.has(code));
+                const newCompletedEquivalencies = new_codes.every(code => completed_temp.has(code));
 
-                if (oldCompleted) {
+                if (oldCompletedEquivalencies) {
                     for (const newCode of new_codes) {
                         if (!completed_temp.has(newCode)) {
                             completed_temp.add(newCode);
@@ -344,7 +348,7 @@ class ToposortModel {
                     }
                 }
 
-                if (newCompleted) {
+                if (newCompletedEquivalencies) {
                     for (const oldCode of old_codes) {
                         if (!completed_temp.has(oldCode)) {
                             completed_temp.add(oldCode);
