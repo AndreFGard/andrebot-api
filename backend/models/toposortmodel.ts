@@ -183,6 +183,9 @@ export class RecommendationModel{
             }
 
             for (const p of this.prerequisites[course.code]){
+                if (g.g[p] === undefined){
+                    g.g[p] = [];
+                }
                 g.g[p].push(course.code);
                 g.degrees[course.code] += 1;
             }
@@ -200,6 +203,7 @@ export class RecommendationModel{
             completedCodes: string[]){
                 
         const completedfull = this.addEquivalencesToCompleted(completedCodes);
+        const compleSet = new Set(completedfull);
         const g = this.mandatoryGraphs[major];
         //all the requisites of mandatory courses are mandatory themselves
         const mark = {...g.degrees};
@@ -216,10 +220,18 @@ export class RecommendationModel{
             }
         }
 
-        const pending = Object.entries(mark).filter(([_,v]) => v <= 0).map(([k,_]) => k);
+        const pending = Object.entries(mark).filter(([_,v]) => (v <= 0) && (!compleSet.has(_))).map(([k,_]) => k);
         return pending;
     }
 
+    getTermOfCode(major:string, newCurr: boolean, code:string){
+        const terms = this.mandatoryCurriculumCourse[(newCurr) ? "NEW" : "OLD"][major];
+        for (const [term, courses] of Object.entries(terms)){
+            if (Object.keys(courses).some(coursecode => coursecode==code ))
+                return Number(term);
+        }
+        return Number(11);
+    }
 
     getPendingCodesByCurriculum(
         major: string,
@@ -227,15 +239,15 @@ export class RecommendationModel{
         maxTermToConsider: number,
         completedCodes: string[]
     ): Record<string, string[]> {
-        const pending = this.getPendingCodes(
+        const pending = Array.from(new Set(this.getPendingCodes(
             major,
             oldCurriculum,
             maxTermToConsider,
             completedCodes
-        );
+        )));
         const byCur = {"NEW": [], "OLD": []} as Record<string, string[]>;
-        const oldcur = Object.assign({}, ...this.getMandatoryCourseDicts(major,false,maxTermToConsider));
-        const newcur = Object.assign({}, ...this.getMandatoryCourseDicts(major, true, maxTermToConsider));
+        const oldcur = Object.assign({}, ...this.getMandatoryCourseDicts(major,false,11));
+        const newcur = Object.assign({}, ...this.getMandatoryCourseDicts(major, true, 11));
         // const oldcur = this.getMandatoryCourses(major, true);
         pending.forEach(code => {
             //if (code.includes("CIN"))
@@ -251,7 +263,10 @@ export class RecommendationModel{
                 byCur['NEW'].push(code);
             }
         })
+        Object.keys(byCur).forEach(k => byCur[k] = byCur[k].filter(
+            v => (this.getTermOfCode(major, newcur, v) <= maxTermToConsider)));
         return byCur;
+
     }
 
 }
