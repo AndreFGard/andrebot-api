@@ -38,10 +38,12 @@ export const getCourseCode = (course: CourseDisplayInfo): string => {
 
 // Function to get fictitious credits if needed
 export const getCourseCredits = (course: CourseDisplayInfo): number => {
-  course.code;
-  return 4;
-  //return course.credits ?? 4; // Default to 4 credits if not specified
+  return course.credits;
 };
+
+export const getCourseCH = (course: CourseDisplayInfo): number => {
+  return course.CH;
+}
 
 export interface PeriodProgress {
   completed: number;

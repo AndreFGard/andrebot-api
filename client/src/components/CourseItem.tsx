@@ -3,7 +3,7 @@ import { CourseDisplayInfo } from '@/api';
 import { Button } from "@/components/ui/button";
 import { CheckCircle, CircleX } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getCourseCode, getCourseCredits, getCourseTypeStyle } from '@/utils/courseUtils';
+import { getCourseCode, getCourseCredits, getCourseCH, getCourseTypeStyle } from '@/utils/courseUtils';
 
 interface CourseItemProps {
   course: CourseDisplayInfo;
@@ -15,6 +15,7 @@ interface CourseItemProps {
 const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut }) => {
   const courseCode = getCourseCode(course);
   const courseCredits = getCourseCredits(course);
+  const courseCH = getCourseCH(course);
   const typeStyle = getCourseTypeStyle(courseCode);
 
   const isStyleSelected = isGreyedOut || isSelected;
@@ -49,10 +50,16 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
             {course.name}
           </h6>
         </div>
+        <div className="flex gap-2">
+        {/* CH */}
+        <p className="text-xs text-muted-foreground">
+          {courseCH} h
+        </p>
         {/* Credits */}
         <p className="text-xs text-muted-foreground">
           {courseCredits} créditos
         </p>
+        </div>
       </div>
 
       {/* Selection Toggle Button */}
