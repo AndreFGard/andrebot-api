@@ -40,16 +40,16 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
     useEffect(() => {
         setPeriods(Object.keys(recommendations).map(Number));
     periods.sort((a, b) => a - b);
-    console.log(`periods are ${recommendations[0]}`)
+    console.log(`periods are ${recommendations}`)
     }, [recommendations]);
 
     return (
         <div className="space-y-3 outline mt-4">
             <h3> RECOMENDACOOOES </h3>
-            {periods.map((period) => (
+            {periods.filter(p=>recommendations[p]).map((period) => (
                 <PeriodCard
                     period={period}
-                    courses={recommendations[period].map(convertToCourseDisplayInfo)}
+                    courses={(recommendations[period]).map(convertToCourseDisplayInfo)}
                     selectedCourseIds={selectedCourseIds}
                     isExpanded={expandedPeriods[period] || false}
                     onToggleExpand={togglePeriod}
