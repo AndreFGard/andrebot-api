@@ -3,25 +3,17 @@ import { CourseInfo, majorList, PendingCourse} from "../models/schemas";
 
 
 
-
+import { RecommendationModel } from "../models/toposortmodel";
 //interface that must be implemented
 export class CurriculumManager {
     // Abstract methods that must be implemented by child classes
+    recommender: RecommendationModel = new RecommendationModel();
     constructor(major:string){
         //load the file relevant to the major
     }
-    getPendingCourses(completedCourseCodes: string[]): PendingCourse[] {
-        const placeholder:PendingCourse = {
-            code: "CIN0133",
-            name: "INTRODUÇÃO À PROGRAMAÇÃO",
-            professor: "Ricardo Massa Ferreira Lima / Sérgio Soares / Fernanda Madeiral Delfim",
-            id: 5,
-            term: 1,
-            blockedCourseIds: [],
-            blockedCourseCodes: [],
-            isNewCurriculum: false,
-        }
-        return [placeholder] as PendingCourse[];
+    getPendingCourses(major:string, currentTerm:number, newCurriculum:boolean, completedCourseCodes: string[]): PendingCourse[] {
+        const pend =  this.recommender.getPendingCourses(major, newCurriculum,currentTerm+1, completedCourseCodes);
+        return (newCurriculum) ? pend["NEW"] : pend["OLD"];
     }
 }
 
@@ -33,9 +25,9 @@ export class RecommendationSystem{
         });
     }
 
-    getRecommendations(major: string, completedCourseCodes: string[]): Record<number, PendingCourse[]> {
+    getRecommendations(major: string, currentTerm:number, newCurriculum:boolean, completedCourseCodes: string[]): Record<number, PendingCourse[]> {
         const man = this.majorManagers[major];
-        const pending = man.getPendingCourses(completedCourseCodes)
+        const pending = man.getPendingCourses(major, currentTerm, newCurriculum, completedCourseCodes);
         const byTerm: Record<number, PendingCourse[]> = {};
         for (const course of pending) {
             if (byTerm[Number(course.term)]){

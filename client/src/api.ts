@@ -120,8 +120,8 @@ export const initialTimetable: TimetableRenderInfo = ({
     conflictlessIds: []
 });
 
-export const getRecommendations = async (major: string, completedCourseIds: number[]) => {
-    const response = await fetch(`${apiUrl}/getRecommendations?major=${major}&completedCourseIds=${completedCourseIds.join(',')}`);
+export const getRecommendations = async (major: string, currentTerm:number, newCurriculum:boolean, completedCourseIds: number[]) => {
+    const response = await fetch(`${apiUrl}/getRecommendations?major=${major}&currentTerm=${currentTerm}&newCurriculum=${newCurriculum}&completedCourseIds=${completedCourseIds.join(',')}`);
     const data = await response.json();
     return data as Record<number, PendingCourse[]>;
 }

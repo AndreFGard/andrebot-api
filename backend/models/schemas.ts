@@ -76,8 +76,12 @@ export type EquivalenceMapping = {
 export const majorList = ["CC", "EC", "SI", "outros"];
 
 
-interface PendingCourse extends CourseDisplayInfo{
-    blockedCourseIds: number[];
+interface PendingCourse{
+    code: string;
+    name: string;
+    term: number;
+    isNewCurriculum: boolean;
+    blockedCourseIds?: number[];
     blockedCourseCodes: string[];
 }
 export type {PendingCourse};

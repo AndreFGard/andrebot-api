@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { CurriculumDAG, EquivalenceMapping } from './schemas';
+import { CurriculumDAG, EquivalenceMapping, PendingCourse } from './schemas';
 
 function loadCurriculumData(filePath: string): CurriculumDAG {
   try {
@@ -202,7 +202,7 @@ export class RecommendationModel{
 
     private getPendingCodes(
             major:string,
-            oldCurriculum:boolean,
+            newCurr:boolean,
             maxTermToConsider:number,
             completedCodes: string[]){
                 
@@ -228,7 +228,7 @@ export class RecommendationModel{
         return pending;
     }
 
-    getTermOfCode(major:string, newCurr: boolean, code:string){
+    private getTermOfCode(major:string, newCurr: boolean, code:string){
         const terms = this.mandatoryCurriculumCourse[(newCurr) ? "NEW" : "OLD"][major];
         for (const [term, courses] of Object.entries(terms)){
             if (Object.keys(courses).some(coursecode => coursecode==code ))
@@ -239,13 +239,13 @@ export class RecommendationModel{
 
     getPendingCodesByCurriculum(
         major: string,
-        oldCurriculum: boolean,
+        newCurr: boolean,
         maxTermToConsider: number,
         completedCodes: string[]
     ): Record<string, string[]> {
         const pending = Array.from(new Set(this.getPendingCodes(
             major,
-            oldCurriculum,
+            newCurr,
             maxTermToConsider,
             completedCodes
         )));
@@ -271,6 +271,21 @@ export class RecommendationModel{
             v => (this.getTermOfCode(major, newcur, v) <= maxTermToConsider)));
         return byCur;
 
+    }
+
+    getPendingCourses(major:string, newCurr:boolean, maxTerm:number, completedCodes: string[]){
+        const pending = this.getPendingCodesByCurriculum(major, newCurr, maxTerm, completedCodes);
+        const pendingCourses: Record<string, PendingCourse[]> = {};
+        for (const [key, value] of Object.entries(pending)) {
+            pendingCourses[key] = value.map((code) => {return { 
+                name: this.code_equivalences[code].name,
+                code: code,
+                term: this.getTermOfCode(major, newCurr, code),
+                blockedCourseCodes: this.mandatoryGraphs[major].g[code],
+            } as PendingCourse});
+
+        }
+        return pendingCourses;
     }
 
 }

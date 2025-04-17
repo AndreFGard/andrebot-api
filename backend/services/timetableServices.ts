@@ -261,12 +261,13 @@ export class TimeTableService{
         return model.getCourseDisplayInfoList();
     }
 
-    getRecommendations(major: string, completedCourseIds: number[]): Record<number, PendingCourse[]> {
+    getRecommendations(major: string, currentTerm:number, newCurriculum:boolean, completedCourseIds: number[]): Record<number, PendingCourse[]> {
         const codes = completedCourseIds.map(
                 id => GraduationServices.getClassByID(id))
                 .filter(x=>x)
                 .map(x=>x.code);
 
-        return this.recommender.getRecommendations(major, codes);
+        const recommends =  this.recommender.getRecommendations(major, currentTerm, newCurriculum, codes);
+        return recommends;
     }
 }
