@@ -133,5 +133,6 @@ dist
 node_modules
 node_modules.old
 backend/courses.json
+schedule_scraper/CH_and_credits.json
 package-lock.json
 .vscode/tsconfig.json

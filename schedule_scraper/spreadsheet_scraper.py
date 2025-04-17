@@ -61,6 +61,8 @@ class CourseInterface(BaseModel):
     term: int = -1
     optional: bool = False
     id: int = -1
+    CH: int = -1
+    credits: int = -1
     schedule: ClassSchedule | None = None
 
 
@@ -98,6 +100,9 @@ class CourseInfo(CourseInterface):
             super().__init__(major=major, turma=turma, code=code, name=name,
                              professor=professor, schedule_string=schedule_string,
                               term=term, optional=optional, id=id)
+            
+
+            self.credits, self.CH = self.get_credits_and_ch()
 
             self.schedule = ClassSchedule(self.id, schedule_string)
 
@@ -106,6 +111,22 @@ class CourseInfo(CourseInterface):
 
     def __repr__(self):
         return f"{self.major}-{self.code}-{self.name}: {self.professor}"
+    
+    def get_credits_and_ch(self):
+        with open('./CH_and_credits.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            
+            for ciclo in data["obrigatorios"]:
+                for course in data["obrigatorios"][ciclo]:
+                    if course["nome"] == self.name:
+                        return course["creditos"], course["ch_total"]
+            
+            for course in data["eletivos"]:
+                if course["nome"] == self.name:
+                    return course["creditos"], course["ch_total"]
+            
+            return None, None
+            
 
 class OptionalCourseInfo(CourseInfo):
     def __init__(self, col_contents: list[str], id:int):
