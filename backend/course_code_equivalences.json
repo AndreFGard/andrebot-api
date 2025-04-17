@@ -353,7 +353,7 @@
       "CIN0145", "CIN0146"
      ],
      "new_course_name": [
-      "PROGRAMACAO CONCORRENTE"
+      "PROGRAMACAO CONCORRENTE", "PROGRAMACAO FUNCIONAL"
      ],
      "new_status": [
       "OBRIGATÓRIO OBRIGATÓRIO"
@@ -2725,7 +2725,7 @@
           "IF684", "IF699"
          ],
          "old_course_name": [
-          "SISTEMAS INTELIGENTES"
+          "SISTEMAS INTELIGENTES", "APRENDIZAGEM DE MAQUINA"
          ],
          "old_status": [
           "OBRIGATÓRIO ELETIVO"
