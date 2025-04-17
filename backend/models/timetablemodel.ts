@@ -62,6 +62,8 @@ export class timetableModel{
                     professor: crs.professor,
                     term: crs.term,
                     code: crs.code,
+                    credits: crs.credits,
+                    CH: crs.CH,
                     isNewCurriculum: crs.isNewCurriculum,
                 } as CourseDisplayInfo))
 
