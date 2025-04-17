@@ -174,8 +174,6 @@ export class RecommendationModel{
         const g: MandatoryGraph = {g: {}, degrees: {}, uncaughtCourses: []};
         const uncaughtCourses = [];
         for (const course of mandatoryCourses){
-            if (course.code.includes('MA'))
-                console.log(2)
             if (!this.prerequisites[course.code]){
                 uncaughtCourses.push(course.code);
                 continue;
@@ -234,7 +232,7 @@ export class RecommendationModel{
             if (Object.keys(courses).some(coursecode => coursecode==code ))
                 return Number(term);
         }
-        return Number(11);
+        return Number(0);
     }
 
     getPendingCodesByCurriculum(
@@ -267,8 +265,16 @@ export class RecommendationModel{
                 byCur['NEW'].push(code);
             }
         })
-        Object.keys(byCur).forEach(k => byCur[k] = byCur[k].filter(
-            v => (this.getTermOfCode(major, newcur, v) <= maxTermToConsider)));
+        for (const k of Object.keys(byCur)) {
+            const filteredCourses = [];
+            for (let i = 0; i < byCur[k].length; i++) {
+                const v = byCur[k][i];
+                if (this.getTermOfCode(major, newCurr, v) <= maxTermToConsider) {
+                    filteredCourses.push(v);
+                }
+            }
+            byCur[k] = filteredCourses;
+        }
         return byCur;
 
     }
@@ -278,7 +284,7 @@ export class RecommendationModel{
         const pendingCourses: Record<string, PendingCourse[]> = {};
         for (const [key, value] of Object.entries(pending)) {
             pendingCourses[key] = value.map((code) => {return { 
-                name: this.code_equivalences[code].name,
+                name: (this.code_equivalences[code]) ? this.code_equivalences[code].name : `FAILED: ${code}`,
                 code: code,
                 term: this.getTermOfCode(major, newCurr, code),
                 blockedCourseCodes: this.mandatoryGraphs[major].g[code],
@@ -289,10 +295,7 @@ export class RecommendationModel{
     }
 
 }
-const completed = "CIN0132, CIN0133, CIN0130, CIN0131".split(", ")
-const x = new RecommendationModel();
-const y = x.getPendingCodesByCurriculum("CC", true, 2, completed)
-console.log(y);
+
 
 class ToposortModel {
     private readonly _curriculumDAG: CurriculumDAG;
