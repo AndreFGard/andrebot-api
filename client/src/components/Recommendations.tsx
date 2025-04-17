@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import type { PendingCourse } from "../../../backend/models/schemas";
 import PeriodCard from "./PeriodCard";
 import type { CourseDisplayInfo } from "@/api";
@@ -26,24 +26,28 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
 
     // Convert PendingCourse to CourseDisplayInfo
     const convertToCourseDisplayInfo = (course: PendingCourse): CourseDisplayInfo => ({
-        id: course.id,
+        id: -1,
         name: course.name,
-        professor: course.professor,
+        professor: "NO professors",
         code: course.code,
         term: course.term,
         isNewCurriculum: course.isNewCurriculum,
     });
 
     // Get all periods that have recommendations
-    const periods = Object.keys(recommendations).map(Number);
+    const [periods, setPeriods] = useState<number[]>(Object.keys(recommendations).map(Number));
+
+    useEffect(() => {
+        setPeriods(Object.keys(recommendations).map(Number));
     periods.sort((a, b) => a - b);
-    console.log(`periods are ${recommendations[0]}`);
+    console.log(`periods are ${recommendations[0]}`)
+    }, [recommendations]);
 
     return (
-        <div className="space-y-3">
+        <div className="space-y-3 outline mt-4">
+            <h3> RECOMENDACOOOES </h3>
             {periods.map((period) => (
                 <PeriodCard
-                    key={period}
                     period={period}
                     courses={recommendations[period].map(convertToCourseDisplayInfo)}
                     selectedCourseIds={selectedCourseIds}
