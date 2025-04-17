@@ -7,7 +7,11 @@ import { Recommendations } from './Recommendations';
 import { getRecommendations } from '@/api';
 import { PendingCourse } from '../../../backend/models/schemas';
 
-const TimetableEditor = () => {
+
+interface TimetableProps {
+  completedCourseIds: Set<number>;
+}
+const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
   
   const [major,setmajor ] = React.useState("CC");
  // const [newCourseId, setNewCourseId] = React.useState(-1);
@@ -43,13 +47,13 @@ const TimetableEditor = () => {
   const [recommendations, setRecommendations] = React.useState<Record<number, PendingCourse[]>>({});
 
   useEffect(() => {
-    getRecommendations(major, 4, true, Array.from(selectedCourseIds.values())).then((data: Record<number, PendingCourse[]>) => {
+    getRecommendations(major, 4, true, Array.from(completedCourseIds.values())).then((data: Record<number, PendingCourse[]>) => {
       setRecommendations(data);
     }).catch((e: Error) => {
         console.log("error fetching recommendations data", e)
     });
   }
-  , [major, selectedCourseIds]);
+  , [major, completedCourseIds]);
 
   return (
     <>
@@ -59,11 +63,12 @@ const TimetableEditor = () => {
       selectedCourseIds={selectedCourseIds}
       useMajorChooser={true}
      />
+     <Recommendations currentTerm={11} recommendations={recommendations}/>
     <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
     <Timetable renderinfo={timetableRenderInfo} onCourseToggle={handleCourseAddition} selectedCourseIds={selectedCourseIds}/>
     
     
-    <Recommendations currentTerm={1} recommendations={recommendations}/>
+    
   </>
   );
 };
