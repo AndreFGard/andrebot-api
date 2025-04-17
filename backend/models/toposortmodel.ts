@@ -235,6 +235,16 @@ export class RecommendationModel{
         return Number(0);
     }
 
+    private getMandatoryReference(major:string, newCurr: boolean, code:string): MandatoryCourse|undefined{
+        try{
+            const stuff = this.getMandatoryCoursess(major, newCurr);
+            const ref = stuff.find((x: MandatoryCourse) => x.code === code);
+            return ref;
+        } catch(e){
+            return undefined;
+        }
+    }
+
     getPendingCodesByCurriculum(
         major: string,
         newCurr: boolean,
@@ -283,8 +293,12 @@ export class RecommendationModel{
         const pending = this.getPendingCodesByCurriculum(major, newCurr, maxTerm, completedCodes);
         const pendingCourses: Record<string, PendingCourse[]> = {};
         for (const [key, value] of Object.entries(pending)) {
-            pendingCourses[key] = value.map((code) => {return { 
-                name: (this.code_equivalences[code]) ? this.code_equivalences[code].name : `FAILED: ${code}`,
+
+            pendingCourses[key] = value.map((code) => {
+                const ref = this.getMandatoryReference(major, newCurr, code);
+                const name = ref?.name || this.code_equivalences[code]?.name || "FAILED " + code;
+                return { 
+                name: name,
                 code: code,
                 term: this.getTermOfCode(major, newCurr, code),
                 blockedCourseCodes: this.mandatoryGraphs[major].g[code],
