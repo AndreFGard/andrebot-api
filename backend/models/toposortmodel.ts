@@ -54,6 +54,7 @@ export interface CourseEquivalence {
 interface MandatoryCourse{
     code:string;
     name:string;
+    term:string;
 }
 
 interface MandatoryGraph{
@@ -61,13 +62,16 @@ interface MandatoryGraph{
     degrees: Record<string, number>;
     uncaughtCourses: string[];
 }
+
+
 export class RecommendationModel{
     prerequisites: Record<string, string[]> = {}
     equivalences: Record<string, string[]> = {}
-    mandatory_courses_by_major: Record<string, Record<string, Record<number, MandatoryCourse[]>>> = {}
     code_equivalences: Record<string, CourseEquivalence> = {};
     mandatoryGraphs: Record<string, MandatoryGraph> = {};
     uncaughtCourses: string[] = [];
+    mandatoryCurriculumCourse:  Record<string, Record<string,  Record<number, Record<string, MandatoryCourse>[]>>> = {}
+    //* only mandatory courses included
 
     constructor(){
         const data = fs.readFileSync("general_course_info.json", 'utf-8');
@@ -75,9 +79,10 @@ export class RecommendationModel{
         //const prerequList = new Map<string, string[]>(Object.entries(parsedData.prerequisites));
         this.prerequisites = parsedData.prerequisites;
 
-        this.mandatory_courses_by_major = JSON.parse(
+        const mandat = JSON.parse(
                     fs.readFileSync("mandatory_courses.json", 'utf-8')
                 )
+        this.mandatoryCurriculumCourse = mandat.mandatory;
 
         const course_code_equivalences_f = fs.readFileSync("course_code_equivalences.json", 'utf-8');
         const course_code_equivalences = JSON.parse(course_code_equivalences_f);
@@ -144,32 +149,42 @@ export class RecommendationModel{
         return Array.from(completed);
     }
 
-    private getMandatoryByMajorCurriculum(major:string, isNewCurriculum:boolean){
-        return Object.values(
-            this.mandatory_courses_by_major[(isNewCurriculum)? 'NEW': 'OLD'][major]
-            )!.flat();
+    private getMandatoryCourseDicts(major:string, newCurr:boolean,  maxTerm:number=11){
+        const curstr = (newCurr) ? "NEW" : "OLD";
+        const mandatoryCodes: Record<string, MandatoryCourse>[] = Object.values(this.mandatoryCurriculumCourse[curstr][major]).flat();
+        const y =  (mandatoryCodes.filter(d =>Number( Object.values(d)[0].term) <=maxTerm));
+        return y;
     }
 
+    //* bypass the term numbers and course code dicts
+    private getMandatoryCoursess(major:string, newCurr:boolean, maxTerm:number=11){
+        const mandatoryCodes = this.getMandatoryCourseDicts(major,newCurr).map(x=>Object.values(x)).flat().filter(x=>parseInt(x.term) <= maxTerm);
+        return mandatoryCodes;
+    }
+
+
+
     private buildMandatoryGraph(major:string){
-        const mandatoryCodes =  [true,false].map(
-            curr =>this.getMandatoryByMajorCurriculum(major, curr)
-        ).flat()
+        const mandatoryCourses =  ([true,false].map(curr=>this.getMandatoryCoursess(major, curr))).flat();
 
         const g: MandatoryGraph = {g: {}, degrees: {}, uncaughtCourses: []};
         const uncaughtCourses = [];
-        for (const course of mandatoryCodes){
+        for (const course of mandatoryCourses){
+            if (course.code.includes('MA'))
+                console.log(2)
             if (!this.prerequisites[course.code]){
                 uncaughtCourses.push(course.code);
                 continue;
             }
 
+            g.degrees[course.code] = (g.degrees[course.code] || 0);
+            if (g.g[course.code] === undefined){
+                g.g[course.code] = [];
+            }
+
             for (const p of this.prerequisites[course.code]){
-                if (!g.g[p]){
-                    g.g[p] = [];
-                    g.degrees[p] = 0;
-                }
                 g.g[p].push(course.code);
-                g.degrees[course.code] = (g.degrees[course.code] || 0) + 1;
+                g.degrees[course.code] += 1;
             }
         }
         g.uncaughtCourses = uncaughtCourses;
@@ -177,13 +192,13 @@ export class RecommendationModel{
     }
 
 
-    private getMandatoryCourses(major:string, oldCurriculum:boolean){
-        const curriculum =  (oldCurriculum) ? "OLD":"NEW";
-        return this.mandatory_courses_by_major[curriculum][major];
-    }
 
-
-    private getPendingCodes(major:string, oldCurriculum:boolean, maxTermToConsider:number, completedCodes: string[]){
+    private getPendingCodes(
+            major:string,
+            oldCurriculum:boolean,
+            maxTermToConsider:number,
+            completedCodes: string[]){
+                
         const completedfull = this.addEquivalencesToCompleted(completedCodes);
         const g = this.mandatoryGraphs[major];
         //all the requisites of mandatory courses are mandatory themselves
@@ -197,18 +212,54 @@ export class RecommendationModel{
                 mark[son]--;
                 if (mark[son] === 0){
                     orphans.push(son);
-                    delete mark[son];
                 }
             }
         }
 
-        const pending = Object.entries(mark).filter(([_,v]) => v > 0).map(([k,_]) => k);
+        const pending = Object.entries(mark).filter(([_,v]) => v <= 0).map(([k,_]) => k);
         return pending;
     }
 
-}
 
+    getPendingCodesByCurriculum(
+        major: string,
+        oldCurriculum: boolean,
+        maxTermToConsider: number,
+        completedCodes: string[]
+    ): Record<string, string[]> {
+        const pending = this.getPendingCodes(
+            major,
+            oldCurriculum,
+            maxTermToConsider,
+            completedCodes
+        );
+        const byCur = {"NEW": [], "OLD": []} as Record<string, string[]>;
+        const oldcur = Object.assign({}, ...this.getMandatoryCourseDicts(major,false,maxTermToConsider));
+        const newcur = Object.assign({}, ...this.getMandatoryCourseDicts(major, true, maxTermToConsider));
+        // const oldcur = this.getMandatoryCourses(major, true);
+        pending.forEach(code => {
+            //if (code.includes("CIN"))
+            if(newcur[code] && !oldcur[code]){
+                byCur['NEW'].push(code);
+            }
+            else if(!newcur[code] && oldcur[code]){
+                byCur['OLD'].push(code);
+            }
+            else {
+                //suppose it's available on both
+                byCur['OLD'].push(code);
+                byCur['NEW'].push(code);
+            }
+        })
+        return byCur;
+    }
+
+}
+const completed = "CIN0132, CIN0133, CIN0130, CIN0131".split(", ")
 const x = new RecommendationModel();
+const y = x.getPendingCodesByCurriculum("CC", true, 2, completed)
+console.log(y);
+
 class ToposortModel {
     private readonly _curriculumDAG: CurriculumDAG;
 
