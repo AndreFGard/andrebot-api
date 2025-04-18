@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import type { PendingCourse } from "../../../backend/models/schemas";
 import PeriodCard from "./PeriodCard";
 import type { CourseDisplayInfo } from "@/api";
@@ -26,26 +26,30 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
 
     // Convert PendingCourse to CourseDisplayInfo
     const convertToCourseDisplayInfo = (course: PendingCourse): CourseDisplayInfo => ({
-        id: course.id,
+        id: -1,
         name: course.name,
-        professor: course.professor,
+        professor: "NO professors",
         code: course.code,
         term: course.term,
         isNewCurriculum: course.isNewCurriculum,
     });
 
     // Get all periods that have recommendations
-    const periods = Object.keys(recommendations).map(Number);
+    const [periods, setPeriods] = useState<number[]>(Object.keys(recommendations).map(Number));
+
+    useEffect(() => {
+        setPeriods(Object.keys(recommendations).map(Number));
     periods.sort((a, b) => a - b);
-    console.log(`periods are ${recommendations[0]}`);
+    console.log(`periods are ${recommendations}`)
+    }, [recommendations]);
 
     return (
-        <div className="space-y-3">
-            {periods.map((period) => (
+        <div className="space-y-3  py-4 rounded-xl">
+            <h3> RECOMMENDATIONS </h3>
+            {periods.filter(p=>recommendations[p]).map((period) => (
                 <PeriodCard
-                    key={period}
                     period={period}
-                    courses={recommendations[period].map(convertToCourseDisplayInfo)}
+                    courses={(recommendations[period]).map(convertToCourseDisplayInfo)}
                     selectedCourseIds={selectedCourseIds}
                     isExpanded={expandedPeriods[period] || false}
                     onToggleExpand={togglePeriod}

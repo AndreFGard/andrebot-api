@@ -7,8 +7,11 @@ import { useCourseSelection } from '@/hooks/useCourseSelection';
 import PeriodCard from './PeriodCard';
 import VisualizationTab from './VisualizationTab';
 import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
-
-const CourseHistory = () => {
+interface CourseHistoryProps {
+  completedCourseIds: Set<number>;
+  setCompletedCourseIds: (completedCourseIds: Set<number>) => void;
+}
+const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistoryProps) => {
   const [major, setMajor] = React.useState("CC");
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
   const courses = useContext(CourseDisplayInfoCtx)
@@ -20,6 +23,10 @@ const CourseHistory = () => {
     getCoursesForPeriod 
   } = useCourseSelection();
 
+  useEffect(() => {
+    setCompletedCourseIds(new Set(Array.from(selectedCourseIds)));
+  }, [selectedCourseIds, setCompletedCourseIds]);
+  
   // Prevent automatic scroll on page load
   useEffect(() => {
     window.scrollTo(0, 0);

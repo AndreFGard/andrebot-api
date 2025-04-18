@@ -64,7 +64,9 @@ export async function getCourseDisplayInfoList(req: Request, res: Response< Reco
 
 export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>>) {
     const major = req.query.major as string || "CC";
+    const currentTerm = Number(req.query.currentTerm) || 1;
+    const newCurriculum = req.query.newCurriculum === "true";
     const courseids = (req.query.completedCourseIds as string || "").split(",").map(Number);
-    const recommendations=timetableService.getRecommendations(major, courseids);
+    const recommendations=timetableService.getRecommendations(major, currentTerm, newCurriculum, courseids);
     res.send(recommendations);
 }

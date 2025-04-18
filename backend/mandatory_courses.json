@@ -1,0 +1,1064 @@
+{
+  "mandatory": {
+    "NEW": {
+      "SI": {
+        "1": {
+          "CIN0132": {
+            "code": "CIN0132",
+            "name": "MATEMATICA DISCRETA PARA COMPUTACAO",
+            "term": "1"
+          },
+          "CIN0133": {
+            "code": "CIN0133",
+            "name": "INTRODUCAO A PROGRAMACAO",
+            "term": "1"
+          },
+          "CIN0130": {
+            "code": "CIN0130",
+            "name": "SISTEMAS DIGITAIS",
+            "term": "1"
+          },
+          "CIN0131": {
+            "code": "CIN0131",
+            "name": "CONCEPCAO DE ARTEFATOS DIGITAIS",
+            "term": "1"
+          }
+        },
+        "2": {
+          "MA026": {
+            "code": "MA026",
+            "name": "CALCULO DIFERENCIAL E INTEGRAL 1",
+            "term": "2"
+          },
+          "CIN0135": {
+            "code": "CIN0135",
+            "name": "ESTRUTURAS DE DADOS ORIENTADAS A OBJETOS",
+            "term": "2"
+          },
+          "CIN0134": {
+            "code": "CIN0134",
+            "name": "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS",
+            "term": "2"
+          },
+          "CIN0136": {
+            "code": "CIN0136",
+            "name": "DESENVOLVIMENTO DE SOFTWARE",
+            "term": "2"
+          }
+        },
+        "3": {
+          "CIN0138": {
+            "code": "CIN0138",
+            "name": "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO",
+            "term": "3"
+          },
+          "CIN0140": {
+            "code": "CIN0140",
+            "name": "ALGORITMOS",
+            "term": "3"
+          },
+          "CIN0137": {
+            "code": "CIN0137",
+            "name": "BANCO DE DADOS",
+            "term": "3"
+          },
+          "CIN0139": {
+            "code": "CIN0139",
+            "name": "INTEGRACAO E EVOLUCAO DE SISTEMAS DE INFORMACAO",
+            "term": "3"
+          }
+        },
+        "4": {
+          "CIN0142": {
+            "code": "CIN0142",
+            "name": "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO",
+            "term": "4"
+          },
+          "CIN0141": {
+            "code": "CIN0141",
+            "name": "LOGICA PARA COMPUTACAO",
+            "term": "4"
+          },
+          "CIN0143": {
+            "code": "CIN0143",
+            "name": "INTRODUCAO A SISTEMAS DISTRIBUIDOS E REDES DE COMPUTADORES",
+            "term": "4"
+          },
+          "CIN0144": {
+            "code": "CIN0144",
+            "name": "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS",
+            "term": "4"
+          }
+        },
+        "5": {
+          "UNKN001": {
+            "code": "UNKN001",
+            "name": "Empreendimentos em Informática",
+            "term": "5"
+          },
+          "UNKN002": {
+            "code": "UNKN002",
+            "name": "Aspectos Sócio-Econômicos de Sistemas de Informação",
+            "term": "5"
+          },
+          "UNKN003": {
+            "code": "UNKN003",
+            "name": "Administração Contemporânea",
+            "term": "5"
+          }
+        },
+        "6": {
+          "UNKN004": {
+            "code": "UNKN004",
+            "name": "Arquitetura Empresarial",
+            "term": "6"
+          },
+          "UNKN005": {
+            "code": "UNKN005",
+            "name": "Gestão de Processos de Negócios",
+            "term": "6"
+          }
+        },
+        "7": {
+          "CIN0147": {
+            "code": "CIN0147",
+            "name": "METODOLOGIA CIENTIFICA",
+            "term": "7"
+          },
+          "UNKN006": {
+            "code": "UNKN006",
+            "name": "Análise e Projeto de Sistemas de Informação",
+            "term": "7"
+          }
+        },
+        "8": {
+          "UNKN007": {
+            "code": "UNKN007",
+            "name": "Trabalho de Conclusão de Curso",
+            "term": "8"
+          }
+        }
+      },
+      "EC": {
+        "1": {
+          "MA026": {
+            "code": "MA026",
+            "name": "CALCULO DIFERENCIAL E INTEGRAL 1",
+            "term": "1"
+          },
+          "UNKN008": {
+            "code": "UNKN008",
+            "name": "Geometria Analítica",
+            "term": "1"
+          },
+          "UNKN009": {
+            "code": "UNKN009",
+            "name": "Introdução à Computação",
+            "term": "1"
+          },
+          "CIN0133": {
+            "code": "CIN0133",
+            "name": "INTRODUCAO A PROGRAMACAO",
+            "term": "1"
+          },
+          "UNKN010": {
+            "code": "UNKN010",
+            "name": "Laboratório de Programação",
+            "term": "1"
+          }
+        },
+        "2": {
+          "MA027": {
+            "code": "MA027",
+            "name": "CALCULO DIFERENCIAL E INTEGRAL 2",
+            "term": "2"
+          },
+          "UNKN011": {
+            "code": "UNKN011",
+            "name": "Fundamentos de Álgebra Linear",
+            "term": "2"
+          },
+          "UNKN012": {
+            "code": "UNKN012",
+            "name": "Laboratório de Computação",
+            "term": "2"
+          },
+          "CIN0136": {
+            "code": "CIN0136",
+            "name": "DESENVOLVIMENTO DE SOFTWARE",
+            "term": "2"
+          },
+          "UNKN013": {
+            "code": "UNKN013",
+            "name": "Laboratório de Programação",
+            "term": "2"
+          }
+        },
+        "3": {
+          "UNKN014": {
+            "code": "UNKN014",
+            "name": "Cálculo Diferencial e Integral 3",
+            "term": "3"
+          },
+          "UNKN015": {
+            "code": "UNKN015",
+            "name": "Física Geral 1",
+            "term": "3"
+          },
+          "CIN0132": {
+            "code": "CIN0132",
+            "name": "MATEMATICA DISCRETA PARA COMPUTACAO",
+            "term": "3"
+          },
+          "CIN0140": {
+            "code": "CIN0140",
+            "name": "ALGORITMOS",
+            "term": "3"
+          },
+          "CIN0130": {
+            "code": "CIN0130",
+            "name": "SISTEMAS DIGITAIS",
+            "term": "3"
+          }
+        },
+        "4": {
+          "UNKN016": {
+            "code": "UNKN016",
+            "name": "Cálculo Diferencial e Integral 4",
+            "term": "4"
+          },
+          "UNKN017": {
+            "code": "UNKN017",
+            "name": "Física Geral 2",
+            "term": "4"
+          },
+          "CIN0142": {
+            "code": "CIN0142",
+            "name": "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO",
+            "term": "4"
+          },
+          "CIN0149": {
+            "code": "CIN0149",
+            "name": "INFORMATICA E SOCIEDADE",
+            "term": "4"
+          },
+          "CIN0134": {
+            "code": "CIN0134",
+            "name": "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS",
+            "term": "4"
+          }
+        },
+        "5": {
+          "UNKN018": {
+            "code": "UNKN018",
+            "name": "Complementos de Matemática para Computação",
+            "term": "5"
+          },
+          "UNKN019": {
+            "code": "UNKN019",
+            "name": "Circuitos Lógicos",
+            "term": "5"
+          },
+          "UNKN020": {
+            "code": "UNKN020",
+            "name": "Laboratório de Circuitos Lógicos",
+            "term": "5"
+          },
+          "CIN0137": {
+            "code": "CIN0137",
+            "name": "BANCO DE DADOS",
+            "term": "5"
+          },
+          "UNKN021": {
+            "code": "UNKN021",
+            "name": "Sistemas Operacionais",
+            "term": "5"
+          }
+        },
+        "6": {
+          "UNKN022": {
+            "code": "UNKN022",
+            "name": "Sinais e Sistemas Lineares para Computação",
+            "term": "6"
+          },
+          "UNKN023": {
+            "code": "UNKN023",
+            "name": "Eletrônica",
+            "term": "6"
+          },
+          "UNKN024": {
+            "code": "UNKN024",
+            "name": "Eletrônica para Computação",
+            "term": "6"
+          },
+          "UNKN025": {
+            "code": "UNKN025",
+            "name": "Laboratório de Eletrônica",
+            "term": "6"
+          },
+          "CIN0154": {
+            "code": "CIN0154",
+            "name": "REDES DE COMPUTADORES",
+            "term": "6"
+          }
+        },
+        "7": {
+          "UNKN026": {
+            "code": "UNKN026",
+            "name": "Princípios de Comunicações",
+            "term": "7"
+          },
+          "UNKN027": {
+            "code": "UNKN027",
+            "name": "Processamento de Sinais",
+            "term": "7"
+          },
+          "UNKN028": {
+            "code": "UNKN028",
+            "name": "Fundamentos de Sistemas de Controle",
+            "term": "7"
+          },
+          "CIN0144": {
+            "code": "CIN0144",
+            "name": "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS",
+            "term": "7"
+          },
+          "UNKN029": {
+            "code": "UNKN029",
+            "name": "Laboratório de Redes de Computadores",
+            "term": "7"
+          }
+        },
+        "8": {
+          "UNKN030": {
+            "code": "UNKN030",
+            "name": "Projeto de Sistemas de Telecomunicações",
+            "term": "8"
+          },
+          "CIN0159": {
+            "code": "CIN0159",
+            "name": "SISTEMAS EMBARCADOS",
+            "term": "8"
+          },
+          "UNKN031": {
+            "code": "UNKN031",
+            "name": "Engenharia de Software e Sistemas",
+            "term": "8"
+          },
+          "UNKN032": {
+            "code": "UNKN032",
+            "name": "Laboratório de Sistemas Embarcados",
+            "term": "8"
+          }
+        },
+        "9": {
+          "UNKN033": {
+            "code": "UNKN033",
+            "name": "TCC 1",
+            "term": "9"
+          },
+          "CIN0141": {
+            "code": "CIN0141",
+            "name": "LOGICA PARA COMPUTACAO",
+            "term": "9"
+          },
+          "CIN0148": {
+            "code": "CIN0148",
+            "name": "TEORIA DA COMPUTACAO",
+            "term": "9"
+          },
+          "UNKN034": {
+            "code": "UNKN034",
+            "name": "Linguagens Formais e Autômatos",
+            "term": "9"
+          }
+        },
+        "10": {
+          "UNKN035": {
+            "code": "UNKN035",
+            "name": "TCC 2",
+            "term": "10"
+          },
+          "CIN0150": {
+            "code": "CIN0150",
+            "name": "COMPILADORES",
+            "term": "10"
+          },
+          "UNKN036": {
+            "code": "UNKN036",
+            "name": "Laboratório de Linguagens de Programação",
+            "term": "10"
+          }
+        }
+      },
+      "CC": {
+        "1": {
+          "CIN0132": {
+            "code": "CIN0132",
+            "name": "MATEMATICA DISCRETA PARA COMPUTACAO",
+            "term": "1"
+          },
+          "CIN0133": {
+            "code": "CIN0133",
+            "name": "INTRODUCAO A PROGRAMACAO",
+            "term": "1"
+          },
+          "CIN0130": {
+            "code": "CIN0130",
+            "name": "SISTEMAS DIGITAIS",
+            "term": "1"
+          },
+          "CIN0131": {
+            "code": "CIN0131",
+            "name": "CONCEPCAO DE ARTEFATOS DIGITAIS",
+            "term": "1"
+          }
+        },
+        "2": {
+          "MA026": {
+            "code": "MA026",
+            "name": "CALCULO DIFERENCIAL E INTEGRAL 1",
+            "term": "2"
+          },
+          "CIN0135": {
+            "code": "CIN0135",
+            "name": "ESTRUTURAS DE DADOS ORIENTADAS A OBJETOS",
+            "term": "2"
+          },
+          "CIN0134": {
+            "code": "CIN0134",
+            "name": "ARQUITETURA DE COMPUTADORES E SISTEMAS OPERACIONAIS",
+            "term": "2"
+          },
+          "CIN0136": {
+            "code": "CIN0136",
+            "name": "DESENVOLVIMENTO DE SOFTWARE",
+            "term": "2"
+          }
+        },
+        "3": {
+          "CIN0138": {
+            "code": "CIN0138",
+            "name": "ALGEBRA VETORIAL E LINEAR PARA COMPUTACAO",
+            "term": "3"
+          },
+          "CIN0140": {
+            "code": "CIN0140",
+            "name": "ALGORITMOS",
+            "term": "3"
+          },
+          "CIN0137": {
+            "code": "CIN0137",
+            "name": "BANCO DE DADOS",
+            "term": "3"
+          },
+          "CIN0139": {
+            "code": "CIN0139",
+            "name": "INTEGRACAO E EVOLUCAO DE SISTEMAS DE INFORMACAO",
+            "term": "3"
+          }
+        },
+        "4": {
+          "CIN0142": {
+            "code": "CIN0142",
+            "name": "ESTATISTICA E PROBABILIDADE PARA COMPUTACAO",
+            "term": "4"
+          },
+          "CIN0141": {
+            "code": "CIN0141",
+            "name": "LOGICA PARA COMPUTACAO",
+            "term": "4"
+          },
+          "CIN0143": {
+            "code": "CIN0143",
+            "name": "INTRODUCAO A SISTEMAS DISTRIBUIDOS E REDES DE COMPUTADORES",
+            "term": "4"
+          },
+          "CIN0144": {
+            "code": "CIN0144",
+            "name": "APRENDIZADO DE MAQUINA E CIENCIA DE DADOS",
+            "term": "4"
+          }
+        },
+        "5": {
+          "CIN0148": {
+            "code": "CIN0148",
+            "name": "TEORIA DA COMPUTACAO",
+            "term": "5"
+          },
+          "UNKN037": {
+            "code": "UNKN037",
+            "name": "Programação Funcional",
+            "term": "5"
+          },
+          "CIN0145": {
+            "code": "CIN0145",
+            "name": "PROGRAMACAO CONCORRENTE",
+            "term": "5"
+          },
+          "CIN0147": {
+            "code": "CIN0147",
+            "name": "METODOLOGIA CIENTIFICA",
+            "term": "5"
+          },
+          "CIN0149": {
+            "code": "CIN0149",
+            "name": "INFORMATICA E SOCIEDADE",
+            "term": "5"
+          }
+        },
+        "6": {
+          "CIN0150": {
+            "code": "CIN0150",
+            "name": "COMPILADORES",
+            "term": "6"
+          }
+        }
+      }
+    },
+      "OLD": {
+        "SI": {
+          "1": {
+            "AD431": {
+              "code": "AD431",
+              "name": "Administração Contemporânea",
+              "term": "1"
+            },
+            "MA026": {
+              "code": "MA026",
+              "name": "Cálculo Diferencial e Integral I",
+              "term": "1"
+            },
+            "IF966": {
+              "code": "IF966",
+              "name": "Introdução aos Sistemas de Informação",
+              "term": "1"
+            },
+            "IF967": {
+              "code": "IF967",
+              "name": "Matemática Discreta para Computação",
+              "term": "1"
+            },
+            "IF968": {
+              "code": "IF968",
+              "name": "Programação 1",
+              "term": "1"
+            }
+          },
+          "2": {
+            "IF969": {
+              "code": "IF969",
+              "name": "Algoritmos e Estruturas de Dados",
+              "term": "2"
+            },
+            "AD291": {
+              "code": "AD291",
+              "name": "Análise das Organizações",
+              "term": "2"
+            },
+            "IF971": {
+              "code": "IF971",
+              "name": "Estatística e Probabilidade para Computação",
+              "term": "2"
+            },
+            "LE732": {
+              "code": "LE732",
+              "name": "Inglês para Computação",
+              "term": "2"
+            },
+            "IF972": {
+              "code": "IF972",
+              "name": "Lógica para Computação",
+              "term": "2"
+            }
+          },
+          "3": {
+            "AD193": {
+              "code": "AD193",
+              "name": "Comportamento Organizacional",
+              "term": "3"
+            },
+            "CT503": {
+              "code": "CT503",
+              "name": "Contabilidade de Custos e Gerencial",
+              "term": "3"
+            },
+            "IF973": {
+              "code": "IF973",
+              "name": "Fundamentos de Sistemas de Informação",
+              "term": "3"
+            },
+            "IF974": {
+              "code": "IF974",
+              "name": "Organização de Computadores e Sistemas Operacionais",
+              "term": "3"
+            },
+            "IF975": {
+              "code": "IF975",
+              "name": "Redes de Computadores",
+              "term": "3"
+            }
+          },
+          "4": {
+            "IF991": {
+              "code": "IF991",
+              "name": "Banco de Dados",
+              "term": "4"
+            },
+            "IF977": {
+              "code": "IF977",
+              "name": "Engenharia de Software",
+              "term": "4"
+            },
+            "IF978": {
+              "code": "IF978",
+              "name": "Gestão de Processos de Negócios",
+              "term": "4"
+            },
+            "IF979": {
+              "code": "IF979",
+              "name": "Planejamento e Gerenciamento de Projetos",
+              "term": "4"
+            },
+            "IF980": {
+              "code": "IF980",
+              "name": "Sistema de Gestão Empresarial",
+              "term": "4"
+            }
+          },
+          "5": {
+            "CO691": {
+              "code": "CO691",
+              "name": "Comunicação Técnica e Científica",
+              "term": "5"
+            },
+            "IF982": {
+              "code": "IF982",
+              "name": "Gestão da Informação e do Conhecimento",
+              "term": "5"
+            },
+            "IF983": {
+              "code": "IF983",
+              "name": "Sistemas de Apoio à Decisão",
+              "term": "5"
+            }
+          },
+          "6": {
+            "IF984": {
+              "code": "IF984",
+              "name": "Estágio Supervisionado",
+              "term": "6"
+            },
+            "IF985": {
+              "code": "IF985",
+              "name": "Projeto de Sistema de Informação",
+              "term": "6"
+            },
+            "IF986": {
+              "code": "IF986",
+              "name": "Viabilidade Econômico-Financeira de Projetos de SI",
+              "term": "6"
+            }
+          },
+          "7": {
+            "IF987": {
+              "code": "IF987",
+              "name": "Auditoria e Segurança de Sistemas de Informação",
+              "term": "7"
+            },
+            "AD432": {
+              "code": "AD432",
+              "name": "Estratégia e Planejamento",
+              "term": "7"
+            }
+          },
+          "8": {
+            "IF988": {
+              "code": "IF988",
+              "name": "Empreendimentos em Informática",
+              "term": "8"
+            },
+            "IF989": {
+              "code": "IF989",
+              "name": "Tendências e Desafios em Sistemas de Informação",
+              "term": "8"
+            },
+            "IF990": {
+              "code": "IF990",
+              "name": "Trabalho de Conclusão de Curso em Sistemas de Informação",
+              "term": "8"
+            }
+          }
+        },
+        "CC": {
+          "1": {
+            "MA531": {
+              "code": "MA531",
+              "name": "Álgebra Linear e Vetorial para Computação (AVLC)",
+              "term": "1"
+            },
+            "MA026": {
+              "code": "MA026",
+              "name": "Cálculo Diferencial e Integral 1",
+              "term": "1"
+            },
+            "IF668": {
+              "code": "IF668",
+              "name": "Introdução à Computação (IC)",
+              "term": "1"
+            },
+            "IF669": {
+              "code": "IF669",
+              "name": "Introdução à Programação (IP)",
+              "term": "1"
+            },
+            "IF670": {
+              "code": "IF670",
+              "name": "Matemática Discreta para Computação",
+              "term": "1"
+            }
+          },
+          "2": {
+            "IF672": {
+              "code": "IF672",
+              "name": "Algoritmos e Estruturas de Dados",
+              "term": "2"
+            },
+            "ET586": {
+              "code": "ET586",
+              "name": "Estatística e Probabilidade para Computação",
+              "term": "2"
+            },
+            "FI582": {
+              "code": "FI582",
+              "name": "Física para Computação",
+              "term": "2"
+            },
+            "IF673": {
+              "code": "IF673",
+              "name": "Lógica para Computação",
+              "term": "2"
+            },
+            "IF675": {
+              "code": "IF675",
+              "name": "Sistemas Digitais (SD)",
+              "term": "2"
+            }
+          },
+          "3": {
+            "IF679": {
+              "code": "IF679",
+              "name": "Informática e Sociedade",
+              "term": "3"
+            },
+            "IF678": {
+              "code": "IF678",
+              "name": "Infraestrutura de Comunicação",
+              "term": "3"
+            },
+            "IF674": {
+              "code": "IF674",
+              "name": "Infraestrutura de Hardware",
+              "term": "3"
+            },
+            "IF677": {
+              "code": "IF677",
+              "name": "Infraestrutura de Software",
+              "term": "3"
+            },
+            "LE530": {
+              "code": "LE530",
+              "name": "Inglês para Computação",
+              "term": "3"
+            }
+          },
+          "4": {
+            "IF682": {
+              "code": "IF682",
+              "name": "Engenharia de Software e Sistemas (ESS)",
+              "term": "4"
+            },
+            "IF685": {
+              "code": "IF685",
+              "name": "Gerenciamento de Dados e Informação (GDI)",
+              "term": "4"
+            },
+            "IF689": {
+              "code": "IF689",
+              "name": "Informática Teórica",
+              "term": "4"
+            },
+            "IF681": {
+              "code": "IF681",
+              "name": "Interfaces Usuário-Máquina (IUM)",
+              "term": "4"
+            },
+            "IF680": {
+              "code": "IF680",
+              "name": "Processamento Gráfico (PG)",
+              "term": "4"
+            },
+            "IF684": {
+              "code": "IF684",
+              "name": "Sistemas Inteligentes (SI)",
+              "term": "4"
+            }
+          },
+          "5": {
+            "IF690": {
+              "code": "IF690",
+              "name": "História e Futuro da Computação (HFC)",
+              "term": "5"
+            },
+            "IF687": {
+              "code": "IF687",
+              "name": "Introdução a Multimídia",
+              "term": "5"
+            },
+            "IF676": {
+              "code": "IF676",
+              "name": "Metodologia e Expressão Técnico-Científica",
+              "term": "5"
+            },
+            "IF686": {
+              "code": "IF686",
+              "name": "Paradigmas de Linguagens Computacionais (PLC)",
+              "term": "5"
+            },
+            "IF688": {
+              "code": "IF688",
+              "name": "Teoria e Implementação de Linguagens Computacionais (Compiladores)",
+              "term": "5"
+            },
+            "IF683": {
+              "code": "IF683",
+              "name": "Projeto de Desenvolvimento (Projetão)",
+              "term": "5"
+            }
+          },
+          "9": {
+            "IF691": {
+              "code": "IF691",
+              "name": "Trabalho de Graduação (TG)",
+              "term": "9"
+            }
+          }
+        },
+        "EC": {
+          "1": {
+            "MA531": {
+              "code": "MA531",
+              "name": "Álgebra Linear e Vetorial para Computação",
+              "term": "1"
+            },
+            "MA026": {
+              "code": "MA026",
+              "name": "Cálculo Diferencial e Integral 1",
+              "term": "1"
+            },
+            "IF668": {
+              "code": "IF668",
+              "name": "Introdução à Computação",
+              "term": "1"
+            },
+            "IF669": {
+              "code": "IF669",
+              "name": "Introdução à Programação",
+              "term": "1"
+            },
+            "IF670": {
+              "code": "IF670",
+              "name": "Matemática Discreta para Computação",
+              "term": "1"
+            }
+          },
+          "2": {
+            "FI006": {
+              "code": "FI006",
+              "name": "Cálculo Diferencial e Integral 2",
+              "term": "2"
+            },
+            "MA027": {
+              "code": "MA027",
+              "name": "Física Geral 1",
+              "term": "2"
+            },
+            "IF672": {
+              "code": "IF672",
+              "name": "Algoritmos e Estruturas de Dados",
+              "term": "2"
+            },
+            "IF673": {
+              "code": "IF673",
+              "name": "Lógica para Computação",
+              "term": "2"
+            },
+            "IF675": {
+              "code": "IF675",
+              "name": "Sistemas Digitais",
+              "term": "2"
+            }
+          },
+          "3": {
+            "MA128": {
+              "code": "MA128",
+              "name": "Cálculo Diferencial e Integral 3",
+              "term": "3"
+            },
+            "FI007": {
+              "code": "FI007",
+              "name": "Física Geral 2",
+              "term": "3"
+            },
+            "IF679": {
+              "code": "IF679",
+              "name": "Informática e Sociedade",
+              "term": "3"
+            },
+            "IF674": {
+              "code": "IF674",
+              "name": "Infraestrutura de Hardware",
+              "term": "3"
+            },
+            "IF677": {
+              "code": "IF677",
+              "name": "Infraestrutura de Software",
+              "term": "3"
+            }
+          },
+          "4": {
+            "ET586": {
+              "code": "ET586",
+              "name": "Estatística e Probabilidade para Computação",
+              "term": "4"
+            },
+            "FI021": {
+              "code": "FI021",
+              "name": "Física Experimental 1",
+              "term": "4"
+            },
+            "FI108": {
+              "code": "FI108",
+              "name": "Física Geral 3",
+              "term": "4"
+            },
+            "IF685": {
+              "code": "IF685",
+              "name": "Gerenciamento de Dados e Informação",
+              "term": "4"
+            },
+            "IF817": {
+              "code": "IF817",
+              "name": "Interface Hardware-Software",
+              "term": "4"
+            },
+            "IF816": {
+              "code": "IF816",
+              "name": "Métodos Numéricos Computacionais",
+              "term": "4"
+            }
+          },
+          "5": {
+            "EL215": {
+              "code": "EL215",
+              "name": "Circuitos Elétricos 1A",
+              "term": "5"
+            },
+            "IF690": {
+              "code": "IF690",
+              "name": "História e Futuro da Computação",
+              "term": "5"
+            },
+            "IF678": {
+              "code": "IF678",
+              "name": "Infraestrutura de Comunicação",
+              "term": "5"
+            },
+            "IF686": {
+              "code": "IF686",
+              "name": "Paradigmas de Linguagens Computacionais",
+              "term": "5"
+            },
+            "ES413": {
+              "code": "ES413",
+              "name": "Sinais e Sistemas para Engenharia da Computação",
+              "term": "5"
+            }
+          },
+          "6": {
+            "ES203": {
+              "code": "ES203",
+              "name": "Eletromagnetismo 1",
+              "term": "6"
+            },
+            "IF682": {
+              "code": "IF682",
+              "name": "Engenharia de Software e Sistemas",
+              "term": "6"
+            },
+            "IF689": {
+              "code": "IF689",
+              "name": "Informática Teórica",
+              "term": "6"
+            },
+            "LE530": {
+              "code": "LE530",
+              "name": "Inglês para Computação",
+              "term": "6"
+            },
+            "ES232": {
+              "code": "ES232",
+              "name": "Introdução a Dispositivos Semicondutores",
+              "term": "6"
+            }
+          },
+          "7": {
+            "ES238": {
+              "code": "ES238",
+              "name": "Eletrônica 1",
+              "term": "7"
+            },
+            "ES344": {
+              "code": "ES344",
+              "name": "Princípios de Comunicação",
+              "term": "7"
+            },
+            "ES414": {
+              "code": "ES414",
+              "name": "Servomecanismo para Engenharia da Computação",
+              "term": "7"
+            },
+            "IF684": {
+              "code": "IF684",
+              "name": "Sistemas Inteligentes",
+              "term": "7"
+            },
+            "IF688": {
+              "code": "IF688",
+              "name": "Teoria e Implementação de Linguagens Computacionais",
+              "term": "7"
+            }
+          },
+          "8": {
+            "IF676": {
+              "code": "IF676",
+              "name": "Metodologia e Expressão Técnico Científica",
+              "term": "8"
+            },
+            "IF822": {
+              "code": "IF822",
+              "name": "Projeto Co-Desenvolvimento Hardware-Software",
+              "term": "8"
+            }
+          },
+          "10": {
+            "IF813": {
+              "code": "IF813",
+              "name": "Trabalho de Graduação",
+              "term": "10"
+            }
+          }
+        }
+      }
+    }
+  }
