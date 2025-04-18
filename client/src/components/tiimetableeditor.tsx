@@ -47,7 +47,7 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
   const [recommendations, setRecommendations] = React.useState<Record<number, PendingCourse[]>>({});
 
   useEffect(() => {
-    getRecommendations(major, 4, true, Array.from(completedCourseIds.values())).then((data: Record<number, PendingCourse[]>) => {
+    getRecommendations(major, currentTerm, true, Array.from(completedCourseIds.values())).then((data: Record<number, PendingCourse[]>) => {
       setRecommendations(data);
     }).catch((e: Error) => {
         console.log("error fetching recommendations data", e)
