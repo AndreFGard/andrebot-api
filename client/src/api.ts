@@ -18,7 +18,7 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
     CC: {
         1: [
             {
-                name: 'Algebra Linear',
+                name: 'PLACEHOLDER Algebra Linear',
                 id: 1,
                 professor: "Silvio",
                 code: "MAT140",
@@ -37,7 +37,7 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
             },
         ],
         2: [{
-            name: 'Desenvolvimento Paia',
+            name: 'PLACEHOLDER Desenvolvimento Paia',
             id: 3,
             professor: 'Gustavo',
             code: "CC102",
@@ -49,7 +49,7 @@ export const coursesplaceholder: Record<string, Record<number, CourseDisplayInfo
     },
     EC: {        
         1: [{
-            name: 'Calculo 1',
+            name: 'PLACEHOLDER Calculo 1',
             id: 3,
             professor: 'Andre',
             code: "MAT141",
