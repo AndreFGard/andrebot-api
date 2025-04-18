@@ -45,7 +45,7 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
 
     return (
         <div className="space-y-3  py-4 rounded-xl">
-            <h3> RECOMENDACOOOES </h3>
+            <h3> RECOMMENDATIONS </h3>
             {periods.filter(p=>recommendations[p]).map((period) => (
                 <PeriodCard
                     period={period}
