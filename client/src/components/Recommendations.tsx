@@ -57,6 +57,7 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
                     onToggleExpand={togglePeriod}
                     onToggleCourse={() => {}} // No-op since these are just recommendations
                     onAddAllFromPeriod={() => {}} // No-op since these are just recommendations
+                    getIdentifier={(course: CourseDisplayInfo) => course.code}
                 />
             ))}
             {periods.length === 0 && (

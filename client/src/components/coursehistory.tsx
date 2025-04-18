@@ -7,11 +7,13 @@ import { useCourseSelection } from '@/hooks/useCourseSelection';
 import PeriodCard from './PeriodCard';
 import VisualizationTab from './VisualizationTab';
 import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
+import { CourseDisplayInfo } from '@/api';
 interface CourseHistoryProps {
   completedCourseIds: Set<number>;
   setCompletedCourseIds: (completedCourseIds: Set<number>) => void;
 }
 const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistoryProps) => {
+  
   const [major, setMajor] = React.useState("CC");
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
   const courses = useContext(CourseDisplayInfoCtx)
@@ -22,6 +24,8 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
     addCoursesByTerm, 
     getCoursesForPeriod 
   } = useCourseSelection();
+
+  completedCourseIds;
 
   useEffect(() => {
     setCompletedCourseIds(new Set(Array.from(selectedCourseIds)));
@@ -126,6 +130,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
                     onToggleCourse={handleCourseToggle}
                     onAddAllFromPeriod={handleAddAllFromTerm}
                     isNewCurriculum={newCurriculumStrings.indexOf(newCurriculum) === 1}
+                    getIdentifier={(course: CourseDisplayInfo) => course.code}
                   />
                 ))}
               </div>
