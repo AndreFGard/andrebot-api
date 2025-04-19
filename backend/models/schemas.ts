@@ -44,6 +44,7 @@ interface TimetableRenderInfo {
     conflicts: [CourseInfo, CourseInfo, ScheduleDay][];
     conflictIds: number[];
     conflictlessIds: number[];
+    conflictfullClasses: CourseInfo[]
 }
 
 export type {TimetableRenderInfo};

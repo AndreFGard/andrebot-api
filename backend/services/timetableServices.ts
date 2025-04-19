@@ -193,6 +193,7 @@ Object(majors).forEach( (major: string) => {
 export const GraduationServices = new CourseTable(courses);
 
 import { RecommendationSystem} from "./courseRecomendationService";
+import { string } from "pg-format";
 
 export class TimeTableService{
     recommender: RecommendationSystem = new RecommendationSystem();
@@ -240,6 +241,14 @@ export class TimeTableService{
         const conflicts = GraduationServices.blameConflictingClasses(currentlyChosenClasses);
         const conflictIds = [...new Set(conflicts.map(x => (x[0].id, x[1].id)).flat())];
 
+
+        const conflictfulClasses: CourseInfo[] = []
+        for (const id of conflictIds){
+            if (!conflictfulClasses.some(c=>c.code==string(id))){
+                conflictfulClasses.push(currentlyChosenClasses.filter(c=>c.id==id)[0])
+            }
+        }
+
         [conflictlessClasses, currentlyChosenClasses] = [conflictlessClasses, currentlyChosenClasses]
                     .map((x)=>[... new Set(x)]);
 
@@ -252,6 +261,7 @@ export class TimeTableService{
             conflicts: conflicts,
             conflictIds: conflictIds,
             conflictlessIds: conflictlessClasses.map(c => c.id),
+            conflictfullClasses: conflictfulClasses.filter(x=>x)
         }
 
         return renderInfo;      
