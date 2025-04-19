@@ -1,5 +1,5 @@
 import {timetableModel} from "../models/timetablemodel"
-import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo, PendingCourse} from '../models/schemas';
+import { CourseInfo, ScheduleDay, ITimetable, TimetableRenderInfo, PendingCourse, CourseDisplayInfo} from '../models/schemas';
 
 
 const model = new timetableModel();
@@ -196,8 +196,29 @@ import { RecommendationSystem} from "./courseRecomendationService";
 
 export class TimeTableService{
     recommender: RecommendationSystem = new RecommendationSystem();
+    uniqueCoursesByCode: Record<string, Record<number, CourseDisplayInfo[]>> = {};
     constructor() {
+        const l = this.getCourseDisplayInfoList();
+        const d = this.uniqueCoursesByCode;
 
+        //make terms only contain one instance of each course
+        for (const [major, termdict] of Object.entries(l)) {
+            d[major] = {};
+            for (const [term, courses] of Object.entries(termdict)) {
+                const uniqueCodes = new Set(courses.map(c => c.code));
+                d[major][Number(term)] = courses.filter(c => {
+                    const has = uniqueCodes.has(c.code)
+                    if (has) uniqueCodes.delete(c.code);
+                    return has;
+                });
+
+            }
+        }
+
+    }
+
+    getUniqueCoursesByCode(){
+        return this.uniqueCoursesByCode;
     }
 
     async getCourses(major: string){
@@ -260,6 +281,8 @@ export class TimeTableService{
     getCourseDisplayInfoList(){
         return model.getCourseDisplayInfoList();
     }
+
+
 
     getRecommendations(major: string, currentTerm:number, newCurriculum:boolean, completedCourseIds: number[]): Record<number, PendingCourse[]> {
         const codes = completedCourseIds.map(
