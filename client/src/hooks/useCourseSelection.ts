@@ -1,9 +1,12 @@
 import { useState, useContext } from 'react';
 import { CourseSelectionManager, CourseDisplayInfo } from '@/api';
 import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
+import { ClassDisplayInfoCtx } from '@/CourseClassInfoProvider';
 
-export function useCourseSelection(initialSelection: number[] = []) {
+export function useCourseSelection(initialSelection: number[] = [], uniqueByClassCodes:boolean=false) {
+  console.log(`uniqueByClassCodes is ${uniqueByClassCodes}`)
   const courses = useContext(CourseDisplayInfoCtx);
+  const classInfo = useContext(ClassDisplayInfoCtx);
 
   const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set(initialSelection));
   const [courseManager] = useState<CourseSelectionManager>(new CourseSelectionManager(initialSelection));
@@ -26,15 +29,20 @@ export function useCourseSelection(initialSelection: number[] = []) {
   };
   
   // Get courses for a specific period
-  const getCoursesForPeriod = (major: string, period: number): CourseDisplayInfo[] => {
+  const getCoursesForPeriodNotUnique = (major: string, period: number): CourseDisplayInfo[] => {
     return courses[major]?.[period] ?? [];
   };
+  
+  const getCoursesForPeriodUnique = (major: string, period: number): CourseDisplayInfo[] => {
+    return classInfo[major]?.[period]  ?? [];
+  }
+
   
   return {
     selectedCourseIds,
     toggleCourse,
     addCoursesByTerm,
-    getCoursesForPeriod,
+    getCoursesForPeriod: uniqueByClassCodes ? getCoursesForPeriodUnique : getCoursesForPeriodNotUnique,
     resetSelection: () => {
       courseManager.setSelectedCourseIds([]);
       setSelectedCourseIds(new Set());
