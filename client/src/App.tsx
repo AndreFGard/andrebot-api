@@ -2,6 +2,7 @@ import TimetableEditor from './components/tiimetableeditor'
 import { ThemeProvider } from "@/components/theme-provider"
 import CourseHistory from './components/coursehistory'
 import { CourseDisplayInfoProvider } from './CourseDisplayInfoCtx'
+import { CourseClassDisplayInfoProvider } from './CourseClassInfoProvider'
 import { useState } from 'react';
 function App() {
   const [completedCourseIds, setCompletedCourseIds ] = useState<Set<number>>(new Set());
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="w-full">
       <main className="w-full" id="course-history-section">
+        <CourseClassDisplayInfoProvider>
         <CourseDisplayInfoProvider>
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
@@ -24,6 +26,7 @@ function App() {
             
           </ThemeProvider>
         </CourseDisplayInfoProvider>
+        </CourseClassDisplayInfoProvider>
       </main>
     </div>
   )

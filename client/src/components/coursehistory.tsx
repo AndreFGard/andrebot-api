@@ -19,7 +19,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
   const [major, setMajor] = React.useState("CC");
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
   const courses = useContext(ClassDisplayInfoCtx);
-  console.log(`course value is c ${JSON.stringify(courses[major])}`);
+  console.log(`course history values are ${JSON.stringify(courses[major])}`);
 
   const { 
     selectedCourseIds, 
