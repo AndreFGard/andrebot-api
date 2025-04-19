@@ -135,3 +135,9 @@ export const getRecommendations = async (major: string, currentTerm:number, newC
     const data = await response.json();
     return data as Record<number, PendingCourse[]>;
 }
+
+export const getCourseClassInfoList = async () => {
+    const response = await fetch(`${apiUrl}/getCourseClassInfoList`);
+    const data = await response.json() as Record<string, Record<number, CourseDisplayInfo[]>>;
+    return data;
+}

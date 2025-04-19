@@ -6,24 +6,27 @@ import { useCourseSelection } from '@/hooks/useCourseSelection';
 
 import PeriodCard from './PeriodCard';
 import VisualizationTab from './VisualizationTab';
-import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
 import { CourseDisplayInfo } from '@/api';
+import { ClassDisplayInfoCtx } from '@/CourseClassInfoProvider';
+
+
 interface CourseHistoryProps {
   completedCourseIds: Set<number>;
   setCompletedCourseIds: (completedCourseIds: Set<number>) => void;
 }
 const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistoryProps) => {
-  
+
   const [major, setMajor] = React.useState("CC");
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
-  const courses = useContext(CourseDisplayInfoCtx)
+  const courses = useContext(ClassDisplayInfoCtx);
+  console.log(`course value is c ${JSON.stringify(courses[major])}`);
 
   const { 
     selectedCourseIds, 
     toggleCourse, 
     addCoursesByTerm, 
     getCoursesForPeriod 
-  } = useCourseSelection();
+  } = useCourseSelection([], true);
 
   completedCourseIds;
 
