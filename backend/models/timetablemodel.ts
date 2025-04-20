@@ -50,6 +50,7 @@ export class timetableModel{
     readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
 
     readonly #coursesByCode: Record<string, CourseInfo> = {};
+    readonly #flatCourses: CourseInfo[]
 
     constructor(){
 
@@ -84,6 +85,15 @@ export class timetableModel{
             });
         });
 
+        this.#flatCourses = [];
+        Object.entries(courses).forEach(([major, termCourses]) => {
+            Object.entries(termCourses).forEach(([term, courseList]) => {
+                courseList.forEach(course => {
+                    this.#flatCourses.push(course)
+                });
+            });
+        });
+
             
     }
 
@@ -99,5 +109,9 @@ export class timetableModel{
 
     getCourseBycode(code: string): CourseInfo|undefined{   
         return this.#coursesByCode[code] || undefined ;
+    }
+
+    getAllCoursesByCode(code:string): CourseInfo[] {
+        return this.#flatCourses.filter(course=>course.code==code);
     }
 }

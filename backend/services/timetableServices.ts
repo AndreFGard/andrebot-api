@@ -221,6 +221,21 @@ export class TimeTableService{
                 filter((x) => x !== undefined);
     }
 
+    
+    addWithoutConflictByCode(chosen: string[], code:string ){
+        const conflictless = GraduationServices.filterConflictless(chosen.map(id=>GraduationServices.getClassByID(Number(id))))
+        const matches = model.getAllCoursesByCode(code);
+        const baseSize = conflictless.length;
+
+        for (const course of matches){
+            const attempt = GraduationServices.filterConflictless(conflictless.concat([course]));
+            if (attempt.length > baseSize)
+                return course;
+        }
+        return undefined;
+
+    }
+
     //provides all the information necessary to render the timetable
     async renderTimetable(chosenids: string[], addedClassIds: string[]): Promise<TimetableRenderInfo> {
         const chosenClasses = chosenids.map(ID => {
