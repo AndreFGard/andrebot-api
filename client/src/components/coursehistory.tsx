@@ -136,13 +136,9 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
               <VisualizationTab
                 major={major}
                 selectedCourseIds={selectedCourseIds}
-                selectedTerms={selectedTerms}
                 allPeriods={allPeriods}
                 coursesData={courses}
-                onMajorChange={setMajor}
                 onCourseToggle={handleCourseToggle}
-                onUpdateSelectedTerms={setSelectedTerms}
-                onAddAllFromTerm={handleAddAllFromTerm}
               />
             </TabsContent>
           </Tabs>
