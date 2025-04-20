@@ -81,23 +81,21 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
                 <CommandInput placeholder="Pesquise uma disciplina para adicioná-la" />
                 <CommandList>
                   <CommandEmpty>No results found.</CommandEmpty>
-                  <div className="space-y-1.5 pt-3"> {/* Simplified structure */}
+                  <CommandGroup>
                     {Object.values(filteredCourses[mjr]).flat().map((course) => (
-                      <CommandItem
-                          key={course.id}
+                      <CommandItem 
+                          key={course.id} 
                           onSelect={() => onCourseToggle(Number(course.id))}
-                          value={`${course.name}-${course.professor}-${course.id}`} // Add a unique value for filtering
-                          className="p-0 cursor-pointer" // Ensure padding is zero and it's clickable
+                          className={(selectedCourseIds.has(course.id)) ? 'bg-muted' : ''}
                           >
-                           {/* CourseItem now controls its own padding and layout */}
-                           <CourseItem 
+                          <CourseItem 
                               course={course}
                               isSelected={selectedCourseIds.has(course.id)}
                               onToggleCourse={onCourseToggle}
-                           />
+                          />
                       </CommandItem>
                     ))}
-                  </div>
+                  </CommandGroup>
                 </CommandList>
               </Command>
 
