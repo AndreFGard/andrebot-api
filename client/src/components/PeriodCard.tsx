@@ -15,6 +15,7 @@ interface PeriodCardProps {
   onToggleCourse: (id: number) => void;
   onAddAllFromPeriod: (period: number) => void;
   isNewCurriculum?: boolean;
+  hasToggle?:boolean;
 }
 
 const PeriodCard: React.FC<PeriodCardProps> = ({ 
@@ -25,7 +26,8 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
   onToggleExpand, 
   onToggleCourse, 
   onAddAllFromPeriod,
-  isNewCurriculum
+  isNewCurriculum,
+  hasToggle=true
 }) => {
   const progress = calculatePeriodProgress(courses, selectedCourseIds);
 
@@ -39,7 +41,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
           </div>
           <h5 className="text-base font-medium leading-none tracking-tight">{period}º Período</h5>
         </div>
-        {progress.isComplete ? (
+        {hasToggle && (progress.isComplete ? (
           <span className="ml-4 text-xs font-semibold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">Completo</span>
         ) : (
           <Button 
@@ -53,7 +55,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
           >
             Adicionar Todas
           </Button>
-        )}
+        ))}
       </div>
 
       {/* Progress Info and Bar (Always Visible) */}
@@ -76,6 +78,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
                 isSelected={selectedCourseIds.has(course.id)}
                 onToggleCourse={onToggleCourse}
                 isGreyedOut={(course.isNewCurriculum != isNewCurriculum)}
+                hasToggle={hasToggle}
               />
             ))}
           </div>

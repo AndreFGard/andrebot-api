@@ -9,10 +9,11 @@ interface CourseItemProps {
   course: CourseDisplayInfo;
   isSelected: boolean;
   onToggleCourse: (id: number) => void;
+  hasToggle?: boolean; // Optional prop to indicate if the course has a toggle button
   isGreyedOut?: boolean; // Optional prop to indicate if the course should be greyed out
 }
 
-const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut }) => {
+const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut, hasToggle=true}) => {
   const courseCode = getCourseCode(course);
   const courseCredits = getCourseCredits(course);
   const courseCH = getCourseCH(course);
@@ -63,24 +64,26 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
       </div>
 
       {/* Selection Toggle Button */}
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        className={cn(
-          "h-7 w-7 flex-shrink-0 rounded-full ml-4", 
-          isSelected ? "text-red-500 hover:bg-red-100 hover:text-red-600" : "text-muted-foreground hover:text-primary hover:bg-muted" 
-        )}
-        onClick={(e) => {
-          e.stopPropagation(); 
-          onToggleCourse(course.id);
-        }}
-      >
-        {isSelected 
-          ? <CircleX size={16} />
-          : <CheckCircle size={16} />
-        }
-        <span className="sr-only">{isSelected ? "Remover" : "Adicionar"}</span>
-      </Button>
+      {hasToggle &&
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className={cn(
+            "h-7 w-7 flex-shrink-0 rounded-full ml-4", 
+            isSelected ? "text-red-500 hover:bg-red-100 hover:text-red-600" : "text-muted-foreground hover:text-primary hover:bg-muted" 
+          )}
+          onClick={(e) => {
+            e.stopPropagation(); 
+            onToggleCourse(course.id);
+          }}
+        >
+          {isSelected 
+            ? <CircleX size={16} />
+            : <CheckCircle size={16} />
+          }
+          <span className="sr-only">{isSelected ? "Remover" : "Adicionar"}</span>
+        </Button>
+      }
     </div>
   );
 };

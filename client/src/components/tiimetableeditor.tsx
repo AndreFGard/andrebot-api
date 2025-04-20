@@ -71,6 +71,7 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
         onCourseToggle={handleCourseAddition}
         selectedCourseIds={selectedCourseIds}
         useMajorChooser={true}
+        hasToggle={false}
       />
       
       <Accordion type="single" collapsible className="w-full rounded-lg my-4 outline">

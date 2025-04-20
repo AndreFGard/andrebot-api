@@ -16,6 +16,7 @@ interface ClassChooserProps {
   onMajorChange: (value: string) => void;
   onCourseToggle: (value: number) => void;
   selectedCourseIds: Set<number>;
+  hasToggle?:boolean;
 }
 
 import { CourseDisplayInfo, majorList } from '@/api';
@@ -23,7 +24,7 @@ import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
 import TermChooser from './termChooser';
 import CourseItem from './CourseItem'; 
 
-const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, useMajorChooser, selectedCourseIds }: ClassChooserProps) => {
+const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, useMajorChooser, selectedCourseIds, hasToggle=true }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
   const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
 
@@ -92,6 +93,7 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
                               course={course}
                               isSelected={selectedCourseIds.has(course.id)}
                               onToggleCourse={onCourseToggle}
+                              hasToggle={hasToggle}
                           />
                       </CommandItem>
                     ))}
