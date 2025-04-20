@@ -34,7 +34,7 @@ const TermChooser :React.FC<TermChooserProps> = ({terms, selectedTerms, setSelec
   return (
     <>
       {/* Term selection dropdown */}
-      <div className="my-4">
+      <div className="">
       <Select onValueChange={handleTermChange} defaultValue="1">
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Select a term" />

@@ -74,7 +74,7 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
           useMajorChooser={true}
           hasToggle={false}
         />
-        <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
+        <p className='text-gray-400'>Ids selecionados: {Array.from(selectedCourseIds.values()).join(', ')}</p>
       </div>
       
       <Accordion type="single" collapsible className="w-full rounded-lg outline">

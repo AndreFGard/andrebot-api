@@ -45,6 +45,7 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
   return (
     <>
       <div className="overflow-auto">
+        <h4> Disciplinas escolhidas:</h4>
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-gray-100">
@@ -74,7 +75,7 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
                       onCourseToggle(Number(classItem.id));
                     }}
                   >
-                    Delete
+                    Remover
                   </button>
                 </td>
                 <td className="p-2">
