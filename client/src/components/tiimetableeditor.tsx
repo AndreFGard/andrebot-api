@@ -64,10 +64,10 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
       useMajorChooser={true}
      />
      
-    <Accordion type="single" collapsible className="w-full outline rounded-lg mt-4">
+    <Accordion type="single" collapsible className="w-full rounded-lg my-4">
       <AccordionItem value="recommendations">
-        <AccordionTrigger className="py-2"><span>Disciplinas pendentes</span></AccordionTrigger>
-        <AccordionContent className="max-h-[300px] overflow-y-auto">
+        <AccordionTrigger className="p3-2 shadow outline"><span>Disciplinas pendentes disponíveis</span></AccordionTrigger>
+        <AccordionContent className="">
           <Recommendations currentTerm={11} recommendations={recommendations}/>
         </AccordionContent>
       </AccordionItem>

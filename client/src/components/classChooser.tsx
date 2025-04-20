@@ -78,7 +78,7 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
 
             <TabsContent value={mjr}>
               <Command className='w-full' >
-                <CommandInput placeholder="Type a command or search..." />
+                <CommandInput placeholder="Pesquise uma disciplina para adicioná-la" />
                 <CommandList>
                   <CommandEmpty>No results found.</CommandEmpty>
                   <CommandGroup>
