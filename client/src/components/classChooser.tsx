@@ -21,7 +21,7 @@ interface ClassChooserProps {
 import { CourseDisplayInfo, majorList } from '@/api';
 import { coursesplaceholder, getCourseDisplayInfoList } from '@/api';
 import TermChooser from './termChooser';
-
+import CourseItem from './CourseItem'; 
 
 const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCourseToggle, useMajorChooser, selectedCourseIds }: ClassChooserProps) => {
   const [courses, setCourses] = React.useState(coursesplaceholder);
@@ -81,25 +81,23 @@ const ClassChooser: React.FC<ClassChooserProps> = ({ major, onMajorChange, onCou
                 <CommandInput placeholder="Pesquise uma disciplina para adicioná-la" />
                 <CommandList>
                   <CommandEmpty>No results found.</CommandEmpty>
-                  <CommandGroup>
+                  <div className="space-y-1.5 pt-3"> {/* Simplified structure */}
                     {Object.values(filteredCourses[mjr]).flat().map((course) => (
-                      <CommandItem 
-                          key={course.id} 
+                      <CommandItem
+                          key={course.id}
                           onSelect={() => onCourseToggle(Number(course.id))}
-                          className={(selectedCourseIds.has(course.id)) ? 'bg-muted' : ''}
+                          value={`${course.name}-${course.professor}-${course.id}`} // Add a unique value for filtering
+                          className="p-0 cursor-pointer" // Ensure padding is zero and it's clickable
                           >
-                        <div className="flex justify-between items-center w-full">
-                          <div className="flex flex-col">
-                            <span className="font-semibold text-sm">{course.name}</span>
-                            <span className="text-xs text-muted-foreground">Prof: {course.professor}</span>
-                          </div>
-                          {selectedCourseIds.has(course.id) && 
-                            <Check className="h-4 w-4 text-primary ml-2 flex-shrink-0" />
-                          }
-                        </div>
+                           {/* CourseItem now controls its own padding and layout */}
+                           <CourseItem 
+                              course={course}
+                              isSelected={selectedCourseIds.has(course.id)}
+                              onToggleCourse={onCourseToggle}
+                           />
                       </CommandItem>
                     ))}
-                  </CommandGroup>
+                  </div>
                 </CommandList>
               </Command>
 
