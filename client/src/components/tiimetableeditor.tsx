@@ -7,6 +7,8 @@ import { Recommendations } from './Recommendations';
 import { getRecommendations } from '@/api';
 import { PendingCourse } from '../../../backend/models/schemas';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
+import { Card, CardDescription, CardTitle, CardHeader, CardContent } from './ui/card';
+import { Car } from 'lucide-react';
 
 interface TimetableProps {
   completedCourseIds: Set<number>;
@@ -56,31 +58,38 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
   , [major, completedCourseIds]);
 
   return (
-    <>
-    <h2 className='text-xl font-bold mb-2 text-left'>Select Major</h2>
-    <ClassChooser major={major} onMajorChange={setmajor}
-      onCourseToggle={handleCourseAddition}
-      selectedCourseIds={selectedCourseIds}
-      useMajorChooser={true}
-     />
-     
-    <Accordion type="single" collapsible className="w-full rounded-lg my-4">
-      <AccordionItem value="recommendations">
-        <AccordionTrigger className="p3-2 shadow outline"><span>Disciplinas pendentes disponíveis</span></AccordionTrigger>
-        <AccordionContent className="">
-          <Recommendations currentTerm={11} recommendations={recommendations}/>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
-    <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
-    <Timetable 
-      renderinfo={timetableRenderInfo} 
-      onCourseToggle={handleCourseAddition}
-      selectedCourseIds={selectedCourseIds}/>
-    
-    
-    
-  </>
+    <Card>
+      <CardHeader>
+        <CardTitle><h2>Editor de Horários</h2></CardTitle>
+        <CardDescription className='text-lg'>Pesquise e adicione as disicplinas no seu horário, 
+          verifique a existência de conflitos de horários, etc.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+      <h4 className='text-xl font-bold mb-2 text-left'>Filtrar cursos</h4>
+      <ClassChooser major={major} onMajorChange={setmajor}
+        onCourseToggle={handleCourseAddition}
+        selectedCourseIds={selectedCourseIds}
+        useMajorChooser={true}
+      />
+      
+      <Accordion type="single" collapsible className="w-full rounded-lg my-4 outline">
+        <AccordionItem value="recommendations">
+          <AccordionTrigger className="text-sm py-2" style={{fontSize: "0.6em"}}>Disciplinas pendentes disponíveis</AccordionTrigger>
+          <AccordionContent className='p-2'>
+            <Recommendations currentTerm={11} recommendations={recommendations}/>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
+      <Timetable 
+        renderinfo={timetableRenderInfo} 
+        onCourseToggle={handleCourseAddition}
+        selectedCourseIds={selectedCourseIds}/>
+      
+      
+      </CardContent>
+    </Card>
   );
 };
 
