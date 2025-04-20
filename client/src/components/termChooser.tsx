@@ -42,11 +42,11 @@ const TermChooser :React.FC<TermChooserProps> = ({terms, selectedTerms, setSelec
         <SelectContent>
           {availableTerms.map((term) => (
             <SelectItem key={term} value={term.toString()}>
-              Term {term}
+            {term}º período
             </SelectItem>
           ))}
           <SelectItem key={-1} value="-1">
-            All terms
+            Todos os períodos
           </SelectItem>
         </SelectContent>
       </Select>
