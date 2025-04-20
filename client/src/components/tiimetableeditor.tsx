@@ -65,30 +65,33 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
           verifique a existência de conflitos de horários, etc.
         </CardDescription>
       </CardHeader>
-      <CardContent>
-      <h4 className='text-xl font-bold mb-2 text-left'>Filtrar cursos</h4>
-      <ClassChooser major={major} onMajorChange={setmajor}
-        onCourseToggle={handleCourseAddition}
-        selectedCourseIds={selectedCourseIds}
-        useMajorChooser={true}
-        hasToggle={false}
-      />
+      <CardContent className="gap-6  flex flex-col">
+      <div className="flex flex-col gap-2">
+        <h4 className='text-xl font-bold text-left'>Filtrar cursos</h4>
+        <ClassChooser major={major} onMajorChange={setmajor}
+          onCourseToggle={handleCourseAddition}
+          selectedCourseIds={selectedCourseIds}
+          useMajorChooser={true}
+          hasToggle={false}
+        />
+        <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
+      </div>
       
-      <Accordion type="single" collapsible className="w-full rounded-lg my-4 outline">
+      <Accordion type="single" collapsible className="w-full rounded-lg outline">
         <AccordionItem value="recommendations">
-          <AccordionTrigger className="text-sm py-2" style={{fontSize: "0.6em"}}>Disciplinas pendentes disponíveis</AccordionTrigger>
-          <AccordionContent className='p-2'>
+          <AccordionTrigger className="text-sm pt-2" style={{fontSize: "0.8em"}}>Ver disciplinas pendentes disponíveis</AccordionTrigger>
+          <AccordionContent className='p-3'>
             <Recommendations currentTerm={11} recommendations={recommendations}/>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
+      
       <Timetable 
         renderinfo={timetableRenderInfo} 
         onCourseToggle={handleCourseAddition}
-        selectedCourseIds={selectedCourseIds}/>
-      
-      
+        selectedCourseIds={selectedCourseIds}
+        />
+
       </CardContent>
     </Card>
   );
