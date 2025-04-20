@@ -6,7 +6,7 @@ import Timetable from './timetable';
 import { Recommendations } from './Recommendations';
 import { getRecommendations } from '@/api';
 import { PendingCourse } from '../../../backend/models/schemas';
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 
 interface TimetableProps {
   completedCourseIds: Set<number>;
@@ -63,9 +63,20 @@ const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
       selectedCourseIds={selectedCourseIds}
       useMajorChooser={true}
      />
-     <Recommendations currentTerm={11} recommendations={recommendations}/>
+     
+    <Accordion type="single" collapsible className="w-full outline rounded-lg mt-4">
+      <AccordionItem value="recommendations">
+        <AccordionTrigger className="py-2"><span>Disciplinas pendentes</span></AccordionTrigger>
+        <AccordionContent className="max-h-[300px] overflow-y-auto">
+          <Recommendations currentTerm={11} recommendations={recommendations}/>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
     <p>Selected courses: {Array.from(selectedCourseIds.values()).join(', ')}</p>
-    <Timetable renderinfo={timetableRenderInfo} onCourseToggle={handleCourseAddition} selectedCourseIds={selectedCourseIds}/>
+    <Timetable 
+      renderinfo={timetableRenderInfo} 
+      onCourseToggle={handleCourseAddition}
+      selectedCourseIds={selectedCourseIds}/>
     
     
     
