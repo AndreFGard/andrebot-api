@@ -127,7 +127,8 @@ export const initialTimetable: TimetableRenderInfo = ({
     conflictlessClasses: [],
     conflicts: [],
     conflictIds: [],
-    conflictlessIds: []
+    conflictlessIds: [],
+    conflictfullClasses: []
 });
 
 export const getRecommendations = async (major: string, currentTerm:number, newCurriculum:boolean, completedCourseIds: number[]) => {
