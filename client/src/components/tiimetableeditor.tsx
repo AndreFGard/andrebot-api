@@ -12,12 +12,13 @@ import { Car } from 'lucide-react';
 
 interface TimetableProps {
   completedCourseIds: Set<number>;
+  selectedCourseIds: Set<number>;
+  setSelectedCourseIds: (ids: Set<number>) => void;
 }
-const TimetableEditor = ({completedCourseIds}:TimetableProps) => {
+const TimetableEditor = ({completedCourseIds, selectedCourseIds, setSelectedCourseIds}:TimetableProps) => {
   
   const [major,setmajor ] = React.useState("CC");
  // const [newCourseId, setNewCourseId] = React.useState(-1);
-  const [selectedCourseIds, setSelectedCourseIds] = React.useState<Set<number>>(new Set());
 
   const [courseManager, setCourseManager] = React.useState<CourseSelectionManager>(new CourseSelectionManager) ;
   const [timetableRenderInfo, setTimetableRenderInfo] = React.useState<TimetableRenderInfo>(initialTimetable);

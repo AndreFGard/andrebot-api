@@ -2,9 +2,29 @@ import TimetableEditor from './components/tiimetableeditor'
 import { ThemeProvider } from "@/components/theme-provider"
 import CourseHistory from './components/coursehistory'
 import { CourseDisplayInfoProvider } from './CourseDisplayInfoCtx'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 function App() {
   const [completedCourseIds, setCompletedCourseIds ] = useState<Set<number>>(new Set());
+
+
+
+  const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const completed = localStorage.getItem('completedCourseIds');
+    const selected = localStorage.getItem('selectedCourseIds');
+    if (completed) {
+      setCompletedCourseIds(new Set(JSON.parse(completed)));
+    }
+    if (selected) {
+      setSelectedCourseIds(new Set(JSON.parse(selected)));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (completedCourseIds.size) localStorage.setItem('completedCourseIds', JSON.stringify(Array.from(completedCourseIds)));
+    if (selectedCourseIds.size) localStorage.setItem('selectedCourseIds', JSON.stringify(Array.from(selectedCourseIds)));
+  }, [completedCourseIds, selectedCourseIds]);
 
 
   return (
@@ -17,10 +37,13 @@ function App() {
             <CourseHistory completedCourseIds={completedCourseIds} setCompletedCourseIds={setCompletedCourseIds}></CourseHistory>
           </div>
     
-          <hr style={{marginTop: 200}}></hr>
           <div >
-            <TimetableEditor completedCourseIds={completedCourseIds}></TimetableEditor>
-            </div>
+            <TimetableEditor selectedCourseIds={selectedCourseIds}
+              setSelectedCourseIds={setSelectedCourseIds} 
+              completedCourseIds={completedCourseIds}>
+
+              </TimetableEditor>
+          </div>
             
           </ThemeProvider>
         </CourseDisplayInfoProvider>
