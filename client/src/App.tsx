@@ -9,6 +9,12 @@ function App() {
 
 
   const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set());
+  useEffect(() => {
+    new Promise(resolve => setTimeout(resolve, 50)).then(() => {
+      ;
+    window.scrollTo(0, 0);
+    });
+  }, []);
 
   useEffect(() => {
     const completed = localStorage.getItem('completedCourseIds');
@@ -19,6 +25,7 @@ function App() {
     if (selected) {
       setSelectedCourseIds(new Set(JSON.parse(selected)));
     }
+    
   }, []);
 
   useEffect(() => {
@@ -33,7 +40,7 @@ function App() {
         <CourseDisplayInfoProvider>
           <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
-          <div >
+          <div id='course-history-section' >
             <CourseHistory completedCourseIds={completedCourseIds} setCompletedCourseIds={setCompletedCourseIds}></CourseHistory>
           </div>
     

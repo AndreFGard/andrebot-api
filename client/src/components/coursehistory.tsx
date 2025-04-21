@@ -27,10 +27,6 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
     setCompletedCourseIds(new Set(Array.from(selectedCourseIds)));
   }, [selectedCourseIds, setCompletedCourseIds]);
   
-  // Prevent automatic scroll on page load
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
 
   // Get all periods for the selected major
