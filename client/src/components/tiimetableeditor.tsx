@@ -62,13 +62,14 @@ const TimetableEditor = ({completedCourseIds, selectedCourseIds, setSelectedCour
     <Card>
       <CardHeader>
         <CardTitle><h2>Editor de Horários</h2></CardTitle>
-        <CardDescription className='text-lg'>Pesquise e adicione as disicplinas no seu horário, 
-          verifique a existência de conflitos de horários, etc.
+        <CardDescription className='text-lg'>Pesquise e adicione disciplinas ao seu horário, 
+          verifique se há horários conflitantes e veja as disciplinas pendentes disponíveis considerando
+          os requisitos que você já completou.
         </CardDescription>
       </CardHeader>
       <CardContent className="gap-6  flex flex-col">
       <div className="flex flex-col gap-2">
-        <h4 className='text-xl font-bold text-left'>Filtrar cursos</h4>
+        <h4 className='text-xl font-bold text-left'>Pesquisar disciplinas sendo ofertadas</h4>
         <ClassChooser major={major} onMajorChange={setmajor}
           onCourseToggle={handleCourseAddition}
           selectedCourseIds={selectedCourseIds}
@@ -80,7 +81,7 @@ const TimetableEditor = ({completedCourseIds, selectedCourseIds, setSelectedCour
       
       <Accordion type="single" collapsible className="w-full rounded-lg outline">
         <AccordionItem value="recommendations">
-          <AccordionTrigger className="text-sm pt-2" style={{fontSize: "0.8em"}}>Ver disciplinas pendentes disponíveis</AccordionTrigger>
+          <AccordionTrigger className="text-sm pt-2" style={{fontSize: "0.8em"}}>Ver disciplinas pendentes</AccordionTrigger>
           <AccordionContent className='p-3'>
             <Recommendations currentTerm={11} recommendations={recommendations}/>
           </AccordionContent>

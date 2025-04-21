@@ -50,10 +50,10 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
           <thead>
             <tr className="bg-gray-100">
               <th className="p-2">#</th>
-              <th className="p-2">Name</th>
+              <th className="p-2">Nome</th>
               <th className="p-2">Professor</th>
-              <th className="p-2">Action</th>
-              <th className="p-2">Code</th>
+              <th className="p-2">Ação</th>
+              <th className="p-2">Código</th>
             </tr>
           </thead>
           <tbody>
@@ -90,13 +90,13 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
 
       {conflictIds.length > 0 && (
         <div className="p-4 mb-4 rounded-md bg-red-100 text-red-700 border border-red-200">
-          There were conflicts between your courses! : {(Array.from((new Set(conflicts.map(([cls1, cls2, day])=> cls1.shortName))).values())).join(', ')}
+          Há conflitos nas disciplinas!: {(Array.from((new Set(conflicts.map(([cls1, cls2, day])=> cls1.shortName))).values())).join(', ')}
         </div>
       )}
       
       {timetable.aproxHourList.length === 0 && (
         <div className="p-4 mb-4 rounded-md bg-yellow-100 text-yellow-700 border border-yellow-200">
-          Your timetable is empty!
+          Seu horário está vazio! Adicione disciplinas usando a pesquisa acima.
         </div>
       )}
 
@@ -104,7 +104,7 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
         <table className="w-full border-collapse min-w-[600px]">
           <thead>
             <tr className="bg-gray-50">
-              <th className="p-3 text-xs font-semibold text-gray-600 uppercase tracking-wider border border-gray-200 text-center w-20">Time</th>
+              <th className="p-3 text-xs font-semibold text-gray-600 uppercase tracking-wider border border-gray-200 text-center w-20">Hora</th>
               {['Seg', 'Ter', 'Qua', 'Qui', 'Sex'].map((day) => (
                 <th key={day} className="p-3 text-xs font-semibold text-gray-600 uppercase tracking-wider border border-gray-200 text-center">
                   {day}

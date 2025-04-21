@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import MajorChooser from './majorChooser';
 import { useCourseSelection } from '@/hooks/useCourseSelection';
@@ -89,8 +89,16 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
 
       {/* Course History */}
       <Card>
+        <CardHeader>
+          <CardTitle><h3 className="text-2xl font-bold my-4">Disciplinas Cursadas</h3></CardTitle>
+          <CardDescription className='text-lg'>Adicione disciplinas obrigatórias que você já cursou, 
+            para calcular o seu progresso e 
+            receber recomendações de disciplinas pendentes abaixo.
+            Disciplinas equivalentes de outros currículos estarão acizentadas. 
+          </CardDescription>
+        </CardHeader>
         <CardContent>
-          <h2 className="text-2xl font-bold my-4">Disciplinas Cursadas</h2>
+          
           
           <Tabs defaultValue="periodo" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-4 bg-muted p-1 rounded-lg h-auto"> 
