@@ -9,6 +9,7 @@ import { PendingCourse } from '../../../backend/models/schemas';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { Card, CardDescription, CardTitle, CardHeader, CardContent } from './ui/card';
 import { Car } from 'lucide-react';
+import { Button } from './ui/button';
 
 interface TimetableProps {
   completedCourseIds: Set<number>;
@@ -79,9 +80,11 @@ const TimetableEditor = ({completedCourseIds, selectedCourseIds, setSelectedCour
         <p className='text-gray-400'>Ids selecionados: {Array.from(selectedCourseIds.values()).join(', ')}</p>
       </div>
       
-      <Accordion type="single" collapsible className="w-full rounded-lg outline">
-        <AccordionItem value="recommendations">
-          <AccordionTrigger className="text-sm pt-2" style={{fontSize: "0.8em"}}>Ver disciplinas pendentes</AccordionTrigger>
+      <Accordion type="single" collapsible className="w-full ">
+        <AccordionItem value="recommendations" className=' rounded-lg outline'>
+          <AccordionTrigger className="text-sm" style={{fontSize: "0.8em"}}>
+            Ver disciplinas pendentes
+            </AccordionTrigger>
           <AccordionContent className='p-3'>
             <Recommendations currentTerm={11} recommendations={recommendations}/>
           </AccordionContent>
