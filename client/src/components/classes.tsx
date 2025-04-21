@@ -6,7 +6,7 @@ const courses = (majorClasses: CourseInfo[]) =>
 
     return (
     <>
-        <select id="class-select" className="form-select" multiple>
+        <select className="form-select" multiple>
             {majorClasses.map(classItem => 
                 (<option value={classItem.id}>
                     {classItem.name} - {classItem.professor.slice(0, 20) + "..." ? ( length > 20) : classItem.professor}
