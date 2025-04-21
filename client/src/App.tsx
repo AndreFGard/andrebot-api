@@ -3,18 +3,21 @@ import { ThemeProvider } from "@/components/theme-provider"
 import CourseHistory from './components/coursehistory'
 import { CourseDisplayInfoProvider } from './CourseDisplayInfoCtx'
 import { useState, useEffect} from 'react';
+
+
 function App() {
   const [completedCourseIds, setCompletedCourseIds ] = useState<Set<number>>(new Set());
 
-
-
   const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set());
+
+  //gambiarra to avoid a misterious autoscroll
   useEffect(() => {
     new Promise(resolve => setTimeout(resolve, 50)).then(() => {
       ;
     window.scrollTo(0, 0);
     });
   }, []);
+
 
   useEffect(() => {
     const completed = localStorage.getItem('completedCourseIds');

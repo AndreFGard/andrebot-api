@@ -100,13 +100,13 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
 
   // Use allPeriods derived from props to ensure correct order and inclusion
   const periods = allPeriods.sort((a, b) => a - b);
-
+  const StatisticCardClassName = 'shadow-sm hover:shadow-md transition-shadow duration-200 min-w-70 md:w-1/3 snap-start';
   return (
     <>
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="flex gap-4 mb-6 overflow-scroll snap-start">
          {/* Card 1: Disciplinas Cursadas */}
-         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
+         <Card className={StatisticCardClassName}>
            <CardContent className="pt-2">
              <div className="flex items-center justify-between">
                <div>
@@ -124,7 +124,7 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
          </Card>
 
          {/* Card 2: Créditos Completados */}
-         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
+         <Card className={StatisticCardClassName}>
            <CardContent className="pt-2">
              <div className="flex items-center justify-between">
                <div>
@@ -142,7 +142,7 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
          </Card>
 
          {/* Card 3: Progresso do Curso */}
-         <Card className="shadow-sm hover:shadow-md transition-shadow duration-200">
+         <Card className={StatisticCardClassName}>
            <CardContent className="pt-2">
              <div className="flex items-center justify-between">
                <div>

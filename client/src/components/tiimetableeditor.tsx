@@ -84,6 +84,7 @@ const TimetableEditor = ({completedCourseIds, selectedCourseIds, setSelectedCour
             Ver disciplinas pendentes
             </AccordionTrigger>
           <AccordionContent className='p-3'>
+            <p className='text-muted'>Disciplinas obrigatórias do curso de {major} ainda não cursadas</p>
             <Recommendations currentTerm={11} recommendations={recommendations}/>
           </AccordionContent>
         </AccordionItem>

@@ -69,7 +69,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
   const getCoursesForPeriodWithMajor = (period: number) => getCoursesForPeriod(major, period);
 
   const newCurriculumStrings = ["Não", "Sim"];
-  const [newCurriculum, setNewCurriculum] = useState<string>("Não");
+  const [newCurriculum, setNewCurriculum] = useState<string>("Sim");
   return (
     <>
       {/* Major Selection */}
@@ -77,7 +77,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
         <CardContent className="pt-6">
           <h2 className="text-2xl font-bold mb-4">Selecione seu Curso</h2>
           <MajorChooser major={major} onMajorChange={setMajor} />
-          <h2 className="text-2xl font-bold my-4">Grade nova?</h2>
+          <h2 className="text-2xl font-bold my-4">Você está na grade nova?</h2>
           <MajorChooser major={newCurriculum} onMajorChange={setNewCurriculum} majors={newCurriculumStrings} />
         </CardContent>
       </Card>
