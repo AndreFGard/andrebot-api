@@ -17,15 +17,11 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
   const courses = useContext(CourseDisplayInfoCtx)
 
   const { 
-    selectedCourseIds, 
     toggleCourse, 
     addCoursesByTerm, 
     getCoursesForPeriod 
-  } = useCourseSelection();
+  } = useCourseSelection({selectedCourseIds:completedCourseIds, setSelectedCourseIds:setCompletedCourseIds});
 
-  useEffect(() => {
-    setCompletedCourseIds(new Set(Array.from(selectedCourseIds)));
-  }, [selectedCourseIds, setCompletedCourseIds]);
   
 
 
@@ -124,7 +120,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
                     key={period}
                     period={period}
                     courses={getCoursesForPeriodWithMajor(period)}
-                    selectedCourseIds={selectedCourseIds}
+                    selectedCourseIds={completedCourseIds}
                     isExpanded={expandedPeriods[period] || false}
                     onToggleExpand={togglePeriod}
                     onToggleCourse={handleCourseToggle}
@@ -139,7 +135,7 @@ const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistory
             <TabsContent value="visualizacao">
               <VisualizationTab
                 major={major}
-                selectedCourseIds={selectedCourseIds}
+                selectedCourseIds={completedCourseIds}
                 allPeriods={allPeriods}
                 coursesData={courses}
                 onCourseToggle={handleCourseToggle}

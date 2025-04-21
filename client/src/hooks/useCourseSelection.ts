@@ -1,11 +1,14 @@
 import { useState, useContext } from 'react';
 import { CourseSelectionManager, CourseDisplayInfo } from '@/api';
 import { CourseDisplayInfoCtx } from '@/CourseDisplayInfoCtx';
-
-export function useCourseSelection(initialSelection: number[] = []) {
+interface useCourseSelectionProps {
+  selectedCourseIds: Set<number>;
+  setSelectedCourseIds: (selectedCourseIds: Set<number>) => void;
+  initialSelection?: number[];
+}
+export function useCourseSelection({initialSelection=[], selectedCourseIds, setSelectedCourseIds}: useCourseSelectionProps) {
   const courses = useContext(CourseDisplayInfoCtx);
 
-  const [selectedCourseIds, setSelectedCourseIds] = useState<Set<number>>(new Set(initialSelection));
   const [courseManager] = useState<CourseSelectionManager>(new CourseSelectionManager(initialSelection));
   
   // Toggle a single course
@@ -32,6 +35,7 @@ export function useCourseSelection(initialSelection: number[] = []) {
   
   return {
     selectedCourseIds,
+    setSelectedCourseIds,
     toggleCourse,
     addCoursesByTerm,
     getCoursesForPeriod,
