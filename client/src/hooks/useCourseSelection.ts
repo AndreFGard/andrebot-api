@@ -7,7 +7,10 @@ interface useCourseSelectionProps {
   initialSelection?: number[];
 }
 export function useCourseSelection({initialSelection=[], selectedCourseIds, setSelectedCourseIds}: useCourseSelectionProps) {
+import { ClassDisplayInfoCtx } from '@/CourseClassInfoProvider';
+
   const courses = useContext(CourseDisplayInfoCtx);
+  const classInfo = useContext(ClassDisplayInfoCtx);
 
   const [courseManager] = useState<CourseSelectionManager>(new CourseSelectionManager(initialSelection));
   
@@ -29,16 +32,21 @@ export function useCourseSelection({initialSelection=[], selectedCourseIds, setS
   };
   
   // Get courses for a specific period
-  const getCoursesForPeriod = (major: string, period: number): CourseDisplayInfo[] => {
+  const getCoursesForPeriodNotUnique = (major: string, period: number): CourseDisplayInfo[] => {
     return courses[major]?.[period] ?? [];
   };
+  
+  const getCoursesForPeriodUnique = (major: string, period: number): CourseDisplayInfo[] => {
+    return classInfo[major]?.[period]  ?? [];
+  }
+
   
   return {
     selectedCourseIds,
     setSelectedCourseIds,
     toggleCourse,
     addCoursesByTerm,
-    getCoursesForPeriod,
+    getCoursesForPeriod: uniqueByClassCodes ? getCoursesForPeriodUnique : getCoursesForPeriodNotUnique,
     resetSelection: () => {
       courseManager.setSelectedCourseIds([]);
       setSelectedCourseIds(new Set());

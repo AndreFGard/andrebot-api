@@ -32,8 +32,8 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
         code: course.code,
         term: course.term,
         isNewCurriculum: course.isNewCurriculum,
-        CH: 60,
-        credits: 4
+        credits: 60,
+        CH: 120,
     });
 
     // Get all periods that have recommendations
@@ -57,6 +57,7 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
                     onToggleCourse={() => {}} // No-op since these are just recommendations
                     onAddAllFromPeriod={() => {}} // No-op since these are just recommendations
                     hasToggle={false} //
+                    getIdentifier={(course: CourseDisplayInfo) => course.code}
                 />
             ))}
             {periods.length === 0 && (

@@ -62,6 +62,12 @@ export async function getCourseDisplayInfoList(req: Request, res: Response< Reco
         res.send(courseDisplayInfoList);
 }
 
+//* courses made unique by their code.
+export async function getCourseClassInfoList(req: Request, res: Response< Record<string, Record<number, CourseDisplayInfo[]>>>) {
+    const courseDisplayInfoList = timetableService.getUniqueCoursesByCode();
+    res.send(courseDisplayInfoList);
+}
+
 export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>>) {
     const major = req.query.major as string || "CC";
     const currentTerm = Number(req.query.currentTerm) || 1;

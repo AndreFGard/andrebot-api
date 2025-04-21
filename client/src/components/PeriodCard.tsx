@@ -16,6 +16,7 @@ interface PeriodCardProps {
   onAddAllFromPeriod: (period: number) => void;
   isNewCurriculum?: boolean;
   hasToggle?:boolean;
+  getIdentifier?: (course: CourseDisplayInfo) => string;
 }
 
 const PeriodCard: React.FC<PeriodCardProps> = ({ 
@@ -28,6 +29,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
   onAddAllFromPeriod,
   isNewCurriculum,
   hasToggle=true
+  getIdentifier = ((course: CourseDisplayInfo) => course.id)
 }) => {
   const progress = calculatePeriodProgress(courses, selectedCourseIds);
 
@@ -73,7 +75,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
           <div className="space-y-1.5 pt-3">
             {courses.map((course) => (
               <CourseItem 
-                key={course.id}
+                key={getIdentifier(course)}
                 course={course}
                 isSelected={selectedCourseIds.has(course.id)}
                 onToggleCourse={onToggleCourse}
