@@ -8,8 +8,6 @@ import { getRecommendations } from '@/api';
 import { PendingCourse } from '../../../backend/models/schemas';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { Card, CardDescription, CardTitle, CardHeader, CardContent } from './ui/card';
-import { Car } from 'lucide-react';
-import { Button } from './ui/button';
 
 interface TimetableProps {
   completedCourseIds: Set<number>;

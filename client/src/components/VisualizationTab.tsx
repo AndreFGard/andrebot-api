@@ -17,10 +17,6 @@ interface VisualizationTabProps {
 
 // Helper function to check prerequisites (assuming CourseDisplayInfo has prerequisites)
 // todo ajustar os pre-requisitos em CourseDisplayInfo
-const arePrerequisitesCompleted = (course: CourseDisplayInfo, completedIds: Set<number>): boolean => {
-  if (!course.prerequisites || course.prerequisites.length === 0) return true;
-  return course.prerequisites.every((prereqId) => completedIds.has(prereqId));
-};
 
 const VisualizationTab: React.FC<VisualizationTabProps> = ({
   major,

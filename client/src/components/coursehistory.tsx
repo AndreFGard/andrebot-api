@@ -13,7 +13,6 @@ interface CourseHistoryProps {
 }
 const CourseHistory = ({completedCourseIds, setCompletedCourseIds}:CourseHistoryProps) => {
   const [major, setMajor] = React.useState("CC");
-  const [selectedTerms, setSelectedTerms] = React.useState<Set<number>>(new Set([1]));
   const courses = useContext(CourseDisplayInfoCtx)
 
   const { 

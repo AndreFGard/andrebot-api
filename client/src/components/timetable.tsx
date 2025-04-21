@@ -40,7 +40,6 @@ const calculateCellClasses = (isContinuation: boolean, isFollowed: boolean) => {
 const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selectedCourseIds}) => {
   selectedCourseIds;
   const { timetable, conflictlessClasses, conflicts, conflictIds, conflictfullClasses } = renderinfo;
-  const conflictfulIds =(new Set(conflicts.map(([cls1, cls2, day])=>[cls1.id,cls2.id]).flat()))
 
   return (
     <>
@@ -90,7 +89,7 @@ const Timetable: React.FC<TimetableProps> = ({ renderinfo, onCourseToggle, selec
 
       {conflictIds.length > 0 && (
         <div className="p-4 mb-4 rounded-md bg-red-100 text-red-700 border border-red-200">
-          Há conflitos nas disciplinas!: {(Array.from((new Set(conflicts.map(([cls1, cls2, day])=> cls1.shortName))).values())).join(', ')}
+          Há conflitos nas disciplinas!: {(Array.from((new Set(conflicts.map(([cls1, _cls2, _day])=> cls1.shortName))).values())).join(', ')}
         </div>
       )}
       
