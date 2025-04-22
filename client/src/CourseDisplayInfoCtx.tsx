@@ -1,4 +1,4 @@
-import { coursesplaceholder, getCourseDisplayInfoList, getCoursesUniqueByCode } from "./api";
+import { coursesplaceholder, getCoursesUniqueByCode } from "./api";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 export const CourseDisplayInfoCtx = createContext({} as Record<string, Record<number, any[]>>);
