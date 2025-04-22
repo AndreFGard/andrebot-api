@@ -61,15 +61,15 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
         </p> 
         }
         {/* CH */
-        courseCH &&
+        (courseCH &&
         <p className="text-xs text-muted-foreground">
           {courseCH} h
-        </p>
+        </p>) || ''
         }
-        {/* Credits */ courseCredits &&
+        {/* Credits */ (courseCredits &&
         <p className="text-xs text-muted-foreground">
           {courseCredits} créditos
-        </p>
+        </p>) || ""
         }
         </div>
       </div>
