@@ -6,6 +6,7 @@ import * as fs from 'fs';
 const coursesraw = fs.readFileSync('courses.json', 'utf-8');
 const courses = JSON.parse(coursesraw) as Record<string, Record<number, CourseInfo[]>>;
 Object.values(courses).forEach(major => {
+
     Object.values(major).forEach(trm => {
         let i =0;
         Object.values(trm).forEach(clss => {
