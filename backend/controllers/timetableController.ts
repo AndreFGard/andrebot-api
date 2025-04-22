@@ -67,11 +67,16 @@ export async function getCoursesUniqueByCode(req: Request, res: Response< Record
     res.send(courseDisplayInfoList);
 }
 
-export async function getRecommendations(req: Request, res: Response<Record<number, PendingCourse[]>>) {
-    const major = req.query.major as string || "CC";
-    const currentTerm = Number(req.query.currentTerm) || 1;
-    const newCurriculum = req.query.newCurriculum === "true";
-    const courseids = (req.query.completedCourseIds as string || "").split(",").map(Number);
-    const recommendations=timetableService.getRecommendations(major, currentTerm, newCurriculum, courseids);
-    res.send(recommendations);
+export async function getRecommendations(req: Request, res: Response) {
+    try{
+        const major = req.query.major as string || "CC";
+        const currentTerm = Number(req.query.currentTerm) || 1;
+        const newCurriculum = req.query.newCurriculum === "true";
+        const courseids = (req.query.completedCourseIds as string || "").split(",").map(Number);
+        const recommendations=timetableService.getRecommendations(major, currentTerm, newCurriculum, courseids);
+        res.send(recommendations);
+    }
+    catch (error) {
+        res.status(500).send({ error: "Error fetching recommendations" });
+    }
 }
