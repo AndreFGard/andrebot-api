@@ -296,10 +296,13 @@ export class RecommendationModel{
 
             pendingCourses[key] = value.map((code) => {
                 const ref = this.getMandatoryReference(major, newCurr, code);
-                const name = ref?.name || this.code_equivalences[code]?.name || "FAILED " + code;
+                const hasEquivalence = (ref?.name || this.code_equivalences[code]?.name) ? true : false;
+                const name = hasEquivalence ? (ref?.name || this.code_equivalences[code]?.name) : code;
                 return { 
                 name: name,
                 code: code,
+                hasEquivalence: hasEquivalence,
+                isNewCurriculum: key === "NEW", 
                 term: this.getTermOfCode(major, newCurr, code),
                 blockedCourseCodes: this.mandatoryGraphs[major].g[code],
             } as PendingCourse});

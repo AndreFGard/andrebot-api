@@ -31,6 +31,7 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
         professor: "NO professors",
         code: course.code,
         term: course.term,
+        hasEquivalence: course.hasEquivalence,
         isNewCurriculum: course.isNewCurriculum,
         CH: 60,
         credits: 4
@@ -51,12 +52,14 @@ export const Recommendations: FC<RecommendationsProps> = ({currentTerm, recommen
                 <PeriodCard
                     period={period}
                     courses={(recommendations[period]).map(convertToCourseDisplayInfo)}
+                    isNewCurriculum={true}
                     selectedCourseIds={selectedCourseIds}
                     isExpanded={expandedPeriods[period] || false}
                     onToggleExpand={togglePeriod}
                     onToggleCourse={() => {}} // No-op since these are just recommendations
                     onAddAllFromPeriod={() => {}} // No-op since these are just recommendations
                     hasToggle={false} //
+                    warnNoEquivalence={true}
                 />
             ))}
             {periods.length === 0 && (

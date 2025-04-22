@@ -59,6 +59,7 @@ export interface CourseDisplayInfo{
     credits: number;
     CH: number;
     isNewCurriculum?: boolean;
+    hasEquivalence?: boolean;
 }
 
 
@@ -85,6 +86,7 @@ interface PendingCourse{
     code: string;
     name: string;
     term: number;
+    hasEquivalence: boolean;
     isNewCurriculum: boolean;
     blockedCourseIds?: number[];
     blockedCourseCodes: string[];

@@ -16,6 +16,7 @@ interface PeriodCardProps {
   onAddAllFromPeriod: (period: number) => void;
   isNewCurriculum?: boolean;
   hasToggle?:boolean;
+  warnNoEquivalence?:boolean;
 }
 
 const PeriodCard: React.FC<PeriodCardProps> = ({ 
@@ -27,7 +28,8 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
   onToggleCourse, 
   onAddAllFromPeriod,
   isNewCurriculum,
-  hasToggle=true
+  hasToggle=true,
+  warnNoEquivalence = false
 }) => {
   const progress = calculatePeriodProgress(courses, selectedCourseIds);
 
@@ -77,7 +79,8 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
                 course={course}
                 isSelected={selectedCourseIds.has(course.id)}
                 onToggleCourse={onToggleCourse}
-                isGreyedOut={(course.isNewCurriculum != isNewCurriculum)}
+                oldCurriculum={(!course.isNewCurriculum)}
+                hasNoEquivalence={warnNoEquivalence && course.hasEquivalence === false}
                 hasToggle={hasToggle}
                 showProfessor={false}
               />
