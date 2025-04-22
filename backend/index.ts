@@ -9,7 +9,7 @@ dotenv.config();
 
 const app: Express = express();
 const DOMAIN_NAME_S = process.env.DOMAIN_NAME_S as string;
-const port = process.env.PORT || 3000;
+const port = Number(process.env.PORT) || 3000;
 app.use(cors())
 app.use(express.json()); //middleware that partes the request's json
 app.set('view engine', 'ejs');
@@ -30,6 +30,7 @@ app.use(morgan('tiny'))
 // app.use("/andrebot", andrebotRoutes);
 
 import timetableRoutes from "./routes/timetableRouter";
+import { number } from "zod";
 app.use("/timetable", timetableRoutes);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -62,7 +63,7 @@ if (Number(port) == 443){
     });
 }
 else {
-    app.listen(port, () => {
+    app.listen(port, '0.0.0.0', () => {
         console.log(`starting server at http://localhost:${port}`)
      })
 }
