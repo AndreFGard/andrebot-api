@@ -79,6 +79,7 @@ const PeriodCard: React.FC<PeriodCardProps> = ({
                 onToggleCourse={onToggleCourse}
                 isGreyedOut={(course.isNewCurriculum != isNewCurriculum)}
                 hasToggle={hasToggle}
+                showProfessor={false}
               />
             ))}
           </div>

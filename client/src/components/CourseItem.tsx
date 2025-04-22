@@ -11,13 +11,15 @@ interface CourseItemProps {
   onToggleCourse: (id: number) => void;
   hasToggle?: boolean; // Optional prop to indicate if the course has a toggle button
   isGreyedOut?: boolean; // Optional prop to indicate if the course should be greyed out
+  showProfessor?:boolean;
 }
 
-const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut, hasToggle=true}) => {
+const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCourse, isGreyedOut, hasToggle=true, showProfessor=true}) => {
   const courseCode = getCourseCode(course);
   const courseCredits = getCourseCredits(course);
   const courseCH = getCourseCH(course);
   const typeStyle = getCourseTypeStyle(courseCode);
+  const professor=course.professor;
 
   const isStyleSelected = isGreyedOut || isSelected;
 
@@ -52,14 +54,23 @@ const CourseItem: React.FC<CourseItemProps> = ({ course, isSelected, onToggleCou
           </h6>
         </div>
         <div className="flex gap-2">
-        {/* CH */}
+        {/* Professor */}
+        {showProfessor && 
+        <p className="text-xs text-muted-foreground max-w-[200px] truncate">
+         ({professor}) -
+        </p> 
+        }
+        {/* CH */
+        courseCH &&
         <p className="text-xs text-muted-foreground">
           {courseCH} h
         </p>
-        {/* Credits */}
+        }
+        {/* Credits */ courseCredits &&
         <p className="text-xs text-muted-foreground">
           {courseCredits} créditos
         </p>
+        }
         </div>
       </div>
 
