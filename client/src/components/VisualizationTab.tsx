@@ -37,6 +37,8 @@ const VisualizationTab: React.FC<VisualizationTabProps> = ({
         });
     }
 
+    onCourseToggle;
+
     const completed = allCoursesForMajor.filter(course => selectedCourseIds.has(course.id));
 
     let totalCreditsValue = 0;

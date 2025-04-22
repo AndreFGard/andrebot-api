@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "export VITE_API_URL='http://localhost:3000/timetable' && vite",
+    "build": "export VITE_API_URL=https://andrefgard.duckdns.org/timetable && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.7",
     "@radix-ui/react-dialog": "^1.1.7",
     "@radix-ui/react-popover": "^1.1.7",
     "@radix-ui/react-progress": "^1.1.3",

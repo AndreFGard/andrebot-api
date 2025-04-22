@@ -9,7 +9,6 @@ import {
   CommandList,
 } from "@/components/ui/command";
 
-import {Check} from "lucide-react";
 interface ClassChooserProps {
   major: string;
   useMajorChooser?: boolean;

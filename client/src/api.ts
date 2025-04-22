@@ -1,6 +1,6 @@
 import { TimetableRenderInfo, CourseDisplayInfo, majorList, ITimetable, PendingCourse } from './../../backend/models/schemas';
 
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000/timetable';
+const apiUrl = import.meta.env.VITE_API_URL;
 export type { CourseInfo, ITimetable, ScheduleDay, TimetableRenderInfo, CourseDisplayInfo } from './../../backend/models/schemas';
 
 export const fetchTimetable = async (SelectedClassIDs: number[]) => {
