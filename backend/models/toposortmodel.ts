@@ -94,7 +94,7 @@ export class RecommendationModel{
             
         }
 
-        const x=  Object.assign({}, ...["CC","EC","SI"].map(major => {return {[major]:this.buildMandatoryGraph(major)}}));
+        const x=  Object.assign({}, ...["CC","EC","SI", "IA"].map(major => {return {[major]:this.buildMandatoryGraph(major)}}));
         this.mandatoryGraphs = x;
         
         // for (const [k,v] of Object.entries(this.code_equivalences)) {

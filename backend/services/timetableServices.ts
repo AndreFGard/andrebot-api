@@ -184,7 +184,7 @@ export class CourseTable {
 }
 
 
-const majors = ["CC", "EC", "SI"];
+const majors = ["CC", "EC", "SI", "IA"];
 let courses: majorDict = {}
 Object(majors).forEach( (major: string) => {
     courses[major] = model.getCoursesbymajor(major);
