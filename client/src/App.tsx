@@ -58,6 +58,7 @@ function App() {
           </ThemeProvider>
         </CourseDisplayInfoProvider>
       </main>
+      <footer className='pt-10 text-muted text-center'>Made by Bianca, Fatima and Andre<br></br>Powered by Linux</footer>
     </div>
   )
 }
