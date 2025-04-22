@@ -1,4 +1,4 @@
-import { coursesplaceholder, getCourseDisplayInfoList } from "./api";
+import { coursesplaceholder, getCourseDisplayInfoList, getCoursesUniqueByCode } from "./api";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 export const CourseDisplayInfoCtx = createContext({} as Record<string, Record<number, any[]>>);
@@ -7,7 +7,7 @@ export const CourseDisplayInfoProvider = ({ children }: {children: ReactNode}) =
   const [courseDisplayInfo, setCourseDisplayInfo] = useState(coursesplaceholder);
 
   useEffect(() => {
-    getCourseDisplayInfoList().then(data => {
+    getCoursesUniqueByCode().then(data => {
       setCourseDisplayInfo(data);
       console.log("succesfuly loaded history")
     });
