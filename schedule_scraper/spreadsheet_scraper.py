@@ -1,5 +1,5 @@
 import os
-filepath = os.getenv("PUBLICACAO_OFERTA_PATH_HTML") or '/guaxim/Downloads/Publicação Oferta Graduação 24.2 - Google Drive.html'
+filepath = './oferta25.1.html'
 PRINT_DEBUG = 1
 
 
@@ -78,7 +78,7 @@ with open(filepath, 'r', encoding='utf-8') as file: #type: ignore
 soup = BeautifulSoup(content, 'html.parser')
 
 # Example of finding and printing a specific element
-rows : list[bs4.Tag] = list(soup.find_all('tr')[1:])
+rows : list[bs4.Tag] = list(soup.find_all('tr')[1:]) #type: ignore
 #periodo = (rows[0].text.split(' ')[1])
 #rows = rows[2:]
 
@@ -102,7 +102,6 @@ class CourseInfo(CourseInterface):
                               term=term, optional=optional, id=id)
             
 
-            self.credits, self.CH = self.get_credits_and_ch()
 
             self.schedule = ClassSchedule(self.id, schedule_string)
 
@@ -135,7 +134,7 @@ class OptionalCourseInfo(CourseInfo):
         except:
             term=-1
         col_contents.pop(1)
-        super().__init__(col_contents, term=term, optional=True)
+        super().__init__(col_contents, id=id, term=term, optional=True)
 
 class TermNumberRow:
     def __init__(self, col_contents:list[str], separator=":", term_name_identifier="Período"):
@@ -155,7 +154,7 @@ class TermHeaderRow:
 
 
 def scrape_schedulenew(rows):    
-    majors= ["CC", "EC", "SI", "EXTERNA"]
+    majors= ["CC", "EC", "SI", "IA", "EXTERNA"]
     cmajor=""
     currentTerm = -1
     optional_delimiter = 101
@@ -173,7 +172,8 @@ def scrape_schedulenew(rows):
         cols = r.find_all('td')
         #each column is either a course info (len 6) or a header (len 4). only includes nonempty columns
         col_content = [c.text for c in cols]
-        
+
+
         #TERM and MAJOR SWITCHER
         try:
             #term delimiter. It's also the course delimiter, as each course starts on 1
@@ -268,6 +268,6 @@ coursesByMajorAndTerm = {maj:dumpCoursesByTerm(coursesByMajor[maj]) for maj in c
 #dump into json
 
 import json
-with open("../backend/courses.json", "w", encoding="utf-8") as f:
+with open("backend/courses.json", "w", encoding="utf-8") as f:
     json.dump(coursesByMajorAndTerm, f, ensure_ascii=False, indent=4)
 
