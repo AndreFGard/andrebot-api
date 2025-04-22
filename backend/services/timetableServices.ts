@@ -286,6 +286,10 @@ export class TimeTableService{
         return model.getCourseDisplayInfoList();
     }
 
+    getCoursesUniqueByCode(){
+        return model.getCoursesUniqueByCode();
+    }
+
     getRecommendations(major: string, currentTerm:number, newCurriculum:boolean, completedCourseIds: number[]): Record<number, PendingCourse[]> {
         const codes = completedCourseIds.map(
                 id => GraduationServices.getClassByID(id))

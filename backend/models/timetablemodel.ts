@@ -49,10 +49,11 @@ Object.keys(data).filter(k => {return(!majorList.includes(k))})
 
 export class timetableModel{
     readonly #courseDisplayInfoList: Record<string, Record<number, CourseDisplayInfo[]>> = {};
+    readonly #coursesUniqueByCode: Record<string, Record<number, CourseDisplayInfo[]>> = {};
+
 
     readonly #coursesByCode: Record<string, CourseInfo> = {};
     readonly #flatCourses: CourseInfo[]
-
     constructor(){
 
         const y =
@@ -77,6 +78,26 @@ export class timetableModel{
 
         this.#courseDisplayInfoList = Object.assign({}, ...y);
 
+
+        const uniqueByCode =
+        Object.assign({}, ...Object.entries(this.#courseDisplayInfoList).map(([major, termCourses]) => {
+            const assigned = Object.entries(termCourses).map(([term, courseList]) => {
+                const codelist = new Set(courseList.map(course=>course.code));
+                const uniqueCourses =  courseList.filter(course=> {
+                    if (codelist.has(course.code)) {
+                        codelist.delete(course.code);
+                        return true;
+                    }
+                    return false;
+                })
+                return {[Number(term)]: uniqueCourses};
+            });
+            return {[major]: Object.assign({}, ...assigned)}
+        }));
+
+        this.#coursesUniqueByCode = uniqueByCode;
+
+
         this.#coursesByCode = {};
         Object.entries(courses).forEach(([major, termCourses]) => {
             Object.entries(termCourses).forEach(([term, courseList]) => {
@@ -95,6 +116,8 @@ export class timetableModel{
             });
         });
 
+        
+
             
     }
 
@@ -106,6 +129,10 @@ export class timetableModel{
 
     getCourseDisplayInfoList(): Record<string, Record<number, CourseDisplayInfo[]>>{
         return this.#courseDisplayInfoList;
+    }
+
+    getCoursesUniqueByCode(): Record<string, Record<number, CourseDisplayInfo[]>>{
+        return this.#coursesUniqueByCode;
     }
 
     getCourseBycode(code: string): CourseInfo|undefined{   

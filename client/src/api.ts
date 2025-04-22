@@ -78,6 +78,14 @@ export const getCourseDisplayInfoList = async () => {
     return data;
 }
 
+export const getCoursesUniqueByCode = async () => {
+    const response = await fetch(`${apiUrl}/getCoursesUniqueByCode`);
+    const data = await response.json() as Record<string, Record<string, CourseDisplayInfo[]>>;
+
+    return data;
+}
+
+
 
 export {majorList};
 
