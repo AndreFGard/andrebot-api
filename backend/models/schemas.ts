@@ -78,7 +78,7 @@ export type EquivalenceMapping = {
   };
   
 
-export const majorList = ["CC", "EC", "SI", "outros"];
+export const majorList = ["CC", "EC", "SI", "outros", "IA"];
 
 
 interface PendingCourse{
